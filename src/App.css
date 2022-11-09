@@ -1,0 +1,14 @@
+:root {
+  --blue-primary: #252c68;
+  --grey-primary: #b9b9b9;
+  --grey-secondary: #ebebeb;
+  --green-secondary: #014d3f;
+}
+.App {
+  padding: 0 10px;
+  overflow-x: hidden;
+}
+
+.mb {
+  margin-bottom: 20px;
+}

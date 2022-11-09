@@ -1,0 +1,18 @@
+/* header */
+.dashboard-header {
+  margin-bottom: 10px;
+}
+.image_row {
+  margin: 10px;
+}
+
+.header_text_1 {
+  text-align: center;
+  color: #014c3d;
+  font: normal normal 700 normal 30px/34px Mukta;
+}
+
+.header_text_2 {
+  text-align: center;
+  font: normal normal 500 normal 14px/20px Mukta;
+}
