@@ -3,17 +3,25 @@ import QuestionWithIframe from '../../components/QuestionWIthIframe'
 import IframeHeading from './IframeHeading'
 import SectionHeader from './SectionHeader'
 
-const Section4 = () => {
+interface Props {
+    filters: {
+        district: string;
+        block: string;
+        cluster: string
+    }
+}
+const Section4 = ({ filters }: Props) => {
     return (
         <section>
             <SectionHeader label="Mentoring" />
             <div className='section4IframeContainer mb'>
-                {Array(6).fill(1).map(() => (
-                    <div className='section4Iframe '>
+                {Array(6).fill(1).map((_, idx) => (
+                    <div key={idx + "Section4"} className='section4Iframe '>
                         <QuestionWithIframe
                             questionId={84}
                             width="100%"
                             height="100%"
+                            params={{ ...filters }}
                             nonDownloadable={true}
                             handleLoadCounter={() => { }}
                         />
@@ -23,12 +31,13 @@ const Section4 = () => {
             <div className='section4headeing mb'>
                 <IframeHeading label='District Performance' />
             </div>
-            <div className='section4Container'>
+            <div className='section4Container mb'>
                 <div>
                     <QuestionWithIframe
                         questionId={98}
                         width="100%"
                         height="100%"
+                        params={{ ...filters }}
                         handleLoadCounter={() => { }}
                     />
 
@@ -38,6 +47,8 @@ const Section4 = () => {
                         questionId={98}
                         width="100%"
                         height="100%"
+                        params={{ ...filters }}
+
                         handleLoadCounter={() => { }}
                     />
                 </div>
@@ -51,6 +62,8 @@ const Section4 = () => {
                         questionId={111}
                         width="100%"
                         height="100%"
+                        params={{ ...filters }}
+
                         handleLoadCounter={() => { }}
                     />
                 </div>

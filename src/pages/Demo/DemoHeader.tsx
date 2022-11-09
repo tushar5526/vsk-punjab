@@ -1,12 +1,60 @@
 import { Select } from "antd"
 import { useState } from 'react';
 import down_arrow from "../../assets/pjb/utils/down_arrow.png"
-const DemoHeader = () => {
+
+
+interface Props {
+    setDistrict: Function,
+    setBlock: Function,
+    setCluster: Function,
+}
+const DemoHeader = ({ setBlock, setCluster, setDistrict }: Props) => {
     const [active, setActive] = useState<number>(1)
-    const option1 = [
+    const districts = [
         {
-            value: 'jack',
-            label: 'Jack',
+            value: "SIRMAUR",
+            label: "SIRMAUR",
+        },
+        {
+            value: "CHAMBA",
+            label: "CHAMBA",
+        }, {
+            value: "UNA",
+            label: 'UNA',
+        }, {
+            value: "KULLU",
+            label: 'KULLU',
+        }, {
+            value: "KANGRA",
+            label: 'KANGRA',
+        },
+        {
+            value: "MANDI",
+            label: 'MANDI',
+        },
+        {
+            value: "SOLAN",
+            label: 'SOLAN',
+        },
+        {
+            value: "SHIMLA",
+            label: 'SHIMLA',
+        },
+        {
+            value: "HAMIRPUR",
+            label: 'HAMIRPUR',
+        },
+        {
+            value: "LAHUL AND SPITI",
+            label: 'LAHUL AND SPITI',
+        },
+        {
+            value: "BILASPUR",
+            label: 'BILASPUR',
+        },
+        {
+            value: "KINNAUR",
+            label: 'KINNAUR',
         },
     ]
     const option2 = [
@@ -21,14 +69,12 @@ const DemoHeader = () => {
             label: 'Jack',
         },
     ]
-    const option4 = [
-        {
-            value: 'jack',
-            label: 'Jack',
-        },
-    ]
+
     const handleChange = (e: any) => {
         console.log(e, "handle change")
+    }
+    const handleDistrictsChange = (e: any) => {
+        setDistrict(e)
     }
     return (
         <>
@@ -41,11 +87,11 @@ const DemoHeader = () => {
                 <div className='demoHeader__span demoHeader__center'>
                     <Select
                         className='demoHeader__select'
-                        defaultValue="lucy"
+                        defaultValue={districts[0].value}
                         suffixIcon={<img className='demoHeader__dropdown--suffix' src={down_arrow} />}
                         style={{ width: 120 }}
                         onChange={handleChange}
-                        options={option1}
+                        options={districts}
                     />
                 </div>
             </div>
@@ -63,8 +109,8 @@ const DemoHeader = () => {
                         className='demoHeader__select'
                         defaultValue="District"
                         suffixIcon={<img className='demoHeader__dropdown--suffix' src={down_arrow} />}
-                        onChange={handleChange}
-                        options={option1}
+                        onChange={handleDistrictsChange}
+                        options={districts}
                     />                    <Select
                         className='demoHeader__select'
                         defaultValue="Block"

@@ -1,9 +1,17 @@
-import React from 'react'
 import QuestionWithIframe from '../../components/QuestionWIthIframe'
 import IframeHeading from './IframeHeading'
 import SectionHeader from './SectionHeader'
+import { useEffect } from 'react';
 
-const Section1 = () => {
+interface Props {
+    filters: {
+        district: string;
+        block: string;
+        cluster: string
+    }
+}
+
+const Section1 = ({ filters }: Props) => {
     return (
         <>
             <SectionHeader label={"Student Attendance"} />
@@ -15,6 +23,7 @@ const Section1 = () => {
                                 <QuestionWithIframe
                                     questionId={84}
                                     width="100%"
+                                    params={{ ...filters }}
                                     height="100%"
                                     nonDownloadable={true}
                                     handleLoadCounter={() => { }}
@@ -24,6 +33,7 @@ const Section1 = () => {
                                 <QuestionWithIframe
                                     questionId={84}
                                     width="100%"
+                                    params={{ ...filters }}
                                     height="100%"
                                     nonDownloadable={true}
                                     handleLoadCounter={() => { }}
@@ -39,6 +49,7 @@ const Section1 = () => {
                                 <div className='spanContainer2__item'>
                                     <QuestionWithIframe
                                         questionId={97}
+                                        params={{ ...filters }}
                                         width="100%"
                                         height="100%"
                                         handleLoadCounter={() => { }}
@@ -49,6 +60,7 @@ const Section1 = () => {
                                         questionId={98}
                                         width="100%"
                                         height="100%"
+                                        params={{ ...filters }}
                                         handleLoadCounter={() => { }}
                                     />
                                 </div>
@@ -66,6 +78,7 @@ const Section1 = () => {
                                 questionId={59}
                                 width="100%"
                                 height="100%"
+                                params={{ ...filters }}
                             />
                         </div>
                     </div>

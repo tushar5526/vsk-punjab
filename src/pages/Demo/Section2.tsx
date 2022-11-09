@@ -5,8 +5,16 @@ import IframeHeading from './IframeHeading'
 interface Props {
     getMarkerData: Function
     markerData: any
+    filters: {
+        district: string;
+        block: string;
+        cluster: string
+    }
 }
-const Section2 = (props: Props) => {
+
+
+
+const Section2 = ({ getMarkerData, markerData, filters: { district, block, cluster } }: Props) => {
     const [config, setConfig] = useState([]);
     const getConfig = () => {
         if (config.length) {
@@ -29,7 +37,7 @@ const Section2 = (props: Props) => {
 
     useEffect(() => {
         getConfig();
-        props.getMarkerData("Districts")
+        getMarkerData("Districts")
     }, [])
     return (
         <div className='section2 mb'>
@@ -38,7 +46,7 @@ const Section2 = (props: Props) => {
             </div>
             <div className="section2MapContainer">
                 <div className='section2Map'>
-                    <MapComponent config={config} markers={props.markerData} />
+                    <MapComponent config={config} markers={markerData} />
                 </div>
             </div>
         </div>

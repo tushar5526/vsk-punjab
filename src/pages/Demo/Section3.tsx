@@ -1,9 +1,17 @@
-import React from 'react'
 import QuestionWithIframe from '../../components/QuestionWIthIframe'
 import IframeHeading from './IframeHeading'
 import SectionHeader from './SectionHeader'
 
-const Section3 = () => {
+
+interface Props {
+    filters: {
+        district: string;
+        block: string;
+        cluster: string
+    }
+}
+
+const Section3 = ({ filters }: Props) => {
     return (
         <>
             <SectionHeader label={"Mid-Day Meal"} />
@@ -13,6 +21,17 @@ const Section3 = () => {
                         <div className='section3Iframe'>
                             <QuestionWithIframe
                                 questionId={84}
+                                params={{ ...filters }}
+                                width="100%"
+                                height="100%"
+                                nonDownloadable={true}
+                                handleLoadCounter={() => { }}
+                            />
+                        </div>
+                        <div className='section3Iframe'>
+                            <QuestionWithIframe
+                                questionId={84}
+                                params={{ ...filters }}
                                 width="100%"
                                 height="100%"
                                 nonDownloadable={true}
@@ -24,15 +43,7 @@ const Section3 = () => {
                                 questionId={84}
                                 width="100%"
                                 height="100%"
-                                nonDownloadable={true}
-                                handleLoadCounter={() => { }}
-                            />
-                        </div>
-                        <div className='section3Iframe'>
-                            <QuestionWithIframe
-                                questionId={84}
-                                width="100%"
-                                height="100%"
+                                params={{ ...filters }}
                                 nonDownloadable={true}
                                 handleLoadCounter={() => { }}
                             />
@@ -47,6 +58,7 @@ const Section3 = () => {
                                 <QuestionWithIframe
                                     questionId={98}
                                     width="100%"
+                                    params={{ ...filters }}
                                     height="100%"
                                     handleLoadCounter={() => { }}
                                 />
@@ -56,6 +68,7 @@ const Section3 = () => {
                                     questionId={98}
                                     width="100%"
                                     height="100%"
+                                    params={{ ...filters }}
                                     handleLoadCounter={() => { }}
                                 />
                             </div>
@@ -64,6 +77,7 @@ const Section3 = () => {
                                     questionId={98}
                                     width="100%"
                                     height="100%"
+                                    params={{ ...filters }}
                                     handleLoadCounter={() => { }}
                                 />
                             </div>
@@ -79,6 +93,7 @@ const Section3 = () => {
                             handleLoadCounter={() => { }}
                             questionId={59}
                             width="100%"
+                            params={{ ...filters }}
                             height="100%"
                         />
                     </div>

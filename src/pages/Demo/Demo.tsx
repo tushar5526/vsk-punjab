@@ -20,13 +20,44 @@ export class Demo extends Component {
     }
 
     state = {
-        markerData: null
+        markerData: null,
+        filters: {
+            district: "",
+            block: "",
+            cluster: ""
+        }
+
     }
 
 
 
     componentDidMount(): void {
         this.getMarkerData()
+    }
+    setDistrict = (e: any) => {
+        this.setState({
+            filters: {
+                ...this.state.filters,
+                district: e
+            }
+        })
+    }
+
+    setBlock = (e: any) => {
+        this.setState({
+            filters: {
+                ...this.state.filters,
+                block: e
+            }
+        })
+    }
+    setCluster = (e: any) => {
+        this.setState({
+            filters: {
+                ...this.state.filters,
+                cluster: e
+            }
+        })
     }
     formatMarkerData = (data: any) => {
         const formattedData = data
@@ -97,12 +128,12 @@ export class Demo extends Component {
     render() {
         return (
             <>
-                <DemoHeader />
-                <Section1 />
-                <Section2 getMarkerData={this.getMarkerData} markerData={this.state.markerData} />
-                <Section3 />
-                <Section4 />
-                <Section5 />
+                <DemoHeader setBlock={this.setBlock} setCluster={this.setCluster} setDistrict={this.setDistrict} />
+                <Section1 filters={this.state.filters} />
+                <Section2 filters={this.state.filters} getMarkerData={this.getMarkerData} markerData={this.state.markerData} />
+                <Section3 filters={this.state.filters} />
+                <Section4 filters={this.state.filters} />
+                <Section5 filters={this.state.filters} />
             </>
 
         )

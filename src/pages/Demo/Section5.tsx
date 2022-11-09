@@ -4,7 +4,14 @@ import GreayFooter from './GreayFooter'
 import IframeHeading from './IframeHeading'
 import SectionHeader from './SectionHeader'
 
-const Section5 = () => {
+interface Props {
+    filters: {
+        district: string;
+        block: string;
+        cluster: string
+    }
+}
+const Section5 = ({ filters }: Props) => {
     return (
         <section className='section5'>
             <SectionHeader label="Infrastructure" />
@@ -15,6 +22,7 @@ const Section5 = () => {
                             questionId={84}
                             width="100%"
                             height="100%"
+                            params={{ ...filters }}
                             nonDownloadable={true}
                             handleLoadCounter={() => { }}
                         />
@@ -22,6 +30,7 @@ const Section5 = () => {
                     <div className="section5Iframe">
                         <QuestionWithIframe
                             questionId={84}
+                            params={{ ...filters }}
                             width="100%"
                             height="100%"
                             nonDownloadable={true}
@@ -31,6 +40,7 @@ const Section5 = () => {
                     <div className="section5Iframe">
                         <QuestionWithIframe
                             questionId={84}
+                            params={{ ...filters }}
                             width="100%"
                             height="100%"
                             nonDownloadable={true}
@@ -43,6 +53,7 @@ const Section5 = () => {
                         <QuestionWithIframe
                             questionId={84}
                             width="100%"
+                            params={{ ...filters }}
                             height="100%"
                             nonDownloadable={true}
                             handleLoadCounter={() => { }}
@@ -52,6 +63,7 @@ const Section5 = () => {
                         <QuestionWithIframe
                             questionId={84}
                             width="100%"
+                            params={{ ...filters }}
                             height="100%"
                             nonDownloadable={true}
                             handleLoadCounter={() => { }}
@@ -60,6 +72,7 @@ const Section5 = () => {
                     <div className="section5Iframe">
                         <QuestionWithIframe
                             questionId={84}
+                            params={{ ...filters }}
                             width="100%"
                             height="100%"
                             nonDownloadable={true}
@@ -77,6 +90,7 @@ const Section5 = () => {
                         questionId={98}
                         width="100%"
                         height="100%"
+                        params={{ ...filters }}
                         handleLoadCounter={() => { }}
                     />
                 </div>
@@ -92,6 +106,7 @@ const Section5 = () => {
                     <QuestionWithIframe
                         questionId={98}
                         width="100%"
+                        params={{ ...filters }}
                         height="100%"
                         handleLoadCounter={() => { }}
                     />
@@ -109,6 +124,7 @@ const Section5 = () => {
                                 questionId={84}
                                 width="100%"
                                 height="100%"
+                                params={{ ...filters }}
                                 nonDownloadable={true}
                                 handleLoadCounter={() => { }}
                             />
@@ -118,6 +134,7 @@ const Section5 = () => {
                                 questionId={84}
                                 width="100%"
                                 height="100%"
+                                params={{ ...filters }}
                                 nonDownloadable={true}
                                 handleLoadCounter={() => { }}
                             />
@@ -127,6 +144,7 @@ const Section5 = () => {
                                 questionId={84}
                                 width="100%"
                                 height="100%"
+                                params={{ ...filters }}
                                 nonDownloadable={true}
                                 handleLoadCounter={() => { }}
                             />
@@ -143,6 +161,7 @@ const Section5 = () => {
                                 questionId={84}
                                 width="100%"
                                 height="100%"
+                                params={{ ...filters }}
                                 nonDownloadable={true}
                                 handleLoadCounter={() => { }}
                             />
@@ -151,6 +170,7 @@ const Section5 = () => {
                             <QuestionWithIframe
                                 questionId={84}
                                 width="100%"
+                                params={{ ...filters }}
                                 height="100%"
                                 nonDownloadable={true}
                                 handleLoadCounter={() => { }}
@@ -160,6 +180,7 @@ const Section5 = () => {
                             <QuestionWithIframe
                                 questionId={84}
                                 width="100%"
+                                params={{ ...filters }}
                                 height="100%"
                                 nonDownloadable={true}
                                 handleLoadCounter={() => { }}
@@ -177,6 +198,7 @@ const Section5 = () => {
                         <QuestionWithIframe
                             questionId={98}
                             width="100%"
+                            params={{ ...filters }}
                             height="100%"
                             handleLoadCounter={() => { }}
                         />
@@ -185,6 +207,7 @@ const Section5 = () => {
                         <QuestionWithIframe
                             questionId={98}
                             width="100%"
+                            params={{ ...filters }}
                             height="100%"
                             handleLoadCounter={() => { }}
                         />
