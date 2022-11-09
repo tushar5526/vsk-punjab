@@ -1,6 +1,7 @@
 import { Select } from "antd"
 import { useState } from 'react';
 import down_arrow from "../../assets/pjb/utils/down_arrow.png"
+import { getDisabled } from "../../services/parameters";
 
 
 interface Props {
@@ -10,6 +11,7 @@ interface Props {
 }
 const DemoHeader = ({ setBlock, setCluster, setDistrict }: Props) => {
     const [active, setActive] = useState<number>(1)
+    const disabled = getDisabled()
     const districts = [
         {
             value: "SIRMAUR",
@@ -76,6 +78,8 @@ const DemoHeader = ({ setBlock, setCluster, setDistrict }: Props) => {
     const handleDistrictsChange = (e: any) => {
         setDistrict(e)
     }
+
+    console.log(disabled, "disabled")
     return (
         <>
             <div className="demoHeader mb">
@@ -110,18 +114,26 @@ const DemoHeader = ({ setBlock, setCluster, setDistrict }: Props) => {
                         defaultValue="District"
                         suffixIcon={<img className='demoHeader__dropdown--suffix' src={down_arrow} />}
                         onChange={handleDistrictsChange}
+                        disabled={disabled.district}
                         options={districts}
-                    />                    <Select
+                    />
+                    <Select
                         className='demoHeader__select'
                         defaultValue="Block"
                         suffixIcon={<img className='demoHeader__dropdown--suffix' src={down_arrow} />}
                         onChange={handleChange}
                         options={option2}
-                    />                    <Select
+                        disabled={disabled.block}
+
+
+
+                    />
+                    <Select
                         className='demoHeader__select'
                         defaultValue="Cluster"
                         suffixIcon={<img className='demoHeader__dropdown--suffix' src={down_arrow} />}
                         onChange={handleChange}
+                        disabled={disabled.cluster}
                         options={option3}
                     />
                 </div>
