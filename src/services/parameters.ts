@@ -10,9 +10,9 @@ export const roles = {
 };
 
 export const getDisabled = () => {
-  // const _role = "District";
+  const _role = "District";
   // const _role = "Block";
-  const _role = "State";
+  // const _role = "State";
   // const _role = "Cluster";
 
   const obj = {
