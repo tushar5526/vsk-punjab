@@ -2,14 +2,20 @@ import { Select } from "antd"
 import { useState } from 'react';
 import down_arrow from "../../assets/pjb/utils/down_arrow.png"
 import { getDisabled } from "../../services/parameters";
+import { tab1, tab2, tab3 } from '../../redux/TabController/actions';
+import { connect } from "react-redux/es/exports"
 
 
 interface Props {
-    setDistrict: Function,
-    setBlock: Function,
-    setCluster: Function,
+    setDistrict: Function
+    setBlock: Function
+    setCluster: Function
+    switchToTab1: Function
+    switchToTab2: Function
+    switchToTab3: Function
+    current: number
 }
-const DemoHeader = ({ setBlock, setCluster, setDistrict }: Props) => {
+const DemoHeader = (props: Props) => {
     const [active, setActive] = useState<number>(1)
     const disabled = getDisabled()
     const districts = [
@@ -76,23 +82,22 @@ const DemoHeader = ({ setBlock, setCluster, setDistrict }: Props) => {
         console.log(e, "handle change")
     }
     const handleDistrictsChange = (e: any) => {
-        setDistrict(e)
+        props.setDistrict(e)
     }
 
-    console.log(disabled, "disabled")
     return (
         <>
             <div className="demoHeader mb">
                 <div className="demoHeader__span demoHeader__spaceBetween">
-                    <button onClick={() => setActive(1)} className={`demoHeader__button ${active === 1 && "demoHeader__button--active"}`}>Performace</button>
-                    <button onClick={() => setActive(2)} className={`demoHeader__button ${active === 2 && "demoHeader__button--active"}`} >Admin Data</button>
-                    <button onClick={() => setActive(3)} className={`demoHeader__button ${active === 3 && "demoHeader__button--active"}`} >Academic Data</button>
+                    <button onClick={() => props.switchToTab1()} className={`demoHeader__button ${props.current === 1 && "demoHeader__button--active"}`}>Performace</button>
+                    <button onClick={() => props.switchToTab2()} className={`demoHeader__button ${props.current === 2 && "demoHeader__button--active"}`} >Admin Data</button>
+                    <button onClick={() => props.switchToTab3()} className={`demoHeader__button ${props.current === 3 && "demoHeader__button--active"}`} >Academic Data</button>
                 </div>
                 <div className='demoHeader__span demoHeader__center'>
                     <Select
                         className='demoHeader__select'
                         defaultValue={districts[0].value}
-                        suffixIcon={<img className='demoHeader__dropdown--suffix' src={down_arrow} />}
+                        suffixIcon={<img alt="dropdown" className='demoHeader__dropdown--suffix' src={down_arrow} />}
                         style={{ width: 120 }}
                         onChange={handleChange}
                         options={districts}
@@ -112,7 +117,7 @@ const DemoHeader = ({ setBlock, setCluster, setDistrict }: Props) => {
                     <Select
                         className='demoHeader__select'
                         defaultValue="District"
-                        suffixIcon={<img className='demoHeader__dropdown--suffix' src={down_arrow} />}
+                        suffixIcon={<img alt="dropdown" className='demoHeader__dropdown--suffix' src={down_arrow} />}
                         onChange={handleDistrictsChange}
                         disabled={disabled.district}
                         options={districts}
@@ -120,7 +125,7 @@ const DemoHeader = ({ setBlock, setCluster, setDistrict }: Props) => {
                     <Select
                         className='demoHeader__select'
                         defaultValue="Block"
-                        suffixIcon={<img className='demoHeader__dropdown--suffix' src={down_arrow} />}
+                        suffixIcon={<img alt="dropdown" className='demoHeader__dropdown--suffix' src={down_arrow} />}
                         onChange={handleChange}
                         options={option2}
                         disabled={disabled.block}
@@ -131,7 +136,7 @@ const DemoHeader = ({ setBlock, setCluster, setDistrict }: Props) => {
                     <Select
                         className='demoHeader__select'
                         defaultValue="Cluster"
-                        suffixIcon={<img className='demoHeader__dropdown--suffix' src={down_arrow} />}
+                        suffixIcon={<img alt="dropdown" className='demoHeader__dropdown--suffix' src={down_arrow} />}
                         onChange={handleChange}
                         disabled={disabled.cluster}
                         options={option3}
@@ -142,4 +147,14 @@ const DemoHeader = ({ setBlock, setCluster, setDistrict }: Props) => {
     )
 }
 
-export default DemoHeader
+
+const mapDispatchToProps = (dispatch: any) => ({
+    switchToTab1: () => dispatch(tab1()),
+    switchToTab2: () => dispatch(tab2()),
+    switchToTab3: () => dispatch(tab3()),
+});
+const mapStateToProps = ({ tab: { current } }: any) => ({
+    current
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(DemoHeader)

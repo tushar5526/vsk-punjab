@@ -1,7 +1,6 @@
 import QuestionWithIframe from '../../components/QuestionWIthIframe'
 import IframeHeading from './IframeHeading'
 import SectionHeader from './SectionHeader'
-import { useEffect } from 'react';
 
 interface Props {
     filters: {

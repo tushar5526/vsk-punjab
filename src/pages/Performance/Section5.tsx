@@ -1,6 +1,6 @@
 import React from 'react'
 import QuestionWithIframe from '../../components/QuestionWIthIframe'
-import GreayFooter from './GreayFooter'
+import GreayFooter from '../../components/GreyFooter/GreayFooter'
 import IframeHeading from './IframeHeading'
 import SectionHeader from './SectionHeader'
 

@@ -1,10 +1,12 @@
 import { Redirect, Route } from "react-router-dom";
 import ROUTE_CONST from "./RouteConstants";
+import { connect } from "react-redux/es/exports"
 
-const PrivateRoute = ({ children, ...rest }: any) => {
-  const user = localStorage.getItem("user");
+const PrivateRoute = ({ children, user, ...rest }: any) => {
   const token = sessionStorage.getItem("user");
   const userExists = user && token;
+  console.log(user, "data")
+  console.log(userExists, "exist")
   return (
     <Route
       {...rest}
@@ -24,4 +26,8 @@ const PrivateRoute = ({ children, ...rest }: any) => {
   );
 };
 
-export default PrivateRoute;
+const mapStateToProps = ({ user: { data } }: any) => ({
+  user: data,
+});
+
+export default connect(mapStateToProps)(PrivateRoute);

@@ -1,3 +1,5 @@
+import "./index.css"
+
 const GreayFooter = () => {
     return (
         <div className="greyfooter ">

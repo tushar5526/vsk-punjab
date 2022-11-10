@@ -31,20 +31,22 @@ const Login: FC = ({ addUserToStore }: any) => {
       password: password,
     };
     const res = await API_SERVICE.Login(params);
-    const { user, refreshToken, token } = res?.data?.result?.data?.user;
-    addUserToStore({ user, refreshToken, token })
-    sessionStorage.setItem(
-      "user",
-      JSON.stringify({
-        refreshToken,
-        token,
-      })
-    );
+    if (res) {
+      const { user, refreshToken, token } = res?.data?.result?.data?.user;
+      addUserToStore({ user, refreshToken, token })
+      sessionStorage.setItem(
+        "user",
+        JSON.stringify({
+          refreshToken,
+          token,
+        })
+      );
+    }
+
     if ("serviceWorker" in navigator) {
       navigator.serviceWorker.ready.then((registration) => {
         console.log(`A service worker is active.....: ${registration.active}`);
         history.push(ROUTE_CONST.root);
-        // window.location.href = "/detailed-dashboard";
       });
     } else {
       console.error("Service workers are not supported.");

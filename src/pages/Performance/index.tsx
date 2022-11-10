@@ -1,8 +1,8 @@
 import { notification } from 'antd';
 import { Component } from 'react'
 import API_SERVICE from '../../services/api-service';
-import "./Demo.css"
-import DemoHeader from './DemoHeader';
+import "./index.css"
+import DemoHeader from '../../components/ControllHeader';
 import Section1 from './Section1';
 import Section2 from './Section2';
 import Section3 from './Section3';
@@ -14,11 +14,7 @@ import Section5 from './Section5';
 
 
 
-export class Demo extends Component {
-    constructor(props: any) {
-        super(props);
-    }
-
+export class Performace extends Component {
     state = {
         markerData: null,
         filters: {
@@ -140,4 +136,4 @@ export class Demo extends Component {
     }
 }
 
-export default Demo
+export default Performace

@@ -1,6 +1,5 @@
 const ROUTE_CONST = {
     root: "/",
-    demo: "/demo",
     login: "/login"
 }
 

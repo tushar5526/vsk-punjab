@@ -9,7 +9,7 @@ import "./App.less";
 import DashboardHeader from "./components/layouts/DashboardHeader";
 import Login from "./pages/Login";
 import PrivateRoute from "./Routing/ProtectedRoute";
-import Demo from "./pages/Demo/Demo";
+import Demo from "./pages/Performance";
 import ROUTE_CONST from "./Routing/RouteConstants";
 import "./App.css"
 
@@ -61,7 +61,7 @@ const App: FC = () => {
           {<DashboardHeader />}
           <Switch>
             <Route exact path={ROUTE_CONST.login} component={Login} />
-            <PrivateRoute exact path={ROUTE_CONST.demo}>
+            <PrivateRoute exact path={ROUTE_CONST.root}>
               <Demo />
             </PrivateRoute>
           </Switch>
@@ -70,5 +70,7 @@ const App: FC = () => {
     </div>
   );
 };
+
+
 
 export default App;
