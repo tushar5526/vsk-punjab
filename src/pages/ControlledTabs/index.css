@@ -550,9 +550,12 @@
   justify-content: center;
   align-items: center;
   height: fit-content;
+  flex-direction: column;
+  width: 100%;
 }
 .AdminData6__container {
   height: 80vh;
+  width: 100%;
   border-radius: var(--card-radius);
   box-shadow: var(--card-shadow);
 }
@@ -734,6 +737,9 @@
   .AdminData4__Container2 {
     width: 100%;
     margin-bottom: 10px;
+  }
+  .AdminData6__container {
+    height: 70vh;
   }
 }
 
