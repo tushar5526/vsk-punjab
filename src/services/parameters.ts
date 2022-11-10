@@ -10,6 +10,8 @@ export const roles = {
 };
 
 export const getDisabled = () => {
+  const user = localStorage.getItem("user");
+  console.log(user, "user");
   const _role = "District";
   // const _role = "Block";
   // const _role = "State";
