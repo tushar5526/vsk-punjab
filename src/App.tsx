@@ -9,9 +9,10 @@ import "./App.less";
 import DashboardHeader from "./components/layouts/DashboardHeader";
 import Login from "./pages/Login";
 import PrivateRoute from "./Routing/ProtectedRoute";
-import Demo from "./pages/Performance";
+import Demo from "./pages/ControlledTabs/Tabs/Performance";
 import ROUTE_CONST from "./Routing/RouteConstants";
 import "./App.css"
+import ControlledTabs from "./pages/ControlledTabs";
 
 export const IframeContextContext = React.createContext({
   updateHasFirstIframeLoaded: null,
@@ -62,7 +63,7 @@ const App: FC = () => {
           <Switch>
             <Route exact path={ROUTE_CONST.login} component={Login} />
             <PrivateRoute exact path={ROUTE_CONST.root}>
-              <Demo />
+              <ControlledTabs />
             </PrivateRoute>
           </Switch>
         </Router>

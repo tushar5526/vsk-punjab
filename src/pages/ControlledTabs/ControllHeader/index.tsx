@@ -1,8 +1,6 @@
 import { Select } from "antd"
-import { useState } from 'react';
-import down_arrow from "../../assets/pjb/utils/down_arrow.png"
-import { getDisabled } from "../../services/parameters";
-import { toogleTab } from '../../redux/TabController/actions';
+import down_arrow from "../../../assets/pjb/utils/down_arrow.png"
+import { toogleTab } from '../../../redux/TabController/actions';
 import { connect } from "react-redux/es/exports"
 
 
@@ -10,7 +8,7 @@ interface Props {
     toogleTab: Function
     current: number
 }
-const DemoHeader = (props: Props) => {
+const DemoHeader = ({ toogleTab, current }: Props) => {
     const districts = [
         {
             value: "SIRMAUR",
@@ -67,11 +65,11 @@ const DemoHeader = (props: Props) => {
         <>
             <div className="demoHeader mb">
                 <div className="demoHeader__span demoHeader__spaceBetween">
-                    <button onClick={() => props.toogleTab(1)} className={`demoHeader__button ${props.current === 1 && "demoHeader__button--active"}`}>Performace</button>
-                    <button onClick={() => props.toogleTab(2)} className={`demoHeader__button ${props.current === 2 && "demoHeader__button--active"}`} >Admin Data</button>
-                    <button onClick={() => props.toogleTab(3)} className={`demoHeader__button ${props.current === 3 && "demoHeader__button--active"}`} >Academic Data</button>
+                    <button onClick={() => toogleTab(1)} className={`demoHeader__button ${current === 1 && "demoHeader__button--active"}`}>Performace</button>
+                    <button onClick={() => toogleTab(2)} className={`demoHeader__button ${current === 2 && "demoHeader__button--active"}`} >Admin Data</button>
+                    <button onClick={() => toogleTab(3)} className={`demoHeader__button ${current === 3 && "demoHeader__button--active"}`} >Academic Data</button>
                 </div>
-                <div className='demoHeader__span demoHeader__center'>
+                <div className="demoHeader__span demoHeader__center">
                     <Select
                         className='demoHeader__select'
                         defaultValue={districts[0].value}

@@ -1,37 +1,63 @@
 import { notification, Select } from 'antd';
 import { Component } from 'react'
-import API_SERVICE from '../../services/api-service';
-import "./index.css"
-import DemoHeader from '../../components/ControllHeader';
+import API_SERVICE from '../../../../services/api-service';
 import Section1 from './Section1';
 import Section2 from './Section2';
 import Section3 from './Section3';
 import Section4 from './Section4';
 import Section5 from './Section5';
-import { getDisabled } from '../../services/parameters';
-import down_arrow from "../../assets/pjb/utils/down_arrow.png"
+import { getDisabled } from '../../../../services/parameters';
+import down_arrow from "../../../../assets/pjb/utils/down_arrow.png"
+
+
+
+
+type PerforMaceProps = {
+    user: any
+};
+type PerformanceState = {
+    markerData: any,
+    filters: {
+        district: string,
+        block: string,
+        cluster: string
+    },
+    disabled: {
+        block: boolean,
+        district: boolean,
+        cluster: boolean
+    },
+};
 
 
 
 
 
-
-
-export class Performace extends Component {
+export class Performace extends Component<PerforMaceProps, PerformanceState> {
+    constructor(props: any) {
+        super(props)
+    }
     state = {
         markerData: null,
         filters: {
             district: "",
             block: "",
             cluster: ""
-        }
-
+        },
+        disabled: {
+            block: false,
+            district: false,
+            cluster: false
+        },
     }
 
 
 
     componentDidMount(): void {
         this.getMarkerData()
+        this.setState({
+            disabled: getDisabled(this.props.user)
+        })
     }
     setDistrict = (e: any) => {
         this.setState({
@@ -124,7 +150,7 @@ export class Performace extends Component {
         }
     }
 
-    disabled = getDisabled()
+
     districts = [
         {
             value: "SIRMAUR",
@@ -190,7 +216,6 @@ export class Performace extends Component {
     render() {
         return (
             <>
-                <DemoHeader />
                 <div className='demoHeader2 mb'>
                     <div className='demoHeader2__span1'>
                         <button className='demoHeader2__button'>Attendance</button>
@@ -205,7 +230,7 @@ export class Performace extends Component {
                             className='demoHeader__select'
                             defaultValue="District"
                             suffixIcon={<img alt="dropdown" className='demoHeader__dropdown--suffix' src={down_arrow} />}
-                            disabled={this.disabled.district}
+                            disabled={this.state.disabled.district}
                             options={this.districts}
                         />
                         <Select
@@ -213,7 +238,7 @@ export class Performace extends Component {
                             defaultValue="Block"
                             suffixIcon={<img alt="dropdown" className='demoHeader__dropdown--suffix' src={down_arrow} />}
                             options={this.option2}
-                            disabled={this.disabled.block}
+                            disabled={this.state.disabled.block}
 
 
 
@@ -222,7 +247,7 @@ export class Performace extends Component {
                             className='demoHeader__select'
                             defaultValue="Cluster"
                             suffixIcon={<img alt="dropdown" className='demoHeader__dropdown--suffix' src={down_arrow} />}
-                            disabled={this.disabled.cluster}
+                            disabled={this.state.disabled.cluster}
                             options={this.option3}
                         />
                     </div>
@@ -237,5 +262,8 @@ export class Performace extends Component {
         )
     }
 }
+
+
+
 
 export default Performace

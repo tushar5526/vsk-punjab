@@ -1,8 +1,8 @@
 import React from 'react'
-import QuestionWithIframe from '../../components/QuestionWIthIframe'
-import GreayFooter from '../../components/GreyFooter/GreayFooter'
-import IframeHeading from './IframeHeading'
-import SectionHeader from './SectionHeader'
+import QuestionWithIframe from '../../../../components/QuestionWIthIframe'
+import GreayFooter from '../../GreyFooter/GreayFooter'
+import IframeHeading from '../utils/IframeHeading'
+import SectionHeader from '../utils/SectionHeader'
 
 interface Props {
     filters: {
@@ -214,7 +214,6 @@ const Section5 = ({ filters }: Props) => {
                     </div>
                 </div>
             </div>
-            <GreayFooter />
         </section>
     )
 }

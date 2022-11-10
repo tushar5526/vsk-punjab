@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import MapComponent from '../../components/MapComponent/MapComponent'
-import IframeHeading from './IframeHeading'
+import MapComponent from '../../../../components/MapComponent/MapComponent'
+import IframeHeading from '../utils/IframeHeading'
 
 interface Props {
     getMarkerData: Function

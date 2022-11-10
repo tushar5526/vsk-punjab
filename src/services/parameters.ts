@@ -9,12 +9,11 @@ export const roles = {
   state: "State",
 };
 
-export const getDisabled = () => {
-  const user = localStorage.getItem("user");
+export const getDisabled = (user: any) => {
   console.log(user, "user");
-  const _role = "District";
+  // const _role = "District";
   // const _role = "Block";
-  // const _role = "State";
+  const _role = "State";
   // const _role = "Cluster";
 
   const obj = {

@@ -1,6 +1,6 @@
-import QuestionWithIframe from '../../components/QuestionWIthIframe'
-import IframeHeading from './IframeHeading'
-import SectionHeader from './SectionHeader'
+import QuestionWithIframe from '../../../../components/QuestionWIthIframe'
+import IframeHeading from '../utils/IframeHeading'
+import SectionHeader from '../utils/SectionHeader'
 
 interface Props {
     filters: {

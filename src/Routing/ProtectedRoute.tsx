@@ -5,8 +5,6 @@ import { connect } from "react-redux/es/exports"
 const PrivateRoute = ({ children, user, ...rest }: any) => {
   const token = sessionStorage.getItem("user");
   const userExists = user && token;
-  console.log(user, "data")
-  console.log(userExists, "exist")
   return (
     <Route
       {...rest}
