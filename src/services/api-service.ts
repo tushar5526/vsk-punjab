@@ -69,10 +69,6 @@ async function self() {
 
 async function Login(params: any) {
   const instance = getLoginInstance();
-  console.log({
-    ...params,
-    applicationId: Parameters.applicationId,
-  });
 
   return await instance.post("/user/login", {
     ...params,

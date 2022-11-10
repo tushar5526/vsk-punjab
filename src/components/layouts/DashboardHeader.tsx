@@ -7,17 +7,13 @@ import LeftLogo3 from "../../assets/pjb/Header/Azadi_Ka_Amrit_Mahotsav.png";
 import RightLogo from "../../assets/Profile.svg";
 import { NavLink } from "react-router-dom";
 import "./index.css"
+import { connect } from "react-redux/es/exports";
+import { logout } from "../../redux/user/actions";
 
-const DashboardHeader: FC = () => {
+const DashboardHeader: FC = ({ user, logout }: any) => {
 
-  const handleLogout = () => {
-    localStorage.removeItem("user");
-    sessionStorage.removeItem("user");
-    window.location.href = "/";
-  };
 
-  const pathname = window.location.pathname;
-  console.warn(localStorage.getItem("user"), "localStorage");
+
 
   return (
     <div key={+new Date()} className="dashboard-header">
@@ -67,45 +63,32 @@ const DashboardHeader: FC = () => {
           }}
         >
           <div style={{ display: "flex", flexDirection: "column" }}>
-            {pathname === "/login" ? null : (
-              <>
-                <Image src={RightLogo} height={"30px"} preview={false} />
-                {localStorage.getItem("user") && (
-                  <Button
-                    style={{
-                      display: "flex",
-                      justifyContent: "flex-end",
-                      marginTop: "2px",
-                      height: "28px",
-                      fontSize: "12px",
-                    }}
-                    onClick={handleLogout}
-                  >
-                    <span>Log Out</span>
-                  </Button>
-                )}
-              </>
-            )}
+            <>
+              <Image src={RightLogo} height={"30px"} preview={false} />
+              {user && (
+                <Button
+                  className="logout-btn"
+                  onClick={logout}
+                >
+                  <span>Log Out</span>
+                </Button>
+              )}
+            </>
           </div>
         </Col>
-
-        {/* <Col>
-        <NavLink to={"/"}>
-          <Row gutter={10}>
-            <Col>
-              <Image src={RightLogo} height={"50px"} preview={false} />
-            </Col>
-            <Col>
-              User Manual
-              <br />
-              उपयोगकर्ता पुस्तिका
-            </Col>
-          </Row>
-        </NavLink>
-      </Col> */}
       </Row>
     </div>
   );
 };
+const mapStateToProps = ({ user: { data } }: any) => ({
+  user: data,
+});
 
-export default DashboardHeader;
+const mapDispatchToProps = (dispatch: any) => ({
+  logout: () => dispatch(logout()),
+});
+
+
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(DashboardHeader);
