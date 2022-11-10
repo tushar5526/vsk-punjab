@@ -1,4 +1,4 @@
-import { notification } from 'antd';
+import { notification, Select } from 'antd';
 import { Component } from 'react'
 import API_SERVICE from '../../services/api-service';
 import "./index.css"
@@ -8,6 +8,9 @@ import Section2 from './Section2';
 import Section3 from './Section3';
 import Section4 from './Section4';
 import Section5 from './Section5';
+import { getDisabled } from '../../services/parameters';
+import down_arrow from "../../assets/pjb/utils/down_arrow.png"
+
 
 
 
@@ -121,10 +124,109 @@ export class Performace extends Component {
         }
     }
 
+    disabled = getDisabled()
+    districts = [
+        {
+            value: "SIRMAUR",
+            label: "SIRMAUR",
+        },
+        {
+            value: "CHAMBA",
+            label: "CHAMBA",
+        }, {
+            value: "UNA",
+            label: 'UNA',
+        }, {
+            value: "KULLU",
+            label: 'KULLU',
+        }, {
+            value: "KANGRA",
+            label: 'KANGRA',
+        },
+        {
+            value: "MANDI",
+            label: 'MANDI',
+        },
+        {
+            value: "SOLAN",
+            label: 'SOLAN',
+        },
+        {
+            value: "SHIMLA",
+            label: 'SHIMLA',
+        },
+        {
+            value: "HAMIRPUR",
+            label: 'HAMIRPUR',
+        },
+        {
+            value: "LAHUL AND SPITI",
+            label: 'LAHUL AND SPITI',
+        },
+        {
+            value: "BILASPUR",
+            label: 'BILASPUR',
+        },
+        {
+            value: "KINNAUR",
+            label: 'KINNAUR',
+        },
+    ]
+    option2 = [
+        {
+            value: 'jack',
+            label: 'Jack',
+        },
+    ]
+    option3 = [
+        {
+            value: 'jack',
+            label: 'Jack',
+        },
+    ]
+
+
+
     render() {
         return (
             <>
-                <DemoHeader setBlock={this.setBlock} setCluster={this.setCluster} setDistrict={this.setDistrict} />
+                <DemoHeader />
+                <div className='demoHeader2 mb'>
+                    <div className='demoHeader2__span1'>
+                        <button className='demoHeader2__button'>Attendance</button>
+                        <button className='demoHeader2__button'>Mid-Day Meal</button>
+                        <button className='demoHeader2__button'>Mentoring</button>
+                        <button className='demoHeader2__button'>Infrastructure</button>
+                        <button className='demoHeader2__button'>Civil Work</button>
+                        <button className='demoHeader2__button'>Finance</button>
+                    </div>
+                    <div className='demoHeader2__span2'>
+                        <Select
+                            className='demoHeader__select'
+                            defaultValue="District"
+                            suffixIcon={<img alt="dropdown" className='demoHeader__dropdown--suffix' src={down_arrow} />}
+                            disabled={this.disabled.district}
+                            options={this.districts}
+                        />
+                        <Select
+                            className='demoHeader__select'
+                            defaultValue="Block"
+                            suffixIcon={<img alt="dropdown" className='demoHeader__dropdown--suffix' src={down_arrow} />}
+                            options={this.option2}
+                            disabled={this.disabled.block}
+
+
+
+                        />
+                        <Select
+                            className='demoHeader__select'
+                            defaultValue="Cluster"
+                            suffixIcon={<img alt="dropdown" className='demoHeader__dropdown--suffix' src={down_arrow} />}
+                            disabled={this.disabled.cluster}
+                            options={this.option3}
+                        />
+                    </div>
+                </div>
                 <Section1 filters={this.state.filters} />
                 <Section2 filters={this.state.filters} getMarkerData={this.getMarkerData} markerData={this.state.markerData} />
                 <Section3 filters={this.state.filters} />

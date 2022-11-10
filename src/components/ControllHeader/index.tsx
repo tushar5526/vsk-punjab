@@ -2,22 +2,15 @@ import { Select } from "antd"
 import { useState } from 'react';
 import down_arrow from "../../assets/pjb/utils/down_arrow.png"
 import { getDisabled } from "../../services/parameters";
-import { tab1, tab2, tab3 } from '../../redux/TabController/actions';
+import { toogleTab } from '../../redux/TabController/actions';
 import { connect } from "react-redux/es/exports"
 
 
 interface Props {
-    setDistrict: Function
-    setBlock: Function
-    setCluster: Function
-    switchToTab1: Function
-    switchToTab2: Function
-    switchToTab3: Function
+    toogleTab: Function
     current: number
 }
 const DemoHeader = (props: Props) => {
-    const [active, setActive] = useState<number>(1)
-    const disabled = getDisabled()
     const districts = [
         {
             value: "SIRMAUR",
@@ -65,33 +58,18 @@ const DemoHeader = (props: Props) => {
             label: 'KINNAUR',
         },
     ]
-    const option2 = [
-        {
-            value: 'jack',
-            label: 'Jack',
-        },
-    ]
-    const option3 = [
-        {
-            value: 'jack',
-            label: 'Jack',
-        },
-    ]
 
     const handleChange = (e: any) => {
         console.log(e, "handle change")
-    }
-    const handleDistrictsChange = (e: any) => {
-        props.setDistrict(e)
     }
 
     return (
         <>
             <div className="demoHeader mb">
                 <div className="demoHeader__span demoHeader__spaceBetween">
-                    <button onClick={() => props.switchToTab1()} className={`demoHeader__button ${props.current === 1 && "demoHeader__button--active"}`}>Performace</button>
-                    <button onClick={() => props.switchToTab2()} className={`demoHeader__button ${props.current === 2 && "demoHeader__button--active"}`} >Admin Data</button>
-                    <button onClick={() => props.switchToTab3()} className={`demoHeader__button ${props.current === 3 && "demoHeader__button--active"}`} >Academic Data</button>
+                    <button onClick={() => props.toogleTab(1)} className={`demoHeader__button ${props.current === 1 && "demoHeader__button--active"}`}>Performace</button>
+                    <button onClick={() => props.toogleTab(2)} className={`demoHeader__button ${props.current === 2 && "demoHeader__button--active"}`} >Admin Data</button>
+                    <button onClick={() => props.toogleTab(3)} className={`demoHeader__button ${props.current === 3 && "demoHeader__button--active"}`} >Academic Data</button>
                 </div>
                 <div className='demoHeader__span demoHeader__center'>
                     <Select
@@ -104,54 +82,13 @@ const DemoHeader = (props: Props) => {
                     />
                 </div>
             </div>
-            <div className='demoHeader2 mb'>
-                <div className='demoHeader2__span1'>
-                    <button className='demoHeader2__button'>Attendance</button>
-                    <button className='demoHeader2__button'>Mid-Day Meal</button>
-                    <button className='demoHeader2__button'>Mentoring</button>
-                    <button className='demoHeader2__button'>Infrastructure</button>
-                    <button className='demoHeader2__button'>Civil Work</button>
-                    <button className='demoHeader2__button'>Finance</button>
-                </div>
-                <div className='demoHeader2__span2'>
-                    <Select
-                        className='demoHeader__select'
-                        defaultValue="District"
-                        suffixIcon={<img alt="dropdown" className='demoHeader__dropdown--suffix' src={down_arrow} />}
-                        onChange={handleDistrictsChange}
-                        disabled={disabled.district}
-                        options={districts}
-                    />
-                    <Select
-                        className='demoHeader__select'
-                        defaultValue="Block"
-                        suffixIcon={<img alt="dropdown" className='demoHeader__dropdown--suffix' src={down_arrow} />}
-                        onChange={handleChange}
-                        options={option2}
-                        disabled={disabled.block}
-
-
-
-                    />
-                    <Select
-                        className='demoHeader__select'
-                        defaultValue="Cluster"
-                        suffixIcon={<img alt="dropdown" className='demoHeader__dropdown--suffix' src={down_arrow} />}
-                        onChange={handleChange}
-                        disabled={disabled.cluster}
-                        options={option3}
-                    />
-                </div>
-            </div>
         </>
     )
 }
 
 
 const mapDispatchToProps = (dispatch: any) => ({
-    switchToTab1: () => dispatch(tab1()),
-    switchToTab2: () => dispatch(tab2()),
-    switchToTab3: () => dispatch(tab3()),
+    toogleTab: (currentTab: number) => dispatch(toogleTab(currentTab)),
 });
 const mapStateToProps = ({ tab: { current } }: any) => ({
     current
