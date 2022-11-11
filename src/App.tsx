@@ -13,6 +13,7 @@ import Demo from "./pages/ControlledTabs/Tabs/Performance";
 import ROUTE_CONST from "./Routing/RouteConstants";
 import "./App.css"
 import ControlledTabs from "./pages/ControlledTabs";
+import Mobile from './pages/Mobile/index';
 
 export const IframeContextContext = React.createContext({
   updateHasFirstIframeLoaded: null,
@@ -64,6 +65,9 @@ const App: FC = () => {
             <Route exact path={ROUTE_CONST.login} component={Login} />
             <PrivateRoute exact path={ROUTE_CONST.root}>
               <ControlledTabs />
+            </PrivateRoute>
+            <PrivateRoute exact path={ROUTE_CONST.responsive.assesment}>
+              <Mobile />
             </PrivateRoute>
           </Switch>
         </Router>
