@@ -279,6 +279,25 @@ export class AdminData extends Component<PropTypes, StateTypes> {
                         />
                     </div>
                 </div>
+                <SectionHeader label="Pupil-Teacher Ratio" label2="Government Schools Only" />
+                <div className="AdminData7 mb">
+                    <div className='AdminData7__ContainerLeft'>
+                        <QuestionWithIframe
+                            questionId={115}
+                            width="100%"
+                            height="100%"
+                            handleLoadCounter={() => { }}
+                        />
+                    </div>
+                    <div className='AdminData7__ContainerRight'>
+                        <div className="AdminData7__IframeContainer--big AdminData7__IframeContainer--common mb">
+                            half
+                        </div>
+                        <div className='AdminData7__IframeContainer--small AdminData7__IframeContainer--common'>
+                            half
+                        </div>
+                    </div>
+                </div>
             </>
         )
     }
