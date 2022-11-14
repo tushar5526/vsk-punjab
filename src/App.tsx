@@ -9,11 +9,14 @@ import "./App.less";
 import DashboardHeader from "./components/layouts/DashboardHeader";
 import Login from "./pages/Login";
 import PrivateRoute from "./Routing/ProtectedRoute";
-import Demo from "./pages/ControlledTabs/Tabs/Performance";
 import ROUTE_CONST from "./Routing/RouteConstants";
 import "./App.css"
 import ControlledTabs from "./pages/ControlledTabs";
-import Mobile from './pages/Mobile/index';
+import Mobile from './pages/Mobile';
+import Screen1 from "./pages/VedioWall/Screen1";
+import Screen2 from "./pages/VedioWall/Screen2";
+import Screen3 from "./pages/VedioWall/Screen3/Index";
+import Screen4 from "./pages/VedioWall/Screen4";
 
 export const IframeContextContext = React.createContext({
   updateHasFirstIframeLoaded: null,
@@ -56,6 +59,7 @@ const App: FC = () => {
 
   return (
     <div className="App">
+
       <IframeContextContext.Provider
         value={{ hasFirstIframeLoaded, updateHasFirstIframeLoaded }}
       >
@@ -63,12 +67,13 @@ const App: FC = () => {
           {<DashboardHeader />}
           <Switch>
             <Route exact path={ROUTE_CONST.login} component={Login} />
-            <PrivateRoute exact path={ROUTE_CONST.root}>
-              <ControlledTabs />
-            </PrivateRoute>
-            <PrivateRoute exact path={ROUTE_CONST.responsive.assesment}>
-              <Mobile />
-            </PrivateRoute>
+            <PrivateRoute exact path={ROUTE_CONST.assess_res} component={Mobile} />
+            <PrivateRoute exact path={ROUTE_CONST.vdo_wall_1} component={Screen1} />
+            <PrivateRoute exact path={ROUTE_CONST.vdo_wall_2} component={Screen2} />
+            <PrivateRoute exact path={ROUTE_CONST.vdo_wall_3} component={Screen3} />
+            <PrivateRoute exact path={ROUTE_CONST.vdo_wall_4} component={Screen4} />
+            <PrivateRoute exact path={ROUTE_CONST.root} component={ControlledTabs} />
+            <Route />
           </Switch>
         </Router>
       </IframeContextContext.Provider>
@@ -79,3 +84,4 @@ const App: FC = () => {
 
 
 export default App;
+

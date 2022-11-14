@@ -1,0 +1,133 @@
+.mb_m {
+  margin-bottom: 30px;
+}
+.Assesment1 {
+  display: flex;
+}
+
+.Mobile_HeaderButton {
+  border: none;
+  outline: none;
+  width: 24%;
+  font-size: 10px;
+  height: 7ch;
+  border: none;
+  padding: none;
+  color: black;
+}
+
+.Mobile_HeaderButton--active {
+  background-color: var(--blue-primary);
+  color: white;
+}
+.HeaderMobile {
+  display: flex;
+  background-color: var(--grey-secondary);
+  justify-content: space-between;
+  height: fit-content;
+}
+
+.MobileAssesment1 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.MobileAssesment1Column {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.MobileAssesment1__ContainerColumn {
+  width: 100%;
+  height: fit-content;
+}
+
+.MobileAssesment1__Container {
+  width: 49%;
+  height: fit-content;
+}
+
+.MobileAssesment1__IframeContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 100%;
+}
+
+.MobileAssesment1CardRow {
+  display: flex;
+  justify-content: space-between;
+  height: fit-content;
+  width: 100%;
+}
+
+.MobileAssesment1CardRow2 {
+  display: flex;
+  justify-content: space-between;
+  height: fit-content;
+  width: 100%;
+  flex-direction: column;
+}
+
+.MobileAssesment1__IframeText {
+  background-color: var(--grey-secondary);
+  color: var(--green-primary);
+  min-height: 20px;
+  max-height: fit-content;
+  width: 95%;
+  text-align: center;
+  font-size: 10px;
+}
+
+.MobileAssesment1__Iframe {
+  box-shadow: var(--card-shadow);
+  height: fit-content;
+  width: 95%;
+  height: 20vh;
+}
+
+.MobileAssesment2 {
+  width: 100%;
+  height: fit-content;
+  justify-content: center;
+  align-items: center;
+}
+
+.MobileAssesment2__IframeContainer {
+  width: 100%;
+  height: 30vh;
+  box-shadow: var(--card-shadow);
+}
+
+.MobileFooter {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 50px;
+  background-color: var(--blue-primary);
+  color: white;
+  width: 100%;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+  padding: 10px;
+}
+
+.SpaceFix {
+  height: 50px;
+}
+
+.Assesment__Filters {
+  width: 100%;
+  height: fit-content;
+  margin: 20px 0;
+}
+.Assesment__FiltersContainer {
+  display: flex;
+  justify-content: end;
+  gap: 10px;
+}
+.Assesment__FiltersContainer > div {
+  width: fit-content;
+}

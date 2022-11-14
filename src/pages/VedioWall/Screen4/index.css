@@ -1,0 +1,46 @@
+.Section4 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Section4Child {
+  width: 49%;
+}
+
+.Section4ChildCardsContainer1 {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.Section4ChildCardsContainerIframe {
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+}
+
+.Section4Graph {
+  height: 40vh;
+}
+
+.Section4RightIframeContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.Section4RightIframeContaineriframeCommon {
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+}
+
+.Section4RightIframeContaineriframe {
+  width: 49%;
+  height: 30vh;
+}
+
+.Section4RightIframeContaineriframeBig {
+  width: 60%;
+  height: 30vh;
+}

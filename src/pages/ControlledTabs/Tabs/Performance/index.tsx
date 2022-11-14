@@ -36,20 +36,22 @@ type PerformanceState = {
 export class Performace extends Component<PerforMaceProps, PerformanceState> {
     constructor(props: any) {
         super(props)
+
+        this.state = {
+            markerData: null,
+            filters: {
+                district: "",
+                block: "",
+                cluster: ""
+            },
+            disabled: {
+                block: false,
+                district: false,
+                cluster: false
+            },
+        }
     }
-    state = {
-        markerData: null,
-        filters: {
-            district: "",
-            block: "",
-            cluster: ""
-        },
-        disabled: {
-            block: false,
-            district: false,
-            cluster: false
-        },
-    }
+
 
 
 

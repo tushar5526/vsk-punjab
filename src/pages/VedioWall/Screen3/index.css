@@ -1,0 +1,72 @@
+.Screen3 {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.Screen3__Container {
+  width: 49%;
+}
+
+.Screen3Part {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.Screen3__IframeContainer {
+  width: 49%;
+}
+
+.Screen3__IframeContainerChild {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.Screen3__IframeContainer2 {
+  width: 49%;
+}
+
+.Screen3__Iframe--left {
+  box-shadow: var(--card-shadow);
+  border-radius: var(--card-radius);
+}
+
+.Secton3__Right {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.Section3__RightIframeContainer1 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Section3__Right--iframe {
+  box-shadow: var(--card-shadow);
+  border-radius: var(--card-radius);
+}
+
+.Section3__RightIframeContainer2--Iframe {
+  height: 50vh;
+}
+
+.Screen3Iframes {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Screen3Iframes__Container {
+  width: 49%;
+}
+
+.Screen3Iframes__Container--iframes {
+  box-shadow: var(--card-shadow);
+  border-radius: var(--card-radius);
+}
+
+.Screen3Iframes__ContainerBig {
+  height: 62vh;
+}

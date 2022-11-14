@@ -10,8 +10,6 @@ import green_marker from "../../assets/Map_marker_green.svg";
 import blue_marker from "../../assets/Map_marker_blue.svg";
 import purple_marker from "../../assets/Map_marker_purple.svg";
 import yellow_marker from "../../assets/Map_marker_yellow.svg";
-import district_marker from "../../assets/Map_Marker_District.svg";
-import API_SERVICE from "../../services/api-service";
 import { Spin } from "antd";
 
 const default_toolTipData = {
@@ -23,8 +21,8 @@ const default_toolTipData = {
 
 export default function MapComponent({ config, markers }) {
   const center = config?.markers?.postions[0]?.position || [28.7041, 77.1025];
-  const byGeoJson = config.bounds?.byGeoJson?.length;
-  const byBbox = config.bounds?.byBbox?.length;
+  const byGeoJson = config?.bounds?.byGeoJson?.length;
+  const byBbox = config?.bounds?.byBbox?.length;
   const [toolTipData, setToolTipData] = useState(default_toolTipData);
 
   const tempBounds = [

@@ -37,7 +37,7 @@ const Section2 = ({ getMarkerData, markerData, filters: { district, block, clust
 
     useEffect(() => {
         getConfig();
-        getMarkerData("Districts")
+        getMarkerData()
     }, [])
     return (
         <div className='section2 mb'>

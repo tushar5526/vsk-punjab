@@ -18,34 +18,31 @@ const whiteColor = { color: "white" };
 
 const MapBound = () => {
   const [bounds, setBounds] = useState(innerBounds);
-    const [config, setConfig] = useState([]);
-    const getConfig = () => {
-        if (config.length) {
-            return
-        }
-
-        fetch( '/educationDashboardConfig.json'
-            , {
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                }
-            }
-        )
-            .then(function (response) {
-
-                return response.json();
-            })
-            .then(function (configJson) {
-
-                setBounds(configJson.byGeoJson.map((item) => {
-                    return [item[1], item[0]];
-                }))
-            });
-
+  const [config, setConfig] = useState([]);
+  const getConfig = () => {
+    if (config.length) {
+      return;
     }
 
-    const map = useMap();
+    fetch("/educationDashboardConfig.json", {
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+    })
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (configJson) {
+        setBounds(
+          configJson.byGeoJson.map((item) => {
+            return [item[1], item[0]];
+          })
+        );
+      });
+  };
+
+  const map = useMap();
 
   useEffect(() => {
     bounds.length && map.fitBounds(bounds);

@@ -5,15 +5,11 @@ import AdminData from './Tabs/AdminData';
 import AcademicView from './Tabs/AcademicView';
 import "./index.css"
 import GreayFooter from './GreyFooter/GreayFooter';
-import { useHistory } from 'react-router-dom';
-import ROUTE_CONST from '../../Routing/RouteConstants';
 
 const ControlledTabs = ({ user, current }: any) => {
-    const history = useHistory()
     return (
         <>
             <ControllHeader />
-            <button onClick={() => history.push(ROUTE_CONST.responsive.assesment)}>Click to view responsive</button>
             {
                 (current === 1) ?
                     <Performace user={user} />

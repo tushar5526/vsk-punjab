@@ -1,7 +1,7 @@
 import { Redirect, Route } from "react-router-dom";
 import ROUTE_CONST from "./RouteConstants";
 
-const PrivateRoute = ({ children, user, ...rest }: any) => {
+const PrivateRoute = ({ children, ...rest }: any) => {
   const token = sessionStorage.getItem("user");
   return (
     <Route

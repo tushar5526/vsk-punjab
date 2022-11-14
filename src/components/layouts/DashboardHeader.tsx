@@ -40,8 +40,7 @@ const DashboardHeader: FC = ({ user, logout }: any) => {
                 span={24}
                 className="header_text_1"
               >
-                ਪੜ੍ਹੋ ਪੰਜਾਬ ਏਕੀਕ੍ਰਿਤ ਡੈਸ਼ਬੋਰਡ
-
+                विद्या समीक्षा केन्द्र
               </Col>
             </Row>
             <Row align={"middle"}>
@@ -49,7 +48,7 @@ const DashboardHeader: FC = ({ user, logout }: any) => {
                 span={24}
                 className="header_text_2"
               >
-                ਸਕੂਲ ਸਿੱਖਿਆ ਵਿਭਾਗ, ਪੰਜਾਬ
+                समग्र शिक्षा, हिमाचल प्रदेश
               </Col>
             </Row>
           </NavLink>
