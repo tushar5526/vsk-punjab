@@ -12,11 +12,11 @@ import PrivateRoute from "./Routing/ProtectedRoute";
 import ROUTE_CONST from "./Routing/RouteConstants";
 import "./App.css"
 import ControlledTabs from "./pages/ControlledTabs";
-import Mobile from './pages/Mobile';
 import Screen1 from "./pages/VedioWall/Screen1";
 import Screen2 from "./pages/VedioWall/Screen2";
 import Screen3 from "./pages/VedioWall/Screen3/Index";
 import Screen4 from "./pages/VedioWall/Screen4";
+import MyMap from "./components/MyMap/MyMap";
 
 export const IframeContextContext = React.createContext({
   updateHasFirstIframeLoaded: null,
@@ -67,11 +67,11 @@ const App: FC = () => {
           {<DashboardHeader />}
           <Switch>
             <Route exact path={ROUTE_CONST.login} component={Login} />
-            <PrivateRoute exact path={ROUTE_CONST.assess_res} component={Mobile} />
             <PrivateRoute exact path={ROUTE_CONST.vdo_wall_1} component={Screen1} />
             <PrivateRoute exact path={ROUTE_CONST.vdo_wall_2} component={Screen2} />
             <PrivateRoute exact path={ROUTE_CONST.vdo_wall_3} component={Screen3} />
             <PrivateRoute exact path={ROUTE_CONST.vdo_wall_4} component={Screen4} />
+            <PrivateRoute exact path={ROUTE_CONST.map_test} component={MyMap} />
             <PrivateRoute exact path={ROUTE_CONST.root} component={ControlledTabs} />
             <Route />
           </Switch>
