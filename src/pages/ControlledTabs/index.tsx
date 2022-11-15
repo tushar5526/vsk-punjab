@@ -5,26 +5,43 @@ import AdminData from './Tabs/AdminData';
 import AcademicView from './Tabs/AcademicView';
 import "./index.css"
 import GreayFooter from './GreyFooter/GreayFooter';
+import { useEffect, useState } from 'react';
+import { getRolesFromLS } from '../../utils';
 
-const ControlledTabs = ({ user, current }: any) => {
+const ControlledTabs = ({ current }: any) => {
+    const [level, setLevel] = useState<any>(null)
+    const roles = getRolesFromLS()
+
+    const validateRoles = () => {
+        try {
+            const { geographic_level } = roles
+            if (geographic_level === "State") {
+                setLevel(geographic_level)
+            }
+        } catch (error) {
+            console.log("there is some error")
+        }
+    }
+    useEffect(() => {
+        validateRoles()
+    }, [])
     return (
         <>
             <ControllHeader />
             {
                 (current === 1) ?
-                    <Performace user={user} />
+                    <Performace role={level} />
                     : current === 2 ?
-                        <AdminData user={user} /> :
-                        <AcademicView user={user} />
+                        <AdminData /> :
+                        <AcademicView />
             }
             <GreayFooter />
         </>
     )
 }
 
-const mapStateToProps = ({ user: { data }, tab: { current } }: any) => ({
-    user: data,
-    current
+const mapStateToProps = ({ tab: { current } }: any) => ({
+    current,
 });
 
 

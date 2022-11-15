@@ -5,16 +5,14 @@ import LeftLogo from "../../assets/pjb/Header/headerleft1.png";
 import LeftLogo2 from "../../assets/pjb/Header/headerleft2.png";
 import LeftLogo3 from "../../assets/pjb/Header/Azadi_Ka_Amrit_Mahotsav.png";
 import RightLogo from "../../assets/Profile.svg";
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory } from 'react-router-dom';
 import "./index.css"
-import { connect } from "react-redux/es/exports";
-import { logout } from "../../redux/user/actions";
+import { getUserFromLS, logout } from '../../utils';
+import ROUTE_CONST from "../../Routing/RouteConstants";
 
-const DashboardHeader: FC = ({ user, logout }: any) => {
-
-
-
-
+const DashboardHeader: FC = () => {
+  const user = getUserFromLS()
+  const history = useHistory()
   return (
     <div key={+new Date()} className="dashboard-header">
       <Row gutter={10} justify={"space-between"}>
@@ -64,12 +62,21 @@ const DashboardHeader: FC = ({ user, logout }: any) => {
           <div style={{ display: "flex", flexDirection: "column" }}>
             <>
               <Image src={RightLogo} height={"30px"} preview={false} />
-              {user && (
+              {user ? (
                 <Button
                   className="logout-btn"
                   onClick={logout}
                 >
                   <span>Log Out</span>
+                </Button>
+              ) : (
+                <Button
+                  className="logout-btn"
+                  onClick={() => {
+                    history.push(ROUTE_CONST.login)
+                  }}
+                >
+                  <span>Log in</span>
                 </Button>
               )}
             </>
@@ -79,15 +86,7 @@ const DashboardHeader: FC = ({ user, logout }: any) => {
     </div>
   );
 };
-const mapStateToProps = ({ user: { data } }: any) => ({
-  user: data,
-});
-
-const mapDispatchToProps = (dispatch: any) => ({
-  logout: () => dispatch(logout()),
-});
 
 
 
-
-export default connect(mapStateToProps, mapDispatchToProps)(DashboardHeader);
+export default DashboardHeader;

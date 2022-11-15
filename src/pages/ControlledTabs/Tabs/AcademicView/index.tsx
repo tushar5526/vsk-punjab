@@ -2,7 +2,7 @@ import { Component } from 'react'
 
 
 type PropTypes = {
-    user: any
+    user?: any
 };
 type StateTypes = {
 

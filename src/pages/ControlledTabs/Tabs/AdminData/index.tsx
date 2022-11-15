@@ -5,7 +5,7 @@ import SectionHeader from '../utils/SectionHeader';
 import GovermentSchoolOverview from './GovermentSchoolOverview';
 
 type PropTypes = {
-    user: any
+    user?: any
 };
 type StateTypes = {
 

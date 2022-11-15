@@ -6,14 +6,14 @@ import Section2 from './Section2';
 import Section3 from './Section3';
 import Section4 from './Section4';
 import Section5 from './Section5';
-import { getDisabled } from '../../../../services/parameters';
 import down_arrow from "../../../../assets/pjb/utils/down_arrow.png"
 
 
 
 
 type PerforMaceProps = {
-    user: any
+    user?: any
+    role: any
 };
 type PerformanceState = {
     markerData: any,
@@ -21,11 +21,6 @@ type PerformanceState = {
         district: string,
         block: string,
         cluster: string
-    },
-    disabled: {
-        block: boolean,
-        district: boolean,
-        cluster: boolean
     },
 };
 
@@ -44,11 +39,6 @@ export class Performace extends Component<PerforMaceProps, PerformanceState> {
                 block: "",
                 cluster: ""
             },
-            disabled: {
-                block: false,
-                district: false,
-                cluster: false
-            },
         }
     }
 
@@ -57,9 +47,6 @@ export class Performace extends Component<PerforMaceProps, PerformanceState> {
 
     componentDidMount(): void {
         this.getMarkerData()
-        this.setState({
-            disabled: getDisabled(this.props.user)
-        })
     }
     setDistrict = (e: any) => {
         this.setState({
@@ -88,8 +75,7 @@ export class Performace extends Component<PerforMaceProps, PerformanceState> {
     }
     formatMarkerData = (data: any) => {
         const formattedData = data
-            // .filter((item: any, index: number) => index <= 20000)
-            .map((item: any, index: number) => {
+            .map((item: any) => {
                 return {
                     icon: "https://unpkg.com/leaflet@1.8.0/dist/images/marker-icon-2x.png",
                     color: item?.color ? item.color : "purple",
@@ -232,7 +218,7 @@ export class Performace extends Component<PerforMaceProps, PerformanceState> {
                             className='demoHeader__select'
                             defaultValue="District"
                             suffixIcon={<img alt="dropdown" className='demoHeader__dropdown--suffix' src={down_arrow} />}
-                            disabled={this.state.disabled.district}
+                            disabled={this.props.role !== "State"}
                             options={this.districts}
                         />
                         <Select
@@ -240,7 +226,8 @@ export class Performace extends Component<PerforMaceProps, PerformanceState> {
                             defaultValue="Block"
                             suffixIcon={<img alt="dropdown" className='demoHeader__dropdown--suffix' src={down_arrow} />}
                             options={this.option2}
-                            disabled={this.state.disabled.block}
+                            disabled={this.props.role !== "State"}
+
 
 
 
@@ -249,7 +236,7 @@ export class Performace extends Component<PerforMaceProps, PerformanceState> {
                             className='demoHeader__select'
                             defaultValue="Cluster"
                             suffixIcon={<img alt="dropdown" className='demoHeader__dropdown--suffix' src={down_arrow} />}
-                            disabled={this.state.disabled.cluster}
+                            disabled={this.props.role !== "State"}
                             options={this.option3}
                         />
                     </div>

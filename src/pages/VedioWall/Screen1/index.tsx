@@ -5,6 +5,7 @@ import QuestionWithIframe from '../../../components/QuestionWIthIframe'
 import API_SERVICE from '../../../services/api-service'
 import IframeHeading from '../../ControlledTabs/Tabs/utils/IframeHeading'
 import SectionHeader from '../../ControlledTabs/Tabs/utils/SectionHeader'
+import Filters from '../Filters/Filters'
 import "./index.css"
 
 interface State {
@@ -120,6 +121,7 @@ export class Screen1 extends Component<Props, State> {
     render() {
         return (
             <>
+                <Filters />
                 <SectionHeader label={"Student Attendance"} />
                 <div className='Screen1'>
                     <div className='Screen1__Container'>

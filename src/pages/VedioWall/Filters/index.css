@@ -1,0 +1,21 @@
+.VedioWall__filters {
+  padding-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.VedioWall__filtersElement {
+  box-shadow: var(--card-shadow);
+  width: 120px;
+}
+
+.VedioWall__filtersElementContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.VedioWall__filtersElementContainerHeading {
+  font-weight: 700;
+}

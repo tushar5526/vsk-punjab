@@ -13,10 +13,9 @@ import Side_Img from "../../assets/image 135.png";
 import API_SERVICE from "../../services/api-service";
 import { useHistory } from 'react-router-dom';
 import ROUTE_CONST from "../../Routing/RouteConstants";
-import { addUserToStore } from "../../redux/user/actions";
-import { connect } from "react-redux/es/exports";
+import { setLocalStorageItem } from "../../utils";
 
-const Login: FC = ({ addUserToStore }: any) => {
+const Login: FC = () => {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const [loader, setLoader] = useState(false);
@@ -30,10 +29,12 @@ const Login: FC = ({ addUserToStore }: any) => {
       loginId: userName,
       password: password,
     };
-    const res = await API_SERVICE.Login(params);
+    const res: any = await API_SERVICE.Login(params);
     if (res) {
       const { user, refreshToken, token } = res?.data?.result?.data?.user;
-      addUserToStore({ user, refreshToken, token })
+      setLocalStorageItem("user", { user, refreshToken, token })
+      setLocalStorageItem("roles", user?.data?.roleData)
+      console.log(user, "user")
       sessionStorage.setItem(
         "user",
         JSON.stringify({
@@ -132,9 +133,5 @@ const Login: FC = ({ addUserToStore }: any) => {
   );
 };
 
-const mapDispatchToProps = (dispatch: any) => ({
-  addUserToStore: (user: any) => dispatch(addUserToStore(user)),
-});
 
-
-export default connect(null, mapDispatchToProps)(Login);
+export default Login;

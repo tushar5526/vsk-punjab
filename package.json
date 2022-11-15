@@ -10,21 +10,17 @@
     "@types/jest": "^26.0.15",
     "@types/jsonwebtoken": "^8.5.9",
     "@types/node": "^12.0.0",
-    "@types/react": "^18.0.25",
-    "@types/react-dom": "^17.0.0",
     "antd": "^4.16.13",
     "axios": "^0.27.2",
     "craco-less": "^1.20.0",
     "jsonwebtoken": "^8.5.1",
     "leaflet": "^1.9.2",
     "leaflet.markercluster": "1.4.1",
-    "mapbox-gl": "^2.11.0",
     "prop-types": "^15.8.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-leaflet": "^4.1.0",
     "react-leaflet-cluster": "^2.0.0",
-    "react-map-gl": "^7.0.19",
     "react-redux": "^8.0.5",
     "react-router-dom": "^5.3.0",
     "react-scripts": "4.0.3",
@@ -53,6 +49,9 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "@types/react": "^18.0.25",
+    "@types/react-dom": "^18.0.9",
+    "@types/react-leaflet": "^2.8.2",
     "@types/react-router-dom": "^5.1.8"
   }
 }

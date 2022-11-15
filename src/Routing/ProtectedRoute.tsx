@@ -22,8 +22,4 @@ const PrivateRoute = ({ children, ...rest }: any) => {
   );
 };
 
-// const mapStateToProps = ({ user: { data } }: any) => ({
-//   user: data,
-// });
-
 export default PrivateRoute;

@@ -16,8 +16,7 @@ import Screen1 from "./pages/VedioWall/Screen1";
 import Screen2 from "./pages/VedioWall/Screen2";
 import Screen3 from "./pages/VedioWall/Screen3/Index";
 import Screen4 from "./pages/VedioWall/Screen4";
-import MyMap from "./components/MyMap/MyMap";
-
+import CustomMap from "./components/CustomMap/CustomMap";
 export const IframeContextContext = React.createContext({
   updateHasFirstIframeLoaded: null,
   hasFirstIframeLoaded: null,
@@ -71,7 +70,7 @@ const App: FC = () => {
             <PrivateRoute exact path={ROUTE_CONST.vdo_wall_2} component={Screen2} />
             <PrivateRoute exact path={ROUTE_CONST.vdo_wall_3} component={Screen3} />
             <PrivateRoute exact path={ROUTE_CONST.vdo_wall_4} component={Screen4} />
-            <PrivateRoute exact path={ROUTE_CONST.map_test} component={MyMap} />
+            <PrivateRoute exact path={ROUTE_CONST.map_test} component={CustomMap} />
             <PrivateRoute exact path={ROUTE_CONST.root} component={ControlledTabs} />
             <Route />
           </Switch>
