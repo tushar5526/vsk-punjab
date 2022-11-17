@@ -6,6 +6,10 @@ const jwt = require("jsonwebtoken");
 const METABASE_SITE_URL = "https://vskhp.in/metabase";
 const METABASE_SECRET_KEY =
   "68a529116afd75d19c1d625133ea50207a6571d5e786a25a24c14f61555886b5";
+
+var VSKP_METABASE_SITE_URL = "https://vskhp.in/metabase";
+var VSKP_METABASE_SECRET_KEY = "68a529116afd75d19c1d625133ea50207a6571d5e786a25a24c14f61555886b5";
+
 const QuestionWithIframeProtected = ({
   questionId,
   height,
@@ -13,6 +17,7 @@ const QuestionWithIframeProtected = ({
   nonDownloadable,
   params,
   loadCallback,
+  type
 }: {
   questionId: any;
   height?: string;
@@ -20,6 +25,7 @@ const QuestionWithIframeProtected = ({
   nonDownloadable?: boolean;
   params?: any;
   loadCallback?: any;
+  type: number
 }) => {
   const { hasFirstIframeLoaded, updateHasFirstIframeLoaded } =
     useContext(IframeContextContext);
@@ -27,19 +33,35 @@ const QuestionWithIframeProtected = ({
   const [random, setRandom] = useState(0);
   const [url, setUrl] = useState("");
   const generateUrl = () => {
-    const payload = {
-      resource: { question: questionId },
-      params: params || {},
-      exp: Math.round(Date.now() / 1000) + 60 * 60 * 24, // 10 minute expiration
-    };
-    const token = jwt.sign(payload, METABASE_SECRET_KEY);
-    setUrl(
-      METABASE_SITE_URL +
+    if (type === 0) {
+      const payload = {
+        resource: { question: questionId },
+        params: params || {},
+        exp: Math.round(Date.now() / 1000) + 60 * 60 * 24, // 10 minute expiration
+      };
+      const token = jwt.sign(payload, METABASE_SECRET_KEY);
+      setUrl(
+        METABASE_SITE_URL +
         "/embed/question/" +
         token +
         "#bordered=false&titled=false&downloadable=" +
         !!!nonDownloadable
-    );
+      );
+    } else {
+      var payload = {
+        resource: { dashboard: questionId },
+        params: {},
+        exp: Math.round(Date.now() / 1000) + (10 * 60) // 10 minute expiration
+      };
+      const token = jwt.sign(payload, VSKP_METABASE_SECRET_KEY);
+      setUrl(
+        VSKP_METABASE_SITE_URL +
+        "/embed/dashboard/" +
+        token +
+        "#bordered=false&titled=false&downloadable=" +
+        !!!nonDownloadable
+      );
+    }
   };
 
   useEffect(() => {
@@ -103,6 +125,7 @@ const QuestionWithIframe = ({
   nonDownloadable,
   params,
   handleLoadCounter = () => console.log("no call back"),
+  type = 0
 }: {
   questionId: any;
   height?: string;
@@ -110,10 +133,8 @@ const QuestionWithIframe = ({
   nonDownloadable?: boolean;
   params?: any;
   handleLoadCounter?: any;
+  type?: number
 }) => {
-  useEffect(() => {
-    console.log(params);
-  }, []);
   return (
     <QuestionWithIframeProtected
       questionId={questionId}
@@ -122,6 +143,7 @@ const QuestionWithIframe = ({
       nonDownloadable={nonDownloadable}
       params={params}
       loadCallback={handleLoadCounter}
+      type={type}
     />
   );
 };

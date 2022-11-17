@@ -1,6 +1,6 @@
 import types from "./types";
 
-export const toogleTab = (current: number) => ({
+export const toogleTab = (obj: object) => ({
   type: types.ADD_TAB,
-  payload: current,
+  payload: obj,
 });
