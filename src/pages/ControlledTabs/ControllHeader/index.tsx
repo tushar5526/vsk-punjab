@@ -2,13 +2,11 @@ import { Select } from "antd"
 import down_arrow from "../../../assets/pjb/utils/down_arrow.png"
 import { toogleTab } from '../../../redux/TabController/actions';
 import { connect } from "react-redux/es/exports"
+import Dashboard from "../../Dashboard/Dashboard";
 
 
-interface Props {
-    toogleTab: Function
-    current: number
-}
-const DemoHeader = ({ toogleTab, current }: Props) => {
+
+const DemoHeader = ({ tabs, _toogle, current, dashboard }: any) => {
     const districts = [
         {
             value: "SIRMAUR",
@@ -61,13 +59,17 @@ const DemoHeader = ({ toogleTab, current }: Props) => {
         console.log(e, "handle change")
     }
 
+    //    <button  className={`demoHeader__button ${current === 1 && "demoHeader__button--active"}`}>Performace</button>
     return (
         <>
             <div className="demoHeader mb">
                 <div className="demoHeader__span demoHeader__spaceBetween">
-                    <button onClick={() => toogleTab(1)} className={`demoHeader__button ${current === 1 && "demoHeader__button--active"}`}>Performace</button>
-                    <button onClick={() => toogleTab(2)} className={`demoHeader__button ${current === 2 && "demoHeader__button--active"}`} >Admin Data</button>
-                    <button onClick={() => toogleTab(3)} className={`demoHeader__button ${current === 3 && "demoHeader__button--active"}`} >Academic Data</button>
+                    {tabs?.map(({ dashboard_id, name, id }: any, idx: number) => (
+                        <button onClick={() => _toogle({
+                            dashboard: dashboard_id,
+                            current: idx
+                        })} className={`demoHeader__button ${current === idx && "demoHeader__button--active"}`}>{name}</button>
+                    ))}
                 </div>
                 <div className="demoHeader__span demoHeader__center">
                     <Select
@@ -80,16 +82,19 @@ const DemoHeader = ({ toogleTab, current }: Props) => {
                     />
                 </div>
             </div>
+
         </>
     )
 }
 
 
+
 const mapDispatchToProps = (dispatch: any) => ({
-    toogleTab: (currentTab: number) => dispatch(toogleTab(currentTab)),
-});
-const mapStateToProps = ({ tab: { current } }: any) => ({
-    current
-});
+    _toogle: (obj: object) => dispatch(toogleTab(obj))
+})
+const mapStateToProps = ({ tab: { current, dashboard } }: any) => ({
+    current,
+    dashboard
+})
 
 export default connect(mapStateToProps, mapDispatchToProps)(DemoHeader)
