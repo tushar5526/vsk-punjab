@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Button, Col, Image, Row } from "antd";
+import { Button, Col, Image, Row, notification } from 'antd';
 import "./index.less";
 import LeftLogo from "../../assets/pjb/Header/headerleft1.png";
 import LeftLogo2 from "../../assets/pjb/Header/headerleft2.png";
@@ -8,11 +8,18 @@ import RightLogo from "../../assets/Profile.svg";
 import { NavLink, useHistory } from 'react-router-dom';
 import "./index.css"
 import { getUserFromLS, logout } from '../../utils';
-import ROUTE_CONST from "../../Routing/RouteConstants";
+import ROUTE_CONST from '../../Routing/RouteConstants';
+import { useState, useEffect } from 'react';
 
 const DashboardHeader: FC = () => {
-  const user = getUserFromLS()
+  const [user, setUser] = useState<any>(getUserFromLS())
   const history = useHistory()
+  const _logout = () => {
+    logout(history.push(ROUTE_CONST.login))
+  }
+  useEffect(() => {
+    
+  },[])
   return (
     <div key={+new Date()} className="dashboard-header">
       <Row gutter={10} justify={"space-between"}>
@@ -65,7 +72,7 @@ const DashboardHeader: FC = () => {
               {user ? (
                 <Button
                   className="logout-btn"
-                  onClick={logout}
+                  onClick={_logout}
                 >
                   <span>Log Out</span>
                 </Button>

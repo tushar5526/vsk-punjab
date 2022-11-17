@@ -17,7 +17,7 @@ export class AdminData extends Component<PropTypes, StateTypes> {
         return (
             <>
                 <SectionHeader label="State Overview" label2="Government and Private Schools" />
-                <div className='AdminData mb'>
+                {/* <div className='AdminData mb'>
                     <div className='AdminData__IframeContainer'>
                         <QuestionWithIframe
                             questionId={84}
@@ -297,7 +297,7 @@ export class AdminData extends Component<PropTypes, StateTypes> {
                             half
                         </div>
                     </div>
-                </div>
+                </div> */}
             </>
         )
     }

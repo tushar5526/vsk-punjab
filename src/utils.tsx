@@ -36,7 +36,7 @@ export const getRolesFromLS = () => {
 
 
 
-export const logout = () => {
+export const logout = (cb?: any) => {
     localStorage.clear()
 }
 

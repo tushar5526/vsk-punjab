@@ -1,11 +1,11 @@
 import { notification, Select } from 'antd';
 import { Component } from 'react'
 import API_SERVICE from '../../../../services/api-service';
-import Section1 from './Section1';
-import Section2 from './Section2';
-import Section3 from './Section3';
-import Section4 from './Section4';
-import Section5 from './Section5';
+// import Section1 from './Section1';
+// import Section2 from './Section2';
+// import Section3 from './Section3';
+// import Section4 from './Section4';
+// import Section5 from './Section5';
 import down_arrow from "../../../../assets/pjb/utils/down_arrow.png"
 
 
@@ -241,11 +241,13 @@ export class Performace extends Component<PerforMaceProps, PerformanceState> {
                         />
                     </div>
                 </div>
-                <Section1 filters={this.state.filters} />
+                {/* hard coded iframes start */}
+                {/* <Section1 filters={this.state.filters} />
                 <Section2 filters={this.state.filters} getMarkerData={this.getMarkerData} markerData={this.state.markerData} />
                 <Section3 filters={this.state.filters} />
                 <Section4 filters={this.state.filters} />
-                <Section5 filters={this.state.filters} />
+                <Section5 filters={this.state.filters} /> */}
+                {/* hard coded iframes end */}
             </>
 
         )
