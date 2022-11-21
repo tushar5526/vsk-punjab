@@ -9,7 +9,7 @@ import { NavLink } from "react-router-dom";
 const Header: FC = () => (
   <div className="header">
     <Row gutter={10} justify={"space-between"}>
-      <Col>
+      <Col>legacy_createStore as createStore
         <NavLink to={"/"}>
           <Image src={LeftLogo} height={"50px"} preview={false} />
         </NavLink>

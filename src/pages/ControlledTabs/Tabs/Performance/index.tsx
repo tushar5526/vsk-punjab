@@ -204,41 +204,7 @@ export class Performace extends Component<PerforMaceProps, PerformanceState> {
         return (
             <>
                 <div className='demoHeader2 mb'>
-                    <div className='demoHeader2__span1'>
-                        <button className='demoHeader2__button'>Attendance</button>
-                        <button className='demoHeader2__button'>Mid-Day Meal</button>
-                        <button className='demoHeader2__button'>Mentoring</button>
-                        <button className='demoHeader2__button'>Infrastructure</button>
-                        <button className='demoHeader2__button'>Civil Work</button>
-                        <button className='demoHeader2__button'>Finance</button>
-                    </div>
-                    <div className='demoHeader2__span2'>
-                        <Select
-                            className='demoHeader__select'
-                            defaultValue="District"
-                            suffixIcon={<img alt="dropdown" className='demoHeader__dropdown--suffix' src={down_arrow} />}
-                            disabled={this.props.role !== "State"}
-                            options={this.districts}
-                        />
-                        <Select
-                            className='demoHeader__select'
-                            defaultValue="Block"
-                            suffixIcon={<img alt="dropdown" className='demoHeader__dropdown--suffix' src={down_arrow} />}
-                            options={this.option2}
-                            disabled={this.props.role !== "State"}
 
-
-
-
-                        />
-                        <Select
-                            className='demoHeader__select'
-                            defaultValue="Cluster"
-                            suffixIcon={<img alt="dropdown" className='demoHeader__dropdown--suffix' src={down_arrow} />}
-                            disabled={this.props.role !== "State"}
-                            options={this.option3}
-                        />
-                    </div>
                 </div>
                 {/* hard coded iframes start */}
                 {/* <Section1 filters={this.state.filters} />

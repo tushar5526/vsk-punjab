@@ -1,13 +1,23 @@
 .demoHeader {
   display: flex;
-  height: 30px;
+  min-height: 30px;
+  max-height: fit-content;
   padding: 0 10px;
+  flex-direction: column;
 }
 
-.demoHeader__span {
-  width: 50%;
+.demoHeader > div:last-child {
   display: flex;
-  height: 100%;
+  height: 32px;
+}
+
+.demoHeader > div:first-child {
+  width: 154px !important;
+  margin-left: auto;
+}
+.demoHeader__span {
+  width: 100%;
+  display: flex;
 }
 
 .demoHeader__spaceBetween {
@@ -26,7 +36,7 @@
 }
 
 .demoHeader__button {
-  width: 32%;
+  width: 25%;
   height: 100%;
   border: none;
   background-color: var(--grey-primary);
@@ -38,18 +48,46 @@
 }
 
 .demoHeader__select {
-  width: 26% !important;
+  width: 18% !important;
   cursor: pointer !important;
-  height: 100%;
 }
-.demoHeader__select > .ant-select-selector {
+.demoHeader__Tabs {
+  width: 50%;
+  height: 100%;
+  display: flex;
+}
+
+.demoHeader__Tabs__Between {
+  justify-content: space-between;
+}
+
+.demoHeader__Tabs__Evenly {
+  justify-content: flex-end;
+  gap: 10%;
+}
+
+.demoHeader__select__top {
+  width: 100% !important;
+  cursor: pointer !important;
+  margin-top: 20px;
+}
+
+.demoHeader__select__top
+  > .ant-select-single.ant-select-show-arrow
+  .ant-select-selection-item,
+.ant-select-single.ant-select-show-arrow .ant-select-selection-placeholder {
+  font-weight: 700;
+}
+.demoHeader__select > .ant-select-selector,
+.demoHeader__select__top > .ant-select-selector {
   background-color: var(--grey-secondary) !important;
   border-radius: 2px !important;
   height: 100%;
   width: 100%;
 }
 
-.demoHeader__select > .ant-select-selector > .ant-select-selection-item {
+.demoHeader__select > .ant-select-selector > .ant-select-selection-item,
+.demoHeader__select_top > .ant-select-selector > .ant-select-selection-item {
   font-weight: 700 !important;
 }
 
@@ -689,6 +727,9 @@
   .AdminData7__IframeContainer--big {
     height: 48.4vh;
   }
+  .demoHeader__select {
+    width: 24% !important;
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -819,6 +860,17 @@
   .AdminData7__IframeContainer--small {
     margin-bottom: 0 !important;
     height: 40vh;
+  }
+  .demoHeader__span {
+    flex-direction: column;
+  }
+  .demoHeader__Tabs {
+    width: 100%;
+  }
+
+  .demoHeader__Tabs__Evenly {
+    justify-content: space-between;
+    gap: 0;
   }
 }
 

@@ -7,19 +7,24 @@ import LeftLogo3 from "../../assets/pjb/Header/Azadi_Ka_Amrit_Mahotsav.png";
 import RightLogo from "../../assets/Profile.svg";
 import { NavLink, useHistory } from 'react-router-dom';
 import "./index.css"
-import { getUserFromLS, logout } from '../../utils';
+import { logout } from '../../utils';
 import ROUTE_CONST from '../../Routing/RouteConstants';
 import { useState, useEffect } from 'react';
+import { connect } from 'react-redux/es/exports';
+import { toogleUserSession } from "../../redux/user/actions";
 
-const DashboardHeader: FC = () => {
-  const [user, setUser] = useState<any>(getUserFromLS())
+interface Props {
+  user_in_session?: boolean
+  _toogleUserSession?: any,
+}
+const DashboardHeader: FC<Props> = ({ user_in_session, _toogleUserSession }) => {
   const history = useHistory()
   const _logout = () => {
-    logout(history.push(ROUTE_CONST.login))
+    logout()
+    history.push(ROUTE_CONST.login)
+    _toogleUserSession()
   }
-  useEffect(() => {
-    
-  },[])
+
   return (
     <div key={+new Date()} className="dashboard-header">
       <Row gutter={10} justify={"space-between"}>
@@ -69,7 +74,7 @@ const DashboardHeader: FC = () => {
           <div style={{ display: "flex", flexDirection: "column" }}>
             <>
               <Image src={RightLogo} height={"30px"} preview={false} />
-              {user ? (
+              {user_in_session ? (
                 <Button
                   className="logout-btn"
                   onClick={_logout}
@@ -96,4 +101,13 @@ const DashboardHeader: FC = () => {
 
 
 
-export default DashboardHeader;
+const mapStateToProps = ({ session: { user_in_session } }: any) => ({
+  user_in_session
+})
+
+const mapDispatchToProps = (dispatch: any) => ({
+  _toogleUserSession: () => dispatch(toogleUserSession())
+})
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(DashboardHeader);

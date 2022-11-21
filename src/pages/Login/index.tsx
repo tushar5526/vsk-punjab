@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { Dispatch, FC, useState } from "react";
 import { Button, Col, Layout, Row, Input, Divider, Spin } from "antd";
 import {
   UserOutlined,
@@ -14,8 +14,10 @@ import API_SERVICE from "../../services/api-service";
 import { useHistory } from 'react-router-dom';
 import ROUTE_CONST from "../../Routing/RouteConstants";
 import { setLocalStorageItem } from "../../utils";
+import { toogleUserSession } from '../../redux/user/actions';
+import { connect } from 'react-redux/es/exports';
 
-const Login: FC = () => {
+const Login: FC = ({ _toogleUserSession }: any) => {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const [loader, setLoader] = useState(false);
@@ -31,6 +33,7 @@ const Login: FC = () => {
     };
     const res: any = await API_SERVICE.Login(params);
     if (res) {
+      _toogleUserSession()
       const { user, refreshToken, token } = res?.data?.result?.data?.user;
       setLocalStorageItem("user", { user, refreshToken, token })
       setLocalStorageItem("roles", user?.data?.roleData)
@@ -134,4 +137,9 @@ const Login: FC = () => {
 };
 
 
-export default Login;
+const mapDispatchToProps = (dispatch: any) => ({
+  _toogleUserSession: () => dispatch(toogleUserSession())
+})
+
+
+export default connect(null, mapDispatchToProps)(Login);
