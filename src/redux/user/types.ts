@@ -1,5 +1,6 @@
 const Types = {
   TOOGLE_USER_IN_SESSION: "TOOGLE_USER_IN_SESSION",
+  ADD_ROLES_TO_STATE: "ADD_ROLES_TO_STATE",
 };
 
 export default Types;

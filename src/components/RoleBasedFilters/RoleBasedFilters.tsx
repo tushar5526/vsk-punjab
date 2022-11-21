@@ -1,7 +1,15 @@
 import { Select } from 'antd'
 import down_arrow from "../../assets/pjb/utils/down_arrow.png"
+import { useEffect } from 'react';
+import { connect } from 'react-redux/es/exports';
+import { getFiltersValidationsBasedOnRole } from './filters.utils';
+import { dummyRoles } from '../../services/parameters';
 
-const RoleBasedFilters = () => {
+
+const RoleBasedFilters = ({ roles: { designation, geographic_level } }: any) => {
+    const { permissions, geo } = getFiltersValidationsBasedOnRole(dummyRoles.STATE)
+
+
     const districts = [
         {
             value: "SIRMAUR",
@@ -53,6 +61,11 @@ const RoleBasedFilters = () => {
     const handleChange = (e: any) => {
         console.log(e, "handle change")
     }
+
+
+
+
+    if (!designation) return <div>Loading....</div>
     return (
         <>
             <Select
@@ -61,6 +74,7 @@ const RoleBasedFilters = () => {
                 defaultValue={districts[0].value}
                 onChange={handleChange}
                 options={districts}
+                disabled={permissions?.district}
             />
             <Select
                 className='demoHeader__select'
@@ -68,10 +82,7 @@ const RoleBasedFilters = () => {
                 defaultValue={districts[0].value}
                 onChange={handleChange}
                 options={districts}
-
-
-
-
+                disabled={permissions?.block}
             />
             <Select
                 className='demoHeader__select'
@@ -79,9 +90,15 @@ const RoleBasedFilters = () => {
                 defaultValue={districts[0].value}
                 onChange={handleChange}
                 options={districts}
+                disabled={permissions?.cluster}
             />
         </>
     )
 }
 
-export default RoleBasedFilters
+const mapStateToProps = ({ session: { roles } }: any) => ({
+    roles
+})
+
+
+export default connect(mapStateToProps)(RoleBasedFilters)

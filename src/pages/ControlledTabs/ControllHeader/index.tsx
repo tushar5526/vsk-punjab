@@ -2,12 +2,11 @@ import { Select } from "antd"
 import down_arrow from "../../../assets/pjb/utils/down_arrow.png"
 import { toogleTab } from '../../../redux/TabController/actions';
 import { connect } from "react-redux/es/exports"
-import Dashboard from "../../Dashboard/Dashboard";
 import RoleBasedFilters from "../../../components/RoleBasedFilters/RoleBasedFilters";
 
 
 
-const DemoHeader = ({ tabs, _toogle, current, dashboard }: any) => {
+const DemoHeader = ({ tabs, _toogle, current, level }: any) => {
     const districts = [
         {
             value: "SIRMAUR",
