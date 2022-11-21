@@ -1,4 +1,4 @@
-import { Select } from "antd"
+import { DatePicker, Select } from "antd"
 import down_arrow from "../../../assets/pjb/utils/down_arrow.png"
 import { toogleTab } from '../../../redux/TabController/actions';
 import { connect } from "react-redux/es/exports"
@@ -61,15 +61,14 @@ const DemoHeader = ({ tabs, _toogle, current, level }: any) => {
     return (
         <>
             <div className="demoHeader mb">
-                <div className="mb">
-                    <Select
-                        className='demoHeader__select__top'
-                        defaultValue={districts[0].value}
-                        onChange={handleChange}
-                        options={districts}
-                        suffixIcon={<img alt="dropdown" className='demoHeader__dropdown--suffix' src={down_arrow} />}
-
-                    />
+                <div className="demoHeader__DateSelector mb">
+                    <DatePicker
+                        suffixIcon={
+                            <img alt="dropdown"
+                                className='demoHeader__dropdown--suffix'
+                                src={down_arrow} />
+                        }
+                        onChange={handleChange} />
                 </div>
                 <div>
                     <div className="demoHeader__span demoHeader__spaceBetween">

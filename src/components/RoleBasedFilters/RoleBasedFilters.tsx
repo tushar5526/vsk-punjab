@@ -7,6 +7,8 @@ import { dummyRoles } from '../../services/parameters';
 
 
 const RoleBasedFilters = ({ roles: { designation, geographic_level } }: any) => {
+    // use geographic_level to get permissons based on the user login
+    // using dummyRoles to test functionality
     const { permissions, geo } = getFiltersValidationsBasedOnRole(dummyRoles.STATE)
 
 
@@ -61,9 +63,6 @@ const RoleBasedFilters = ({ roles: { designation, geographic_level } }: any) => 
     const handleChange = (e: any) => {
         console.log(e, "handle change")
     }
-
-
-
 
     if (!designation) return <div>Loading....</div>
     return (
