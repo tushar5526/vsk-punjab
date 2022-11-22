@@ -1,11 +1,18 @@
-import { getUserFromLS } from '../../utils';
+import { getUserFromLS, getRolesFromLS } from '../../utils';
 import Types from "./types";
 
 
-const { data, data: { roleData } } = getUserFromLS()
+// const { data, data: { roleData } } = getUserFromLS()
+// const INITIAL_STATE = {
+//     user_in_session: data ? true : false,
+//     roles: roleData
+// }
 const INITIAL_STATE = {
-    user_in_session: data ? true : false,
-    roles: roleData
+    user_in_session: true,
+    roles: {
+        designation: "State Project Director",
+        geographic_level: "State"
+    }
 }
 const userAuthReducer = (state = INITIAL_STATE, action: any) => {
     switch (action.type) {
