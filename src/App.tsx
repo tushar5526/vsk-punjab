@@ -17,6 +17,8 @@ import Screen2 from "./pages/VedioWall/Screen2";
 import Screen3 from "./pages/VedioWall/Screen3/Index";
 import Screen4 from "./pages/VedioWall/Screen4";
 import CustomMap from "./components/CustomMap/CustomMap";
+import Screen2Header from "./components/layouts/Screen2Header";
+import Screen1Header from "./components/layouts/Screen1Header";
 export const IframeContextContext = React.createContext({
   updateHasFirstIframeLoaded: null,
   hasFirstIframeLoaded: null,
@@ -56,6 +58,39 @@ const App: FC = () => {
     setHasFirstIframeLoaded(v);
   }
 
+
+
+  const CreateHeaderContext = ({ comp: Comp }: {
+    comp: any
+  }) => {
+    return (
+      <>
+        <DashboardHeader />
+        <Comp />
+      </>
+    )
+  }
+
+  const CreateHeaderContextForScreen1 = ({ comp: Comp }: {
+    comp: any
+  }) => {
+    return (
+      <>
+        <Screen1Header />
+        <Comp />
+      </>
+    )
+  }
+  const CreateHeaderContextForScreen2 = ({ comp: Comp }: {
+    comp: any
+  }) => {
+    return (
+      <>
+        <Screen2Header />
+        <Comp />
+      </>
+    )
+  }
   return (
     <div className="App">
 
@@ -63,15 +98,14 @@ const App: FC = () => {
         value={{ hasFirstIframeLoaded, updateHasFirstIframeLoaded }}
       >
         <Router>
-          {<DashboardHeader />}
           <Switch>
-            <Route exact path={ROUTE_CONST.login} component={Login} />
-            <PrivateRoute exact path={ROUTE_CONST.vdo_wall_1} component={Screen1} />
-            <PrivateRoute exact path={ROUTE_CONST.vdo_wall_2} component={Screen2} />
+            <Route exact path={ROUTE_CONST.login} component={() => <CreateHeaderContext comp={Login} />} />
+            <PrivateRoute exact path={ROUTE_CONST.vdo_wall_1} component={() => <CreateHeaderContextForScreen1 comp={Screen1} />} />
+            <PrivateRoute exact path={ROUTE_CONST.vdo_wall_2} component={() => <CreateHeaderContextForScreen2 comp={Screen2} />} />
             <PrivateRoute exact path={ROUTE_CONST.vdo_wall_3} component={Screen3} />
             <PrivateRoute exact path={ROUTE_CONST.vdo_wall_4} component={Screen4} />
-            <PrivateRoute exact path={ROUTE_CONST.map_test} component={CustomMap} />
-            <PrivateRoute exact path={ROUTE_CONST.root} component={ControlledTabs} />
+            <PrivateRoute exact path={ROUTE_CONST.map_test} component={() => <CreateHeaderContext comp={CustomMap} />} />
+            <PrivateRoute exact path={ROUTE_CONST.root} component={() => <CreateHeaderContext comp={ControlledTabs} />} />
             <Route />
           </Switch>
         </Router>

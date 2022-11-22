@@ -9,7 +9,8 @@ import { dummyRoles } from '../../services/parameters';
 const RoleBasedFilters = ({ roles: { designation, geographic_level } }: any) => {
     // use geographic_level to get permissons based on the user login
     // using dummyRoles to test functionality
-    const { permissions, geo } = getFiltersValidationsBasedOnRole(dummyRoles.STATE)
+    const { permissions } = getFiltersValidationsBasedOnRole(dummyRoles.STATE)
+    // const { permissions, geo } = getFiltersValidationsBasedOnRole(dummyRoles.STATE)
 
 
     const districts = [
@@ -20,13 +21,16 @@ const RoleBasedFilters = ({ roles: { designation, geographic_level } }: any) => 
         {
             value: "CHAMBA",
             label: "CHAMBA",
-        }, {
+        },
+        {
             value: "UNA",
             label: 'UNA',
-        }, {
+        },
+        {
             value: "KULLU",
             label: 'KULLU',
-        }, {
+        },
+        {
             value: "KANGRA",
             label: 'KANGRA',
         },

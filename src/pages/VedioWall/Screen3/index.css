@@ -26,11 +26,16 @@
 
 .Screen3__IframeContainer2 {
   width: 49%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
 }
 
 .Screen3__Iframe--left {
   box-shadow: var(--card-shadow);
   border-radius: var(--card-radius);
+  height: 25vh;
+  padding: 12px;
 }
 
 .Secton3__Right {
@@ -47,6 +52,8 @@
 .Section3__Right--iframe {
   box-shadow: var(--card-shadow);
   border-radius: var(--card-radius);
+  padding: 10px;
+  width: 48%;
 }
 
 .Section3__RightIframeContainer2--Iframe {

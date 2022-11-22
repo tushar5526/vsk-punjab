@@ -3,21 +3,22 @@ import SectionHeader from '../../ControlledTabs/Tabs/utils/SectionHeader'
 import "./index.css"
 import IframeHeading from '../../ControlledTabs/Tabs/utils/IframeHeading';
 import QuestionWithIframe from '../../../components/QuestionWIthIframe';
-import Filters from '../Filters/Filters';
+
+import IframeWithImage from './IframeWithImage/IframeWithImage';
 
 export class Screen4 extends Component {
     render() {
         return (
             <>
-                <Filters />
                 <div className='Section4'>
                     <div className="Section4Child">
+                        {/* Mentoring start  */}
                         <SectionHeader label='' label2='Mentoring' />
 
                         <div className="Section4ChildCardsContainer1 mb">
                             <div className='Section4ChildCardsContainerIframe mb'>
                                 <QuestionWithIframe
-                                    questionId={84}
+                                    questionId={254}
                                     width="100%"
                                     height="100%"
                                     nonDownloadable={true}
@@ -26,25 +27,16 @@ export class Screen4 extends Component {
                             </div>
                             <div className='Section4ChildCardsContainerIframe mb'>
                                 <QuestionWithIframe
-                                    questionId={84}
+                                    questionId={259}
                                     width="100%"
                                     height="100%"
                                     nonDownloadable={true}
                                     handleLoadCounter={() => { }}
                                 />
                             </div>
-                            <div className='Section4ChildCardsContainerIframe mb'>
+                            <div className='Section4ChildCardsContainerIframe  mb'>
                                 <QuestionWithIframe
-                                    questionId={84}
-                                    width="100%"
-                                    height="100%"
-                                    nonDownloadable={true}
-                                    handleLoadCounter={() => { }}
-                                />
-                            </div>
-                            <div className='Section4ChildCardsContainerIframe'>
-                                <QuestionWithIframe
-                                    questionId={84}
+                                    questionId={261}
                                     width="100%"
                                     height="100%"
                                     nonDownloadable={true}
@@ -53,7 +45,7 @@ export class Screen4 extends Component {
                             </div>
                             <div className='Section4ChildCardsContainerIframe'>
                                 <QuestionWithIframe
-                                    questionId={84}
+                                    questionId={255}
                                     width="100%"
                                     height="100%"
                                     nonDownloadable={true}
@@ -62,7 +54,16 @@ export class Screen4 extends Component {
                             </div>
                             <div className='Section4ChildCardsContainerIframe'>
                                 <QuestionWithIframe
-                                    questionId={84}
+                                    questionId={260}
+                                    width="100%"
+                                    height="100%"
+                                    nonDownloadable={true}
+                                    handleLoadCounter={() => { }}
+                                />
+                            </div>
+                            <div className='Section4ChildCardsContainerIframe'>
+                                <QuestionWithIframe
+                                    questionId={262}
                                     width="100%"
                                     height="100%"
                                     nonDownloadable={true}
@@ -70,49 +71,21 @@ export class Screen4 extends Component {
                                 />
                             </div>
                         </div>
+                        {/* Mentoring end */}
+
                         <IframeHeading greenVariant label='Monthly Cadre-wise % School Visits Completed against the target' />
                         <div className="Section4Graph">
                             <QuestionWithIframe
-                                questionId={152}
+                                questionId={263}
                                 width="100%"
                                 height="100%"
                                 handleLoadCounter={() => { }}
                             />
                         </div>
                     </div>
-                    <div className="Section4Child">
-                        <IframeHeading greenVariant label='Parameter-wise Status' />
-                        <div className="Section4RightIframeContainer">
-                            <div className="Section4RightIframeContaineriframe Section4RightIframeContaineriframeCommon mb">
-                                <QuestionWithIframe
-                                    questionId={84}
-                                    width="100%"
-                                    height="100%"
-                                    nonDownloadable={true}
-                                    handleLoadCounter={() => { }}
-                                />
-                            </div>
 
-                            <div className="Section4RightIframeContaineriframe Section4RightIframeContaineriframeCommon mb">
-                                <QuestionWithIframe
-                                    questionId={84}
-                                    width="100%"
-                                    height="100%"
-                                    nonDownloadable={true}
-                                    handleLoadCounter={() => { }}
-                                />
-                            </div>
-                            <div className="Section4RightIframeContaineriframeBig Section4RightIframeContaineriframeCommon">
-                                <QuestionWithIframe
-                                    questionId={84}
-                                    width="100%"
-                                    height="100%"
-                                    nonDownloadable={true}
-                                    handleLoadCounter={() => { }}
-                                />
-                            </div>
-                        </div>
-                    </div>
+                    <IframeWithImage />
+
                 </div>
             </>
         )

@@ -38,5 +38,7 @@
 
 .Screen2__Container3--iframe {
   box-shadow: var(--card-shadow);
-  height: 70vh;
+  height: 30vh;
+  border-radius: var(--card-radius);
+  padding: 10px;
 }

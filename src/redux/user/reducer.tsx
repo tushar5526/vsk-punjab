@@ -1,4 +1,4 @@
-import { getUserFromLS, getRolesFromLS } from '../../utils';
+import { getUserFromLS } from '../../utils';
 import Types from "./types";
 
 

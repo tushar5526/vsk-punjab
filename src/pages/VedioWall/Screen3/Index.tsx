@@ -2,14 +2,12 @@ import { Component } from 'react'
 import QuestionWithIframe from '../../../components/QuestionWIthIframe'
 import IframeHeading from '../../ControlledTabs/Tabs/utils/IframeHeading'
 import SectionHeader from '../../ControlledTabs/Tabs/utils/SectionHeader'
-import Filters from '../Filters/Filters'
 import "./index.css"
 
 export class Screen3 extends Component {
     render() {
         return (
             <>
-                <Filters />
                 <div className='Screen3'>
                     <div className="Screen3__Container">
                         <SectionHeader label='' label2='Finance and Civil Works' />
@@ -20,7 +18,7 @@ export class Screen3 extends Component {
                                     <div className='Screen3__IframeContainer2'>
                                         <div className="Screen3__Iframe--left mb_m">
                                             <QuestionWithIframe
-                                                questionId={84}
+                                                questionId={264}
                                                 width="100%"
                                                 height="100%"
                                                 nonDownloadable={true}
@@ -29,7 +27,7 @@ export class Screen3 extends Component {
                                         </div>
                                         <div className="Screen3__Iframe--left mb_m">
                                             <QuestionWithIframe
-                                                questionId={84}
+                                                questionId={265}
                                                 width="100%"
                                                 height="100%"
                                                 nonDownloadable={true}
@@ -38,7 +36,7 @@ export class Screen3 extends Component {
                                         </div>
                                         <div className="Screen3__Iframe--left">
                                             <QuestionWithIframe
-                                                questionId={84}
+                                                questionId={266}
                                                 width="100%"
                                                 height="100%"
                                                 nonDownloadable={true}
@@ -47,13 +45,27 @@ export class Screen3 extends Component {
                                         </div>
                                     </div>
                                     <div className='Screen3__IframeContainer2'>
-                                        <div className='Screen2__Container3--iframe'>
-                                            <QuestionWithIframe
-                                                questionId={152}
-                                                width="100%"
-                                                height="100%"
-                                                handleLoadCounter={() => { }}
-                                            />
+                                        <div className='mb'>
+                                            <IframeHeading greenVariant label='Top District' />
+                                            <div className='Screen2__Container3--iframe'>
+                                                <QuestionWithIframe
+                                                    questionId={267}
+                                                    width="100%"
+                                                    height="100%"
+                                                    handleLoadCounter={() => { }}
+                                                />
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <IframeHeading greenVariant label='Bottom District' />
+                                            <div className='Screen2__Container3--iframe'>
+                                                <QuestionWithIframe
+                                                    questionId={268}
+                                                    width="100%"
+                                                    height="100%"
+                                                    handleLoadCounter={() => { }}
+                                                />
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -64,7 +76,7 @@ export class Screen3 extends Component {
                                     <div className="Section3__RightIframeContainer1 mb">
                                         <div className="Section3__Right--iframe">
                                             <QuestionWithIframe
-                                                questionId={84}
+                                                questionId={269}
                                                 width="100%"
                                                 height="100%"
                                                 nonDownloadable={true}
@@ -73,7 +85,7 @@ export class Screen3 extends Component {
                                         </div>
                                         <div className="Section3__Right--iframe">
                                             <QuestionWithIframe
-                                                questionId={84}
+                                                questionId={270}
                                                 width="100%"
                                                 height="100%"
                                                 nonDownloadable={true}

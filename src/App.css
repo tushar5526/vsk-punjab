@@ -12,6 +12,7 @@
 .App {
   overflow-x: hidden;
   box-sizing: border-box;
+  padding: 0 10px;
 }
 
 p {

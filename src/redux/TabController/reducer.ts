@@ -1,6 +1,6 @@
 import types from "./types";
 
-const performaceDashboardId = 22;
+const performaceDashboardId = 26;
 
 const INITIAL_STATE = {
   current: 0,
