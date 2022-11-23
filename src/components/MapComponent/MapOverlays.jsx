@@ -1,6 +1,5 @@
 // import { Map } from "leaflet";
-import { useMap, Rectangle, Polygon, SVGOverlay } from "react-leaflet";
-import { useEffect, useMemo, useState } from "react";
+import { Polygon } from "react-leaflet";
 // import { overlays } from "./config.json";
 
 // const allOverlays = overlays.map((overlay) => {
@@ -15,8 +14,8 @@ const MapOverlays = ({ overlays }) => {
   return (
     <>
       {overlays.map((item) => {
-        if(!item.geoJson){
-          return <></>
+        if (!item.geoJson) {
+          return <></>;
         }
         return (
           //   <SVGOverlay

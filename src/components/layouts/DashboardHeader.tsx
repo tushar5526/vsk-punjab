@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Button, Col, Image, Row, notification } from 'antd';
+import { Button, Col, Image, Row } from 'antd';
 import "./index.less";
 import LeftLogo from "../../assets/pjb/Header/headerleft1.png";
 import LeftLogo2 from "../../assets/pjb/Header/headerleft2.png";
@@ -9,7 +9,6 @@ import { NavLink, useHistory } from 'react-router-dom';
 import "./index.css"
 import { logout } from '../../utils';
 import ROUTE_CONST from '../../Routing/RouteConstants';
-import { useState, useEffect } from 'react';
 import { connect } from 'react-redux/es/exports';
 import { toogleUserSession } from "../../redux/user/actions";
 

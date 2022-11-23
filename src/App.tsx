@@ -19,13 +19,17 @@ import Screen4 from "./pages/VedioWall/Screen4";
 import CustomMap from "./components/CustomMap/CustomMap";
 import Screen2Header from "./components/layouts/Screen2Header";
 import Screen1Header from "./components/layouts/Screen1Header";
+import { getUserFromLS } from "./utils";
+import { addUserToState } from './redux/user/actions';
+import { connect } from 'react-redux/es/exports';
 export const IframeContextContext = React.createContext({
   updateHasFirstIframeLoaded: null,
   hasFirstIframeLoaded: null,
 } as any);
 
-const App: FC = () => {
+const App: FC = ({ _addUserToState }: any) => {
   const [hasFirstIframeLoaded, setHasFirstIframeLoaded] = useState(false);
+
   useEffect(() => {
     localStorage.removeItem("hasFirstIframeLoaded");
     const registerServiceWorker = async () => {
@@ -52,6 +56,7 @@ const App: FC = () => {
       }
     };
     registerServiceWorker();
+    _addUserToState()
   }, []);
 
   function updateHasFirstIframeLoaded(v: boolean) {
@@ -114,5 +119,12 @@ const App: FC = () => {
   );
 };
 
-export default (App);
+const mapDispatchToProps = (dispatch: any) => ({
+  _addUserToState: async () => {
+    const { data, data: { roleData } } = await getUserFromLS()
+    dispatch(addUserToState({ roleData, data }))
+  }
+})
+
+export default connect(null, mapDispatchToProps)(App);
 

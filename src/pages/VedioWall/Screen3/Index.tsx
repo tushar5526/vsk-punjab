@@ -9,7 +9,7 @@ export class Screen3 extends Component {
         return (
             <>
                 <div className='Screen3'>
-                    <div className="Screen3__Container">
+                    <div className="Screen3__Container1">
                         <SectionHeader label='' label2='Finance and Civil Works' />
                         <div className='Screen3Part'>
                             <div className="Screen3__IframeContainer">
@@ -92,30 +92,52 @@ export class Screen3 extends Component {
                                                 handleLoadCounter={() => { }}
                                             />
                                         </div>
-                                    </div>
-                                    <div className="Section3__RightIframeContainer2">
-                                        <IframeHeading label='District Performance' greenVariant />
-                                        <div className="Section3__RightIframeContainer2--Iframe">
+                                        <div className="Section3__Right--iframeBig">
                                             <QuestionWithIframe
-                                                questionId={152}
+                                                questionId={274}
                                                 width="100%"
                                                 height="100%"
+                                                nonDownloadable={true}
                                                 handleLoadCounter={() => { }}
                                             />
+                                        </div>
+                                    </div>
+                                    <div className="Section3__RightIframeContainer2">
+                                        <div>
+                                            <IframeHeading label='Top District' greenVariant />
+                                            <div className="Section3__RightIframeContainer2--Iframe">
+                                                <QuestionWithIframe
+                                                    questionId={271}
+                                                    width="100%"
+                                                    height="100%"
+                                                    handleLoadCounter={() => { }}
+                                                />
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <IframeHeading label='Bottom District' greenVariant />
+                                            <div className="Section3__RightIframeContainer2--Iframe">
+                                                <QuestionWithIframe
+                                                    questionId={272}
+                                                    width="100%"
+                                                    height="100%"
+                                                    handleLoadCounter={() => { }}
+                                                />
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div className="Screen3__Container">
+                    <div className="Screen3__Container2">
                         <SectionHeader label='' label2='Infrastructure' />
                         <IframeHeading greenVariant label='Smart School Phase-wise Compliance' />
                         <div className="Screen3Iframes">
                             <div className="Screen3Iframes__Container">
                                 <div className="Screen3Iframes__Container--iframes mb">
                                     <QuestionWithIframe
-                                        questionId={84}
+                                        questionId={275}
                                         width="100%"
                                         height="100%"
                                         nonDownloadable={true}
@@ -124,7 +146,7 @@ export class Screen3 extends Component {
                                 </div>
                                 <div className="Screen3Iframes__Container--iframes mb">
                                     <QuestionWithIframe
-                                        questionId={84}
+                                        questionId={276}
                                         width="100%"
                                         height="100%"
                                         nonDownloadable={true}
@@ -133,7 +155,7 @@ export class Screen3 extends Component {
                                 </div>
                                 <div className="Screen3Iframes__Container--iframes">
                                     <QuestionWithIframe
-                                        questionId={84}
+                                        questionId={277}
                                         width="100%"
                                         height="100%"
                                         nonDownloadable={true}
@@ -142,14 +164,27 @@ export class Screen3 extends Component {
                                 </div>
                             </div>
                             <div className="Screen3Iframes__Container">
-                                <IframeHeading greenVariant label='District Performance' />
-                                <div className="Screen3Iframes__ContainerBig">
-                                    <QuestionWithIframe
-                                        questionId={152}
-                                        width="100%"
-                                        height="100%"
-                                        handleLoadCounter={() => { }}
-                                    />
+                                <div>
+                                    <IframeHeading greenVariant label='Top District' />
+                                    <div className="Screen3Iframes__ContainerBig mb">
+                                        <QuestionWithIframe
+                                            questionId={278}
+                                            width="100%"
+                                            height="100%"
+                                            handleLoadCounter={() => { }}
+                                        />
+                                    </div>
+                                </div>
+                                <div>
+                                    <IframeHeading greenVariant label='Bottom District' />
+                                    <div className="Screen3Iframes__ContainerBig">
+                                        <QuestionWithIframe
+                                            questionId={279}
+                                            width="100%"
+                                            height="100%"
+                                            handleLoadCounter={() => { }}
+                                        />
+                                    </div>
                                 </div>
                             </div>
                         </div>

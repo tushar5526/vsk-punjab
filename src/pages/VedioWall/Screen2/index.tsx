@@ -12,7 +12,7 @@ const Screen2: React.FC = () => {
             <SectionHeader label='' label2={"Mid-Day Meal"} />
             <div className='Screen2'>
                 <div className="Screen2__Container">
-                    <div className="Screen2__Container1 mb_m">
+                    <div className="Screen2__Container1 mb">
                         <div className="Screen2__Container1--iframe">
                             <QuestionWithIframe
                                 questionId={84}

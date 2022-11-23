@@ -1,6 +1,5 @@
 import { Select } from 'antd'
 import down_arrow from "../../assets/pjb/utils/down_arrow.png"
-import { useEffect } from 'react';
 import { connect } from 'react-redux/es/exports';
 import { getFiltersValidationsBasedOnRole } from './filters.utils';
 import { dummyRoles } from '../../services/parameters';

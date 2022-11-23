@@ -4,10 +4,8 @@ import "./index.less";
 import LeftLogo from "../../assets/pjb/Header/headerleft1.png";
 import LeftLogo2 from "../../assets/pjb/Header/headerleft2.png";
 import LeftLogo3 from "../../assets/pjb/Header/Azadi_Ka_Amrit_Mahotsav.png";
-import { NavLink, useHistory } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import "./index.css"
-import { logout } from '../../utils';
-import ROUTE_CONST from '../../Routing/RouteConstants';
 import { connect } from 'react-redux/es/exports';
 import { toogleUserSession } from "../../redux/user/actions";
 

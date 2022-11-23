@@ -37,7 +37,7 @@ const IframeWithImage = () => {
                     </div>
 
                     <div className='Screen4IframeContainer__Common Screen4IframeContainer__Common__Width2'>
-                        <img src={img3} alt="parameter wise" className='extraTop mb' />
+                        <img src={img3} alt="parameter wise" className='Screen4ThirdImageMarginFix extraTop  mb' />
                         <div className="Section4ChildCardsContainerIframeType2 Screen4IframeContainer__Common__height2 ">
                             <QuestionWithIframe
                                 questionId={258}

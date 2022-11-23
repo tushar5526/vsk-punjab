@@ -10,7 +10,6 @@ import green_marker from "../../assets/Map_marker_green.svg";
 import blue_marker from "../../assets/Map_marker_blue.svg";
 import purple_marker from "../../assets/Map_marker_purple.svg";
 import yellow_marker from "../../assets/Map_marker_yellow.svg";
-import { Spin } from "antd";
 
 const default_toolTipData = {
   Attendance: "NA",
@@ -42,7 +41,7 @@ export default function MapComponent({ config, markers }) {
           config &&
           config.legend &&
           config.legend.position &&
-          config.legend.position.split("-")[0] == "bottom"
+          config.legend.position.split("-")[0] === "bottom"
             ? "column"
             : "column-reverse",
       }}
@@ -111,15 +110,15 @@ export default function MapComponent({ config, markers }) {
             <div>
               {markers?.postions.map((item) => {
                 let markerColor = blue_marker;
-                if (item.color == "red") {
+                if (item.color === "red") {
                   markerColor = red_marker;
-                } else if (item.color == "yellow") {
+                } else if (item.color === "yellow") {
                   markerColor = yellow_marker;
-                } else if (item.color == "blue") {
+                } else if (item.color === "blue") {
                   markerColor = blue_marker;
-                } else if (item.color == "green") {
+                } else if (item.color === "green") {
                   markerColor = green_marker;
-                } else if (item.color == "purple") {
+                } else if (item.color === "purple") {
                   markerColor = purple_marker;
                 }
                 const iconPerson = new L.Icon({
@@ -155,7 +154,7 @@ export default function MapComponent({ config, markers }) {
             marginTop: "10px",
             // flexDirection: "column",
             justifyContent:
-              config.legend.position.split("-")[1] == "right"
+              config.legend.position.split("-")[1] === "right"
                 ? "flex-end"
                 : "flex-start",
           }}

@@ -1,12 +1,7 @@
-import { getUserFromLS, getRolesFromLS } from '../../utils';
 import Types from "./types";
 
 
-// const { data, data: { roleData } } = getUserFromLS()
-// const INITIAL_STATE = {
-//     user_in_session: data ? true : false,
-//     roles: roleData
-// }
+
 const INITIAL_STATE = {
     user_in_session: true,
     roles: {
@@ -25,6 +20,13 @@ const userAuthReducer = (state = INITIAL_STATE, action: any) => {
             return {
                 ...state,
                 roles: action.payload
+            };
+        case Types.ADD_USER_TO_STATE:
+            const { roleData: roles, data } = action.payload
+            return {
+                ...state,
+                roles,
+                user_in_session: data ? true : false
             };
         default:
             return state;

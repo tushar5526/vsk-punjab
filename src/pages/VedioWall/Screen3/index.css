@@ -4,8 +4,12 @@
   width: 100%;
 }
 
-.Screen3__Container {
-  width: 49%;
+.Screen3__Container1 {
+  width: 66%;
+}
+
+.Screen3__Container2 {
+  width: 33%;
 }
 
 .Screen3Part {
@@ -47,6 +51,7 @@
 .Section3__RightIframeContainer1 {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .Section3__Right--iframe {
@@ -56,8 +61,26 @@
   width: 48%;
 }
 
+.Section3__Right--iframeBig {
+  box-shadow: var(--card-shadow);
+  border-radius: var(--card-radius);
+  padding: 10px;
+  width: 100%;
+}
+
 .Section3__RightIframeContainer2--Iframe {
-  height: 50vh;
+  height: 34.5vh;
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  padding: 10px;
+}
+
+.Section3__RightIframeContainer2 {
+  display: flex;
+  justify-content: space-between;
+}
+.Section3__RightIframeContainer2 > div {
+  width: 49%;
 }
 
 .Screen3Iframes {
@@ -67,13 +90,19 @@
 
 .Screen3Iframes__Container {
   width: 49%;
+  display: flex;
+  flex-direction: column;
 }
-
 .Screen3Iframes__Container--iframes {
   box-shadow: var(--card-shadow);
+  padding: 10px;
+  height: 24.25vh;
   border-radius: var(--card-radius);
 }
 
 .Screen3Iframes__ContainerBig {
-  height: 62vh;
+  height: 29.85vh;
+  box-shadow: var(--card-shadow);
+  padding: 10px;
+  border-radius: var(--card-radius);
 }
