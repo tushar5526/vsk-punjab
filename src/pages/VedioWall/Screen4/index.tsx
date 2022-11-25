@@ -5,6 +5,7 @@ import IframeHeading from '../../ControlledTabs/Tabs/utils/IframeHeading';
 import QuestionWithIframe from '../../../components/QuestionWIthIframe';
 
 import IframeWithImage from './IframeWithImage/IframeWithImage';
+import mentoring from "../../../assets/pjb/SectionHeader/mentoring_visits.png"
 
 export class Screen4 extends Component {
     render() {
@@ -13,7 +14,7 @@ export class Screen4 extends Component {
                 <div className='Section4'>
                     <div className="Section4Child">
                         {/* Mentoring start  */}
-                        <SectionHeader label='' label2='Mentoring' />
+                        <SectionHeader Icon={mentoring} label='Mentoring' />
 
                         <div className="Section4ChildCardsContainer1 mb">
                             <div className='Section4ChildCardsContainerIframe mb'>

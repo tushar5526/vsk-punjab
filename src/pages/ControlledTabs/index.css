@@ -207,10 +207,16 @@
 }
 
 .demoHeader3__spanDiv {
-  background-color: var(--grey-primary);
-  width: 50px;
-  height: 35px;
+  background-color: white;
+  width: 40px;
+  border-radius: 50%;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
   margin-right: 10px;
+  object-fit: contain;
 }
 
 .demoHeader3__spanText {

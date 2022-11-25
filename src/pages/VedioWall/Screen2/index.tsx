@@ -4,12 +4,13 @@ import IframeHeading from '../../ControlledTabs/Tabs/utils/IframeHeading'
 import SectionHeader from '../../ControlledTabs/Tabs/utils/SectionHeader'
 import Filters from '../Filters/Filters'
 import "./index.css"
+import midDayMeal from "../../../assets/pjb/SectionHeader/mid_day_meal.png"
 
 const Screen2: React.FC = () => {
     return (
         <>
             <Filters />
-            <SectionHeader label='' label2={"Mid-Day Meal"} />
+            <SectionHeader Icon={midDayMeal} label='Mid-Day Meal' />
             <div className='Screen2'>
                 <div className="Screen2__Container">
                     <div className="Screen2__Container1 mb">

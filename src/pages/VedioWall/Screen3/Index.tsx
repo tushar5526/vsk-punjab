@@ -3,14 +3,15 @@ import QuestionWithIframe from '../../../components/QuestionWIthIframe'
 import IframeHeading from '../../ControlledTabs/Tabs/utils/IframeHeading'
 import SectionHeader from '../../ControlledTabs/Tabs/utils/SectionHeader'
 import "./index.css"
-
+import financeAndCivilWorks from "../../../assets/pjb/SectionHeader/finance_and_civil_works.png"
+import infrastructure from "../../../assets/pjb/SectionHeader/infrastructure.png"
 export class Screen3 extends Component {
     render() {
         return (
             <>
                 <div className='Screen3'>
                     <div className="Screen3__Container1">
-                        <SectionHeader label='' label2='Finance and Civil Works' />
+                        <SectionHeader Icon={financeAndCivilWorks} label='Finance and Civil Works' />
                         <div className='Screen3Part'>
                             <div className="Screen3__IframeContainer">
                                 <IframeHeading greenVariant label='Finance' />
@@ -134,7 +135,7 @@ export class Screen3 extends Component {
                         </div>
                     </div>
                     <div className="Screen3__Container2">
-                        <SectionHeader label='' label2='Infrastructure' />
+                        <SectionHeader Icon={infrastructure} label='Infrastructure' />
                         <IframeHeading greenVariant label='Smart School Phase-wise Compliance' />
                         <div className="Screen3Iframes">
                             <div className="Screen3Iframes__Container">
