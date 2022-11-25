@@ -71,7 +71,14 @@ const Screen2: React.FC = () => {
                 </div>
                 <div className="Screen2__Container">
                     <IframeHeading greenVariant label='Month-wise Trend of Students Receiving MDM' />
-
+                    <div className="Screen2__Container3--iframe">
+                        <QuestionWithIframe
+                            questionId={152}
+                            width="100%"
+                            height="100%"
+                            handleLoadCounter={() => { }}
+                        />
+                    </div>
                 </div>
             </div>
         </>
