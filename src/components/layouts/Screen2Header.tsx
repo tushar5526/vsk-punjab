@@ -5,7 +5,8 @@ import RightLogo from "../../assets/Profile.svg";
 import "./index.css"
 import { connect } from 'react-redux/es/exports';
 import { toogleUserSession } from "../../redux/user/actions";
-import circlepjicon from "../../assets/pjb/utils/circlepjicon.svg"
+import education from "../../assets/pjb/Header/highres/education-logo.png"
+
 
 interface Props {
     user_in_session?: boolean
@@ -24,10 +25,9 @@ const DashboardHeader: FC<Props> = () => {
                     }}
                 >
 
-                    <div style={{ display: "flex" }} >
-                        <Image src={circlepjicon} height={"30px"} preview={false} />
-                        <Image src={RightLogo} height={"30px"} preview={false} />
-                    </div>
+                    <Col>
+                        <Image src={education} height={"40px"} preview={false} />
+                    </Col>
                 </Col>
             </Row>
         </div >

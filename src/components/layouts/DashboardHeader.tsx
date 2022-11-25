@@ -1,9 +1,8 @@
 import { FC } from "react";
 import { Button, Col, Image, Row } from 'antd';
 import "./index.less";
-import LeftLogo from "../../assets/pjb/Header/headerleft1.png";
-import LeftLogo2 from "../../assets/pjb/Header/headerleft2.png";
-import LeftLogo3 from "../../assets/pjb/Header/Azadi_Ka_Amrit_Mahotsav.png";
+import BrataSarkar from "../../assets/pjb/Header/highres/bharat-sarkar.png"
+import education from "../../assets/pjb/Header/highres/education-logo.png"
 import RightLogo from "../../assets/Profile.svg";
 import { NavLink, useHistory } from 'react-router-dom';
 import "./index.css"
@@ -31,13 +30,11 @@ const DashboardHeader: FC<Props> = ({ user_in_session, _toogleUserSession }) => 
           <NavLink to={"/"}>
             <Row className="image_row" gutter={10}>
               <Col>
-                <Image src={LeftLogo} height={"40px"} preview={false} />
+                <Image src={BrataSarkar} height={"40px"} preview={false} />
               </Col>
+
               <Col>
-                <Image src={LeftLogo2} height={"40px"} preview={false} />
-              </Col>
-              <Col>
-                <Image src={LeftLogo3} height={"40px"} preview={false} />
+                <Image src={education} height={"40px"} preview={false} />
               </Col>
             </Row>
           </NavLink>

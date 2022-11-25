@@ -1,9 +1,8 @@
 import { FC } from "react";
 import { Col, Image, Row } from 'antd';
 import "./index.less";
-import LeftLogo from "../../assets/pjb/Header/headerleft1.png";
-import LeftLogo2 from "../../assets/pjb/Header/headerleft2.png";
-import LeftLogo3 from "../../assets/pjb/Header/Azadi_Ka_Amrit_Mahotsav.png";
+import bharatSarkar from "../../assets/pjb/Header/highres/bharat-sarkar.png"
+import education from "../../assets/pjb/Header/highres/education-logo.png"
 import { NavLink } from 'react-router-dom';
 import "./index.css"
 import { connect } from 'react-redux/es/exports';
@@ -23,14 +22,9 @@ const DashboardHeader: FC<Props> = () => {
                     <NavLink to={"/"}>
                         <Row className="image_row" gutter={10}>
                             <Col>
-                                <Image src={LeftLogo} height={"40px"} preview={false} />
+                                <Image src={bharatSarkar} height={"40px"} preview={false} />
                             </Col>
-                            <Col>
-                                <Image src={LeftLogo2} height={"40px"} preview={false} />
-                            </Col>
-                            <Col>
-                                <Image src={LeftLogo3} height={"40px"} preview={false} />
-                            </Col>
+
                         </Row>
                     </NavLink>
                 </Col>
