@@ -117,10 +117,11 @@
 .iframeHeader > p {
   margin-bottom: 0;
   font-weight: 700;
+  font-size: 18px;
 }
 
 .iframeHeader2__Height {
-  height: 60px;
+  height: 50px;
 }
 
 .iframeHeader__Height {
