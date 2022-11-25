@@ -52,13 +52,18 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  flex-direction: column;
+}
+.Section3__Right {
+  display: flex;
 }
 
 .Section3__Right--iframe {
   box-shadow: var(--card-shadow);
   border-radius: var(--card-radius);
   padding: 10px;
-  width: 48%;
+  width: 98%;
+  height: 24vh;
 }
 
 .Section3__Right--iframeBig {
@@ -69,7 +74,7 @@
 }
 
 .Section3__RightIframeContainer2--Iframe {
-  height: 34.5vh;
+  height: 31vh;
   border-radius: var(--card-radius);
   box-shadow: var(--card-shadow);
   padding: 10px;
@@ -78,9 +83,10 @@
 .Section3__RightIframeContainer2 {
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
 }
 .Section3__RightIframeContainer2 > div {
-  width: 49%;
+  width: 98%;
 }
 
 .Screen3Iframes {

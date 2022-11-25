@@ -14,6 +14,7 @@ export class Screen3 extends Component {
                         <div className='Screen3Part'>
                             <div className="Screen3__IframeContainer">
                                 <IframeHeading greenVariant label='Finance' />
+
                                 <div className="Screen3__IframeContainerChild">
                                     <div className='Screen3__IframeContainer2'>
                                         <div className="Screen3__Iframe--left mb_m">
@@ -70,11 +71,12 @@ export class Screen3 extends Component {
                                     </div>
                                 </div>
                             </div>
+
                             <div className="Screen3__IframeContainer">
                                 <IframeHeading greenVariant label='Civil Works' />
-                                <div className="Section3__Right">
-                                    <div className="Section3__RightIframeContainer1 mb">
-                                        <div className="Section3__Right--iframe">
+                                <div className="Screen3__IframeContainerChild">
+                                    <div className='Screen3__IframeContainer2'>
+                                        <div className="Screen3__Iframe--left mb_m">
                                             <QuestionWithIframe
                                                 questionId={269}
                                                 width="100%"
@@ -83,7 +85,7 @@ export class Screen3 extends Component {
                                                 handleLoadCounter={() => { }}
                                             />
                                         </div>
-                                        <div className="Section3__Right--iframe">
+                                        <div className="Screen3__Iframe--left mb_m">
                                             <QuestionWithIframe
                                                 questionId={270}
                                                 width="100%"
@@ -92,7 +94,7 @@ export class Screen3 extends Component {
                                                 handleLoadCounter={() => { }}
                                             />
                                         </div>
-                                        <div className="Section3__Right--iframeBig">
+                                        <div className="Screen3__Iframe--left">
                                             <QuestionWithIframe
                                                 questionId={274}
                                                 width="100%"
@@ -102,10 +104,10 @@ export class Screen3 extends Component {
                                             />
                                         </div>
                                     </div>
-                                    <div className="Section3__RightIframeContainer2">
-                                        <div>
-                                            <IframeHeading label='Top District' greenVariant />
-                                            <div className="Section3__RightIframeContainer2--Iframe">
+                                    <div className='Screen3__IframeContainer2'>
+                                        <div className='mb'>
+                                            <IframeHeading greenVariant label='Top District' />
+                                            <div className='Screen2__Container3--iframe'>
                                                 <QuestionWithIframe
                                                     questionId={271}
                                                     width="100%"
@@ -115,8 +117,8 @@ export class Screen3 extends Component {
                                             </div>
                                         </div>
                                         <div>
-                                            <IframeHeading label='Bottom District' greenVariant />
-                                            <div className="Section3__RightIframeContainer2--Iframe">
+                                            <IframeHeading greenVariant label='Bottom District' />
+                                            <div className='Screen2__Container3--iframe'>
                                                 <QuestionWithIframe
                                                     questionId={272}
                                                     width="100%"
@@ -128,6 +130,7 @@ export class Screen3 extends Component {
                                     </div>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                     <div className="Screen3__Container2">
