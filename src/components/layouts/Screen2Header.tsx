@@ -1,7 +1,6 @@
 import { FC } from "react";
 import { Col, Image, Row } from 'antd';
 import "./index.less";
-import RightLogo from "../../assets/Profile.svg";
 import "./index.css"
 import { connect } from 'react-redux/es/exports';
 import { toogleUserSession } from "../../redux/user/actions";

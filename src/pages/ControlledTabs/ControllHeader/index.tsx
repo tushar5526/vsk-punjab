@@ -7,53 +7,6 @@ import RoleBasedFilters from "../../../components/RoleBasedFilters/RoleBasedFilt
 
 
 const DemoHeader = ({ tabs, _toogle, current, level }: any) => {
-    const districts = [
-        {
-            value: "SIRMAUR",
-            label: "SIRMAUR",
-        },
-        {
-            value: "CHAMBA",
-            label: "CHAMBA",
-        }, {
-            value: "UNA",
-            label: 'UNA',
-        }, {
-            value: "KULLU",
-            label: 'KULLU',
-        }, {
-            value: "KANGRA",
-            label: 'KANGRA',
-        },
-        {
-            value: "MANDI",
-            label: 'MANDI',
-        },
-        {
-            value: "SOLAN",
-            label: 'SOLAN',
-        },
-        {
-            value: "SHIMLA",
-            label: 'SHIMLA',
-        },
-        {
-            value: "HAMIRPUR",
-            label: 'HAMIRPUR',
-        },
-        {
-            value: "LAHUL AND SPITI",
-            label: 'LAHUL AND SPITI',
-        },
-        {
-            value: "BILASPUR",
-            label: 'BILASPUR',
-        },
-        {
-            value: "KINNAUR",
-            label: 'KINNAUR',
-        },
-    ]
 
     const handleChange = (e: any) => {
         console.log(e, "handle change")
