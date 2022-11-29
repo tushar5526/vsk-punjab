@@ -2,7 +2,6 @@ import { FC } from "react";
 import { Col, Image, Row } from 'antd';
 import "./index.less";
 import bharatSarkar from "../../assets/pjb/Header/highres/bharat-sarkar.png"
-import education from "../../assets/pjb/Header/highres/education-logo.png"
 import { NavLink } from 'react-router-dom';
 import "./index.css"
 import { connect } from 'react-redux/es/exports';
@@ -24,7 +23,6 @@ const DashboardHeader: FC<Props> = () => {
                             <Col>
                                 <Image src={bharatSarkar} height={"40px"} preview={false} />
                             </Col>
-
                         </Row>
                     </NavLink>
                 </Col>
