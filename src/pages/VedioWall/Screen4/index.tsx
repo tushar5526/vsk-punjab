@@ -13,7 +13,6 @@ export class Screen4 extends Component {
             <>
                 <div className='Section4'>
                     <div className="Section4Child">
-                        {/* Mentoring start  */}
                         <SectionHeader Icon={mentoring} label='Mentoring' />
 
                         <div className="Section4ChildCardsContainer1 mb">
@@ -72,7 +71,6 @@ export class Screen4 extends Component {
                                 />
                             </div>
                         </div>
-                        {/* Mentoring end */}
 
                         <IframeHeading greenVariant label='Monthly Cadre-wise % School Visits Completed against the target' />
                         <div className="Section4Graph">
