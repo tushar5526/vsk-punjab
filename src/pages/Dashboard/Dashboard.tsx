@@ -3,10 +3,11 @@ import { connect } from 'react-redux/es/exports';
 import QuestionWithIframe from '../../components/QuestionWIthIframe';
 
 const Dashboard = ({ dashboard }: any) => {
-    console.log(dashboard, "dashboard")
     return (
         <div className='Dashboard'>
-            <div className='Dashboard__iframeContainer'>
+            <div onScroll={e => {
+                console.log(e, "scroll from dashboard")
+            }} className='Dashboard__iframeContainer'>
                 <QuestionWithIframe
                     questionId={dashboard}
                     type={1}
@@ -17,7 +18,6 @@ const Dashboard = ({ dashboard }: any) => {
                     handleLoadCounter={() => { }}
                 />
             </div>
-
         </div>
     )
 }
