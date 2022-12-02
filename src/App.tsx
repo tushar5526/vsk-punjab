@@ -111,6 +111,7 @@ const App: FC = ({ _addUserToState }: any) => {
             <PrivateRoute exact path={ROUTE_CONST.map_test} component={() => <CreateHeaderContext comp={CustomMap} />} />
             <PrivateRoute exact path={ROUTE_CONST.card_poc1} component={() => <CreateHeaderContext comp={ScreenPoc} />} />
             <PrivateRoute exact path={ROUTE_CONST.card_poc2} component={() => <CreateHeaderContext comp={ScreenPoc2} />} />
+            <PrivateRoute exact path={ROUTE_CONST.deployment_test} component={() => <div>Deployment Working</div>} />
             <PrivateRoute exact path={ROUTE_CONST.root} component={() => <CreateHeaderContext comp={ControlledTabs} />} />
             <Route />
           </Switch>

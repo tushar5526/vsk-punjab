@@ -1,10 +1,23 @@
 import ControllHeader from './ControllHeader';
 import "./index.css"
 import GreayFooter from './GreyFooter/GreayFooter';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Dashboard from '../Dashboard/Dashboard';
 
 const ControlledTabs = () => {
+    const [show, handleShow] = useState(true)
+
+    const transitionNavbar = () => {
+        if (window.scrollY > 100) {
+            handleShow(false);
+        } else {
+            handleShow(true)
+        }
+    }
+    useEffect(() => {
+        window.addEventListener('scroll', transitionNavbar)
+        return () => window.removeEventListener("scroll", transitionNavbar)
+    }, [])
     const [tabs, setTabs] = useState([
         {
             id: 1,
@@ -56,7 +69,7 @@ const ControlledTabs = () => {
     // }, [])
     return (
         <>
-            <ControllHeader tabs={tabs} />
+            {show && <ControllHeader tabs={tabs} />}
             <Dashboard />
             <GreayFooter />
         </>
