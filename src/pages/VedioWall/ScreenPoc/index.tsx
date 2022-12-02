@@ -36,8 +36,8 @@ class ScreenPoc extends Component<Props, State> {
                 <SectionHeader Icon={StudentAttendanceIcon} label={"POC 1"} />
                 <div>
                     <CardsPoc1 type={1} fill={4} />
-                    <CardsPoc1 type={1} fill={4} />
-                    <CardsPoc1 type={1} fill={4} />
+                    {/* <CardsPoc1 type={1} fill={4} />
+                    <CardsPoc1 type={1} fill={4} /> */}
                 </div>
             </>
         )
