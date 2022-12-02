@@ -6,8 +6,8 @@ import RoleBasedFilters from "../../../components/RoleBasedFilters/RoleBasedFilt
 
 
 
-const DemoHeader = ({ tabs, _toogle, current, level }: any) => {
 
+const DemoHeader = ({ tabs, _toogle, current, level }: any) => {
     const handleChange = (e: any) => {
         console.log(e, "handle change")
     }
@@ -27,17 +27,20 @@ const DemoHeader = ({ tabs, _toogle, current, level }: any) => {
                     <div className="demoHeader__span demoHeader__spaceBetween">
                         <div className="demoHeader__Tabs demoHeader__Tabs__Between">
                             {tabs?.map(({ dashboard_id, name, id }: any, idx: number) => (
-                                <button onClick={() => _toogle({
-                                    dashboard: dashboard_id,
-                                    current: idx
-                                })} className={`demoHeader__button ${current === idx && "demoHeader__button--active"}`}>{name}</button>
+                                <button
+                                    onClick={() =>
+                                        _toogle({
+                                            dashboard: dashboard_id,
+                                            current: idx
+                                        })
+
+                                    }
+                                    className={`demoHeader__button ${current === idx && "demoHeader__button--active"}`}>{name}</button>
                             ))}
                         </div>
-
                         <div className="demoHeader__Tabs demoHeader__Tabs__Evenly">
-                            <RoleBasedFilters />
+                            <RoleBasedFilters filtersPages={tabs[current]?.filters} />
                         </div>
-
                     </div>
 
                 </div>
@@ -52,6 +55,7 @@ const DemoHeader = ({ tabs, _toogle, current, level }: any) => {
 const mapDispatchToProps = (dispatch: any) => ({
     _toogle: (obj: object) => dispatch(toogleTab(obj))
 })
+
 const mapStateToProps = ({ tab: { current, dashboard } }: any) => ({
     current,
     dashboard

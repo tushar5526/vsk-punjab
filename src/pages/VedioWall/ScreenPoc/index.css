@@ -1,0 +1,17 @@
+.VdoWallIframePocContainer1 {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.VdoWallIframePocContainer1__Iframe {
+  height: fit-content;
+  width: 25%;
+  margin-bottom: 20px;
+  box-shadow: var(--card-shadow);
+  border-radius: var(--card-radius);
+  height: 24vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

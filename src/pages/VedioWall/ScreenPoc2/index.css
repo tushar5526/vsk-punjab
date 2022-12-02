@@ -1,0 +1,30 @@
+.VdoWallIframePocContainer1 {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  padding: 0 20px;
+}
+
+.VdoWallIframePocContainer1__IframeBig {
+  height: fit-content;
+  width: 25%;
+  margin-bottom: 50px;
+  box-shadow: var(--card-shadow);
+  border-radius: var(--card-radius);
+  height: 28vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.VdoWallIframePocContainer1__IframeSmall {
+  height: fit-content;
+  width: 25%;
+  margin-bottom: 50px;
+  box-shadow: var(--card-shadow);
+  border-radius: var(--card-radius);
+  height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
