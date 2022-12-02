@@ -1,9 +1,4 @@
-import { notification } from 'antd'
 import { Component } from 'react'
-import MapComponent from '../../../components/MapComponent/MapComponent'
-import QuestionWithIframe from '../../../components/QuestionWIthIframe'
-import API_SERVICE from '../../../services/api-service'
-import IframeHeading from '../../ControlledTabs/Tabs/utils/IframeHeading'
 import SectionHeader from '../../ControlledTabs/Tabs/utils/SectionHeader'
 import StudentAttendanceIcon from "../../../assets/pjb/SectionHeader/student_attendance.png"
 import "./index.css"
@@ -26,9 +21,6 @@ class ScreenPoc extends Component<Props, State> {
             markerData: null
         }
     }
-
-
-
 
     render() {
         return (
