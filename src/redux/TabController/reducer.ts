@@ -16,6 +16,11 @@ const controllTabReducer = (state = INITIAL_STATE, action: any) => {
         current,
         dashboard,
       };
+    case types.ADD_FILTER_TAB:
+      return {
+        ...state,
+        dashboard: action.payload,
+      };
     default:
       return state;
   }

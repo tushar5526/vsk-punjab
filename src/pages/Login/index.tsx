@@ -8,7 +8,7 @@ import {
 } from "@ant-design/icons";
 import "./login.css";
 import { Content } from "antd/es/layout/layout";
-import Login_Img from "../../assets/Login_Img.png";
+import Login_Img from "../../assets/pjb/login/login-bg.jpg";
 import Side_Img from "../../assets/image 135.png";
 import API_SERVICE from "../../services/api-service";
 import { useHistory } from 'react-router-dom';

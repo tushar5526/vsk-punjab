@@ -16,7 +16,7 @@ const Screen2: React.FC = () => {
                     <div className="Screen2__Container1 mb">
                         <div className="Screen2__Container1--iframe">
                             <QuestionWithIframe
-                                questionId={84}
+                                questionId={293}
                                 width="100%"
                                 height="100%"
                                 nonDownloadable={true}
@@ -25,7 +25,7 @@ const Screen2: React.FC = () => {
                         </div>
                         <div className="Screen2__Container1--iframe">
                             <QuestionWithIframe
-                                questionId={84}
+                                questionId={294}
                                 width="100%"
                                 height="100%"
                                 nonDownloadable={true}
@@ -34,7 +34,7 @@ const Screen2: React.FC = () => {
                         </div>
                         <div className="Screen2__Container1--iframe">
                             <QuestionWithIframe
-                                questionId={84}
+                                questionId={295}
                                 width="100%"
                                 height="100%"
                                 nonDownloadable={true}
@@ -46,7 +46,7 @@ const Screen2: React.FC = () => {
                     <div className="Screen2__Container2">
                         <div className="Screen2__Container2--iframe">
                             <QuestionWithIframe
-                                questionId={152}
+                                questionId={297}
                                 width="100%"
                                 height="100%"
                                 handleLoadCounter={() => { }}
@@ -54,7 +54,7 @@ const Screen2: React.FC = () => {
                         </div>
                         <div className="Screen2__Container2--iframe">
                             <QuestionWithIframe
-                                questionId={152}
+                                questionId={298}
                                 width="100%"
                                 height="100%"
                                 handleLoadCounter={() => { }}
@@ -62,7 +62,7 @@ const Screen2: React.FC = () => {
                         </div>
                         <div className="Screen2__Container2--iframe">
                             <QuestionWithIframe
-                                questionId={152}
+                                questionId={299}
                                 width="100%"
                                 height="100%"
                                 handleLoadCounter={() => { }}
@@ -74,7 +74,7 @@ const Screen2: React.FC = () => {
                     <IframeHeading greenVariant label='Month-wise Trend of Students Receiving MDM' />
                     <div className="Screen2__Container3--iframe">
                         <QuestionWithIframe
-                            questionId={152}
+                            questionId={296}
                             width="100%"
                             height="100%"
                             handleLoadCounter={() => { }}

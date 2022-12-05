@@ -8,6 +8,10 @@
   height: 80vh;
 }
 
+.Screen1__Container1_DistrictPerformance {
+  width: 48%;
+}
+
 .Screen1__Container1 {
   display: flex;
   height: fit-content;
@@ -16,7 +20,8 @@
 
 .Screen1__Container--iframe {
   width: 42%;
-  height: 14vh;
+  height: 16vh;
+  padding: 10px;
   box-shadow: var(--card-shadow);
   border-radius: var(--card-radius);
 }
@@ -40,4 +45,16 @@
 
 .Screen__Container1--map {
   height: 76vh;
+}
+
+.Screen1__Container1_DistrictPerformance {
+  display: flex;
+  flex-direction: column;
+}
+
+.Screen1__Container1_DistrictPerformance--iframe {
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  padding: 10px;
+  height: 24vh;
 }

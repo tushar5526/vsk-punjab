@@ -49,7 +49,7 @@ export class Screen3 extends Component {
                                     <div className='Screen3__IframeContainer2'>
                                         <div className='mb'>
                                             <IframeHeading greenVariant label='Top District' />
-                                            <div className='Screen2__Container3--iframe'>
+                                            <div className='TopBottomDistrictScreen2--iframe'>
                                                 <QuestionWithIframe
                                                     questionId={267}
                                                     width="100%"
@@ -60,7 +60,7 @@ export class Screen3 extends Component {
                                         </div>
                                         <div>
                                             <IframeHeading greenVariant label='Bottom District' />
-                                            <div className='Screen2__Container3--iframe'>
+                                            <div className='TopBottomDistrictScreen2--iframe'>
                                                 <QuestionWithIframe
                                                     questionId={268}
                                                     width="100%"
@@ -108,7 +108,7 @@ export class Screen3 extends Component {
                                     <div className='Screen3__IframeContainer2'>
                                         <div className='mb'>
                                             <IframeHeading greenVariant label='Top District' />
-                                            <div className='Screen2__Container3--iframe'>
+                                            <div className='TopBottomDistrictScreen2--iframe'>
                                                 <QuestionWithIframe
                                                     questionId={271}
                                                     width="100%"
@@ -119,7 +119,7 @@ export class Screen3 extends Component {
                                         </div>
                                         <div>
                                             <IframeHeading greenVariant label='Bottom District' />
-                                            <div className='Screen2__Container3--iframe'>
+                                            <div className='TopBottomDistrictScreen2--iframe'>
                                                 <QuestionWithIframe
                                                     questionId={272}
                                                     width="100%"
@@ -134,12 +134,13 @@ export class Screen3 extends Component {
 
                         </div>
                     </div>
+
                     <div className="Screen3__Container2">
                         <SectionHeader Icon={infrastructure} label='Infrastructure' />
                         <IframeHeading greenVariant label='Smart School Phase-wise Compliance' />
-                        <div className="Screen3Iframes">
-                            <div className="Screen3Iframes__Container">
-                                <div className="Screen3Iframes__Container--iframes mb">
+                        <div className="Screen3__IframeContainerChild">
+                            <div className='Screen3__IframeContainer2'>
+                                <div className="Screen3__Iframe--left mb_m">
                                     <QuestionWithIframe
                                         questionId={275}
                                         width="100%"
@@ -148,7 +149,7 @@ export class Screen3 extends Component {
                                         handleLoadCounter={() => { }}
                                     />
                                 </div>
-                                <div className="Screen3Iframes__Container--iframes mb">
+                                <div className="Screen3__Iframe--left mb_m">
                                     <QuestionWithIframe
                                         questionId={276}
                                         width="100%"
@@ -157,7 +158,7 @@ export class Screen3 extends Component {
                                         handleLoadCounter={() => { }}
                                     />
                                 </div>
-                                <div className="Screen3Iframes__Container--iframes">
+                                <div className="Screen3__Iframe--left">
                                     <QuestionWithIframe
                                         questionId={277}
                                         width="100%"
@@ -167,10 +168,10 @@ export class Screen3 extends Component {
                                     />
                                 </div>
                             </div>
-                            <div className="Screen3Iframes__Container">
-                                <div>
+                            <div className='Screen3__IframeContainer2'>
+                                <div className='mb'>
                                     <IframeHeading greenVariant label='Top District' />
-                                    <div className="Screen3Iframes__ContainerBig mb">
+                                    <div className='TopBottomDistrictScreen2--iframe'>
                                         <QuestionWithIframe
                                             questionId={278}
                                             width="100%"
@@ -181,7 +182,7 @@ export class Screen3 extends Component {
                                 </div>
                                 <div>
                                     <IframeHeading greenVariant label='Bottom District' />
-                                    <div className="Screen3Iframes__ContainerBig">
+                                    <div className='TopBottomDistrictScreen2--iframe'>
                                         <QuestionWithIframe
                                             questionId={279}
                                             width="100%"

@@ -22,6 +22,7 @@
   box-shadow: var(--card-shadow);
   width: 32%;
   padding: 10px;
+  height: 18vh;
 }
 
 .Screen2__Container2 {
@@ -33,13 +34,23 @@
 }
 
 .Screen2__Container2--iframe {
-  width: 49%;
-  height: 58vh;
+  width: 32%;
+  height: 65vh;
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  padding: 10px;
 }
 
 .Screen2__Container3--iframe {
   box-shadow: var(--card-shadow);
-  height: 30vh;
+  height: 83.8vh;
+  border-radius: var(--card-radius);
+  padding: 10px;
+}
+
+.TopBottomDistrictScreen2--iframe {
+  box-shadow: var(--card-shadow);
+  height: 40vh;
   border-radius: var(--card-radius);
   padding: 10px;
 }

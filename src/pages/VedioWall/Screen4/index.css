@@ -20,6 +20,9 @@
 
 .Section4Graph {
   height: 50vh;
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  padding: 10px;
 }
 
 .Section4RightIframeContainer {
@@ -57,7 +60,8 @@
 
 .Section4ChildCardsContainerIframe {
   width: 32%;
-  height: 50%;
+  height: 16vh;
+  padding: 10px;
 }
 
 .Section4ChildCardsContainerIframeType2 {
@@ -66,12 +70,13 @@
 }
 
 .Screen4IframeContainer__Common__Width1 {
-  width: 49%;
-  height: fit-content;
+  width: 47%;
+  height: 33.55vh;
 }
 
 .Screen4IframeContainer__Common__Width2 {
   width: 99%;
+  height: 53.1vh;
 }
 
 .Screen4IframeContainer__Common__height1 {
