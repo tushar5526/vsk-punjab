@@ -87,18 +87,11 @@ export default function MapComponent({ config, markers }) {
                     <Popup
                       className="tooltip-popup"
                       onOpen={() => {
-                        // getToolTipData(
-                        //   item?.district,
-                        //   item?.block,
-                        //   item?.school,
-                        //   item?.ay,
-                        //   item?.at
-                        // );
+                        // instruction written here will be executed -
+                        // - while the tooltip is opened
                       }}
                     >
-                      {toolTipData && (
-                        <div>this is a tooltip made by vinay</div>
-                      )}
+                      <div>{item.tooltip}</div>
                     </Popup>
                   </Marker>
                 );
