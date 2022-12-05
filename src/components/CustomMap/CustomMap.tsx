@@ -48,9 +48,8 @@ const CustomMap = () => {
         getMarkerData()
     }, [])
     return (
-        <div className="MyMap">
-            <MapComponent config={null} markers={markers} />
-        </div>
+
+        <MapComponent config={null} markers={markers} />
     )
 }
 

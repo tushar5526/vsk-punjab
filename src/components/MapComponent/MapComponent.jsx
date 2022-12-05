@@ -19,10 +19,10 @@ const default_toolTipData = {
 };
 
 export default function MapComponent({ config, markers }) {
-  const center = config?.markers?.postions[0]?.position || [28.7041, 77.1025];
+  // const center = config?.markers?.postions[0]?.position || [28.7041, 77.1025];
+  const center = [30.8244732639336, 75.173516308009];
   const byGeoJson = config?.bounds?.byGeoJson?.length;
   const byBbox = config?.bounds?.byBbox?.length;
-  const [toolTipData, setToolTipData] = useState(default_toolTipData);
 
   const tempBounds = [
     [76.715049743652401, 31.588310241699446],
@@ -131,7 +131,7 @@ export default function MapComponent({ config, markers }) {
                         // getToolTipData(item.district, item.block, item.school);
                       }}
                     >
-                      {toolTipData}
+                      <div>Empty Tool Tip</div>
                     </Popup>
                   </Marker>
                 );
