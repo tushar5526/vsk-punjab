@@ -1,7 +1,7 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { IframeContextContext } from "../App";
 
-const jwt = require("jsonwebtoken");
+import jwt from "jsonwebtoken";
 
 var VSKP_METABASE_SITE_URL = "https://vskhp.in/metabase";
 var VSKP_METABASE_SECRET_KEY = "68a529116afd75d19c1d625133ea50207a6571d5e786a25a24c14f61555886b5";
@@ -45,9 +45,10 @@ const QuestionWithIframeProtected = ({
     } else {
       var payload = {
         resource: { dashboard: questionId },
-        params: {},
+        params: params || {},
         exp: Math.round(Date.now() / 1000) + (10 * 60) // 10 minute expiration
       };
+
       const token = jwt.sign(payload, VSKP_METABASE_SECRET_KEY);
       setUrl(
         VSKP_METABASE_SITE_URL +
@@ -60,10 +61,11 @@ const QuestionWithIframeProtected = ({
   };
 
   useEffect(() => {
+    console.log(params, "parms filters")
     if (questionId) {
       generateUrl();
     }
-  }, [questionId, params?.month, params?.Quarter]);
+  }, [questionId, params?.district, params?.month, params?.Quarter]);
 
   useEffect(() => {
     if (

@@ -2,27 +2,28 @@ import "./Dashboard.css"
 import { connect } from 'react-redux/es/exports';
 import QuestionWithIframe from '../../components/QuestionWIthIframe';
 
-const Dashboard = ({ dashboard }: any) => {
+const Dashboard = ({ dashboard, params }: any) => {
     return (
         <div className='Dashboard'>
-            <div onScroll={e => {
-                console.log(e, "scroll from dashboard")
-            }} className='Dashboard__iframeContainer'>
+            <div className='Dashboard__iframeContainer'>
                 <QuestionWithIframe
                     questionId={dashboard}
                     type={1}
                     width={"100%"}
-                    // params={{ ...filters }}
+                    params={params}
                     height="100%"
                     nonDownloadable={true}
                     handleLoadCounter={() => { }}
                 />
             </div>
-        </div>
+        </div >
     )
 }
 
-const mapStateToProps = ({ tab: { dashboard } }: any) => ({
-    dashboard
+const mapStateToProps = ({ tab: { dashboard }, filters: { district } }: any) => ({
+    dashboard,
+    params: {
+        district
+    }
 })
 export default connect(mapStateToProps)(Dashboard)

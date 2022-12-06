@@ -36,7 +36,7 @@
 }
 
 .demoHeader__button {
-  width: 25%;
+  width: 32%;
   height: 100%;
   border: none;
   background-color: var(--grey-primary);
@@ -47,10 +47,6 @@
   font-weight: 700;
 }
 
-.demoHeader__select {
-  width: 18% !important;
-  cursor: pointer !important;
-}
 .demoHeader__Tabs {
   width: 50%;
   height: 100%;
@@ -60,10 +56,15 @@
 .demoHeader__Tabs__Between {
   justify-content: space-between;
 }
+/* vinay */
+.demoHeader__select {
+  width: 23% !important;
+  cursor: pointer !important;
+}
 
 .demoHeader__Tabs__Evenly {
   justify-content: flex-end;
-  gap: 10%;
+  gap: 5%;
 }
 
 .demoHeader__select__top {
