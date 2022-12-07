@@ -7,6 +7,7 @@ import { toogleFilter } from '../../redux/TabController/actions';
 import * as _ from "lodash"
 import filterActions from '../../redux/filters/action';
 import { useEffect } from 'react';
+import { useState } from 'react';
 
 interface Props {
     roles: {
@@ -32,6 +33,11 @@ const RoleBasedFilters = (props: Props) => {
     // use geographic_level to get permissons based on the user login
     // using dummyRoles to test functionality
     const { permissions } = getFiltersValidationsBasedOnRole(dummyRoles.STATE)
+    const [geo, setGeo] = useState({
+        district: "",
+        block: "",
+        cluster: ""
+    })
     // const { permissions, geo } = getFiltersValidationsBasedOnRole(dummyRoles.STATE)
 
 
@@ -41,15 +47,24 @@ const RoleBasedFilters = (props: Props) => {
 
     const handleDistrictChange = (e: any) => {
         props._toogleFilterPage(props.filtersPages.district)
+        props._applyClusterFilter(null)
+        props._applyBlockFilter(null)
         props._applyDistrictFilter(e)
+        setGeo({ ...geo, district: e })
     }
     const handleBlockChange = (e: any) => {
         props._toogleFilterPage(props.filtersPages.block)
         props._applyBlockFilter(e)
+        props._applyClusterFilter(null)
+        props._applyDistrictFilter(null)
+        setGeo({ ...geo, block: e })
     }
     const handleClusterChange = (e: any) => {
         props._toogleFilterPage(props.filtersPages.cluster)
         props._applyClusterFilter(e)
+        props._applyBlockFilter(null)
+        props._applyDistrictFilter(null)
+        setGeo({ ...geo, cluster: e })
     }
     if (!props.roles.designation) return <div>Loading....</div>
     return (
@@ -57,7 +72,7 @@ const RoleBasedFilters = (props: Props) => {
             <Select
                 className='demoHeader__select'
                 suffixIcon={<img alt="dropdown" className='demoHeader__dropdown--suffix' src={down_arrow} />}
-                value={props.selectedDistrict || "District"}
+                value={geo.district || "District"}
                 onChange={handleDistrictChange}
                 options={districts}
                 disabled={permissions?.district}
@@ -65,18 +80,18 @@ const RoleBasedFilters = (props: Props) => {
             <Select
                 className='demoHeader__select'
                 suffixIcon={<img alt="dropdown" className='demoHeader__dropdown--suffix' src={down_arrow} />}
-                value={props.selectedBlock || "Block"}
+                value={geo.block || "Block"}
                 onChange={handleBlockChange}
                 options={block}
-                disabled={permissions?.block || !props.selectedDistrict}
+                disabled={permissions?.block}
             />
             <Select
                 className='demoHeader__select'
                 suffixIcon={<img alt="dropdown" className='demoHeader__dropdown--suffix' src={down_arrow} />}
                 onChange={handleClusterChange}
                 options={cluster}
-                value={props.selectedCluster || "Cluster"}
-                disabled={permissions?.cluster || !props.selectedDistrict || !props.selectedBlock}
+                value={geo.cluster || "Cluster"}
+                disabled={permissions?.cluster}
             />
         </>
     )

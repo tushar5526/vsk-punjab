@@ -12,7 +12,7 @@ const Dashboard = ({ dashboard, district, block, cluster }: any) => {
                     questionId={dashboard}
                     type={1}
                     width={"100%"}
-                    params={district && !block && !cluster ? { district } : district && block && !cluster ? { block } : { cluster }}
+                    params={district ? { district } : block ? { block } : { cluster }}
                     height="100%"
                     nonDownloadable={true}
                     handleLoadCounter={() => { }}

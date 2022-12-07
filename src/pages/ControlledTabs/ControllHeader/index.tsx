@@ -3,11 +3,12 @@ import down_arrow from "../../../assets/pjb/utils/down_arrow.png"
 import { toogleTab } from '../../../redux/TabController/actions';
 import { connect } from "react-redux/es/exports"
 import RoleBasedFilters from "../../../components/RoleBasedFilters/RoleBasedFilters";
+import filterActions from "../../../redux/filters/action";
 
 
 
 
-const DemoHeader = ({ tabs, _toogle, current, level }: any) => {
+const DemoHeader = ({ tabs, _toogle, current, level, _applyDistrictFilter, _applyBlockFilter, _applyClusterFilter }: any) => {
     const handleChange = (e: any) => {
         console.log(e, "handle change")
     }
@@ -28,12 +29,15 @@ const DemoHeader = ({ tabs, _toogle, current, level }: any) => {
                         <div className="demoHeader__Tabs demoHeader__Tabs__Between">
                             {tabs?.map(({ dashboard_id, name, id }: any, idx: number) => (
                                 <button
-                                    onClick={() =>
+                                    onClick={() => {
                                         _toogle({
                                             dashboard: dashboard_id,
                                             current: idx
                                         })
-
+                                        _applyDistrictFilter(null)
+                                        _applyBlockFilter(null)
+                                        _applyClusterFilter(null)
+                                    }
                                     }
                                     className={`demoHeader__button ${current === idx && "demoHeader__button--active"}`}>{name}</button>
                             ))}
@@ -53,7 +57,10 @@ const DemoHeader = ({ tabs, _toogle, current, level }: any) => {
 
 
 const mapDispatchToProps = (dispatch: any) => ({
-    _toogle: (obj: object) => dispatch(toogleTab(obj))
+    _toogle: (obj: object) => dispatch(toogleTab(obj)),
+    _applyDistrictFilter: (district: string) => dispatch(filterActions.applyDistrict(district)),
+    _applyBlockFilter: (block: string) => dispatch(filterActions.applyBlock(block)),
+    _applyClusterFilter: (cluster: string) => dispatch(filterActions.applyCluster(cluster))
 })
 
 const mapStateToProps = ({ tab: { current, dashboard } }: any) => ({
