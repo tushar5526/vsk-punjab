@@ -42,8 +42,8 @@ const RoleBasedFilters = (props: Props) => {
 
 
     const districts = getDataFromLodash(lodashTypes.DISTRICT)
-    const block = getDataFromLodash(lodashTypes.BLOCK, props.selectedDistrict)
-    const cluster = getDataFromLodash(lodashTypes.CLUSTER, props.selectedBlock)
+    const block = getDataFromLodash(lodashTypes.BLOCK, geo.district)
+    const cluster = getDataFromLodash(lodashTypes.CLUSTER, geo.block)
 
     const handleDistrictChange = (e: any) => {
         props._toogleFilterPage(props.filtersPages.district)
