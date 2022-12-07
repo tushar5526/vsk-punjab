@@ -6,6 +6,7 @@ import { dummyRoles } from '../../services/parameters';
 import { toogleFilter } from '../../redux/TabController/actions';
 import * as _ from "lodash"
 import filterActions from '../../redux/filters/action';
+import { useEffect } from 'react';
 
 interface Props {
     roles: {
@@ -16,9 +17,16 @@ interface Props {
     _toogleFilterPage: any
     _applyDistrictFilter: any
     _applyClusterFilter: any
-    _applyBlockFilter: any
+    _applyBlockFilter: any,
+    selectedDistrict: string,
+    selectedBlock: string,
+    selectedCluster: string
 }
 const RoleBasedFilters = (props: Props) => {
+
+    useEffect(() => {
+
+    }, [props])
 
     const { lodashTypes, getDataFromLodash, getFiltersValidationsBasedOnRole } = filterUtils
     // use geographic_level to get permissons based on the user login
@@ -28,9 +36,8 @@ const RoleBasedFilters = (props: Props) => {
 
 
     const districts = getDataFromLodash(lodashTypes.DISTRICT)
-    const block = getDataFromLodash(lodashTypes.BLOCK)
-    const cluster = getDataFromLodash(lodashTypes.CLUSTER)
-    console.log(districts, "districts")
+    const block = getDataFromLodash(lodashTypes.BLOCK, props.selectedDistrict)
+    const cluster = getDataFromLodash(lodashTypes.CLUSTER, props.selectedBlock)
 
     const handleDistrictChange = (e: any) => {
         props._toogleFilterPage(props.filtersPages.district)
@@ -50,7 +57,7 @@ const RoleBasedFilters = (props: Props) => {
             <Select
                 className='demoHeader__select'
                 suffixIcon={<img alt="dropdown" className='demoHeader__dropdown--suffix' src={down_arrow} />}
-                defaultValue={"District"}
+                value={props.selectedDistrict || "District"}
                 onChange={handleDistrictChange}
                 options={districts}
                 disabled={permissions?.district}
@@ -58,25 +65,28 @@ const RoleBasedFilters = (props: Props) => {
             <Select
                 className='demoHeader__select'
                 suffixIcon={<img alt="dropdown" className='demoHeader__dropdown--suffix' src={down_arrow} />}
-                defaultValue={"Block"}
+                value={props.selectedBlock || "Block"}
                 onChange={handleBlockChange}
                 options={block}
-                disabled={permissions?.block}
+                disabled={permissions?.block || !props.selectedDistrict}
             />
             <Select
                 className='demoHeader__select'
                 suffixIcon={<img alt="dropdown" className='demoHeader__dropdown--suffix' src={down_arrow} />}
-                defaultValue={"Cluster"}
                 onChange={handleClusterChange}
                 options={cluster}
-                disabled={permissions?.cluster}
+                value={props.selectedCluster || "Cluster"}
+                disabled={permissions?.cluster || !props.selectedDistrict || !props.selectedBlock}
             />
         </>
     )
 }
 
-const mapStateToProps = ({ session: { roles } }: any) => ({
-    roles
+const mapStateToProps = ({ session: { roles }, filters: { district, block, cluster } }: any) => ({
+    roles,
+    selectedDistrict: district,
+    selectedBlock: block,
+    selectedCluster: cluster
 })
 
 const mapDispatchToProps = (dispatch: any) => ({

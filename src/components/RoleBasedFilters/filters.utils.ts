@@ -62,7 +62,7 @@ const lodashTypes = {
   CLUSTER: "CLUSTER",
 };
 
-const getDataFromLodash = (type: string) => {
+const getDataFromLodash = (type: string, cascade?: string) => {
   switch (type) {
     case lodashTypes.DISTRICT:
       return _.uniqBy(location, "District").map((item) => ({
@@ -70,15 +70,19 @@ const getDataFromLodash = (type: string) => {
         label: item.District,
       }));
     case lodashTypes.BLOCK:
-      return _.uniqBy(location, "Block").map((item) => ({
-        value: item.Block,
-        label: item.Block,
-      }));
+      return _.uniqBy(location, "Block")
+        .filter((item) => item.District === cascade)
+        .map((item) => ({
+          value: item.Block,
+          label: item.Block,
+        }));
     case lodashTypes.CLUSTER:
-      return _.uniqBy(location, "Cluster").map((item) => ({
-        value: item.Cluster,
-        label: item.Cluster,
-      }));
+      return _.uniqBy(location, "Cluster")
+        .filter((item) => item.Block == cascade)
+        .map((item) => ({
+          value: item.Cluster,
+          label: item.Cluster,
+        }));
     default:
       break;
   }

@@ -12,8 +12,6 @@ interface Props {
     _toogleUserSession?: any,
 }
 const DashboardHeader: FC<Props> = () => {
-
-
     return (
         <div key={+new Date()} className="dashboard-header">
             <Row gutter={10} justify={"space-between"}>

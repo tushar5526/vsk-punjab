@@ -104,15 +104,10 @@
 
 .iframeHeader {
   width: 100%;
-  /* height: 50px; */
-  /* background-color: var(--green-secondary); */
   background-color: var(--grey-secondary);
-
-  /* color: white; */
   color: var(--green-new);
   display: flex;
   justify-content: center;
-  /* box-shadow: var(--card-shadow); */
   align-items: center;
 }
 .iframeHeader > p {
@@ -132,7 +127,6 @@
 .iframeHeader2 {
   width: 100%;
   background-color: var(--green-secondary);
-  /* background-color: var(--grey-secondary); */
   color: white;
   display: flex;
   justify-content: center;
