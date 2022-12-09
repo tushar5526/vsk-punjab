@@ -30,83 +30,14 @@ export class Screen1 extends Component<Props, State> {
             <>
                 <SectionHeader Icon={StudentAttendanceIcon} label={"Student Attendance"} />
                 <div className='Screen1'>
-                    <div className='Screen1__Container'>
-                        <div className="Screen1__Container1 mb">
-                            <div className="Screen1__Container--iframe">
-                                <QuestionWithIframe
-                                    questionId={253}
-                                    width="100%"
-                                    height="100%"
-                                    nonDownloadable={true}
-                                    handleLoadCounter={() => { }}
-                                />
-                            </div>
-                            <div className="Screen1__Container--iframe">
-                                <QuestionWithIframe
-                                    questionId={282}
-                                    width="100%"
-                                    height="100%"
-                                    nonDownloadable={true}
-                                    handleLoadCounter={() => { }}
-                                />
-                            </div>
-                        </div>
-                        <IframeHeading greenVariant label='District Performance' />
-                        <div className="Screen1__Container1 mb">
-                            <div className='Screen1__Container1_DistrictPerformance'>
-                                <IframeHeading greenVariant label='Top District' />
-                                <div className='Screen1__Container1_DistrictPerformance--iframe mb'>
-                                    <QuestionWithIframe
-                                        questionId={304}
-                                        width="100%"
-                                        height="100%"
-                                        nonDownloadable={true}
-                                        handleLoadCounter={() => { }}
-                                    />
-                                </div>
-                                <div className='Screen1__Container1_DistrictPerformance--iframe'>
-                                    <QuestionWithIframe
-                                        questionId={305}
-                                        width="100%"
-                                        height="100%"
-                                        nonDownloadable={true}
-                                        handleLoadCounter={() => { }}
-                                    />
-                                </div>
-                            </div>
-                            <div className='Screen1__Container1_DistrictPerformance'>
-                                <IframeHeading greenVariant label='Bottom District' />
-                                <div className='Screen1__Container1_DistrictPerformance--iframe mb'>
-                                    <QuestionWithIframe
-                                        questionId={306}
-                                        width="100%"
-                                        height="100%"
-                                        nonDownloadable={true}
-                                        handleLoadCounter={() => { }}
-                                    />
-                                </div>
-                                <div className='Screen1__Container1_DistrictPerformance--iframe'>
-                                    <QuestionWithIframe
-                                        questionId={307}
-                                        width="100%"
-                                        height="100%"
-                                        nonDownloadable={true}
-                                        handleLoadCounter={() => { }}
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className='Screen1__Container'>
-                        <IframeHeading greenVariant label='Month-wise Trend of Average Student Attendance' />
-                        <div className="Screen1__Container3">
-                            <QuestionWithIframe
-                                questionId={303}
-                                width="100%"
-                                height="100%"
-                                handleLoadCounter={() => { }}
-                            />
-                        </div>
+                    <div className='screen1NewIframe'>
+                        <QuestionWithIframe
+                            questionId={54}
+                            width="100%"
+                            type={1}
+                            height="100%"
+                            handleLoadCounter={() => { }}
+                        />
                     </div>
                     <div className='Screen1__Container'>
                         <IframeHeading greenVariant label='Student Attendance - Map View' />

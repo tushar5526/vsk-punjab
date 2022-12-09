@@ -54,3 +54,8 @@
   border-radius: var(--card-radius);
   padding: 10px;
 }
+
+.IframeScreen {
+  width: 100vw;
+  height: 100vh;
+}

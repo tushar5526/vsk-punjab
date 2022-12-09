@@ -9,7 +9,7 @@ import midDayMeal from "../../../assets/pjb/SectionHeader/mid_day_meal.png"
 const Screen2: React.FC = () => {
     return (
         <>
-            <Filters />
+            {/* <Filters />
             <SectionHeader Icon={midDayMeal} label='Mid-Day Meal' />
             <div className='Screen2'>
                 <div className="Screen2__Container">
@@ -80,7 +80,16 @@ const Screen2: React.FC = () => {
                             handleLoadCounter={() => { }}
                         />
                     </div>
-                </div>
+                </div> */}
+            {/* </div> */}
+            <div className='IframeScreen2'>
+                <QuestionWithIframe
+                    questionId={55}
+                    width="100%"
+                    type={1}
+                    height="100%"
+                    handleLoadCounter={() => { }}
+                />
             </div>
         </>
     )

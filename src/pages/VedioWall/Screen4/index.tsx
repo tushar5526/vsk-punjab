@@ -11,7 +11,16 @@ export class Screen4 extends Component {
     render() {
         return (
             <>
-                <div className='Section4'>
+                <div className='IframeScreen2'>
+                    <QuestionWithIframe
+                        questionId={57}
+                        width="100%"
+                        type={1}
+                        height="100%"
+                        handleLoadCounter={() => { }}
+                    />
+                </div>
+                {/* <div className='Section4'>
                     <div className="Section4Child">
                         <SectionHeader Icon={mentoring} label='Mentoring' />
 
@@ -85,7 +94,7 @@ export class Screen4 extends Component {
 
                     <IframeWithImage />
 
-                </div>
+                </div> */}
             </>
         )
     }

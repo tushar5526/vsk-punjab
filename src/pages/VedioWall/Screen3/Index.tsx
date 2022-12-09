@@ -9,7 +9,16 @@ export class Screen3 extends Component {
     render() {
         return (
             <>
-                <div className='Screen3'>
+                <div className='IframeScreen2'>
+                    <QuestionWithIframe
+                        questionId={56}
+                        width="100%"
+                        type={1}
+                        height="100%"
+                        handleLoadCounter={() => { }}
+                    />
+                </div>
+                {/* <div className='Screen3'>
                     <div className="Screen3__Container1">
                         <SectionHeader Icon={financeAndCivilWorks} label='Finance and Civil Works' />
                         <div className='Screen3Part'>
@@ -194,7 +203,7 @@ export class Screen3 extends Component {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> */}
             </>
         )
     }
