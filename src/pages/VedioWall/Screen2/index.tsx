@@ -82,7 +82,7 @@ const Screen2: React.FC = () => {
                     </div>
                 </div> */}
             {/* </div> */}
-            <div className='IframeScreen2'>
+            <div className='IframeScreen'>
                 <QuestionWithIframe
                     questionId={55}
                     width="100%"
