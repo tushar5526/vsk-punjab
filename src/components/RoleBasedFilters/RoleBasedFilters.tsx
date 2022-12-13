@@ -66,6 +66,7 @@ const RoleBasedFilters = (props: Props) => {
         props._applyDistrictFilter(null)
         setGeo({ ...geo, cluster: e })
     }
+
     if (!props.roles.designation) return <div>Loading....</div>
     return (
         <>

@@ -10,7 +10,7 @@ export const getItemFromLocalStorage = (key: string) => {
 
 export const getUserFromLS = () => {
     try {
-        const user = JSON.parse(localStorage.getItem("user") as "").user
+        const user = JSON.parse(localStorage.getItem("user") as "")
         if (user) {
             return user
         }

@@ -1,10 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { IframeContextContext } from "../App";
-
 import jwt from "jsonwebtoken";
 
-var VSKP_METABASE_SITE_URL = "https://vskhp.in/metabase";
-var VSKP_METABASE_SECRET_KEY = "68a529116afd75d19c1d625133ea50207a6571d5e786a25a24c14f61555886b5";
 
 const QuestionWithIframeProtected = ({
   questionId,
@@ -23,6 +20,11 @@ const QuestionWithIframeProtected = ({
   loadCallback?: any;
   type: number
 }) => {
+  var SK: any = process.env.REACT_APP_VSKP_METABASE_SECRET_KEY
+  var SU: any = process.env.REACT_APP_VSKP_METABASE_SITE_URL
+
+
+  console.log(SK, SU, "SK SU")
   const { hasFirstIframeLoaded, updateHasFirstIframeLoaded } =
     useContext(IframeContextContext);
   const [load, setLoad] = useState(false);
@@ -34,9 +36,9 @@ const QuestionWithIframeProtected = ({
         params: params || {},
         exp: Math.round(Date.now() / 1000) + 60 * 60 * 24, // 10 minute expiration
       };
-      const token = jwt.sign(payload, VSKP_METABASE_SECRET_KEY);
+      const token = jwt.sign(payload, SK as string);
       setUrl(
-        VSKP_METABASE_SITE_URL +
+        SU as string +
         "/embed/question/" +
         token +
         "#bordered=false&titled=false&downloadable=" +
@@ -49,9 +51,9 @@ const QuestionWithIframeProtected = ({
         exp: Math.round(Date.now() / 1000) + (10 * 60) // 10 minute expiration
       };
 
-      const token = jwt.sign(payload, VSKP_METABASE_SECRET_KEY);
+      const token = jwt.sign(payload, SK as string);
       setUrl(
-        VSKP_METABASE_SITE_URL +
+        SU as string +
         "/embed/dashboard/" +
         token +
         "#bordered=false&titled=false&downloadable=" +

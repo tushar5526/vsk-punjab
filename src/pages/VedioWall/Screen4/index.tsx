@@ -1,17 +1,11 @@
 import { Component } from 'react'
-import SectionHeader from '../../ControlledTabs/Tabs/utils/SectionHeader'
 import "./index.css"
-import IframeHeading from '../../ControlledTabs/Tabs/utils/IframeHeading';
 import QuestionWithIframe from '../../../components/QuestionWIthIframe';
-
-import IframeWithImage from './IframeWithImage/IframeWithImage';
-import mentoring from "../../../assets/pjb/SectionHeader/mentoring_visits.png"
-
 export class Screen4 extends Component {
     render() {
         return (
             <>
-                <div className='IframeScreen2'>
+                <div className='IframeScreen'>
                     <QuestionWithIframe
                         questionId={57}
                         width="100%"

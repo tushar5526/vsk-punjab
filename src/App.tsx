@@ -57,8 +57,9 @@ const App: FC = ({ _addUserToState }: any) => {
         }
       }
     };
+
     registerServiceWorker();
-    _addUserToState()
+    // _addUserToState()
   }, []);
 
   function updateHasFirstIframeLoaded(v: boolean) {
@@ -121,8 +122,8 @@ const App: FC = ({ _addUserToState }: any) => {
 };
 
 const mapDispatchToProps = (dispatch: any) => ({
-  _addUserToState: async () => {
-    const { data, data: { roleData } } = await getUserFromLS()
+  _addUserToState: () => {
+    const { data, data: { roleData } } = getUserFromLS()
     dispatch(addUserToState({ roleData, data }))
   }
 })
