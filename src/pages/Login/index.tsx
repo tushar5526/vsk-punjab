@@ -1,5 +1,5 @@
 import { FC, useState } from "react";
-import { Button, Col, Layout, Row, Input, Divider, Spin } from "antd";
+import { Button, Col, Layout, Row, Input, Divider, Spin, notification } from 'antd';
 import {
   UserOutlined,
   LockOutlined,
@@ -12,10 +12,11 @@ import Login_Img from "../../assets/pjb/login/login-bg.jpg";
 import Side_Img from "../../assets/image 135.png";
 import API_SERVICE from "../../services/api-service";
 import { useHistory } from 'react-router-dom';
-import ROUTE_CONST from "../../Routing/RouteConstants";
-import { setLocalStorageItem } from "../../utils";
 import { toogleUserSession } from '../../redux/user/actions';
 import { connect } from 'react-redux/es/exports';
+import { parseStringPromise, parseString } from 'xml2js';
+import { setLocalStorageItem } from "../../utils";
+import ROUTE_CONST from "../../Routing/RouteConstants";
 
 const Login: FC = ({ _toogleUserSession }: any) => {
   const [userName, setUserName] = useState("");
@@ -25,26 +26,40 @@ const Login: FC = ({ _toogleUserSession }: any) => {
 
   const handleLogin = async () => {
     setLoader(true);
-    const params = {
-      // loginId: "chaks",
-      // password: "1234abcd",
-      loginId: userName,
-      password: password,
-    };
-    const res: any = await API_SERVICE.Login(params);
-    if (res) {
-      _toogleUserSession()
-      const { user, refreshToken, token } = res?.data?.result?.data?.user;
-      setLocalStorageItem("user", { user, refreshToken, token })
-      setLocalStorageItem("roles", user?.data?.roleData)
-      console.log(user, "user")
-      sessionStorage.setItem(
-        "user",
-        JSON.stringify({
-          refreshToken,
-          token,
-        })
-      );
+    try {
+      const encryptedUserName = await API_SERVICE.EncryptUserNameOrPasswordForMIS(userName)
+      const encryptedPassword = await API_SERVICE.EncryptUserNameOrPasswordForMIS(password)
+
+
+      if (encryptedPassword && encryptedUserName) {
+        const _encryptedPassword = await parseStringPromise(encryptedPassword.data).then((resolved: any) => resolved?.string?._)
+        const _encryptedUserName = await parseStringPromise(encryptedUserName.data).then((resolved: any) => resolved?.string?._)
+
+        const params = new URLSearchParams()
+        params.append("password", _encryptedPassword)
+        params.append("UserID", _encryptedUserName)
+
+        const res = await API_SERVICE.Login(params)
+        if (res) {
+          const { Location, Role, UserType, uniqueCode, message } = await parseStringPromise(res.data).then((resolved: any) => JSON.parse(resolved?.string?._)[0])
+          if (uniqueCode) {
+            _toogleUserSession()
+            setLocalStorageItem("user", { Location, Role, UserType, uniqueCode })
+            notification.success({
+              message: "Logged in Successfully",
+              placement: "topRight"
+            })
+          } else {
+            notification.error({
+              message: "Invalid Username or Password",
+              placement: "topRight"
+            })
+          }
+        }
+      }
+
+    } catch (error) {
+      // Relative error handling to be added 
     }
 
     if ("serviceWorker" in navigator) {

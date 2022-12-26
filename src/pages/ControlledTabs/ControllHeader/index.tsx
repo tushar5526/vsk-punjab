@@ -43,7 +43,7 @@ const DemoHeader = ({ tabs, _toogle, current, level, _applyDistrictFilter, _appl
                             ))}
                         </div>
                         <div className="demoHeader__Tabs demoHeader__Tabs__Evenly">
-                            <RoleBasedFilters filtersPages={tabs[current]?.filters} />
+                            <RoleBasedFilters tab={current} filtersPages={tabs[current]?.filters} />
                         </div>
                     </div>
 

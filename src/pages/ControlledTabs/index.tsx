@@ -18,10 +18,10 @@ const ControlledTabs = () => {
         window.addEventListener('scroll', transitionNavbar)
         return () => window.removeEventListener("scroll", transitionNavbar)
     }, [])
-    const [tabs, setTabs] = useState([
+    const tabs = [
         {
             id: 1,
-            name: "Performance",
+            name: "Administrative KPIs",
             dashboard_id: 26,
             filters: {
                 block: 33,
@@ -31,7 +31,7 @@ const ControlledTabs = () => {
         },
         {
             id: 2,
-            name: "Admin Data",
+            name: "Administrative Overview",
             dashboard_id: 25,
             filters: {
                 block: 30,
@@ -41,14 +41,14 @@ const ControlledTabs = () => {
         },
         {
             id: 3,
-            name: "Academic Data",
+            name: "Academic Overview",
             dashboard_id: 27,
             filters: {
                 cluster: 36,
                 district: 35
             }
         }
-    ])
+    ]
 
     // const getTabsData = async () => {
     //     try {

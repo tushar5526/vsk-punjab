@@ -22,11 +22,12 @@ interface Props {
     selectedDistrict: string,
     selectedBlock: string,
     selectedCluster: string
+    tab: any
 }
 const RoleBasedFilters = (props: Props) => {
 
     useEffect(() => {
-
+        console.log(props.tab, "tab")
     }, [props])
 
     const { lodashTypes, getDataFromLodash, getFiltersValidationsBasedOnRole } = filterUtils
@@ -38,6 +39,8 @@ const RoleBasedFilters = (props: Props) => {
         block: "",
         cluster: ""
     })
+
+    const [adminDataParams, setAdminDataParams] = useState<any>(null)
     // const { permissions, geo } = getFiltersValidationsBasedOnRole(dummyRoles.STATE)
 
 
@@ -86,14 +89,42 @@ const RoleBasedFilters = (props: Props) => {
                 options={block}
                 disabled={permissions?.block}
             />
-            <Select
-                className='demoHeader__select'
-                suffixIcon={<img alt="dropdown" className='demoHeader__dropdown--suffix' src={down_arrow} />}
-                onChange={handleClusterChange}
-                options={cluster}
-                value={geo.cluster || "Cluster"}
-                disabled={permissions?.cluster}
-            />
+            {/* {props.tab === 1 ? (
+                <>
+                    <Select
+                        className='demoHeader__select'
+                        suffixIcon={<img alt="dropdown" className='demoHeader__dropdown--suffix' src={down_arrow} />}
+                        onChange={handleClusterChange}
+                        options={cluster}
+                        value={adminDataParams?.year || "Year"}
+                    />
+
+                    <Select
+                        className='demoHeader__select'
+                        suffixIcon={<img alt="dropdown" className='demoHeader__dropdown--suffix' src={down_arrow} />}
+                        onChange={handleClusterChange}
+                        options={cluster}
+                        value={adminDataParams?.assessment || "Assessment"}
+                    />
+                    <Select
+                        className='demoHeader__select'
+                        suffixIcon={<img alt="dropdown" className='demoHeader__dropdown--suffix' src={down_arrow} />}
+                        onChange={handleClusterChange}
+                        options={cluster}
+                        value={adminDataParams?.class || "Class"}
+                    />
+                    <Select
+                        className='demoHeader__select'
+                        suffixIcon={<img alt="dropdown" className='demoHeader__dropdown--suffix' src={down_arrow} />}
+                        onChange={handleClusterChange}
+                        options={cluster}
+                        value={adminDataParams?.subject || "Subject"}
+                    />
+                </>
+            ) : (
+                <>
+                </>
+            )} */}
         </>
     )
 }
