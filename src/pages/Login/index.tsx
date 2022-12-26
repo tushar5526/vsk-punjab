@@ -49,6 +49,7 @@ const Login: FC = ({ _toogleUserSession }: any) => {
               message: "Logged in Successfully",
               placement: "topRight"
             })
+            history.push(ROUTE_CONST.root);
           } else {
             notification.error({
               message: "Invalid Username or Password",
