@@ -18,7 +18,7 @@ const getDataFromLodash = (type: string, cascade?: any) => {
       }));
     case lodashTypes.BLOCK:
       return _.uniqBy(location, "Block")
-        .filter((item) => cascade?.includes(item.District))
+        .filter((item) => cascade === item.District)
         .map((item) => ({
           value: item.Block,
           label: item.Block,

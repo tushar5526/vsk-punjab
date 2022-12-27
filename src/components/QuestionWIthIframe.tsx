@@ -67,7 +67,7 @@ const QuestionWithIframeProtected = ({
     if (questionId) {
       generateUrl();
     }
-  }, [questionId, params?.district, params?.month, params?.Quarter]);
+  }, [questionId, params]);
 
   useEffect(() => {
     if (

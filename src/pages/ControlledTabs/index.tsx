@@ -33,7 +33,9 @@ const ControlledTabs = () => {
             dashboard_id: 27,
             filters: {
                 cluster: 36,
-                district: 35
+                district: 35,
+                block: 53
+
             }
         }
     ]

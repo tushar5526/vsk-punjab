@@ -667,6 +667,10 @@
 
 /* Admin Data Ends */
 
+.AcademicDateRange {
+  width: 15vw;
+}
+
 @media only screen and (max-width: 1400px) {
   .AdminData3__Iframe {
     height: 62vh;
