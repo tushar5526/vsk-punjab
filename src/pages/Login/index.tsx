@@ -47,6 +47,7 @@ const Login: FC = ({ _toogleUserSession }: any) => {
               message: "Logged in Successfully",
               placement: "topRight"
             })
+            window.location.href = ROUTE_CONST.root
 
           } else {
             notification.error({
