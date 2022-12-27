@@ -1,9 +1,9 @@
 import types from "./types";
 
 const INITIAL_STATE = {
-  district: null,
-  block: null,
-  cluster: null,
+  district: [],
+  // block: null,
+  // cluster: null,
 };
 
 const filterReducer = (state = INITIAL_STATE, action: any) => {

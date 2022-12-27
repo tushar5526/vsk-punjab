@@ -5,19 +5,7 @@ import { useEffect, useState } from 'react';
 import Dashboard from '../Dashboard/Dashboard';
 
 const ControlledTabs = () => {
-    const [show, handleShow] = useState(true)
 
-    const transitionNavbar = () => {
-        if (window.scrollY > 100) {
-            handleShow(false);
-        } else {
-            handleShow(true)
-        }
-    }
-    useEffect(() => {
-        window.addEventListener('scroll', transitionNavbar)
-        return () => window.removeEventListener("scroll", transitionNavbar)
-    }, [])
     const tabs = [
         {
             id: 1,
@@ -50,27 +38,9 @@ const ControlledTabs = () => {
         }
     ]
 
-    // const getTabsData = async () => {
-    //     try {
-    //         const { data: { tabs } } = await getDashboardTabs()
-    //         if (tabs) {
-    //             setTabs(tabs)
-    //         }
-    //     } catch (error) {
-    //         notification.error({
-    //             message: API_SERVICE.handleErrors(error),
-    //             placement: "bottomRight"
-    //         })
-    //     }
-
-    // }
-    // useEffect(() => {
-    //     getTabsData()
-    // }, [])
     return (
         <>
-            {show && <ControllHeader tabs={tabs} />}
-            <Dashboard />
+            <ControllHeader tabs={tabs} />
             <GreayFooter />
         </>
     )

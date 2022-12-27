@@ -1,10 +1,8 @@
 import types from "./types";
 
-const performaceDashboardId = 26;
-
 const INITIAL_STATE = {
   current: 0,
-  dashboard: performaceDashboardId,
+  dashboard: 26,
 };
 
 const controllTabReducer = (state = INITIAL_STATE, action: any) => {

@@ -2,37 +2,23 @@ import "./Dashboard.css"
 import { connect } from 'react-redux/es/exports';
 import QuestionWithIframe from '../../components/QuestionWIthIframe';
 
-const Dashboard = ({ dashboard, district, block, cluster }: any) => {
-    const _dash = {
-        performance: 26,
-        admin: 25,
-        academic: 27
-    }
-    const compliment = ((dashboard === _dash.performance) || (dashboard === _dash.admin) || (dashboard === _dash.academic))
-    console.log(compliment, "this is")
+interface Dashboard {
+    dashboard: number,
+    params: any
+}
+const Dashboard = ({ dashboard, params }: Dashboard) => {
     return (
         <div className='Dashboard'>
             <div className='Dashboard__iframeContainer'>
-                {compliment ? (
-                    <QuestionWithIframe
-                        questionId={dashboard}
-                        type={1}
-                        width={"100%"}
-                        height="100%"
-                        nonDownloadable={true}
-                        handleLoadCounter={() => { }}
-                    />
-                ) : (
-                    <QuestionWithIframe
-                        questionId={dashboard}
-                        type={1}
-                        width={"100%"}
-                        params={district ? { district } : block ? { block } : { cluster }}
-                        height="100%"
-                        nonDownloadable={true}
-                        handleLoadCounter={() => { }}
-                    />
-                )}
+                <QuestionWithIframe
+                    questionId={dashboard}
+                    type={1}
+                    width={"100%"}
+                    params={params}
+                    height="100%"
+                    nonDownloadable={true}
+                    handleLoadCounter={() => { }}
+                />
             </div>
         </div >
     )
