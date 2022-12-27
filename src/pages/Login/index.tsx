@@ -11,7 +11,6 @@ import { Content } from "antd/es/layout/layout";
 import Login_Img from "../../assets/pjb/login/login-bg.jpg";
 import Side_Img from "../../assets/image 135.png";
 import API_SERVICE from "../../services/api-service";
-import { useHistory } from 'react-router-dom';
 import { toogleUserSession } from '../../redux/user/actions';
 import { connect } from 'react-redux/es/exports';
 import { parseStringPromise, parseString } from 'xml2js';
@@ -22,7 +21,6 @@ const Login: FC = ({ _toogleUserSession }: any) => {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const [loader, setLoader] = useState(false);
-  const history = useHistory()
 
   const handleLogin = async () => {
     setLoader(true);
@@ -49,7 +47,7 @@ const Login: FC = ({ _toogleUserSession }: any) => {
               message: "Logged in Successfully",
               placement: "topRight"
             })
-            history.push(ROUTE_CONST.root);
+
           } else {
             notification.error({
               message: "Invalid Username or Password",
@@ -66,7 +64,7 @@ const Login: FC = ({ _toogleUserSession }: any) => {
     if ("serviceWorker" in navigator) {
       navigator.serviceWorker.ready.then((registration) => {
         console.log(`A service worker is active.....: ${registration.active}`);
-        history.push(ROUTE_CONST.root);
+        window.location.href = ROUTE_CONST.root
       });
     } else {
       console.error("Service workers are not supported.");
