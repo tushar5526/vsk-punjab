@@ -35,7 +35,6 @@ const ControlledTabs = () => {
                 cluster: 36,
                 district: 63,
                 block: 64
-
             }
         }
     ]

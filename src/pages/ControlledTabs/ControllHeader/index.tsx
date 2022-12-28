@@ -93,7 +93,7 @@ const DemoHeader = ({ tabs, _toogle, current, _toogleFilterPage, dashboard }: an
         setGeo2({ block: e })
         if (current === 0) _toogleFilterPage(_dash.performance_block)
         else if (current === 1) _toogleFilterPage(_dash.admin_block)
-        else if (current === 2) _toogleFilterPage(_dash.admin_block)
+        else if (current === 2) _toogleFilterPage(_dash.academic_block)
     }
     const { lodashTypes, getDataFromLodash } = filtersUtils
 
