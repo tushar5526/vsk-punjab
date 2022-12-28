@@ -1,87 +1,141 @@
-import React from 'react'
+import React, { useState } from 'react'
 import QuestionWithIframe from '../../../components/QuestionWIthIframe'
-import IframeHeading from '../../ControlledTabs/Tabs/utils/IframeHeading'
-import SectionHeader from '../../ControlledTabs/Tabs/utils/SectionHeader'
-import Filters from '../Filters/Filters'
 import "./index.css"
-import midDayMeal from "../../../assets/pjb/SectionHeader/mid_day_meal.png"
+import { Button, Popover, Select } from 'antd'
+import down_arrow from "../../../assets/pjb/utils/down_arrow.png"
+import filtersUtils from '../../../components/RoleBasedFilters/filters.utils'
 
 const Screen2: React.FC = () => {
+    const { Option } = Select;
+    const [geo, setGeo] = useState<any>({
+        district: [],
+    })
+    const [geo2, setGeo2] = useState<any>({
+        block: [],
+    })
+
+    const [quarter, setQuarter] = useState<any>({
+        quarter: []
+    })
+
+    const [year, setYear] = useState<any>({
+        year: []
+    })
+    const { lodashTypes, getDataFromLodash } = filtersUtils
+
+    const districts = getDataFromLodash(lodashTypes.DISTRICT)
+    const block = getDataFromLodash(lodashTypes.BLOCK, geo.district)
+    const undefinedCheck = (arr: any) => {
+        if (Array.isArray(arr)) {
+            const filtered = arr.filter((i) => i !== undefined);
+            return filtered;
+        }
+    };
+    const handleDistrictChange = async (e: any) => {
+        setGeo({ district: e })
+        console.log(e)
+    }
+
+    const handleBlockChange = (e: any) => {
+        setGeo2({ block: e })
+        console.log(e)
+    }
+    const _width = "200px"
+
+
+    const SelectMultiple1 = () => {
+        const handleChange = (value: string[]) => {
+            if (Array.isArray(value)) {
+                setQuarter({ quarter: undefinedCheck(value) })
+            }
+        };
+        return (
+            <div
+                style={{
+                    width: _width,
+                    display: "flex",
+                    justifyContent: "space-between",
+                }}
+            >
+                <Select
+                    mode="multiple"
+                    style={{ width: "100%" }}
+                    placeholder="Select from list"
+                    onChange={handleChange}
+                    value={undefinedCheck(quarter?.quarter)}
+                    optionLabelProp="label"
+                    className="assesmentClassSelect"
+                >
+                    {Array(4).fill(0).map((item: any, i: number) => (
+                        <Option key={`${i}${item}`} value={item} label={item}>
+                            <div className="demo-option-label-item">{item}</div>
+                        </Option>
+                    ))}
+                </Select>
+            </div>
+        );
+    };
+
+    const SelectMultiple2 = () => {
+        const handleChange = (value: string[]) => {
+            if (Array.isArray(value)) {
+                setYear({ year: undefinedCheck(value) })
+            }
+        };
+        return (
+            <div
+                style={{
+                    width: _width,
+                    display: "flex",
+                    justifyContent: "space-between",
+                }}
+            >
+                <Select
+                    mode="multiple"
+                    style={{ width: "100%" }}
+                    placeholder="Select from list"
+                    onChange={handleChange}
+                    value={undefinedCheck(year?.year)}
+                    optionLabelProp="label"
+                    className="assesmentClassSelect"
+                >
+                    {Array(4).fill(0).map((item: any, i: number) => (
+                        <Option key={`${i}${item}`} value={item} label={item}>
+                            <div className="demo-option-label-item">{item}</div>
+                        </Option>
+                    ))}
+                </Select>
+            </div>
+        );
+    };
     return (
         <>
-            {/* <Filters />
-            <SectionHeader Icon={midDayMeal} label='Mid-Day Meal' />
-            <div className='Screen2'>
-                <div className="Screen2__Container">
-                    <div className="Screen2__Container1 mb">
-                        <div className="Screen2__Container1--iframe">
-                            <QuestionWithIframe
-                                questionId={293}
-                                width="100%"
-                                height="100%"
-                                nonDownloadable={true}
-                                handleLoadCounter={() => { }}
-                            />
-                        </div>
-                        <div className="Screen2__Container1--iframe">
-                            <QuestionWithIframe
-                                questionId={294}
-                                width="100%"
-                                height="100%"
-                                nonDownloadable={true}
-                                handleLoadCounter={() => { }}
-                            />
-                        </div>
-                        <div className="Screen2__Container1--iframe">
-                            <QuestionWithIframe
-                                questionId={295}
-                                width="100%"
-                                height="100%"
-                                nonDownloadable={true}
-                                handleLoadCounter={() => { }}
-                            />
-                        </div>
-                    </div>
-                    <IframeHeading greenVariant label='District Performace' />
-                    <div className="Screen2__Container2">
-                        <div className="Screen2__Container2--iframe">
-                            <QuestionWithIframe
-                                questionId={297}
-                                width="100%"
-                                height="100%"
-                                handleLoadCounter={() => { }}
-                            />
-                        </div>
-                        <div className="Screen2__Container2--iframe">
-                            <QuestionWithIframe
-                                questionId={298}
-                                width="100%"
-                                height="100%"
-                                handleLoadCounter={() => { }}
-                            />
-                        </div>
-                        <div className="Screen2__Container2--iframe">
-                            <QuestionWithIframe
-                                questionId={299}
-                                width="100%"
-                                height="100%"
-                                handleLoadCounter={() => { }}
-                            />
-                        </div>
-                    </div>
-                </div>
-                <div className="Screen2__Container">
-                    <IframeHeading greenVariant label='Month-wise Trend of Students Receiving MDM' />
-                    <div className="Screen2__Container3--iframe">
-                        <QuestionWithIframe
-                            questionId={296}
-                            width="100%"
-                            height="100%"
-                            handleLoadCounter={() => { }}
-                        />
-                    </div>
-                </div> */}
-            {/* </div> */}
+            <div className='Screen2VedioWallFilters'>
+                <Select
+                    className='demoHeader__select'
+                    suffixIcon={<img alt="dropdown" className='demoHeader__dropdown--suffix' src={down_arrow} />}
+                    defaultValue={"District"}
+                    onChange={handleDistrictChange}
+                    options={districts}
+                />
+                <Select
+                    className='demoHeader__select'
+                    suffixIcon={<img alt="dropdown" className='demoHeader__dropdown--suffix' src={down_arrow} />}
+                    defaultValue={"Block"}
+                    options={block}
+                    onChange={handleBlockChange}
+                />
+                <Popover content={SelectMultiple1}>
+                    <Button className="multi-select-label">
+                        Select Year
+                    </Button>
+                </Popover>
+                <Popover content={SelectMultiple2}>
+                    <Button className="multi-select-label">
+                        Select Quarter
+                    </Button>
+                </Popover>
+            </div>
             <div className='IframeScreen'>
                 <QuestionWithIframe
                     questionId={55}

@@ -59,3 +59,10 @@
   width: 100vw;
   height: 100vh;
 }
+
+.Screen2VedioWallFilters {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin: 0 10px;
+}
