@@ -1,5 +1,4 @@
 import { Redirect, Route } from "react-router-dom";
-import ROUTE_CONST from "./RouteConstants";
 
 const PrivateRoute = ({ children, ...rest }: any) => {
   return (

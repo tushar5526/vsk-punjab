@@ -28,7 +28,7 @@ export class Screen1 extends Component<Props, State> {
     render() {
         return (
             <>
-                <SectionHeader Icon={StudentAttendanceIcon} label={"Student Attendance"} />
+                {/* <SectionHeader Icon={StudentAttendanceIcon} label={"Student Attendance"} /> */}
                 <div className='Screen1'>
                     <div className='screen1NewIframe'>
                         <QuestionWithIframe

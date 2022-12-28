@@ -12,9 +12,9 @@ const ControlledTabs = () => {
             name: "Administrative KPIs",
             dashboard_id: 26,
             filters: {
-                block: 33,
+                block: 60,
                 cluster: 34,
-                district: 32
+                district: 59
             }
         },
         {
@@ -22,9 +22,9 @@ const ControlledTabs = () => {
             name: "Administrative Overview",
             dashboard_id: 25,
             filters: {
-                block: 30,
+                block: 62,
                 cluster: 31,
-                district: 29
+                district: 61
             }
         },
         {
@@ -33,8 +33,8 @@ const ControlledTabs = () => {
             dashboard_id: 27,
             filters: {
                 cluster: 36,
-                district: 35,
-                block: 53
+                district: 63,
+                block: 64
 
             }
         }
