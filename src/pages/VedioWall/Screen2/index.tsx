@@ -76,6 +76,12 @@ const Screen2: React.FC = () => {
         );
     };
 
+    const _quarter = [
+        { value: "1", label: "1" },
+        { value: "2", label: "2" },
+        { value: "3", label: "3" },
+        { value: "4", label: "4" }
+    ]
     const SelectMultiple2 = () => {
         const handleChange = (value: string[]) => {
             if (Array.isArray(value)) {
@@ -99,9 +105,9 @@ const Screen2: React.FC = () => {
                     optionLabelProp="label"
                     className="assesmentClassSelect"
                 >
-                    {Array(4).fill(0).map((item: any, i: number) => (
-                        <Option key={`${i}${item}`} value={item} label={item}>
-                            <div className="demo-option-label-item">{item}</div>
+                    {_quarter.map(({ label, value }, i: number) => (
+                        <Option key={`${i}${label}${value}`} value={value} label={label}>
+                            <div className="demo-option-label-item">{label}</div>
                         </Option>
                     ))}
                 </Select>
