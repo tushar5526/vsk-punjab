@@ -1,5 +1,3 @@
-import { dummyRoles } from "../../services/parameters";
-
 import location from "./district_block_cluster.json";
 import * as _ from "lodash";
 
@@ -35,7 +33,13 @@ const getDataFromLodash = (type: string, cascade?: any) => {
   }
 };
 
+const getDistrictBasedOnBlock = (block: any) => {
+  const filtered = location.filter((item) => item.Block === block);
+  console.log(filtered, "filtered");
+};
+
 export default {
   lodashTypes,
   getDataFromLodash,
+  getDistrictBasedOnBlock,
 };

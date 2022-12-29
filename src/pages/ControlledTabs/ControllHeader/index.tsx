@@ -20,6 +20,9 @@ const DemoHeader = ({ tabs, _toogle, current, _toogleFilterPage, dashboard }: an
     const handleChange = (e: any) => {
         console.log(e, "handle change")
     }
+
+    const _defaultDistrict = localStorage.getItem("USER_DEFAULT_DISTRICT")
+    const _defaultBlock = localStorage.getItem("USER_DEFAULT_BLOCK")
     const _dash = {
         performance: 26,
         performance_block: 60,
@@ -48,10 +51,14 @@ const DemoHeader = ({ tabs, _toogle, current, _toogleFilterPage, dashboard }: an
     }
     const linkFilters = (user: USER) => {
         if (user.Role === _role.District) {
+            localStorage.setItem("USER_DEFAULT_DISTRICT", user.Location)
             setGeo({ district: [user.Location] })
             _toogleFilterPage(_dash.performance_district)
+
         } else if (user.Role === _role.Block) {
-            setGeo2({ district: [user.Location] })
+            getDistrictBasedOnBlock(user.Location)
+            localStorage.setItem("USER_DEFAULT_BLOCK", user.Location)
+            setGeo2({ block: [user.Location] })
             _toogleFilterPage(_dash.performance_block)
         }
     }
@@ -95,7 +102,7 @@ const DemoHeader = ({ tabs, _toogle, current, _toogleFilterPage, dashboard }: an
         else if (current === 1) _toogleFilterPage(_dash.admin_block)
         else if (current === 2) _toogleFilterPage(_dash.academic_block)
     }
-    const { lodashTypes, getDataFromLodash } = filtersUtils
+    const { lodashTypes, getDataFromLodash, getDistrictBasedOnBlock } = filtersUtils
 
 
     const districts = getDataFromLodash(lodashTypes.DISTRICT)
@@ -165,14 +172,14 @@ const DemoHeader = ({ tabs, _toogle, current, _toogleFilterPage, dashboard }: an
                             <Select
                                 className='demoHeader__select'
                                 suffixIcon={<img alt="dropdown" className='demoHeader__dropdown--suffix' src={down_arrow} />}
-                                defaultValue={geo?.district[0] || "District"}
+                                defaultValue={_defaultDistrict || "District"}
                                 onChange={handleDistrictChange}
                                 options={districts}
                             />
                             <Select
                                 className='demoHeader__select'
                                 suffixIcon={<img alt="dropdown" className='demoHeader__dropdown--suffix' src={down_arrow} />}
-                                defaultValue={geo2?.block[0] || "Block"}
+                                defaultValue={_defaultBlock || "Block"}
                                 options={block}
                                 onChange={handleBlockChange}
                             />
