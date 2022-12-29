@@ -49,17 +49,19 @@ const DemoHeader = ({ tabs, _toogle, current, _toogleFilterPage, dashboard }: an
         District: "District",
         Block: "Block"
     }
+    const regex = /.* - /gm;
     const linkFilters = (user: USER) => {
         if (user.Role === _role.District) {
+            _toogleFilterPage(_dash.performance_block)
             localStorage.setItem("USER_DEFAULT_DISTRICT", user.Location)
             setGeo({ district: [user.Location] })
             _toogleFilterPage(_dash.performance_district)
-
         } else if (user.Role === _role.Block) {
-            getDistrictBasedOnBlock(user.Location)
+            const districtByBlock = getDistrictBasedOnBlock(user.Location)
             localStorage.setItem("USER_DEFAULT_BLOCK", user.Location)
-            setGeo2({ block: [user.Location] })
-            _toogleFilterPage(_dash.performance_block)
+            localStorage.setItem("USER_DEFAULT_DISTRICT", districtByBlock)
+            setGeo({ district: [districtByBlock] })
+            setGeo2({ block: [String(user.Location).replace(regex, "")] })
         }
     }
     const { RangePicker } = DatePicker;
@@ -91,13 +93,13 @@ const DemoHeader = ({ tabs, _toogle, current, _toogleFilterPage, dashboard }: an
     };
 
     const handleDistrictChange = async (e: any) => {
-        setGeo({ district: e })
+        setGeo({ district: [e] })
         if (current === 0) _toogleFilterPage(_dash.performance_district)
         else if (current === 1) _toogleFilterPage(_dash.admin_district)
         else if (current === 2) _toogleFilterPage(_dash.academic_district)
     }
     const handleBlockChange = (e: any) => {
-        setGeo2({ block: e })
+        setGeo2({ block: [e] })
         if (current === 0) _toogleFilterPage(_dash.performance_block)
         else if (current === 1) _toogleFilterPage(_dash.admin_block)
         else if (current === 2) _toogleFilterPage(_dash.academic_block)
@@ -134,8 +136,6 @@ const DemoHeader = ({ tabs, _toogle, current, _toogleFilterPage, dashboard }: an
             }
         } catch (error) {
             // Relative error handling 
-        } finally {
-            console.log(geo, geo2, "setiigs")
         }
     }
     useEffect(() => {

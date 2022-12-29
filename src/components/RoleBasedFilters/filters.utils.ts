@@ -7,6 +7,13 @@ const lodashTypes = {
   CLUSTER: "CLUSTER",
 };
 
+const locationToFilterBlock = _.uniqBy(location, "District").map(
+  ({ Block, District }) => ({
+    Block,
+    District,
+  })
+);
+
 const getDataFromLodash = (type: string, cascade?: any) => {
   switch (type) {
     case lodashTypes.DISTRICT:
@@ -16,7 +23,7 @@ const getDataFromLodash = (type: string, cascade?: any) => {
       }));
     case lodashTypes.BLOCK:
       return _.uniqBy(location, "Block")
-        .filter((item) => cascade === item.District)
+        .filter((item) => cascade.includes(item.District))
         .map((item) => ({
           value: item.Block,
           label: item.Block,
@@ -34,8 +41,9 @@ const getDataFromLodash = (type: string, cascade?: any) => {
 };
 
 const getDistrictBasedOnBlock = (block: any) => {
-  const filtered = location.filter((item) => item.Block === block);
-  console.log(filtered, "filtered");
+  return _.filter(locationToFilterBlock, ({ Block }) => {
+    return String(block).includes(Block);
+  })[0].District;
 };
 
 export default {
