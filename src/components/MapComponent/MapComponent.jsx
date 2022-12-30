@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import MarkerClusterGroup from "react-leaflet-cluster";
 import L from "leaflet";
@@ -10,13 +9,7 @@ import green_marker from "../../assets/Map_marker_green.svg";
 import blue_marker from "../../assets/Map_marker_blue.svg";
 import purple_marker from "../../assets/Map_marker_purple.svg";
 import yellow_marker from "../../assets/Map_marker_yellow.svg";
-
-const default_toolTipData = {
-  Attendance: "NA",
-  Enrolment: "NA",
-  PTR: "NA",
-  CWSN: "NA",
-};
+import ToolTip from "./ToolTip/ToolTip";
 
 export default function MapComponent({ config, markers }) {
   // const center = config?.markers?.postions[0]?.position || [28.7041, 77.1025];
@@ -79,21 +72,7 @@ export default function MapComponent({ config, markers }) {
                   // className: "leaflet-div-icon",
                 });
                 return (
-                  <Marker
-                    key={`maker${idx}`}
-                    position={item?.position}
-                    icon={iconPerson}
-                  >
-                    <Popup
-                      className="tooltip-popup"
-                      onOpen={() => {
-                        // instruction written here will be executed -
-                        // - while the tooltip is opened
-                      }}
-                    >
-                      <div>{item.tooltip}</div>
-                    </Popup>
-                  </Marker>
+                  <ToolTip iconPerson={iconPerson} position={item.position} />
                 );
               })}
               {/* </div> */}
@@ -126,11 +105,7 @@ export default function MapComponent({ config, markers }) {
                 });
                 return (
                   <Marker position={item.position} icon={iconPerson}>
-                    <Popup
-                      onOpen={() => {
-                        // getToolTipData(item.district, item.block, item.school);
-                      }}
-                    >
+                    <Popup>
                       <div>Empty Tool Tip</div>
                     </Popup>
                   </Marker>

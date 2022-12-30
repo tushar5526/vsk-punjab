@@ -31,13 +31,13 @@ export class Screen1 extends Component<Props, State> {
                 {/* <SectionHeader Icon={StudentAttendanceIcon} label={"Student Attendance"} /> */}
                 <div className='Screen1'>
                     <div className='screen1NewIframe'>
-                        {/* <QuestionWithIframe
+                        <QuestionWithIframe
                             questionId={54}
                             width="100%"
                             type={1}
                             height="100%"
                             handleLoadCounter={() => { }}
-                        /> */}
+                        />
                     </div>
                     <div className='Screen1__Container'>
                         <IframeHeading greenVariant label='Student Attendance - Map View' />

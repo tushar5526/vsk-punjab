@@ -1,10 +1,20 @@
 import MapComponent from "../MapComponent/MapComponent"
 import { useState } from 'react';
 import { useEffect } from 'react';
-import axios from "axios";
+import axios from 'axios';
+
+interface DistrictArray {
+    data: {
+        districts: [{
+            area: number
+            district: string
+            lat: number
+            long: number
+        }]
+    }
+}
 
 const CustomMap = () => {
-    const [config, setConfig] = useState<any>(null)
     const [markers, setMarkers] = useState<any>(null)
     const formatMarkerData = (data: any) => {
         const formattedData = data
@@ -26,15 +36,16 @@ const CustomMap = () => {
         });
     };
 
-    const getMarkerData = async () => {
 
+    const getMarkerData = async () => {
         try {
-            const { data } = await axios.get("https://run.mocky.io/v3/3bf28ec7-4e43-485d-ac0c-32d82c128977")
-            console.log(JSON.parse(data), "res")
+            const { data: { districts } }: DistrictArray = await axios.get("https://run.mocky.io/v3/0291fc8f-10f7-4ff9-a207-4ca6cb1f6504")
+            if (districts) {
+                formatMarkerData(districts)
+            }
         } catch (error) {
-            console.log(error, "erro")
+            console.log(error)
         }
-        // formatMarkerData(districts)
     }
 
 
