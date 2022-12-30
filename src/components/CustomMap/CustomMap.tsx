@@ -1,7 +1,7 @@
 import MapComponent from "../MapComponent/MapComponent"
 import { useState } from 'react';
 import { useEffect } from 'react';
-import districts from "./district";
+import axios from "axios";
 
 const CustomMap = () => {
     const [config, setConfig] = useState<any>(null)
@@ -27,20 +27,14 @@ const CustomMap = () => {
     };
 
     const getMarkerData = async () => {
-        // un comment this implementation while to fetch data from api
-        // try { 
-        //     const { data: { rows } } = await API_SERVICE.getDistrictMarkerData({
-        //         district: "SIRMAUR",
-        //     })
 
-        //     if (rows) {
-        //         formatMarkerData(rows)
-        //     }
-
-        // } catch (error) {
-        //     API_SERVICE.handleErrors(error)
-        // }
-        formatMarkerData(districts)
+        try {
+            const { data } = await axios.get("https://run.mocky.io/v3/3bf28ec7-4e43-485d-ac0c-32d82c128977")
+            console.log(JSON.parse(data), "res")
+        } catch (error) {
+            console.log(error, "erro")
+        }
+        // formatMarkerData(districts)
     }
 
 
