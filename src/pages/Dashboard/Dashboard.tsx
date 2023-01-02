@@ -25,10 +25,8 @@ const Dashboard = ({ dashboard, params }: Dashboard) => {
 }
 
 
-const mapStateToProps = ({ tab: { dashboard }, filters: { district, block, cluster } }: any) => ({
+const mapStateToProps = ({ tab: { dashboard } }: any) => ({
     dashboard,
-    district,
-    block,
-    cluster
+
 })
 export default connect(mapStateToProps)(Dashboard)

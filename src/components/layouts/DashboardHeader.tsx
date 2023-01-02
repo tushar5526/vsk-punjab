@@ -70,21 +70,12 @@ const DashboardHeader: FC<Props> = ({ user_in_session, _toogleUserSession }) => 
           <div style={{ display: "flex", flexDirection: "column" }}>
             <>
               <Image src={RightLogo} height={"30px"} preview={false} />
-              {user_in_session ? (
+              {localStorage.getItem("user") && (
                 <Button
                   className="logout-btn"
                   onClick={_logout}
                 >
                   <span>Log Out</span>
-                </Button>
-              ) : (
-                <Button
-                  className="logout-btn"
-                  onClick={() => {
-                    history.push(ROUTE_CONST.login)
-                  }}
-                >
-                  <span>Log in</span>
                 </Button>
               )}
             </>

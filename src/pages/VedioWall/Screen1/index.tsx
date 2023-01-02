@@ -28,7 +28,6 @@ export class Screen1 extends Component<Props, State> {
     render() {
         return (
             <>
-                {/* <SectionHeader Icon={StudentAttendanceIcon} label={"Student Attendance"} /> */}
                 <div className='Screen1'>
                     <div className='screen1NewIframe'>
                         <QuestionWithIframe
@@ -41,7 +40,6 @@ export class Screen1 extends Component<Props, State> {
                     </div>
                     <div className='Screen1__Container'>
                         <IframeHeading greenVariant label='Student Attendance - Map View' />
-
                         <div className="Screen__Container1--map">
                             <CustomMap />
                         </div>

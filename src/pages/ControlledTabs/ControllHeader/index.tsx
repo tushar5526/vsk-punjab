@@ -1,4 +1,4 @@
-import { DatePicker, Select } from "antd"
+import { Button, DatePicker, Select } from "antd"
 import down_arrow from "../../../assets/pjb/utils/down_arrow.png"
 import { toogleFilter, toogleTab } from '../../../redux/TabController/actions';
 import { connect } from "react-redux/es/exports"
@@ -6,6 +6,7 @@ import moment from "moment";
 import Dashboard from "../../Dashboard/Dashboard";
 import filtersUtils from "../../../components/RoleBasedFilters/filters.utils";
 import { useEffect, useState } from "react";
+import { ClearFilter } from "../../../components/ClearFilter";
 
 
 interface USER {
@@ -65,7 +66,14 @@ const DemoHeader = ({ tabs, _toogle, current, _toogleFilterPage, dashboard }: an
         }
     }
     const { RangePicker } = DatePicker;
-    const [academicDateRange, setAcademicDateRange] = useState<any>("2022-12-04~2022-12-21")
+
+    const [academicParams, setAcademicParams] = useState<any>({
+        date_range: "2022-12-04~2022-12-21",
+        assessment: [],
+        year: [],
+        class: [],
+        subject: []
+    })
     const swapDateForRangeAttendance = (toSwap: any) => {
         if (Array.isArray(toSwap)) {
             const condition1 = toSwap[1] < 10;
@@ -141,6 +149,11 @@ const DemoHeader = ({ tabs, _toogle, current, _toogleFilterPage, dashboard }: an
     useEffect(() => {
         extractUser()
     }, [])
+
+
+
+
+
     return (
         <>
             <div className="demoHeader mb">
@@ -189,7 +202,7 @@ const DemoHeader = ({ tabs, _toogle, current, _toogleFilterPage, dashboard }: an
                                         <RangePicker
                                             onChange={(e: any) => {
                                                 const prepared = fixDateRangeForAttendanceTab(e);
-                                                setAcademicDateRange(prepared);
+                                                setAcademicParams({ ...academicParams, date_range: prepared });
                                             }}
                                         />
                                     </div>
@@ -198,24 +211,50 @@ const DemoHeader = ({ tabs, _toogle, current, _toogleFilterPage, dashboard }: an
                                         className='demoHeader__select'
                                         suffixIcon={<img alt="dropdown" className='demoHeader__dropdown--suffix' src={down_arrow} />}
                                         defaultValue={"Year"}
+                                        onChange={() => {
+                                            setAcademicParams({
+                                                ...academicParams,
+                                                year: [],
+                                            })
+                                        }}
                                     />
                                     <Select
                                         className='demoHeader__select'
                                         suffixIcon={<img alt="dropdown" className='demoHeader__dropdown--suffix' src={down_arrow} />}
                                         defaultValue={"Assesment"}
+                                        onChange={() => {
+                                            setAcademicParams({
+                                                ...academicParams,
+                                                assessment: [],
+                                            })
+                                        }}
                                     />
                                     <Select
                                         className='demoHeader__select'
                                         suffixIcon={<img alt="dropdown" className='demoHeader__dropdown--suffix' src={down_arrow} />}
                                         defaultValue={"Class"}
+                                        onChange={() => {
+                                            setAcademicParams({
+                                                ...academicParams,
+                                                class: [],
+
+                                            })
+                                        }}
                                     />
                                     <Select
                                         className='demoHeader__select'
                                         suffixIcon={<img alt="dropdown" className='demoHeader__dropdown--suffix' src={down_arrow} />}
                                         defaultValue={"Subject"}
+                                        onChange={() => {
+                                            setAcademicParams({
+                                                ...academicParams,
+                                                subject: []
+                                            })
+                                        }}
                                     />
                                 </>
                             )}
+                            <ClearFilter />
                         </div>
                     </div>
 
@@ -235,11 +274,11 @@ const DemoHeader = ({ tabs, _toogle, current, _toogleFilterPage, dashboard }: an
                                     tabCheck.admin_block ?
                                         { ...geo2 } :
                                         tabCheck.academic ?
-                                            { ...geo, date_range: academicDateRange } :
+                                            { ...geo, ...academicParams } :
                                             tabCheck.academic_district ?
-                                                { ...geo, date_range: academicDateRange } :
+                                                { ...geo, ...academicParams } :
                                                 tabCheck.academic_block ?
-                                                    { ...geo, date_range: academicDateRange } :
+                                                    { ...geo2, ...academicParams } :
                                                     {}
             } />
         </>
