@@ -1,0 +1,114 @@
+.Screen3 {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.Screen3__Container1 {
+  width: 66%;
+}
+
+.Screen3__Container2 {
+  width: 33%;
+}
+
+.Screen3Part {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.Screen3__IframeContainer {
+  width: 49%;
+}
+
+.Screen3__IframeContainerChild {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.Screen3__IframeContainer2 {
+  width: 49%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.Screen3__Iframe--left {
+  box-shadow: var(--card-shadow);
+  border-radius: var(--card-radius);
+  height: 25vh;
+  padding: 12px;
+}
+
+.Secton3__Right {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.Section3__RightIframeContainer1 {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.Section3__Right {
+  display: flex;
+}
+
+.Section3__Right--iframe {
+  box-shadow: var(--card-shadow);
+  border-radius: var(--card-radius);
+  padding: 10px;
+  width: 98%;
+  height: 24vh;
+}
+
+.Section3__Right--iframeBig {
+  box-shadow: var(--card-shadow);
+  border-radius: var(--card-radius);
+  padding: 10px;
+  width: 100%;
+}
+
+.Section3__RightIframeContainer2--Iframe {
+  height: 31vh;
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  padding: 10px;
+}
+
+.Section3__RightIframeContainer2 {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.Section3__RightIframeContainer2 > div {
+  width: 98%;
+}
+
+.Screen3Iframes {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Screen3Iframes__Container {
+  width: 49%;
+  display: flex;
+  flex-direction: column;
+}
+.Screen3Iframes__Container--iframes {
+  box-shadow: var(--card-shadow);
+  padding: 10px;
+  height: 23.7vh;
+  border-radius: var(--card-radius);
+}
+
+.Screen3Iframes__ContainerBig {
+  height: 29.85vh;
+  box-shadow: var(--card-shadow);
+  padding: 10px;
+  border-radius: var(--card-radius);
+}

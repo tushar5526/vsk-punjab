@@ -1,0 +1,46 @@
+:root {
+  --theme_purple: #653397;
+  --theme_green: #014c3d;
+}
+
+.divider {
+  /* border-color: var(--theme_purple); */
+  border-color: var(--theme_green);
+  height: 30px;
+}
+
+.title {
+  max-width: 400px;
+  font-size: 22px;
+  text-align: center;
+  /* color: var(--theme_purple); */
+  color: var(--theme_green);
+  padding: 8px;
+}
+
+.form-container {
+  max-width: 400px;
+  /* border: 2px solid var(--theme_purple); */
+  border: 2px solid var(--theme_green);
+  padding: 24px;
+}
+.form-container > * {
+  margin: 8px;
+}
+.input {
+  height: 42px;
+  font-size: 16px;
+}
+.icon {
+  font-size: 24px;
+  /* color: var(--theme_purple); */
+  color: var(--theme_green);
+}
+.button {
+  /* background-color: var(--theme_purple); */
+  background-color: var(--theme_green);
+}
+.link {
+  /* color: var(--theme_purple); */
+  color: var(--theme_green);
+}

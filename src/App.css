@@ -1,0 +1,25 @@
+:root {
+  --blue-primary: #252c68;
+  --grey-primary: #b9b9b9;
+  --grey-secondary: #ebebeb;
+  --green-primary: #014c3d;
+  --green-secondary: #014d3f;
+  --card-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  --card-radius: 8px;
+  --green-new: #259ea6;
+  --dashboard-header: #fff4bd;
+}
+
+.App {
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.mb {
+  margin-bottom: 20px;
+}

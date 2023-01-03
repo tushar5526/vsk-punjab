@@ -1,0 +1,66 @@
+{
+  "name": "samagra-monitoring-dashboard-ant",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@craco/craco": "^6.2.0",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "@types/babel__core": "^7.1.20",
+    "@types/jest": "^26.0.15",
+    "@types/jsonwebtoken": "^8.5.9",
+    "@types/lodash": "^4.14.191",
+    "@types/moment": "^2.13.0",
+    "@types/node": "^12.0.0",
+    "@types/react-redux": "^7.1.24",
+    "@types/redux": "^3.6.0",
+    "@types/xml2js": "^0.4.11",
+    "antd": "^4.16.13",
+    "axios": "^0.27.2",
+    "craco-less": "^1.20.0",
+    "jsonwebtoken": "^8.5.1",
+    "leaflet": "^1.9.2",
+    "leaflet.markercluster": "1.4.1",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.4",
+    "prop-types": "^15.8.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-leaflet": "^4.1.0",
+    "react-leaflet-cluster": "^2.0.0",
+    "react-redux": "^8.0.5",
+    "react-router-dom": "^5.3.0",
+    "react-scripts": "4.0.3",
+    "redux": "^4.2.0",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-thunk": "^2.4.2",
+    "serve": "^14.1.1",
+    "typescript": "^4.1.2",
+    "web-vitals": "^1.0.1",
+    "xml2js": "^0.4.23"
+  },
+  "scripts": {
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
+    "eject": "craco eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "@types/react": "^18.0.25",
+    "@types/react-dom": "^18.0.9",
+    "@types/react-leaflet": "^2.8.2",
+    "@types/react-router-dom": "^5.1.8"
+  }
+}

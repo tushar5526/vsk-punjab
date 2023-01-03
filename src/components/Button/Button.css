@@ -1,0 +1,23 @@
+.CustomButton {
+  height: fit-content;
+  border: none;
+  outline: none;
+  background: var(--green-primary);
+  color: white;
+}
+
+.CustomButton__Small {
+  width: 100px;
+}
+
+.CustomButton__Medium {
+  width: 110px;
+}
+
+.CustomButton__Large {
+  width: 120px;
+}
+
+.CustomButton__Width {
+  width: 140px;
+}

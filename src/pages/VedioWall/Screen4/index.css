@@ -1,0 +1,106 @@
+.Section4 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Section4Child {
+  width: 49%;
+}
+
+.Section4ChildCardsContainer1 {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.Section4ChildCardsContainerIframe {
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+}
+
+.Section4Graph {
+  height: 50vh;
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  padding: 10px;
+}
+
+.Section4RightIframeContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.Screen4IframeContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.Screen4IframeContainer__Common {
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: fit-content;
+}
+
+.Screen4IframeContainer__Common > img {
+  width: 180px;
+  object-fit: contain;
+  margin: 0 auto;
+  position: relative;
+  top: 25px;
+}
+
+.Section4ChildCardsContainerIframe {
+  width: 32%;
+  height: 16vh;
+  padding: 10px;
+}
+
+.Section4ChildCardsContainerIframeType2 {
+  width: 48%;
+  height: 49%;
+}
+
+.Screen4IframeContainer__Common__Width1 {
+  width: 47%;
+  height: 33.55vh;
+}
+
+.Screen4IframeContainer__Common__Width2 {
+  width: 99%;
+  height: 53.1vh;
+}
+
+.Screen4IframeContainer__Common__height1 {
+  width: 49%;
+}
+
+.Screen4IframeContainer__Common__height2 {
+  width: 28vh;
+}
+
+.Section4ChildCardsContainerIframeType1 {
+  height: 15.5vh;
+  padding: 10px;
+}
+.Section4ChildCardsContainerIframeType2 {
+  height: 30vh;
+  padding: 10px;
+}
+
+.extraTop {
+  position: relative;
+  top: 80px;
+}
+
+.Screen4ThirdImageMarginFix {
+  margin-bottom: 16px;
+}

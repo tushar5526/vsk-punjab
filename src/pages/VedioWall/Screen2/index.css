@@ -1,0 +1,68 @@
+.Screen2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+}
+
+.Screen2__Container {
+  width: 49%;
+  height: 100%;
+}
+
+.Screen2__Container1 {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: space-between;
+}
+
+.Screen2__Container1--iframe {
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  width: 32%;
+  padding: 10px;
+  height: 18vh;
+}
+
+.Screen2__Container2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: fit-content;
+}
+
+.Screen2__Container2--iframe {
+  width: 32%;
+  height: 65vh;
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  padding: 10px;
+}
+
+.Screen2__Container3--iframe {
+  box-shadow: var(--card-shadow);
+  height: 83.8vh;
+  border-radius: var(--card-radius);
+  padding: 10px;
+}
+
+.TopBottomDistrictScreen2--iframe {
+  box-shadow: var(--card-shadow);
+  height: 40vh;
+  border-radius: var(--card-radius);
+  padding: 10px;
+}
+
+.IframeScreen {
+  width: 100vw;
+  height: 100vh;
+}
+
+.Screen2VedioWallFilters {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin: 0 10px;
+}

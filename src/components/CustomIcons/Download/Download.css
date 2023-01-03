@@ -1,0 +1,16 @@
+.CutomIcon {
+  width: auto;
+  height: auto;
+}
+
+.CutomIcon__Image {
+  object-fit: contain;
+}
+
+.CostomIcon__Image--large {
+  width: 40px;
+}
+
+.CostomIcon__Image--medium {
+  width: 30px;
+}
