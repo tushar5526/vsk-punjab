@@ -2,8 +2,14 @@ import React, { useState } from 'react'
 import QuestionWithIframe from '../../../components/QuestionWIthIframe'
 import "./index.css"
 import Filters from '../Filters/Filters'
+import { connect } from 'react-redux'
 
-const Screen2: React.FC = () => {
+
+interface Props {
+    year: any
+    date_range: any
+}
+const Screen2: React.FC<Props> = ({ year, date_range }) => {
 
     return (
         <>
@@ -13,6 +19,7 @@ const Screen2: React.FC = () => {
                     questionId={55}
                     width="100%"
                     type={1}
+                    params={{ year, date_range }}
                     height="100%"
                     handleLoadCounter={() => { }}
                 />
@@ -21,4 +28,10 @@ const Screen2: React.FC = () => {
     )
 }
 
-export default Screen2
+
+const mapStateToProps = ({ vedio_wall: { year, date_range } }: any) => ({
+    year,
+    date_range,
+})
+
+export default connect(mapStateToProps)(Screen2)

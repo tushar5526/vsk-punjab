@@ -1,17 +1,17 @@
 import { Component } from 'react'
 import QuestionWithIframe from '../../../components/QuestionWIthIframe'
 import IframeHeading from '../../ControlledTabs/Tabs/utils/IframeHeading'
-import SectionHeader from '../../ControlledTabs/Tabs/utils/SectionHeader'
-import StudentAttendanceIcon from "../../../assets/pjb/SectionHeader/student_attendance.png"
 import "./index.css"
 import CustomMap from '../../../components/CustomMap/CustomMap'
+import { connect } from 'react-redux'
 
 interface State {
     config: any
     markerData: any
 }
 interface Props {
-
+    year: any
+    date_range: any
 }
 
 
@@ -34,6 +34,7 @@ export class Screen1 extends Component<Props, State> {
                             questionId={54}
                             width="100%"
                             type={1}
+                            params={{ ...this.props }}
                             height="100%"
                             handleLoadCounter={() => { }}
                         />
@@ -50,4 +51,10 @@ export class Screen1 extends Component<Props, State> {
     }
 }
 
-export default Screen1
+
+const mapStateToProps = ({ vedio_wall: { year, date_range } }: any) => ({
+    year,
+    date_range,
+})
+
+export default connect(mapStateToProps)(Screen1)
