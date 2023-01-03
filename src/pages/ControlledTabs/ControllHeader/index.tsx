@@ -32,13 +32,7 @@ const DemoHeader = ({ tabs, _toogle, current, _toogleFilterPage, dashboard }: an
             b: "Block"
         })
 
-        setAcademicParams({
-            date_range: "2022-12-04~2022-12-21",
-            assessment: [],
-            year: [],
-            class: [],
-            subject: []
-        })
+
         setGeo({ district: [] })
         setGeo2({ block: [] })
         if (current === 0) {
@@ -46,7 +40,13 @@ const DemoHeader = ({ tabs, _toogle, current, _toogleFilterPage, dashboard }: an
         } else if (current === 1) {
             _toogleFilterPage(_dash.admin)
         } else if (current === 2) {
-
+            setAcademicParams({
+                date_range: "2022-12-04~2022-12-21",
+                assessment: [],
+                year: [],
+                class: [],
+                subject: []
+            })
             _toogleFilterPage(_dash.academic)
         }
     }
