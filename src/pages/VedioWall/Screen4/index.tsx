@@ -22,6 +22,10 @@ export class Screen4 extends Component<Props, any> {
                         width="100%"
                         type={1}
                         height="100%"
+                        params={{
+                            year: this.props.year,
+                            date_range: this.props.date_range
+                        }}
                         handleLoadCounter={() => { }}
                     />
                 </div>

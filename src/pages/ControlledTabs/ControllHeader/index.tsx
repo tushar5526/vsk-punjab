@@ -42,7 +42,6 @@ const DemoHeader = ({ tabs, _toogle, current, _toogleFilterPage, dashboard }: an
         } else if (current === 2) {
             setAcademicParams({
                 date_range: "2022-12-04~2022-12-21",
-                assessment: [],
                 year: [],
                 class: [],
                 subject: []
@@ -94,7 +93,6 @@ const DemoHeader = ({ tabs, _toogle, current, _toogleFilterPage, dashboard }: an
 
     const [academicParams, setAcademicParams] = useState<any>({
         date_range: [],
-        assessment: [],
         year: [],
         class: [],
         subject: []
@@ -234,8 +232,6 @@ const DemoHeader = ({ tabs, _toogle, current, _toogleFilterPage, dashboard }: an
                             ))}
                         </div>
                         <div className="demoHeader__Tabs demoHeader__Tabs__Evenly">
-
-
                             <Select
                                 className='demoHeader__select'
                                 suffixIcon={<img alt="dropdown" className='demoHeader__dropdown--suffix' src={down_arrow} />}
@@ -273,17 +269,6 @@ const DemoHeader = ({ tabs, _toogle, current, _toogleFilterPage, dashboard }: an
                                             setAcademicParams({
                                                 ...academicParams,
                                                 year: [e],
-                                            })
-                                        }}
-                                    />
-                                    <Select
-                                        className='demoHeader__select'
-                                        suffixIcon={<img alt="dropdown" className='demoHeader__dropdown--suffix' src={down_arrow} />}
-                                        value={academicParams.assessment[0] || "Assessment"}
-                                        onChange={() => {
-                                            setAcademicParams({
-                                                ...academicParams,
-                                                assessment: [],
                                             })
                                         }}
                                     />

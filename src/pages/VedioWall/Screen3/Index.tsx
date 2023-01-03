@@ -13,6 +13,7 @@ export class Screen3 extends Component<Props, any> {
     constructor(props: Props) {
         super(props)
     }
+
     render() {
         return (
             <>
@@ -21,7 +22,10 @@ export class Screen3 extends Component<Props, any> {
                         questionId={56}
                         width="100%"
                         type={1}
-                        params={{ ...this.props }}
+                        params={{
+                            year: this.props.year,
+                            date_range: this.props.date_range
+                        }}
                         height="100%"
                         handleLoadCounter={() => { }}
                     />
