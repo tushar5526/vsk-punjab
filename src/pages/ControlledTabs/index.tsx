@@ -1,8 +1,6 @@
 import ControllHeader from './ControllHeader';
 import "./index.css"
 import GreayFooter from './GreyFooter/GreayFooter';
-import { useEffect, useState } from 'react';
-import Dashboard from '../Dashboard/Dashboard';
 
 const ControlledTabs = () => {
 
