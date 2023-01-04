@@ -7,7 +7,9 @@ import education from "../../assets/pjb/Header/highres/education-logo.png"
 const Screen2Header: FC = () => {
 
     return (
-        <div key={+new Date()} className="dashboard-header">
+        <div style={{
+            padding: "20px 0"
+        }} key={+new Date()} className="dashboard-header">
             <Row gutter={10} justify={"space-between"}>
                 <Col
                     span={24}
