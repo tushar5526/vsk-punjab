@@ -106,8 +106,8 @@ const App: FC = ({ _addUserToState }: any) => {
           <Switch>
             <Route exact path={ROUTE_CONST.login} component={() => <CreateHeaderContext comp={Login} />} />
             <Route exact path={ROUTE_CONST.vdo_wall_1} component={() => <CreateHeaderContextForScreen1 comp={Screen1} />} />
-            <Route exact path={ROUTE_CONST.vdo_wall_3} component={Screen3} />
             <Route exact path={ROUTE_CONST.vdo_wall_2} component={() => <CreateHeaderContextForScreen2 comp={Screen2} />} />
+            <Route exact path={ROUTE_CONST.vdo_wall_3} component={Screen3} />
             <Route exact path={ROUTE_CONST.vdo_wall_4} component={Screen4} />
             <PrivateRoute exact path={ROUTE_CONST.map_test} component={() => <CreateHeaderContext comp={CustomMap} />} />
             <PrivateRoute exact path={ROUTE_CONST.card_poc1} component={() => <CreateHeaderContext comp={ScreenPoc} />} />

@@ -53,7 +53,6 @@ const CustomMap = () => {
         getMarkerData()
     }, [])
     return (
-
         <MapComponent config={null} markers={markers} />
     )
 }

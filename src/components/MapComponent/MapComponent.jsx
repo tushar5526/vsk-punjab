@@ -104,11 +104,7 @@ export default function MapComponent({ config, markers }) {
                   // className: "leaflet-div-icon",
                 });
                 return (
-                  <Marker position={item.position} icon={iconPerson}>
-                    <Popup>
-                      <div>Empty Tool Tip</div>
-                    </Popup>
-                  </Marker>
+                  <ToolTip iconPerson={iconPerson} position={item.position} />
                 );
               })}
             </div>

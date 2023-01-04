@@ -1,7 +1,8 @@
 import { Spin } from 'antd';
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Marker, Popup } from 'react-leaflet';
+import { useEffect } from 'react';
 
 interface ToolTipProps {
     position: any
@@ -29,14 +30,18 @@ const ToolTip: React.FC<ToolTipProps> = ({ position, iconPerson }) => {
         getToolTip()
     }, [])
     return (
-        <Marker
-            position={position}
-            icon={iconPerson}
-        >
-            <Popup className="tooltip-popup" >
-                <div>{toolTip || <Spin />}</div>
-            </Popup>
-        </Marker>
+        <div onClick={() => console.log("hello")} >
+            <Marker
+                position={position}
+                icon={iconPerson}
+            >
+                <Popup onOpen={getToolTip} className="tooltip-popup" >
+                    {toolTip && (
+                        <div>{toolTip}</div>
+                    )}
+                </Popup>
+            </Marker>
+        </div>
     )
 }
 
