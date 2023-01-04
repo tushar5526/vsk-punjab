@@ -84,7 +84,7 @@ const DemoHeader = ({ tabs, _toogle, current, _toogleFilterPage, dashboard }: an
             _toogleFilterPage(_dash.performance_district)
         } else if (user.Role === _role.Block) {
             const districtByBlock = getDistrictBasedOnBlock(user.Location)
-            handleBlockLink(user.Location, districtByBlock)
+            handleBlockLink(String(user.Location).replace(regex, ""), districtByBlock)
             setGeo({ district: [districtByBlock] })
             setGeo2({ block: [String(user.Location).replace(regex, "")] })
         }
