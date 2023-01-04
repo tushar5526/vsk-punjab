@@ -5,6 +5,7 @@ import { Col, Row } from "antd"
 import QuestionWithIframe from "../../../components/QuestionWIthIframe"
 import { connect } from 'react-redux';
 import { FC } from "react"
+import CustomMap from "../../../components/CustomMap/CustomMap"
 
 
 interface Props {
@@ -16,18 +17,27 @@ const Combined: FC<Props> = ({ date_range, year }) => {
         <>
             <CombinedHeader />
             <Filters />
-            <Row>
+            <Row gutter={2}>
                 <Col span={12}>
-                    <div className="CombinedIframe">
-                        <QuestionWithIframe
-                            questionId={54}
-                            width="100%"
-                            height="100%"
-                            type={1}
-                            params={{ year, date_range }}
-                            handleLoadCounter={() => { }}
-                        />
-                    </div>
+                    <Row gutter={2}>
+                        <Col span={16}>
+                            <div className="CombinedIframe">
+                                <QuestionWithIframe
+                                    questionId={54}
+                                    width="100%"
+                                    height="100%"
+                                    type={1}
+                                    params={{ year, date_range }}
+                                    handleLoadCounter={() => { }}
+                                />
+                            </div>
+                        </Col>
+                        <Col span={8}>
+                            <div className="CombinedIframe">
+                                <CustomMap />
+                            </div>
+                        </Col>
+                    </Row>
                 </Col>
                 <Col span={12}>
                     <div className="CombinedIframe">
@@ -41,7 +51,7 @@ const Combined: FC<Props> = ({ date_range, year }) => {
                     </div>
                 </Col>
             </Row>
-            <Row>
+            <Row gutter={2}>
                 <Col span={12}>
                     <div className="CombinedIframe">
                         <QuestionWithIframe

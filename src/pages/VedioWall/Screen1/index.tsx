@@ -34,7 +34,7 @@ export class Screen1 extends Component<Props, State> {
                             questionId={54}
                             width="100%"
                             type={1}
-                            // params={{ ...this.props }}
+                            params={{ ...this.props }}
                             height="100%"
                             handleLoadCounter={() => { }}
                         />
