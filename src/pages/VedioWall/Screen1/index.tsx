@@ -33,10 +33,9 @@ export class Screen1 extends Component<Props, State> {
                         <QuestionWithIframe
                             questionId={54}
                             width="100%"
+                            height="100%"
                             type={1}
                             params={{ ...this.props }}
-                            height="100%"
-                            handleLoadCounter={() => { }}
                         />
                     </div>
                     <div className='Screen1__Container'>

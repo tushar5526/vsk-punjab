@@ -8,7 +8,9 @@ const ROUTE_CONST = {
     vdo_wall_4: "/vdo_wall_4",
     card_poc1: "/card_poc1",
     card_poc2: "/card_poc2",
-    combined: "/combined"
+    combined: "/combined",
+    combined_test: "/combined_test"
+
 }
 
 

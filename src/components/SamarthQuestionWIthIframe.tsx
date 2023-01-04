@@ -46,7 +46,7 @@ const SamarthQuestionWithIframeProtected = ({
     if (questionId) {
       generateUrl();
     }
-  }, [questionId, params?.month, params?.Quarter]);
+  }, [questionId, params]);
 
   useEffect(() => {
     if (

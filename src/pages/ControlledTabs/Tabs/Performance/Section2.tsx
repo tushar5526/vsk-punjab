@@ -36,7 +36,7 @@ const Section2 = ({ getMarkerData, markerData, filters: { district, block, clust
     };
 
     useEffect(() => {
-        getConfig();
+        // getConfig();
         getMarkerData()
     }, [])
     return (

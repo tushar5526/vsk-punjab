@@ -63,7 +63,6 @@ const QuestionWithIframeProtected = ({
   };
 
   useEffect(() => {
-    console.log(params, "parms filters")
     if (questionId) {
       generateUrl();
     }

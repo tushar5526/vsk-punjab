@@ -31,7 +31,7 @@ const ToolTip: React.FC<ToolTipProps> = ({ position, iconPerson }) => {
         getToolTip()
     }, [])
     return (
-        <div onClick={() => console.log("hello")} >
+        <div >
             <Marker
                 position={position}
                 icon={iconPerson}

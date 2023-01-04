@@ -1,18 +1,16 @@
-import "./Combined.css"
-import CombinedHeader from "../../../components/layouts/CombinedHeader"
-import Filters from "../Filters/Filters"
-import { Col, Row } from "antd"
-import QuestionWithIframe from "../../../components/QuestionWIthIframe"
+import { Col, Row } from 'antd';
+import QuestionWithIframe from '../../../components/QuestionWIthIframe';
+import CustomMap from '../../../components/CustomMap/CustomMap';
+import Filters from '../Filters/Filters';
+import CombinedHeader from '../../../components/layouts/CombinedHeader';
 import { connect } from 'react-redux';
-import { FC } from "react"
-import CustomMap from "../../../components/CustomMap/CustomMap"
-
+import { FC } from 'react';
 
 interface Props {
     date_range: any
     year: any
 }
-const Combined: FC<Props> = ({ date_range, year }) => {
+const CombinedTest: FC<Props> = ({ date_range, year }) => {
     return (
         <>
             <CombinedHeader />
@@ -41,7 +39,7 @@ const Combined: FC<Props> = ({ date_range, year }) => {
                 <Col span={12}>
                     <div className="CombinedIframe">
                         <QuestionWithIframe
-                            questionId={55}
+                            questionId={65}
                             width="100%"
                             height="100%"
                             type={1}
@@ -54,37 +52,33 @@ const Combined: FC<Props> = ({ date_range, year }) => {
                 <Col span={12}>
                     <div className="CombinedIframe">
                         <QuestionWithIframe
-                            questionId={56}
+                            questionId={66}
                             height="100%"
                             width="100%"
                             params={{ year, date_range }}
                             type={1}
-                            handleLoadCounter={() => { }}
                         />
                     </div>
                 </Col>
                 <Col span={12}>
                     <div className="CombinedIframe">
                         <QuestionWithIframe
-                            questionId={57}
+                            questionId={67}
                             width="100%"
                             height="100%"
                             params={{ year, date_range }}
                             type={1}
-                            handleLoadCounter={() => { }}
                         />
                     </div>
                 </Col>
             </Row>
         </>
     )
-
 }
-
-
 const mapStateToProps = ({ vedio_wall: { year, date_range } }: any) => ({
     year,
     date_range,
 })
 
-export default connect(mapStateToProps)(Combined)
+
+export default connect(mapStateToProps)(CombinedTest)
