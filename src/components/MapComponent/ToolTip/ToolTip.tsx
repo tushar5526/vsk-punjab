@@ -36,7 +36,7 @@ const ToolTip: React.FC<ToolTipProps> = ({ position, iconPerson }) => {
                 position={position}
                 icon={iconPerson}
             >
-                <Popup onOpen={getToolTip} className="tooltip-popup" >
+                <Popup className="tooltip-popup" >
                     {toolTip && (
                         <div className='toolTipStyle'>
                             <div>
