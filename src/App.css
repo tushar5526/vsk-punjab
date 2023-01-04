@@ -23,3 +23,9 @@ p {
 .mb {
   margin-bottom: 20px;
 }
+
+.tooltip-popup .leaflet-popup-content-wrapper {
+  color: black !important;
+  background-color: #d9d9d9 !important;
+  font-size: 0 !important;
+}

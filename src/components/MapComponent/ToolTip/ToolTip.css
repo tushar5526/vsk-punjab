@@ -1,0 +1,11 @@
+.toolTipStyle > div > span {
+  font-size: 10px;
+}
+
+.toolTipStyle {
+  width: 100%;
+}
+
+.tooltip-popup {
+  width: fit-content;
+}
