@@ -47,7 +47,7 @@ const Combined: FC<Props> = ({ date_range, year }) => {
                 <Col span={12}>
                     <div className="CombinedIframe">
                         <QuestionWithIframe
-                            questionId={55}
+                            questionId={65}
                             width="100%"
                             height="100%"
                             type={1}
@@ -60,7 +60,7 @@ const Combined: FC<Props> = ({ date_range, year }) => {
                 <Col span={12}>
                     <div className="CombinedIframe">
                         <QuestionWithIframe
-                            questionId={56}
+                            questionId={66}
                             height="100%"
                             width="100%"
                             params={{ year, date_range }}
@@ -72,7 +72,7 @@ const Combined: FC<Props> = ({ date_range, year }) => {
                 <Col span={12}>
                     <div className="CombinedIframe">
                         <QuestionWithIframe
-                            questionId={57}
+                            questionId={67}
                             width="100%"
                             height="100%"
                             params={{ year, date_range }}

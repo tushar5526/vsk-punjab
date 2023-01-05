@@ -4,6 +4,8 @@
 
 .CombinedIframe__map {
   height: 84%;
+  border: 8px solid var(--grey-primary);
+  overflow: hidden;
 }
 
 .demoHeader3__height1 {
