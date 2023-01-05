@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 import { FC } from "react"
 import CustomMap from "../../../components/CustomMap/CustomMap"
 import SectionHeader from "../../ControlledTabs/Tabs/utils/SectionHeader"
-
+import { GoLocation } from "react-icons/go"
 
 interface Props {
     date_range: any
@@ -32,10 +32,11 @@ const Combined: FC<Props> = ({ date_range, year }) => {
                                 />
                             </div>
                         </Col>
+
                         <Col span={8}>
                             <div className="CombinedIframe CombinedIframe__flex CombinedIframe__flex--fix">
                                 <div className='CombinedIframe__header'>
-                                    <SectionHeader label="Map View" />
+                                    <SectionHeader Icon={GoLocation} label="Map View" />
                                 </div>
                                 <div className='CombinedIframe__map'>
                                     <CustomMap />

@@ -13,7 +13,7 @@ const SectionHeader = ({ label, label2, Icon }: Props) => {
                 {!label2 || label2 === "" ? (
                     <>
                         <div className="demoHeader3__spanDiv">
-                            <Image src={Icon} height={"30px"} preview={false} />
+                            <Icon />
                         </div>
                         <p className="demoHeader3__spanText">{label}</p>
                     </>

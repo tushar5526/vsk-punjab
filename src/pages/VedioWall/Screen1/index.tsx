@@ -1,10 +1,10 @@
 import { Component } from 'react'
 import QuestionWithIframe from '../../../components/QuestionWIthIframe'
-import IframeHeading from '../../ControlledTabs/Tabs/utils/IframeHeading'
 import "./index.css"
 import CustomMap from '../../../components/CustomMap/CustomMap'
 import { connect } from 'react-redux'
-
+import SectionHeader from '../../ControlledTabs/Tabs/utils/SectionHeader'
+import { GoLocation } from "react-icons/go"
 interface State {
     config: any
     markerData: any
@@ -39,7 +39,7 @@ export class Screen1 extends Component<Props, State> {
                         />
                     </div>
                     <div className='Screen1__Container'>
-                        <IframeHeading greenVariant label='Student Attendance - Map View' />
+                        <SectionHeader Icon={GoLocation} label="Map View" />
                         <div className="Screen__Container1--map">
                             <CustomMap />
                         </div>

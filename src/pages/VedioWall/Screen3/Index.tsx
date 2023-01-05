@@ -17,7 +17,7 @@ export class Screen3 extends Component<Props, any> {
     render() {
         return (
             <>
-                <div className='IframeScreen'>
+                <div className='IframeScreen3'>
                     <QuestionWithIframe
                         questionId={66}
                         width="100%"

@@ -44,7 +44,7 @@
 }
 
 .Screen__Container1--map {
-  height: 76vh;
+  height: 87vh;
 }
 
 .Screen1__Container1_DistrictPerformance {
@@ -61,4 +61,5 @@
 
 .screen1NewIframe {
   width: 70vw;
+  height: 96vh;
 }
