@@ -110,44 +110,6 @@ export default function MapComponent({ config, markers }) {
             </div>
           ))}
       </MapContainer>
-      {/* {config.legend.display && (
-        <div
-          style={{
-            display: config.legend.display ? "flex" : "none",
-            width: "100%",
-            marginTop: "10px",
-            // flexDirection: "column",
-            justifyContent:
-              config.legend.position.split("-")[1] === "right"
-                ? "flex-end"
-                : "flex-start",
-          }}
-        >
-          {config.legend.labels.map((item) => {
-            return (
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                }}
-              >
-                <div
-                  style={{
-                    display: "flex",
-                    width: "50px",
-                    height: 25,
-                    backgroundColor: item.color,
-                    padding: "0px",
-                  }}
-                />
-                <label style={{ ...item, color: "black", fontSize: "30px" }}>
-                  {item.label}
-                </label>
-              </div>
-            );
-          })}
-        </div>
-      )} */}
     </div>
   );
 }
