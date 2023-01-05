@@ -16,7 +16,7 @@ const Screen2: React.FC<Props> = ({ year, date_range }) => {
             <Filters />
             <div className='IframeScreen'>
                 <QuestionWithIframe
-                    questionId={55}
+                    questionId={65}
                     width="100%"
                     type={1}
                     params={{ year, date_range }}

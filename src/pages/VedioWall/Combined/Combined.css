@@ -1,3 +1,21 @@
 .CombinedIframe {
   height: 48vh;
 }
+
+.CombinedIframe__map {
+  height: 84%;
+}
+
+.demoHeader3__height1 {
+  height: 100px;
+  margin-top: 70px;
+}
+
+.CombinedIframe__flex {
+  display: flex;
+}
+
+.CombinedIframe__flex--fix {
+  flex-direction: column;
+  justify-content: space-between;
+}

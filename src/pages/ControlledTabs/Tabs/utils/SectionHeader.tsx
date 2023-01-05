@@ -6,9 +6,9 @@ interface Props {
     withHeight?: boolean
     Icon?: any
 }
-const SectionHeader = ({ label, label2, withHeight = true, Icon }: Props) => {
+const SectionHeader = ({ label, label2, Icon }: Props) => {
     return (
-        <div className={`demoHeader3 ${withHeight ? "demoHeader3__height1" : "demoHeader3__height2"}  mb`}>
+        <div className={`demoHeader3 demoHeader3__height1  mb`}>
             <div className='demoHeader3__span'>
                 {!label2 || label2 === "" ? (
                     <>
