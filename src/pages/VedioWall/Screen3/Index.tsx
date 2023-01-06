@@ -1,40 +1,34 @@
-import { Component } from 'react'
+import { FC } from 'react';
 import QuestionWithIframe from '../../../components/QuestionWIthIframe'
 import "./index.css"
 import { connect } from 'react-redux'
-
-
+import SectionHeader from '../../ControlledTabs/Tabs/utils/SectionHeader'
+import midDayMeal from "../../../assets/pjb/SectionHeader/mid_day_meal.png"
+import CombinedFooter from '../../../components/layouts/CombinedFooter'
 
 interface Props {
     year: any
     date_range: any
 }
-export class Screen3 extends Component<Props, any> {
-    constructor(props: Props) {
-        super(props)
-    }
 
-    render() {
-        return (
-            <>
-                <div className='IframeScreen3'>
-                    <QuestionWithIframe
-                        questionId={66}
-                        width="100%"
-                        type={1}
-                        params={{
-                            year: this.props.year,
-                            date_range: this.props.date_range
-                        }}
-                        height="100%"
-                        handleLoadCounter={() => { }}
-                    />
-                </div>
-            </>
-        )
-    }
+const Screen3: FC<Props> = ({ year, date_range }) => {
+    return (
+        <>
+            <SectionHeader Icon={midDayMeal} label="Mid-day Meal" />
+
+            <div className='IframeScreen3'>
+                <QuestionWithIframe
+                    questionId={66}
+                    width="100%"
+                    type={1}
+                    params={{ year, date_range }}
+                    height="100%"
+                />
+            </div>
+            <CombinedFooter />
+        </>
+    )
 }
-
 
 const mapStateToProps = ({ vedio_wall: { year, date_range } }: any) => ({
     year,

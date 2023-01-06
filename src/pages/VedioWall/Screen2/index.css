@@ -60,14 +60,10 @@
   height: 94vh;
 }
 
-.IframeScreen3 {
-  width: 100vw;
-  height: 99vh;
-}
-
+.IframeScreen3,
 .IframeScreen4 {
   width: 100vw;
-  height: 99vh;
+  height: 89vh;
 }
 
 .Screen2VedioWallFilters {

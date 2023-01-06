@@ -63,3 +63,7 @@
   width: 70vw;
   height: 96vh;
 }
+
+.HeaderContainer__padding {
+  padding: 0 10px;
+}

@@ -202,21 +202,22 @@
 
 .demoHeader3__spanDiv {
   background-color: white;
-  width: 40px;
+  width: 95px;
   border-radius: 50%;
-  height: 40px;
+  height: 95px;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 10px;
   margin-right: 10px;
   object-fit: contain;
+  margin-right: 70px;
 }
 
 .demoHeader3__spanText {
   font-weight: 700;
   color: white;
-  font-size: 26px;
+  font-size: 44px;
   margin: 0;
 }
 
@@ -242,6 +243,11 @@
 .demoHeader3__spanLabelDiv > p:nth-child(2) {
   font-size: 20px;
   font-weight: 700;
+}
+
+.demoHeader3__spanDiv--image {
+  width: 80%;
+  object-fit: contain;
 }
 
 /* Demo card section */

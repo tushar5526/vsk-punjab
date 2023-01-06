@@ -24,3 +24,9 @@
   height: 28px;
   font-size: 12px;
 }
+
+.combinedFooter {
+  background: var(--dashboard-header);
+  height: 100px;
+  width: 100%;
+}

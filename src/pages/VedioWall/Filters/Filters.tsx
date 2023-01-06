@@ -1,5 +1,5 @@
 import { Button, DatePicker, Popover, Select } from 'antd';
-import { FC, useState } from 'react'
+import { FC } from 'react'
 import { ClearFilter } from '../../../components/ClearFilter';
 import moment from 'moment';
 import { applyDateFilter, applyYearFilter } from '../../../redux/VedioWall/actions';

@@ -1,16 +1,19 @@
 .CombinedIframe {
-  height: 48vh;
+  height: 37vh;
+}
+
+.CombinedIframe2 {
+  height: 46vh;
 }
 
 .CombinedIframe__map {
-  height: 84%;
+  height: 86%;
   border: 8px solid var(--grey-primary);
   overflow: hidden;
 }
 
 .demoHeader3__height1 {
-  height: 100px;
-  margin-top: 70px;
+  height: 120px;
 }
 
 .CombinedIframe__flex {

@@ -21,6 +21,12 @@ interface USER {
 const DemoHeader = ({ tabs, _toogle, current, _toogleFilterPage, dashboard }: any) => {
 
 
+    const [geo, setGeo] = useState<any>({
+        district: [],
+    })
+    const [geo2, setGeo2] = useState<any>({
+        block: [],
+    })
     const [geoState, setGeoState] = useState<any>({
         d: localStorage.getItem(linkingTypes.USER_DEFAULT_DISTRICT) || "District",
         b: localStorage.getItem(linkingTypes.USER_DEFAULT_BLOCK) || "Block"
@@ -63,12 +69,6 @@ const DemoHeader = ({ tabs, _toogle, current, _toogleFilterPage, dashboard }: an
         academic_district: 63,
         academic_block: 64
     }
-    const [geo, setGeo] = useState<any>({
-        district: [],
-    })
-    const [geo2, setGeo2] = useState<any>({
-        block: [],
-    })
 
     const _role = {
         State: "State",
@@ -207,6 +207,7 @@ const DemoHeader = ({ tabs, _toogle, current, _toogleFilterPage, dashboard }: an
     }
     useEffect(() => {
         extractUser()
+
     }, [])
 
 

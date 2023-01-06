@@ -13,7 +13,7 @@ import Side_Img from "../../assets/image 135.png";
 import API_SERVICE from "../../services/api-service";
 import { toogleUserSession } from '../../redux/user/actions';
 import { connect } from 'react-redux/es/exports';
-import { parseStringPromise, parseString } from 'xml2js';
+import { parseStringPromise } from 'xml2js';
 import { setLocalStorageItem } from "../../utils";
 import ROUTE_CONST from "../../Routing/RouteConstants";
 
@@ -39,7 +39,7 @@ const Login: FC = ({ _toogleUserSession }: any) => {
 
         const res = await API_SERVICE.Login(params)
         if (res) {
-          const { Location, Role, UserType, uniqueCode, message } = await parseStringPromise(res.data).then((resolved: any) => JSON.parse(resolved?.string?._)[0])
+          const { Location, Role, UserType, uniqueCode } = await parseStringPromise(res.data).then((resolved: any) => JSON.parse(resolved?.string?._)[0])
           if (uniqueCode) {
             _toogleUserSession()
             setLocalStorageItem("user", { Location, Role, UserType, uniqueCode })

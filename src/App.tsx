@@ -16,16 +16,16 @@ import Screen1 from "./pages/VedioWall/Screen1";
 import Screen2 from "./pages/VedioWall/Screen2";
 import Screen3 from "./pages/VedioWall/Screen3/Index";
 import Screen4 from "./pages/VedioWall/Screen4";
-import CustomMap from "./components/CustomMap/CustomMap";
 import Screen2Header from "./components/layouts/Screen2Header";
 import Screen1Header from "./components/layouts/Screen1Header";
 import { getUserFromLS } from "./utils";
 import { addUserToState } from './redux/user/actions';
 import { connect } from 'react-redux/es/exports';
-import ScreenPoc from './pages/VedioWall/ScreenPoc/index';
-import ScreenPoc2 from "./pages/VedioWall/ScreenPoc2";
 import Combined from "./pages/VedioWall/Combined/Combined";
-import CombinedTest from "./pages/VedioWall/CombinedTest/CombinedTest";
+// import CustomMap from "./components/CustomMap/CustomMap";
+// import ScreenPoc from './pages/VedioWall/ScreenPoc/index';
+// import ScreenPoc2 from "./pages/VedioWall/ScreenPoc2";
+// import CombinedTest from "./pages/VedioWall/CombinedTest/CombinedTest";
 export const IframeContextContext = React.createContext({
   updateHasFirstIframeLoaded: null,
   hasFirstIframeLoaded: null,

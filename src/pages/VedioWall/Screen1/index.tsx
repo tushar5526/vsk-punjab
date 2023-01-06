@@ -4,7 +4,8 @@ import "./index.css"
 import CustomMap from '../../../components/CustomMap/CustomMap'
 import { connect } from 'react-redux'
 import SectionHeader from '../../ControlledTabs/Tabs/utils/SectionHeader'
-import { GoLocation } from "react-icons/go"
+import StudentAttendance from "../../../assets/pjb/SectionHeader/student_attendance.png"
+import map from "../../../assets/pjb/SectionHeader/map.png"
 interface State {
     config: any
     markerData: any
@@ -29,17 +30,24 @@ export class Screen1 extends Component<Props, State> {
         return (
             <>
                 <div className='Screen1'>
-                    <div className='screen1NewIframe'>
-                        <QuestionWithIframe
-                            questionId={54}
-                            width="100%"
-                            height="100%"
-                            type={1}
-                            params={{ ...this.props }}
-                        />
+
+                    <div className='HeaderContainer'>
+                        <div className='HeaderContainer__padding'>
+                            <SectionHeader Icon={StudentAttendance} label="Student Attendance" />
+                        </div>
+
+                        <div className='screen1NewIframe'>
+                            <QuestionWithIframe
+                                questionId={54}
+                                width="100%"
+                                height="100%"
+                                type={1}
+                                params={{ ...this.props }}
+                            />
+                        </div>
                     </div>
                     <div className='Screen1__Container'>
-                        <SectionHeader Icon={GoLocation} label="Map View" />
+                        <SectionHeader Icon={map} label="Map View" />
                         <div className="Screen__Container1--map">
                             <CustomMap />
                         </div>
