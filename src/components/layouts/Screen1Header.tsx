@@ -11,13 +11,13 @@ const Screen1Header: FC = () => {
         <div key={+new Date()} className="dashboard-header">
             <Row gutter={10} justify={"space-between"}>
                 <Col span={12}>
-                    <NavLink to={"/"}>
-                        <Row className="image_row" gutter={10}>
-                            <Col>
-                                <Image src={bharatSarkar} height={"40px"} preview={false} />
-                            </Col>
-                        </Row>
-                    </NavLink>
+                    {/* <NavLink to={"/"}> */}
+                    <Row className="image_row" gutter={10}>
+                        <Col>
+                            <Image src={bharatSarkar} height={"40px"} preview={false} />
+                        </Col>
+                    </Row>
+                    {/* </NavLink> */}
                 </Col>
                 <Col span={12}>
                     <NavLink to={"/"}>

@@ -8,13 +8,13 @@ const CombinedHeader = () => {
         <div key={+new Date()} className="dashboard-header">
             <Row gutter={2} justify={"space-between"}>
                 <Col span={2}>
-                    <NavLink to={"/"}>
-                        <Row className="image_row" gutter={10}>
-                            <Col>
-                                <Image src={bharatSarkar} height={"40px"} preview={false} />
-                            </Col>
-                        </Row>
-                    </NavLink>
+                    {/* <NavLink to={"/"}> */}
+                    <Row className="image_row" gutter={10}>
+                        <Col>
+                            <Image src={bharatSarkar} height={"40px"} preview={false} />
+                        </Col>
+                    </Row>
+                    {/* </NavLink> */}
                 </Col>
                 <Col span={7}>
                     <NavLink to={"/"}>

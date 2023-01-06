@@ -27,17 +27,17 @@ const DashboardHeader: FC<Props> = ({ user_in_session, _toogleUserSession }) => 
     <div key={+new Date()} className="dashboard-header">
       <Row gutter={10} justify={"space-between"}>
         <Col span={6}>
-          <NavLink to={"/"}>
-            <Row className="image_row" gutter={10}>
-              <Col>
-                <Image src={BrataSarkar} height={"40px"} preview={false} />
-              </Col>
+          {/* <NavLink to={"/"}> */}
+          <Row className="image_row" gutter={10}>
+            <Col>
+              <Image src={BrataSarkar} height={"40px"} preview={false} />
+            </Col>
 
-              <Col>
-                <Image src={education} height={"40px"} preview={false} />
-              </Col>
-            </Row>
-          </NavLink>
+            <Col>
+              <Image src={education} height={"40px"} preview={false} />
+            </Col>
+          </Row>
+          {/* </NavLink> */}
         </Col>
         <Col span={12}>
           <NavLink to={"/"}>
