@@ -11,7 +11,8 @@ import studentAttendance from "../../../assets/pjb/SectionHeader/student_attenda
 import map from "../../../assets/pjb/SectionHeader/map.png"
 import infrastructure from "../../../assets/pjb/SectionHeader/infrastructure.png"
 import midDayMeal from "../../../assets/pjb/SectionHeader/mid_day_meal.png"
-import financeAndCivilWorks from "../../../assets/pjb/SectionHeader/mid_day_meal.png"
+import financeAndCivilWorks from "../../../assets/pjb/SectionHeader/finance_and_civil_works.png"
+import cwsn from "../../../assets/pjb/SectionHeader/cwsn.png"
 
 interface Props {
     date_range: any
@@ -88,10 +89,14 @@ const CombinedTest: FC<Props> = ({ date_range, year }) => {
                     </div>
                 </Col>
                 <Col span={12}>
-                    <div className="HeaderContainer__padding">
-                        <SectionHeader Icon={financeAndCivilWorks} label="Finance and Civil Works" />
+                    <div className="screen4HeaderContainer">
+                        <div className="HeaderContainer__padding HeaderContainer__width1">
+                            <SectionHeader Icon={financeAndCivilWorks} label="Finance and Civil Works" />
+                        </div>
+                        <div className="HeaderContainer__padding HeaderContainer__width2">
+                            <SectionHeader Icon={cwsn} label="CWSN" />
+                        </div>
                     </div>
-
                     <div className="CombinedIframe_Test">
                         <QuestionWithIframe
                             questionId={76}

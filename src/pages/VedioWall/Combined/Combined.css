@@ -32,3 +32,15 @@
   flex-direction: column;
   justify-content: space-between;
 }
+
+.screen4HeaderContainer {
+  display: flex;
+}
+
+.HeaderContainer__width1 {
+  width: 78%;
+}
+
+.HeaderContainer__width2 {
+  width: 23%;
+}
