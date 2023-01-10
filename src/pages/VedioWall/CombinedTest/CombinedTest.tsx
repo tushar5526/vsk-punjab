@@ -27,12 +27,12 @@ const CombinedTest: FC<Props> = ({ date_range, year }) => {
                 <Col span={12}>
                     <Row gutter={2}>
                         <Col span={16}>
-                            <div className="CombinedIframe_Test">
+                            <div className="CombinedIframe">
                                 <div className="HeaderContainer__padding">
                                     <SectionHeader Icon={studentAttendance} label="Student Attendance" />
                                 </div>
                                 <QuestionWithIframe
-                                    questionId={70}
+                                    questionId={77}
                                     width="100%"
                                     height="100%"
                                     type={1}
@@ -42,7 +42,7 @@ const CombinedTest: FC<Props> = ({ date_range, year }) => {
                         </Col>
 
                         <Col span={8}>
-                            <div className="CombinedIframe2_Test CombinedIframe__flex CombinedIframe__flex--fix">
+                            <div className="CombinedIframe2 CombinedIframe__flex CombinedIframe__flex--fix">
                                 <div className='CombinedIframe__header '>
                                     <SectionHeader Icon={map} label="Map View" />
                                 </div>
@@ -54,7 +54,7 @@ const CombinedTest: FC<Props> = ({ date_range, year }) => {
                     </Row>
                 </Col>
                 <Col span={12}>
-                    <div className="CombinedIframe_Test">
+                    <div className="CombinedIframe">
                         <div className="HeaderContainer__padding">
                             <SectionHeader Icon={infrastructure} label="Infrastructure" />
                         </div>
@@ -77,7 +77,7 @@ const CombinedTest: FC<Props> = ({ date_range, year }) => {
                     </div>
 
 
-                    <div className="CombinedIframe_Test">
+                    <div className="CombinedIframe">
                         <QuestionWithIframe
                             questionId={75}
                             height="100%"
@@ -97,7 +97,7 @@ const CombinedTest: FC<Props> = ({ date_range, year }) => {
                             <SectionHeader Icon={cwsn} label="CWSN" />
                         </div>
                     </div>
-                    <div className="CombinedIframe_Test">
+                    <div className="CombinedIframe">
                         <QuestionWithIframe
                             questionId={76}
                             width="100%"

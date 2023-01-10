@@ -7,7 +7,7 @@ interface Props {
 }
 const SectionHeader = ({ label, label2, Icon }: Props) => {
     return (
-        <div className={`demoHeader3 demoHeader3__height1  mb`}>
+        <div className={`demoHeader3 demoHeader3__height1`}>
             <div className='demoHeader3__span'>
                 {!label2 || label2 === "" ? (
                     <>
