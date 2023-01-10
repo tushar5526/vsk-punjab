@@ -72,7 +72,11 @@ export default function MapComponent({ config, markers }) {
                   // className: "leaflet-div-icon",
                 });
                 return (
-                  <ToolTip iconPerson={iconPerson} position={item.position} />
+                  <ToolTip
+                    key={`${idx}`}
+                    iconPerson={iconPerson}
+                    position={item.position}
+                  />
                 );
               })}
               {/* </div> */}
@@ -80,7 +84,7 @@ export default function MapComponent({ config, markers }) {
           ) : (
             //
             <div>
-              {markers?.postions.map((item) => {
+              {markers?.postions.map((item, idx) => {
                 let markerColor = blue_marker;
                 if (item.color === "red") {
                   markerColor = red_marker;
@@ -104,7 +108,11 @@ export default function MapComponent({ config, markers }) {
                   // className: "leaflet-div-icon",
                 });
                 return (
-                  <ToolTip iconPerson={iconPerson} position={item.position} />
+                  <ToolTip
+                    key={idx}
+                    iconPerson={iconPerson}
+                    position={item.position}
+                  />
                 );
               })}
             </div>

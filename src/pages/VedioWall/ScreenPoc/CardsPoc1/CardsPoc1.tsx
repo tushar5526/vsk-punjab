@@ -3,7 +3,6 @@ import QuestionWithIframe from '../../../../components/QuestionWIthIframe'
 const CardsPoc1 = ({ fill, type }: { fill: number, type: number }) => {
     return (
         <div className='VdoWallIframePocContainer1'>
-            {/* {Array(fill).fill(1).map(() => ( */}
             <div className='VdoWallIframePocContainer1__IframeBig'>
                 <QuestionWithIframe
                     questionId={51}

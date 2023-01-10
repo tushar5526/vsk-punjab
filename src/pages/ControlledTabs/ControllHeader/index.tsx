@@ -221,6 +221,7 @@ const DemoHeader = ({ tabs, _toogle, current, _toogleFilterPage, dashboard }: an
                         <div className="demoHeader__Tabs demoHeader__Tabs__Between">
                             {tabs?.map(({ dashboard_id, name }: any, idx: number) => (
                                 <button
+                                    key={`${dashboard_id}${name}${idx}`}
                                     onClick={() => {
                                         _toogle({
                                             dashboard: dashboard_id,

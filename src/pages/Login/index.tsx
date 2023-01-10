@@ -33,6 +33,7 @@ const Login: FC = ({ _toogleUserSession }: any) => {
         const _encryptedPassword = await parseStringPromise(encryptedPassword.data).then((resolved: any) => resolved?.string?._)
         const _encryptedUserName = await parseStringPromise(encryptedUserName.data).then((resolved: any) => resolved?.string?._)
 
+
         const params = new URLSearchParams()
         params.append("password", _encryptedPassword)
         params.append("UserID", _encryptedUserName)
@@ -41,6 +42,7 @@ const Login: FC = ({ _toogleUserSession }: any) => {
         if (res) {
           const { Location, Role, UserType, uniqueCode, message } = await parseStringPromise(res.data).then((resolved: any) => JSON.parse(resolved?.string?._)[0])
           if (uniqueCode) {
+            setLoader(false)
             _toogleUserSession()
             setLocalStorageItem("user", { Location, Role, UserType, uniqueCode })
             notification.success({
@@ -54,23 +56,35 @@ const Login: FC = ({ _toogleUserSession }: any) => {
               message: "Invalid Username or Password",
               placement: "topRight"
             })
+            console.log("in else ")
+            setLoader(false)
+
+
+
+            if ("serviceWorker" in navigator) {
+              navigator.serviceWorker.ready.then((registration) => {
+                console.log(`A service worker is active.....: ${registration.active}`);
+                window.location.href = ROUTE_CONST.root
+              });
+            } else {
+              console.error("Service workers are not supported.");
+            }
+            // return <Spin style={{ height: "100rem", width: "500px" }} />;
           }
         }
       }
 
     } catch (error) {
       // Relative error handling to be added 
+      notification.error({
+        message: "Invalid Username or Password",
+        placement: "topRight"
+      })
+      console.log("in catch")
+      setLoader(false)
+
     }
 
-    if ("serviceWorker" in navigator) {
-      navigator.serviceWorker.ready.then((registration) => {
-        console.log(`A service worker is active.....: ${registration.active}`);
-        window.location.href = ROUTE_CONST.root
-      });
-    } else {
-      console.error("Service workers are not supported.");
-    }
-    return <Spin style={{ height: "100rem", width: "500px" }} />;
   };
 
   return (

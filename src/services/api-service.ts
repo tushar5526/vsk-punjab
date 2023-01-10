@@ -16,7 +16,7 @@ const getLoginInstance = () => {
   return AXIOS.create({
     // @ts-ignore
     accept: "application/json",
-    baseURL: "http://112.196.9.114:98",
+    baseURL: "http://112.196.9.114:85/",
     headers: {
       Accept: "application/json",
       "Content-Type": "application/x-www-form-urlencoded",
