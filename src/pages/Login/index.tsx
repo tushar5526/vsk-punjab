@@ -42,13 +42,13 @@ const Login: FC = ({ _toogleUserSession }: any) => {
         if (res) {
           const { Location, Role, UserType, uniqueCode, message } = await parseStringPromise(res.data).then((resolved: any) => JSON.parse(resolved?.string?._)[0])
           if (uniqueCode) {
-            setLoader(false)
-            _toogleUserSession()
             setLocalStorageItem("user", { Location, Role, UserType, uniqueCode })
             notification.success({
               message: "Logged in Successfully",
               placement: "topRight"
             })
+            setLoader(false)
+            _toogleUserSession()
             window.location.href = ROUTE_CONST.root
 
           } else {
