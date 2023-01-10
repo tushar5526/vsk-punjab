@@ -60,7 +60,7 @@ const CombinedTest: FC<Props> = ({ date_range, year }) => {
 
 
                         <QuestionWithIframe
-                            questionId={71}
+                            questionId={74}
                             width="100%"
                             height="100%"
                             type={1}
@@ -78,7 +78,7 @@ const CombinedTest: FC<Props> = ({ date_range, year }) => {
 
                     <div className="CombinedIframe_Test">
                         <QuestionWithIframe
-                            questionId={72}
+                            questionId={75}
                             height="100%"
                             width="100%"
                             params={{ year, date_range }}
@@ -94,7 +94,7 @@ const CombinedTest: FC<Props> = ({ date_range, year }) => {
 
                     <div className="CombinedIframe_Test">
                         <QuestionWithIframe
-                            questionId={73}
+                            questionId={76}
                             width="100%"
                             height="100%"
                             params={{ year, date_range }}
