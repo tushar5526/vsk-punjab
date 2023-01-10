@@ -5,6 +5,13 @@ import Filters from '../Filters/Filters';
 import CombinedHeader from '../../../components/layouts/CombinedHeader';
 import { connect } from 'react-redux';
 import { FC } from 'react';
+import SectionHeader from '../../ControlledTabs/Tabs/utils/SectionHeader';
+import CombinedFooter from '../../../components/layouts/CombinedFooter';
+import studentAttendance from "../../../assets/pjb/SectionHeader/student_attendance.png"
+import map from "../../../assets/pjb/SectionHeader/map.png"
+import infrastructure from "../../../assets/pjb/SectionHeader/infrastructure.png"
+import midDayMeal from "../../../assets/pjb/SectionHeader/mid_day_meal.png"
+import financeAndCivilWorks from "../../../assets/pjb/SectionHeader/mid_day_meal.png"
 
 interface Props {
     date_range: any
@@ -19,9 +26,12 @@ const CombinedTest: FC<Props> = ({ date_range, year }) => {
                 <Col span={12}>
                     <Row gutter={2}>
                         <Col span={16}>
-                            <div className="CombinedIframe">
+                            <div className="CombinedIframe_Test">
+                                <div className="HeaderContainer__padding">
+                                    <SectionHeader Icon={studentAttendance} label="Student Attendance" />
+                                </div>
                                 <QuestionWithIframe
-                                    questionId={54}
+                                    questionId={70}
                                     width="100%"
                                     height="100%"
                                     type={1}
@@ -29,17 +39,28 @@ const CombinedTest: FC<Props> = ({ date_range, year }) => {
                                 />
                             </div>
                         </Col>
+
                         <Col span={8}>
-                            <div className="CombinedIframe">
-                                <CustomMap />
+                            <div className="CombinedIframe2_Test CombinedIframe__flex CombinedIframe__flex--fix">
+                                <div className='CombinedIframe__header '>
+                                    <SectionHeader Icon={map} label="Map View" />
+                                </div>
+                                <div className='CombinedIframe__map'>
+                                    <CustomMap />
+                                </div>
                             </div>
                         </Col>
                     </Row>
                 </Col>
                 <Col span={12}>
-                    <div className="CombinedIframe">
+                    <div className="CombinedIframe_Test">
+                        <div className="HeaderContainer__padding">
+                            <SectionHeader Icon={infrastructure} label="Infrastructure" />
+                        </div>
+
+
                         <QuestionWithIframe
-                            questionId={65}
+                            questionId={71}
                             width="100%"
                             height="100%"
                             type={1}
@@ -50,28 +71,40 @@ const CombinedTest: FC<Props> = ({ date_range, year }) => {
             </Row>
             <Row gutter={2}>
                 <Col span={12}>
-                    <div className="CombinedIframe">
+                    <div className="HeaderContainer__padding">
+                        <SectionHeader Icon={midDayMeal} label="Mid-day Meal" />
+                    </div>
+
+
+                    <div className="CombinedIframe_Test">
                         <QuestionWithIframe
-                            questionId={66}
+                            questionId={72}
                             height="100%"
                             width="100%"
                             params={{ year, date_range }}
                             type={1}
+                            handleLoadCounter={() => { }}
                         />
                     </div>
                 </Col>
                 <Col span={12}>
-                    <div className="CombinedIframe">
+                    <div className="HeaderContainer__padding">
+                        <SectionHeader Icon={financeAndCivilWorks} label="Finance and Civil Works" />
+                    </div>
+
+                    <div className="CombinedIframe_Test">
                         <QuestionWithIframe
-                            questionId={67}
+                            questionId={73}
                             width="100%"
                             height="100%"
                             params={{ year, date_range }}
                             type={1}
+                            handleLoadCounter={() => { }}
                         />
                     </div>
                 </Col>
             </Row>
+            <CombinedFooter />
         </>
     )
 }

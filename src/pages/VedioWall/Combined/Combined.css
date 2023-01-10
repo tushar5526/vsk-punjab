@@ -6,6 +6,14 @@
   height: 46vh;
 }
 
+.CombinedIframe_Test {
+  height: 37vh;
+}
+
+.CombinedIframe2_Test {
+  height: 46vh;
+}
+
 .CombinedIframe__map {
   height: 86%;
   border: 8px solid var(--grey-primary);
