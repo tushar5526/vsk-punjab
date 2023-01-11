@@ -38,8 +38,6 @@ const DemoHeader = ({ tabs, _toogle, current, _toogleFilterPage, dashboard }: an
         if (current === 0) {
             _toogleFilterPage(_dash.performance)
         } else if (current === 1) {
-            _toogleFilterPage(_dash.admin)
-        } else if (current === 2) {
             setAcademicParams({
                 date_range: "2022-12-04~2022-12-21",
                 year: [],
@@ -47,6 +45,9 @@ const DemoHeader = ({ tabs, _toogle, current, _toogleFilterPage, dashboard }: an
                 subject: []
             })
             _toogleFilterPage(_dash.academic)
+        } else if (current === 2) {
+            _toogleFilterPage(_dash.admin)
+
         }
     }
     const _dash = {
@@ -87,6 +88,7 @@ const DemoHeader = ({ tabs, _toogle, current, _toogleFilterPage, dashboard }: an
             handleBlockLink(String(user.Location).replace(regex, ""), districtByBlock)
             setGeo({ district: [districtByBlock] })
             setGeo2({ block: [String(user.Location).replace(regex, "")] })
+            _toogleFilterPage(_dash.performance_block)
         }
     }
     const { RangePicker } = DatePicker;
@@ -161,15 +163,15 @@ const DemoHeader = ({ tabs, _toogle, current, _toogleFilterPage, dashboard }: an
         setGeoState({ ...geoState, d: e })
         setGeo({ district: [e] })
         if (current === 0) _toogleFilterPage(_dash.performance_district)
-        else if (current === 1) _toogleFilterPage(_dash.admin_district)
-        else if (current === 2) _toogleFilterPage(_dash.academic_district)
+        else if (current === 1) _toogleFilterPage(_dash.academic_district)
+        else if (current === 2) _toogleFilterPage(_dash.admin_district)
     }
     const handleBlockChange = (e: any) => {
         setGeoState({ ...geoState, b: e })
         setGeo2({ block: [e] })
         if (current === 0) _toogleFilterPage(_dash.performance_block)
-        else if (current === 1) _toogleFilterPage(_dash.admin_block)
-        else if (current === 2) _toogleFilterPage(_dash.academic_block)
+        else if (current === 1) _toogleFilterPage(_dash.academic_block)
+        else if (current === 2) _toogleFilterPage(_dash.admin_block)
     }
     const { lodashTypes, getDataFromLodash, getDistrictBasedOnBlock } = filtersUtils
 

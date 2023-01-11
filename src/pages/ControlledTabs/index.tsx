@@ -7,22 +7,12 @@ const ControlledTabs = () => {
     const tabs = [
         {
             id: 1,
-            name: "Administrative KPIs",
+            name: "Administrative Overview",
             dashboard_id: 26,
             filters: {
                 block: 60,
                 cluster: 34,
                 district: 59
-            }
-        },
-        {
-            id: 2,
-            name: "Administrative Overview",
-            dashboard_id: 25,
-            filters: {
-                block: 62,
-                cluster: 31,
-                district: 61
             }
         },
         {
@@ -33,6 +23,16 @@ const ControlledTabs = () => {
                 cluster: 36,
                 district: 63,
                 block: 64
+            }
+        },
+        {
+            id: 2,
+            name: "Education Statistics",
+            dashboard_id: 25,
+            filters: {
+                block: 62,
+                cluster: 31,
+                district: 61
             }
         }
     ]
