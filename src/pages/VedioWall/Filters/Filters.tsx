@@ -2,9 +2,9 @@ import { DatePicker, Select } from 'antd';
 import { FC, useState, useEffect } from 'react'
 import { ClearFilter } from '../../../components/ClearFilter';
 import moment from 'moment';
-import { applyDateFilter, applyYearFilter, pushMisYearToState, setLoadingForMapRender } from '../../../redux/VedioWall/actions';
+import { applyDateFilter, applyYearFilter, pushMisYearToState, setDateForVedioWallFilter, setLoadingForMapRender } from '../../../redux/VedioWall/actions';
 import { connect } from 'react-redux';
-import { getAcademicYearList, parseYearListForMetabase } from '../utils';
+import { getAcademicYearList, parseYearListForMetabase, fixMomentDateForMis } from '../utils';
 
 interface Props {
     year: any
@@ -13,6 +13,7 @@ interface Props {
     applyDate: any
     pushMisYear: any
     setLoading: any
+    addDateForFilter: any
 }
 const Filters: FC<Props> = (props) => {
 
@@ -39,6 +40,7 @@ const Filters: FC<Props> = (props) => {
     };
 
     const fixDateRangeForAttendanceTab = (e: any) => {
+        props.addDateForFilter(fixMomentDateForMis(e[0]))
         let start = swapDateForRangeAttendance(
             moment(e[0]).format("l").split("/").reverse()
         );
@@ -54,7 +56,6 @@ const Filters: FC<Props> = (props) => {
     const getAcademicYear = async () => {
         const _misYearList = await getAcademicYearList()
         const _parsedMetabaseYearList = await parseYearListForMetabase(_misYearList)
-        console.log(_misYearList, _parsedMetabaseYearList, "parsed")
         setMetabaseYearList(_parsedMetabaseYearList)
         setMisYearList(_misYearList)
     }
@@ -101,6 +102,7 @@ const mapDispatchToProps = (dispatch: any) => ({
     applyYear: (e: any) => dispatch(applyYearFilter(e)),
     applyDate: (e: any) => dispatch(applyDateFilter(e)),
     pushMisYear: (e: any) => dispatch(pushMisYearToState(e)),
-    setLoading: (e: any) => dispatch(setLoadingForMapRender(e))
+    setLoading: (e: any) => dispatch(setLoadingForMapRender(e)),
+    addDateForFilter: (e: any) => dispatch(setDateForVedioWallFilter(e))
 })
 export default connect(mapStateToProps, mapDispatchToProps)(Filters)

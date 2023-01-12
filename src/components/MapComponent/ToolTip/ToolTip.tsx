@@ -6,12 +6,14 @@ import { useEffect } from 'react';
 import "./ToolTip.css"
 import { getEncryptedStringForMIS, getToolTip } from '../../../pages/VedioWall/utils';
 import { Spin } from 'antd';
+import { connect } from 'react-redux';
 
 interface Props {
     position: any
     iconPerson: any
     encryptedAcademicYear: any
     school_id: any
+    date: any
 }
 
 interface ToolTip {
@@ -37,7 +39,8 @@ const ToolTip: React.FC<Props> = (props) => {
 
     const getToolTipData = async () => {
         const encryptedSchoolId = await getEncryptedStringForMIS(props.school_id)
-        const res = await getToolTip(props.encryptedAcademicYear, encryptedSchoolId)
+        const encryptedDate = await getEncryptedStringForMIS(props.date)
+        const res = await getToolTip(props.encryptedAcademicYear, encryptedSchoolId, encryptedDate)
         if (res) setToolTip({ ...res, loaded: true })
     }
 
@@ -84,4 +87,7 @@ const ToolTip: React.FC<Props> = (props) => {
     )
 }
 
-export default ToolTip
+const mapStateToProps = ({ vedio_wall: { date } }: any) => ({
+    date
+})
+export default connect(mapStateToProps)(ToolTip)

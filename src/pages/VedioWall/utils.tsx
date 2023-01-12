@@ -1,5 +1,6 @@
 import { parseStringPromise } from "xml2js"
 import API_SERVICE from "../../services/api-service"
+import moment from 'moment';
 
 export const getAcademicYearList = async () => {
     try {
@@ -42,9 +43,9 @@ export const getEncryptedStringForMIS = async (e: any) => {
 }
 
 
-export const getToolTip = async (academicYear: any, schoolId: any) => {
+export const getToolTip = async (academicYear: any, schoolId: any, date: any) => {
     try {
-        const { data } = await API_SERVICE.getToolTipData(academicYear, schoolId)
+        const { data } = await API_SERVICE.getToolTipData(academicYear, schoolId, date)
         if (data) {
             return await parseStringPromise(data).then(({ string: { _ } }) => JSON.parse(_)[0])
         }
@@ -65,3 +66,11 @@ export const getSchoolListForMapWithLatLong = async (e: any) => {
     }
 }
 
+
+
+export const fixMomentDateForMis = (e?: any) => {
+    if (e) {
+        return moment(e).format("L").split("/").reverse().join("-")
+    }
+    return moment().format("L").split("/").reverse().join("-")
+}

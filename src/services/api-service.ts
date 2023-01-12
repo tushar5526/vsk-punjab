@@ -108,11 +108,12 @@ async function getSchoolListForLatLong(e: any) {
   );
 }
 
-async function getToolTipData(AccYearCode: any, school_id: any) {
+async function getToolTipData(AccYearCode: any, school_id: any, date: any) {
   const instance = getLoginInstance();
   const params = new URLSearchParams();
   params.append("AccYearCode", AccYearCode);
   params.append("school_id", school_id);
+  params.append("date", date);
   params.append("key", key);
   return await instance.post(
     "/WebService/vidya-samiksha-login-authentication.asmx/GetSchoolDetails",

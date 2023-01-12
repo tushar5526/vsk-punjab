@@ -19,3 +19,8 @@ export const setLoadingForMapRender = (e: any) => ({
   type: types.SET_LOADING,
   payload: e,
 });
+
+export const setDateForVedioWallFilter = (e: any) => ({
+  type: types.ADD_DATE_FOR_FILTER,
+  payload: e,
+});
