@@ -44,7 +44,7 @@ const CustomMap = ({ mis_year, setLoading, loading }: any) => {
         } catch (error) {
             notification.error({
                 placement: "topRight",
-                message: "Somthing went wrong"
+                message: "Something went wrong"
             })
         }
     }
