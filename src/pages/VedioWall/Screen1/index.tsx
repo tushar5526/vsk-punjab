@@ -38,7 +38,10 @@ export class Screen1 extends Component<Props, State> {
                             width="100%"
                             height="100%"
                             type={1}
-                            params={{ ...this.props }}
+                            params={{
+                                year: this.props.year,
+                                date_range: this.props.date_range
+                            }}
                         />
                     </div>
                     <div className='Screen1__Container'>
