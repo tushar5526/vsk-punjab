@@ -33,13 +33,13 @@ export class Screen1 extends Component<Props, State> {
                 <Filters />
                 <div className='Screen1'>
                     <div className='screen1NewIframe'>
-                        {/* <QuestionWithIframe
+                        <QuestionWithIframe
                             questionId={54}
                             width="100%"
                             height="100%"
                             type={1}
                             params={{ ...this.props }}
-                        /> */}
+                        />
                     </div>
                     <div className='Screen1__Container'>
                         <SectionHeader Icon={GoLocation} label="Map View" />
