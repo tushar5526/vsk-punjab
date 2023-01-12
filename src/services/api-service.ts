@@ -16,7 +16,7 @@ const getLoginInstance = () => {
   return AXIOS.create({
     // @ts-ignore
     accept: "application/json",
-    baseURL: "http://112.196.9.114:98",
+    baseURL: "http://112.196.9.114:85/",
     headers: {
       Accept: "application/json",
       "Content-Type": "application/x-www-form-urlencoded",
@@ -76,13 +76,23 @@ async function Login(params: URLSearchParams) {
 
 const key = "8A574794-770C-4D2B-858F-429C91EE8A95";
 
-async function EncryptUserNameOrPasswordForMIS(field: any) {
+async function EncryptForMIS(field: any) {
   const instance = getLoginInstance();
   const params = new URLSearchParams();
   params.append("values", field);
   params.append("key", key);
   return await instance.post(
     "/WebService/vidya-samiksha-login-authentication.asmx/encryptedMethod",
+    params
+  );
+}
+
+async function getVidyaSamikshaAcademicYear() {
+  const instance = getLoginInstance();
+  const params = new URLSearchParams();
+  params.append("key", key);
+  return await instance.post(
+    "/WebService/vidya-samiksha-login-authentication.asmx/GetAcademicYear",
     params
   );
 }
@@ -102,6 +112,7 @@ const API_SERVICE = {
   handleErrors,
   getDistrictMarkerData,
   getStudentAssesmentDistrict1Grade48,
-  EncryptUserNameOrPasswordForMIS,
+  EncryptForMIS,
+  getVidyaSamikshaAcademicYear,
 };
 export default API_SERVICE;

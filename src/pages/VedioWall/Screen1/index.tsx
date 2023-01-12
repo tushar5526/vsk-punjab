@@ -21,7 +21,7 @@ export class Screen1 extends Component<Props, State> {
         super(props)
         this.state = {
             config: null,
-            markerData: null
+            markerData: null,
         }
     }
 

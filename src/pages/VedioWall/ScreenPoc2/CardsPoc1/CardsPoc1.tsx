@@ -3,9 +3,10 @@ import QuestionWithIframe from '../../../../components/QuestionWIthIframe'
 const CardsPoc1 = ({ fill, type }: { fill: number, type: number }) => {
     return (
         <div className='VdoWallIframePocContainer1'>
-            {Array(fill).fill(1).map(() => (
+            {Array(fill).fill(1).map((_: any, idx: number) => (
                 <div className='VdoWallIframePocContainer1__IframeSmall'>
                     <QuestionWithIframe
+                        key={idx}
                         questionId={305}
                         width="100%"
                         height="100%"

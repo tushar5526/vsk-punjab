@@ -112,7 +112,7 @@ const QuestionWithIframeProtected = ({
       frameBorder="0"
       width={width || "100%"}
       height={height || "300px"}
-      allowTransparency
+    // allowTransparency
     />
   );
 };

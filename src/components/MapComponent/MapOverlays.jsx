@@ -13,7 +13,7 @@ import { Polygon } from "react-leaflet";
 const MapOverlays = ({ overlays }) => {
   return (
     <>
-      {overlays.map((item) => {
+      {overlays.map((item, idx) => {
         if (!item.geoJson) {
           return <></>;
         }
@@ -24,6 +24,7 @@ const MapOverlays = ({ overlays }) => {
           //     })}
           //   >
           <Polygon
+            key={idx}
             fillOpacity={item.opacity}
             pathOptions={{ color: item.color, stroke: false }}
             positions={item.geoJson.map((item) => {

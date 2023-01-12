@@ -1,17 +1,22 @@
 import { Button, DatePicker, Popover, Select } from 'antd';
-import { FC } from 'react'
+import { FC, useState, useEffect } from 'react'
 import { ClearFilter } from '../../../components/ClearFilter';
 import moment from 'moment';
 import { applyDateFilter, applyYearFilter } from '../../../redux/VedioWall/actions';
 import { connect } from 'react-redux';
+import { getAcademicYearList, parseYearListForMetabase } from '../utils';
 
-interface FilterComponent {
+interface Props {
     year: any
     date_range: any
     applyYear: any
     applyDate: any
 }
-const Filters: FC<FilterComponent> = (props) => {
+const Filters: FC<Props> = (props) => {
+
+    const [misYearList, setMisYearList] = useState<any>(null)
+    const [metabaseYearList, setMetabaseYearList] = useState<any>(null)
+
 
     const { Option } = Select;
 
@@ -89,6 +94,17 @@ const Filters: FC<FilterComponent> = (props) => {
     };
 
     const { RangePicker } = DatePicker;
+
+    const getAcademicYear = async () => {
+        const _misYearList = await getAcademicYearList()
+        const _parsedMetabaseYearList = await parseYearListForMetabase(_misYearList)
+        setMetabaseYearList(_parsedMetabaseYearList)
+        setMisYearList(_misYearList)
+    }
+
+    useEffect(() => {
+        getAcademicYear()
+    }, [])
     return (
         <div className='Screen2VedioWallFilters'>
             <Popover content={SelectMultiple1}>
