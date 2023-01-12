@@ -1,0 +1,22 @@
+.MapToolTipContainer__Spinner {
+  width: fit-content;
+  height: fit-content;
+}
+
+.MapToolTipContainer__Spinner--big .ant-spin-lg .ant-spin-dot {
+  font-size: 300px;
+}
+
+.MapToolTipContainer__Spinner--big .ant-spin-lg .ant-spin-dot i {
+  width: 120px;
+  height: 120px;
+}
+
+.MapToolTipContainer__Spinner--small .ant-spin-lg .ant-spin-dot {
+  font-size: 100px;
+}
+
+.MapToolTipContainer__Spinner--small .ant-spin-lg .ant-spin-dot i {
+  width: 44px;
+  height: 44px;
+}

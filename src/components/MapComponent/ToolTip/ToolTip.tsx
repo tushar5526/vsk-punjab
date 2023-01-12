@@ -4,58 +4,79 @@ import { Marker, Popup } from 'react-leaflet';
 import { useEffect } from 'react';
 
 import "./ToolTip.css"
+import { getEncryptedStringForMIS, getToolTip } from '../../../pages/VedioWall/utils';
+import { Spin } from 'antd';
 
-interface ToolTipProps {
+interface Props {
     position: any
     iconPerson: any
-
+    encryptedAcademicYear: any
+    school_id: any
 }
 
-interface toolTipResponse {
-    data: {
-        toolTip: string
+interface ToolTip {
+    block: any
+    district: any
+    is_attendance_marked: any
+    school_name: any
+    total_students_enrolled: any
+    total_students_marked_present: any,
+    loaded: any
+}
+const ToolTip: React.FC<Props> = (props) => {
+
+    const [toolTip, setToolTip] = useState<ToolTip>({
+        block: null,
+        district: null,
+        is_attendance_marked: null,
+        school_name: null,
+        total_students_enrolled: null,
+        total_students_marked_present: null,
+        loaded: false
+    })
+
+    const getToolTipData = async () => {
+        const encryptedSchoolId = await getEncryptedStringForMIS(props.school_id)
+        const res = await getToolTip(props.encryptedAcademicYear, encryptedSchoolId)
+        if (res) setToolTip({ ...res, loaded: true })
     }
-}
-const ToolTip: React.FC<ToolTipProps> = ({ position, iconPerson }) => {
 
-    const [toolTip, setToolTip] = useState<any>(null)
-
-    const getToolTip = async () => {
-        const { data: { toolTip } }: toolTipResponse = await axios.get(
-            "https://run.mocky.io/v3/35beed80-86c9-4a66-8ecb-72cdc0c0e090"
-        );
-        setToolTip(toolTip)
-    };
 
     useEffect(() => {
-        getToolTip()
+        getToolTipData()
     }, [])
     return (
         <div >
             <Marker
-                position={position}
-                icon={iconPerson}
+                position={props.position}
+                icon={props.iconPerson}
             >
                 <Popup className="tooltip-popup" >
-                    {toolTip && (
+                    {toolTip.loaded ? (
                         <div className='toolTipStyle'>
-                            <div>
-                                <span>School Name{" "}:{" "}</span><span>Government Sr. Secondary School Block</span>
-                            </div>
-                            <div>
-                                <span>Block{" "}:{" "}</span><span>Ludhiana West</span>
-                            </div>
-                            <div>
-                                <span>Total number of students enrolled{" "}:{" "}</span><span>90</span>
-                            </div>
-
-                            <div>
-                                <span>Attendance marked{" "}:{" "}</span><span>Yes</span>
-                            </div>
-                            <div>
-                                <span>Number of students marked present{" "}:{" "}</span><span>75</span>
-                            </div>
+                            {toolTip.school_name && (
+                                <div>
+                                    <span>School Name{" "}:{" "}</span><span>{toolTip.school_name}</span>
+                                </div>
+                            )}
+                            {toolTip.block && (
+                                <div>
+                                    <span>Block{" "}:{" "}</span><span>{toolTip.block}</span>
+                                </div>
+                            )}
+                            {toolTip.total_students_enrolled && (
+                                <div>
+                                    <span>Total number of students enrolled{" "}:{" "}</span><span>{toolTip.total_students_enrolled}</span>
+                                </div>
+                            )}
+                            {toolTip.total_students_marked_present && (
+                                <div>
+                                    <span>Number of students marked present{" "}:{" "}</span><span>{toolTip.total_students_marked_present}</span>
+                                </div>
+                            )}
                         </div>
+                    ) : (
+                        <Spin />
                     )}
                 </Popup>
             </Marker>

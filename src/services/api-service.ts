@@ -96,6 +96,29 @@ async function getVidyaSamikshaAcademicYear() {
     params
   );
 }
+
+async function getSchoolListForLatLong(e: any) {
+  const instance = getLoginInstance();
+  const params = new URLSearchParams();
+  params.append("AccYearCode", e);
+  params.append("key", key);
+  return await instance.post(
+    "/WebService/vidya-samiksha-login-authentication.asmx/GetSchoolList",
+    params
+  );
+}
+
+async function getToolTipData(AccYearCode: any, school_id: any) {
+  const instance = getLoginInstance();
+  const params = new URLSearchParams();
+  params.append("AccYearCode", AccYearCode);
+  params.append("school_id", school_id);
+  params.append("key", key);
+  return await instance.post(
+    "/WebService/vidya-samiksha-login-authentication.asmx/GetSchoolDetails",
+    params
+  );
+}
 async function getDistrictMarkerData(params: any) {
   const instance = getPublicInstance();
   return await instance.post("/query/district_master_latlong", params);
@@ -114,5 +137,7 @@ const API_SERVICE = {
   getStudentAssesmentDistrict1Grade48,
   EncryptForMIS,
   getVidyaSamikshaAcademicYear,
+  getSchoolListForLatLong,
+  getToolTipData,
 };
 export default API_SERVICE;

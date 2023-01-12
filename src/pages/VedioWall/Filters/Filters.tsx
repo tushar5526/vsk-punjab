@@ -1,8 +1,8 @@
-import { Button, DatePicker, Popover, Select } from 'antd';
+import { DatePicker, Select } from 'antd';
 import { FC, useState, useEffect } from 'react'
 import { ClearFilter } from '../../../components/ClearFilter';
 import moment from 'moment';
-import { applyDateFilter, applyYearFilter } from '../../../redux/VedioWall/actions';
+import { applyDateFilter, applyYearFilter, pushMisYearToState, setLoadingForMapRender } from '../../../redux/VedioWall/actions';
 import { connect } from 'react-redux';
 import { getAcademicYearList, parseYearListForMetabase } from '../utils';
 
@@ -11,6 +11,8 @@ interface Props {
     date_range: any
     applyYear: any
     applyDate: any
+    pushMisYear: any
+    setLoading: any
 }
 const Filters: FC<Props> = (props) => {
 
@@ -18,54 +20,8 @@ const Filters: FC<Props> = (props) => {
     const [metabaseYearList, setMetabaseYearList] = useState<any>(null)
 
 
-    const { Option } = Select;
-
-    const undefinedCheck = (arr: any) => {
-        if (Array.isArray(arr)) {
-            const filtered = arr.filter((i) => i !== undefined);
-            return filtered;
-        }
-    };
-    const _width = "200px"
-
-    const _year = [
-        { value: "2021-2022", label: "2021-2022" },
-        { value: "2022-2023", label: "2022-2023" },
-    ]
 
 
-    const SelectMultiple1 = () => {
-        const handleChange = (value: string[]) => {
-            if (Array.isArray(value)) {
-                props.applyYear(undefinedCheck(value))
-            }
-        };
-        return (
-            <div
-                style={{
-                    width: _width,
-                    display: "flex",
-                    justifyContent: "space-between",
-                }}
-            >
-                <Select
-                    mode="multiple"
-                    style={{ width: "100%" }}
-                    placeholder="Select from list"
-                    onChange={handleChange}
-                    value={undefinedCheck(props.year)}
-                    optionLabelProp="label"
-                    className="assesmentClassSelect"
-                >
-                    {_year.map(({ value, label }: any, i: number) => (
-                        <Option key={`${i}${label}${value}`} value={value} label={label}>
-                            <div className="demo-option-label-item">{label}</div>
-                        </Option>
-                    ))}
-                </Select>
-            </div>
-        );
-    };
 
     const swapDateForRangeAttendance = (toSwap: any) => {
         if (Array.isArray(toSwap)) {
@@ -98,6 +54,7 @@ const Filters: FC<Props> = (props) => {
     const getAcademicYear = async () => {
         const _misYearList = await getAcademicYearList()
         const _parsedMetabaseYearList = await parseYearListForMetabase(_misYearList)
+        console.log(_misYearList, _parsedMetabaseYearList, "parsed")
         setMetabaseYearList(_parsedMetabaseYearList)
         setMisYearList(_misYearList)
     }
@@ -105,13 +62,24 @@ const Filters: FC<Props> = (props) => {
     useEffect(() => {
         getAcademicYear()
     }, [])
+    const trimStringForMis = (e: string) => {
+        return `${String(e).substring(0, 5)}${String(e).substring(7)}`
+    }
+
+    const filterMisYearItem = (e: string) => {
+        return misYearList.filter(({ Year }: any) => Year === trimStringForMis(e))[0]?.AccYearCode
+    }
     return (
         <div className='Screen2VedioWallFilters'>
-            <Popover content={SelectMultiple1}>
-                <Button className="multi-select-label">
-                    {props?.year.length ? `${props?.year.length} Selected` : "Select Year"}
-                </Button>
-            </Popover>
+            <Select
+                options={metabaseYearList}
+                value={props.year[0] || "Academic Year"}
+                onChange={(e: string) => {
+                    props.setLoading(true)
+                    props.applyYear([e])
+                    props.pushMisYear(filterMisYearItem(e))
+                }}
+            />
             <div className="AcademicDateRange">
                 <RangePicker
                     onChange={(e: any) => {
@@ -131,6 +99,8 @@ const mapStateToProps = ({ vedio_wall: { year, date_range } }: any) => ({
 
 const mapDispatchToProps = (dispatch: any) => ({
     applyYear: (e: any) => dispatch(applyYearFilter(e)),
-    applyDate: (e: any) => dispatch(applyDateFilter(e))
+    applyDate: (e: any) => dispatch(applyDateFilter(e)),
+    pushMisYear: (e: any) => dispatch(pushMisYearToState(e)),
+    setLoading: (e: any) => dispatch(setLoadingForMapRender(e))
 })
 export default connect(mapStateToProps, mapDispatchToProps)(Filters)
