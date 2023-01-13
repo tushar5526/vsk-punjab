@@ -43,14 +43,14 @@ const TooglePoc: FC<Props> = ({ duration, setNewDuration }) => {
             <div className='Autoplay__Container'>
                 <Filters />
                 <div className="Autoplay__ContainerInput">
-                    <Input placeholder='Enter Duration in ms' value={durationValue} onChange={(e) => setDurationValue(e.target.value)} />
+                    <Input placeholder='Enter Duration in seconds' value={durationValue} onChange={(e) => setDurationValue(e.target.value)} />
                     <Button
                         type='primary'
                         onClick={() => {
-                            setNewDuration(durationValue)
+                            setNewDuration(durationValue * 1000)
                             notification.info({
                                 placement: "bottomRight",
-                                message: "New Durartion Applied"
+                                message: "New Duration Applied"
                             })
                             setDurationValue("")
                         }}>
