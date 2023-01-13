@@ -43,7 +43,7 @@ const TooglePoc: FC<Props> = ({ duration, setNewDuration }) => {
             <div className='Autoplay__Container'>
                 <Filters />
                 <div className="Autoplay__ContainerInput">
-                    <Input placeholder='Seconds' value={durationValue} onChange={(e) => setDurationValue(e.target.value)} />
+                    <Input placeholder='Enter Duration in Seconds' value={durationValue} onChange={(e) => setDurationValue(e.target.value)} />
                     <Button
                         type='primary'
                         onClick={() => {
@@ -54,7 +54,7 @@ const TooglePoc: FC<Props> = ({ duration, setNewDuration }) => {
                             })
                             setDurationValue("")
                         }}>
-                        Enter Duration in Seconds
+                        Add
                     </Button>
                 </div>
             </div>
