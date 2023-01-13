@@ -4,7 +4,7 @@ import "./index.css"
 import CustomMap from '../../../components/CustomMap/CustomMap'
 import { connect } from 'react-redux'
 import SectionHeader from '../../ControlledTabs/Tabs/utils/SectionHeader'
-import StudentAttendance from "../../../assets/pjb/SectionHeader/student_attendance.png"
+import Filters from '../Filters/Filters'
 import map from "../../../assets/pjb/SectionHeader/map.png"
 interface State {
     config: any
@@ -13,6 +13,7 @@ interface State {
 interface Props {
     year: any
     date_range: any
+    loading: any
 }
 
 
@@ -29,22 +30,19 @@ export class Screen1 extends Component<Props, State> {
     render() {
         return (
             <>
+                <Filters />
                 <div className='Screen1'>
-
-                    <div className='HeaderContainer'>
-                        <div className='HeaderContainer__padding'>
-                            <SectionHeader Icon={StudentAttendance} label="Student Attendance" />
-                        </div>
-
-                        <div className='screen1NewIframe'>
-                            <QuestionWithIframe
-                                questionId={54}
-                                width="100%"
-                                height="100%"
-                                type={1}
-                                params={{ ...this.props }}
-                            />
-                        </div>
+                    <div className='screen1NewIframe'>
+                        <QuestionWithIframe
+                            questionId={54}
+                            width="100%"
+                            height="100%"
+                            type={1}
+                            params={{
+                                year: this.props.year,
+                                date_range: this.props.date_range
+                            }}
+                        />
                     </div>
                     <div className='Screen1__Container'>
                         <SectionHeader Icon={map} label="Map View" />
@@ -59,9 +57,10 @@ export class Screen1 extends Component<Props, State> {
 }
 
 
-const mapStateToProps = ({ vedio_wall: { year, date_range } }: any) => ({
+const mapStateToProps = ({ vedio_wall: { year, date_range, loading } }: any) => ({
     year,
     date_range,
+    loading
 })
 
 export default connect(mapStateToProps)(Screen1)

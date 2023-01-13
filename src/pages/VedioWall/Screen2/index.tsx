@@ -1,16 +1,17 @@
-import React from 'react'
 import QuestionWithIframe from '../../../components/QuestionWIthIframe'
 import "./index.css"
 import Filters from '../Filters/Filters'
 import { connect } from 'react-redux'
 import SectionHeader from '../../ControlledTabs/Tabs/utils/SectionHeader'
 import infrastructure from "../../../assets/pjb/SectionHeader/infrastructure.png"
+import { FC } from 'react';
 
 interface Props {
     year: any
     date_range: any
 }
-const Screen2: React.FC<Props> = ({ year, date_range }) => {
+
+const Screen2: FC<Props> = ({ year, date_range }) => {
 
     return (
         <>
