@@ -32,7 +32,6 @@ export class Screen1 extends Component<Props, State> {
         return (
             <>
                 <Filters />
-
                 <div className='Screen1'>
                     <div className='screen1NewIframe'>
                         <div className="HeaderContainer__padding">
