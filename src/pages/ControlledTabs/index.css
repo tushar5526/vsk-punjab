@@ -38,8 +38,8 @@
 }
 
 .demoHeader__button {
-  width: 32%;
-  height: 100%;
+  width: 25%;
+  height: 35px;
   border: none;
   background-color: var(--grey-primary);
   cursor: pointer;
