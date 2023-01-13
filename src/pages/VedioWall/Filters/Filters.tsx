@@ -1,18 +1,10 @@
-<<<<<<< HEAD
-import { Button, DatePicker, Popover, Select } from 'antd';
-=======
 import { DatePicker, Select } from 'antd';
->>>>>>> aef389261dc1f4f7c6d51f4102e74f77a936bf85
 import { FC, useState, useEffect } from 'react'
 import { ClearFilter } from '../../../components/ClearFilter';
 import moment from 'moment';
 import { applyDateFilter, applyYearFilter, pushMisYearToState, setDateForVedioWallFilter, setLoadingForMapRender } from '../../../redux/VedioWall/actions';
 import { connect } from 'react-redux';
-<<<<<<< HEAD
-import { getAcademicYearList, parseYearListForMetabase } from '../utils';
-=======
 import { getAcademicYearList, parseYearListForMetabase, fixMomentDateForMis } from '../utils';
->>>>>>> aef389261dc1f4f7c6d51f4102e74f77a936bf85
 
 interface Props {
     year: any
@@ -71,8 +63,6 @@ const Filters: FC<Props> = (props) => {
     useEffect(() => {
         getAcademicYear()
     }, [])
-<<<<<<< HEAD
-=======
     const trimStringForMis = (e: string) => {
         return `${String(e).substring(0, 5)}${String(e).substring(7)}`
     }
@@ -80,7 +70,6 @@ const Filters: FC<Props> = (props) => {
     const filterMisYearItem = (e: string) => {
         return misYearList.filter(({ Year }: any) => Year === trimStringForMis(e))[0]?.AccYearCode
     }
->>>>>>> aef389261dc1f4f7c6d51f4102e74f77a936bf85
     return (
         <div className='Screen2VedioWallFilters'>
             <Select

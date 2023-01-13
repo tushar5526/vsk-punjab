@@ -73,11 +73,8 @@ export default function MapComponent({ config, markers }) {
                 });
                 return (
                   <ToolTip
-<<<<<<< HEAD
-=======
                     encryptedAcademicYear={item?.encryptedAcademicYear}
                     school_id={item?.school_id}
->>>>>>> aef389261dc1f4f7c6d51f4102e74f77a936bf85
                     key={`${idx}`}
                     iconPerson={iconPerson}
                     position={item.position}
@@ -114,11 +111,8 @@ export default function MapComponent({ config, markers }) {
                 });
                 return (
                   <ToolTip
-<<<<<<< HEAD
-=======
                     encryptedAcademicYear={item?.encryptedAcademicYear}
                     school_id={item?.school_id}
->>>>>>> aef389261dc1f4f7c6d51f4102e74f77a936bf85
                     key={idx}
                     iconPerson={iconPerson}
                     position={item.position}

@@ -6,6 +6,7 @@ import { connect } from 'react-redux'
 import SectionHeader from '../../ControlledTabs/Tabs/utils/SectionHeader'
 import Filters from '../Filters/Filters'
 import map from "../../../assets/pjb/SectionHeader/map.png"
+import infrastructure from "../../../assets/pjb/SectionHeader/infrastructure.png"
 interface State {
     config: any
     markerData: any
@@ -31,8 +32,13 @@ export class Screen1 extends Component<Props, State> {
         return (
             <>
                 <Filters />
+
                 <div className='Screen1'>
                     <div className='screen1NewIframe'>
+                        <div className="HeaderContainer__padding">
+                            <SectionHeader Icon={infrastructure} label="Infrastructure" />
+                        </div>
+
                         <QuestionWithIframe
                             questionId={54}
                             width="100%"
