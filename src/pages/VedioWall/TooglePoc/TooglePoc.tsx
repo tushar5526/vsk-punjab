@@ -17,7 +17,7 @@ interface Props {
 }
 const TooglePoc: FC<Props> = ({ duration, setNewDuration }) => {
 
-    const [toogle, setToogle] = useState<any>(3)
+    const [toogle, setToogle] = useState<any>(0)
     const [durationValue, setDurationValue] = useState<any>("")
 
     const _toogleCheck = {
