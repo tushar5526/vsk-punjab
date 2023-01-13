@@ -9,7 +9,8 @@ const ROUTE_CONST = {
     card_poc1: "/card_poc1",
     card_poc2: "/card_poc2",
     combined: "/combined",
-    combined_test: "/combined_test"
+    combined_test: "/combined_test",
+    toogle_poc: "/toogle_poc"
 
 }
 

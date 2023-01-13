@@ -15,7 +15,6 @@ const Screen2: FC<Props> = ({ year, date_range }) => {
 
     return (
         <>
-            <Filters />
             <SectionHeader Icon={infrastructure} label="Infrastructure" />
             <div className='IframeScreen'>
                 <QuestionWithIframe

@@ -9,9 +9,10 @@ import CombinedFooter from '../../../components/layouts/CombinedFooter'
 interface Props {
     year: any
     date_range: any
+    widthFooter?: any
 }
 
-const Screen3: FC<Props> = ({ year, date_range }) => {
+const Screen3: FC<Props> = ({ year, date_range, widthFooter = true }) => {
     return (
         <>
             <SectionHeader Icon={midDayMeal} label="Mid-day Meal" />
@@ -25,7 +26,7 @@ const Screen3: FC<Props> = ({ year, date_range }) => {
                     height="100%"
                 />
             </div>
-            <CombinedFooter />
+            {widthFooter && <CombinedFooter />}
         </>
     )
 }

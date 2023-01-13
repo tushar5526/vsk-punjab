@@ -109,7 +109,7 @@ const CombinedTest: FC<Props> = ({ date_range, year }) => {
                     </div>
                 </Col>
             </Row>
-            {/* <CombinedFooter /> */}
+            <CombinedFooter />
         </>
     )
 }

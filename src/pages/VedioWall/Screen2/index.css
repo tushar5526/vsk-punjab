@@ -55,15 +55,11 @@
   padding: 10px;
 }
 
-.IframeScreen {
-  width: 100vw;
-  height: 94vh;
-}
-
+.IframeScreen,
 .IframeScreen3,
 .IframeScreen4 {
   width: 100vw;
-  height: 89vh;
+  height: 87vh;
 }
 
 .Screen2VedioWallFilters {

@@ -1,0 +1,10 @@
+.Autoplay__Container {
+  display: flex;
+  gap: 20px;
+  padding: 10px 0;
+}
+
+.Autoplay__ContainerInput {
+  display: flex;
+  gap: 20px;
+}

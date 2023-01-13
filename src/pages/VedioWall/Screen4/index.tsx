@@ -9,9 +9,10 @@ import { FC } from "react";
 interface Props {
     year: any
     date_range: any
+    widthFooter?: any
 }
 
-const Screen4: FC<Props> = ({ year, date_range }) => {
+const Screen4: FC<Props> = ({ year, date_range, widthFooter = true }) => {
     return (
         <>
             <SectionHeader Icon={financeAndCivilWorks} label="Finance and Civil Works" />
@@ -27,7 +28,7 @@ const Screen4: FC<Props> = ({ year, date_range }) => {
                     }}
                 />
             </div>
-            <CombinedFooter />
+            {widthFooter && <CombinedFooter />}
         </>
     )
 }
