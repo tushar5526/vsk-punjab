@@ -15,7 +15,16 @@ interface Props {
 const Screen4: FC<Props> = ({ year, single_date, widthFooter = true }) => {
     return (
         <>
-            <SectionHeader Icon={financeAndCivilWorks} label="Finance and Civil Works" />
+            <div className="Screen4HeaderContainer">
+                <div className="HeaderContainer__padding">
+                    <SectionHeader Icon={financeAndCivilWorks} label="Finance" />
+                </div>
+                <div className="HeaderContainer__padding">
+                    <SectionHeader Icon={financeAndCivilWorks} label="Civil Works" />
+                </div>
+
+
+            </div>
             <div className='IframeScreen4'>
                 <QuestionWithIframe
                     questionId={67}

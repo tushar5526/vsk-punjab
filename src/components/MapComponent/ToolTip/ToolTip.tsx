@@ -39,6 +39,7 @@ const ToolTip: React.FC<Props> = (props) => {
 
     const getToolTipData = async () => {
         const encryptedSchoolId = await getEncryptedStringForMIS(props.school_id)
+        console.log(props.single_date, "single")
         const encryptedDate = await getEncryptedStringForMIS(props.single_date)
         const res = await getToolTip(props.encryptedAcademicYear, encryptedSchoolId, encryptedDate)
         if (res) setToolTip({ ...res, loaded: true })
@@ -87,7 +88,11 @@ const ToolTip: React.FC<Props> = (props) => {
     )
 }
 
-const mapStateToProps = ({ vedio_wall: { single_date } }: any) => ({
-    single_date
-})
+const mapStateToProps = ({ vedio_wall: { single_date } }: any) => {
+    const dateArr = String(single_date).split("-")
+
+    return {
+        single_date: `${dateArr[0]}-${dateArr[2]}-${dateArr[1]}`
+    }
+}
 export default connect(mapStateToProps)(ToolTip)

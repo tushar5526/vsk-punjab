@@ -104,3 +104,8 @@
 .Screen4ThirdImageMarginFix {
   margin-bottom: 16px;
 }
+
+.Screen4HeaderContainer {
+  display: flex;
+  width: 100vw;
+}

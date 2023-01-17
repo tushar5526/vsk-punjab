@@ -8,7 +8,7 @@ import moment from 'moment';
 
 interface Props {
     year: any
-    date_range: any
+    single_date: any
     applyYear: any
     applyDate: any
     pushMisYear: any
@@ -20,36 +20,6 @@ const Filters: FC<Props> = (props) => {
     const [metabaseYearList, setMetabaseYearList] = useState<any>(null)
 
 
-
-
-
-    // const swapDateForRangeAttendance = (toSwap: any) => {
-    //     if (Array.isArray(toSwap)) {
-    //         const condition1 = toSwap[1] < 10;
-    //         const condition2 = toSwap[2] < 10;
-    //         if (condition1 || condition2) {
-    //             if (condition1) toSwap[1] = `${0}${toSwap[1]}`;
-    //             if (condition2) toSwap[2] = `${0}${toSwap[2]}`;
-    //         }
-    //         let temp = toSwap[1];
-    //         toSwap[1] = toSwap[toSwap.length - 1];
-    //         toSwap[toSwap.length - 1] = temp;
-    //         return toSwap.join("-");
-    //     }
-    // };
-
-    // const fixDateRangeForAttendanceTab = (e: any) => {
-    //     let start = swapDateForRangeAttendance(
-    //         moment(e[0]).format("l").split("/").reverse()
-    //     );
-    //     let end = swapDateForRangeAttendance(
-    //         moment(e[1]).format("l").split("/").reverse()
-    //     );
-    //     const prepared = `${start}~${end}`;
-    //     if (prepared) return prepared;
-    // };
-
-    // const { RangePicker } = DatePicker;
 
     const getAcademicYear = async () => {
         const _misYearList = await getAcademicYearList()
@@ -91,9 +61,9 @@ const Filters: FC<Props> = (props) => {
         </div>
     )
 }
-const mapStateToProps = ({ vedio_wall: { year, date_range } }: any) => ({
+const mapStateToProps = ({ vedio_wall: { year, single_date } }: any) => ({
     year,
-    date_range,
+    single_date,
 })
 
 
