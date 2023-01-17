@@ -1,10 +1,18 @@
+<<<<<<< Updated upstream
 import { DatePicker, Select } from 'antd';
+=======
+import { Button, DatePicker, Popover, Select } from 'antd';
+>>>>>>> Stashed changes
 import { FC, useState, useEffect } from 'react'
 import { ClearFilter } from '../../../components/ClearFilter';
 import { applyDateFilter, applyYearFilter, pushMisYearToState, setDateForVedioWallFilter, setLoadingForMapRender } from '../../../redux/VedioWall/actions';
 import { connect } from 'react-redux';
+<<<<<<< Updated upstream
 import { getAcademicYearList, parseYearListForMetabase, fixMomentDateForMis } from '../utils';
 import moment from 'moment';
+=======
+import { getAcademicYearList, parseYearListForMetabase } from '../utils';
+>>>>>>> Stashed changes
 
 interface Props {
     year: any
@@ -15,6 +23,13 @@ interface Props {
     setLoading: any
 }
 const Filters: FC<Props> = (props) => {
+<<<<<<< Updated upstream
+=======
+
+    const [misYearList, setMisYearList] = useState<any>(null)
+    const [metabaseYearList, setMetabaseYearList] = useState<any>(null)
+
+>>>>>>> Stashed changes
 
     const [misYearList, setMisYearList] = useState<any>(null)
     const [metabaseYearList, setMetabaseYearList] = useState<any>(null)
@@ -23,6 +38,7 @@ const Filters: FC<Props> = (props) => {
 
 
 
+<<<<<<< Updated upstream
     // const swapDateForRangeAttendance = (toSwap: any) => {
     //     if (Array.isArray(toSwap)) {
     //         const condition1 = toSwap[1] < 10;
@@ -50,6 +66,9 @@ const Filters: FC<Props> = (props) => {
     // };
 
     // const { RangePicker } = DatePicker;
+=======
+    const { RangePicker } = DatePicker;
+>>>>>>> Stashed changes
 
     const getAcademicYear = async () => {
         const _misYearList = await getAcademicYearList()
@@ -61,6 +80,7 @@ const Filters: FC<Props> = (props) => {
     useEffect(() => {
         getAcademicYear()
     }, [])
+<<<<<<< Updated upstream
     const trimStringForMis = (e: string) => {
         return `${String(e).substring(0, 5)}${String(e).substring(7)}`
     }
@@ -68,6 +88,8 @@ const Filters: FC<Props> = (props) => {
     const filterMisYearItem = (e: string) => {
         return misYearList.filter(({ Year }: any) => Year === trimStringForMis(e))[0]?.AccYearCode
     }
+=======
+>>>>>>> Stashed changes
     return (
         <div className='Screen2VedioWallFilters'>
             <Select

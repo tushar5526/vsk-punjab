@@ -96,6 +96,7 @@ async function getVidyaSamikshaAcademicYear() {
     params
   );
 }
+<<<<<<< Updated upstream
 
 async function getSchoolListForLatLong(e: any) {
   const instance = getLoginInstance();
@@ -120,6 +121,8 @@ async function getToolTipData(AccYearCode: any, school_id: any, date: any) {
     params
   );
 }
+=======
+>>>>>>> Stashed changes
 async function getDistrictMarkerData(params: any) {
   const instance = getPublicInstance();
   return await instance.post("/query/district_master_latlong", params);
@@ -138,7 +141,10 @@ const API_SERVICE = {
   getStudentAssesmentDistrict1Grade48,
   EncryptForMIS,
   getVidyaSamikshaAcademicYear,
+<<<<<<< Updated upstream
   getSchoolListForLatLong,
   getToolTipData,
+=======
+>>>>>>> Stashed changes
 };
 export default API_SERVICE;
