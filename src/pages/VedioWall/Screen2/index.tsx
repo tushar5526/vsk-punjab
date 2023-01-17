@@ -1,7 +1,8 @@
 import QuestionWithIframe from '../../../components/QuestionWIthIframe'
 import "./index.css"
-import Filters from '../Filters/Filters'
 import { connect } from 'react-redux'
+import SectionHeader from '../../ControlledTabs/Tabs/utils/SectionHeader'
+import infrastructure from "../../../assets/pjb/SectionHeader/infrastructure.png"
 import { FC } from 'react';
 
 interface Props {
@@ -13,6 +14,7 @@ const Screen2: FC<Props> = ({ year, single_date }) => {
 
     return (
         <>
+            <SectionHeader Icon={infrastructure} label="Infrastructure" />
             <div className='IframeScreen'>
                 <QuestionWithIframe
                     questionId={65}

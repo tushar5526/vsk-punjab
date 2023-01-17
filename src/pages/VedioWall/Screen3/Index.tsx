@@ -4,7 +4,7 @@ import "./index.css"
 import { connect } from 'react-redux'
 import SectionHeader from '../../ControlledTabs/Tabs/utils/SectionHeader'
 import midDayMeal from "../../../assets/pjb/SectionHeader/mid_day_meal.png"
-import CombinedFooter from '../../../components/CombinedFooter/CombinedFooter';
+import CombinedFooter from '../../../components/layouts/CombinedFooter'
 
 interface Props {
     year: any
@@ -30,6 +30,7 @@ const Screen3: FC<Props> = ({ year, single_date, widthFooter = true }) => {
         </>
     )
 }
+
 
 const mapStateToProps = ({ vedio_wall: { year, single_date } }: any) => ({
     year,

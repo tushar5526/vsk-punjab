@@ -1,12 +1,13 @@
 import "./Dashboard.css"
 import { connect } from 'react-redux/es/exports';
 import QuestionWithIframe from '../../components/QuestionWIthIframe';
+import { FC } from 'react';
 
-interface Dashboard {
+interface Props {
     dashboard: number,
     params: any
 }
-const Dashboard = ({ dashboard, params }: Dashboard) => {
+const Dashboard: FC<Props> = ({ dashboard, params }) => {
     return (
         <div className='Dashboard'>
             <div className='Dashboard__iframeContainer'>

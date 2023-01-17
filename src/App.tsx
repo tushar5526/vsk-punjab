@@ -16,17 +16,17 @@ import Screen1 from "./pages/VedioWall/Screen1";
 import Screen2 from "./pages/VedioWall/Screen2";
 import Screen3 from "./pages/VedioWall/Screen3/Index";
 import Screen4 from "./pages/VedioWall/Screen4";
-import CustomMap from "./components/CustomMap/CustomMap";
 import Screen2Header from "./components/layouts/Screen2Header";
 import Screen1Header from "./components/layouts/Screen1Header";
 import { getUserFromLS } from "./utils";
 import { addUserToState } from './redux/user/actions';
 import { connect } from 'react-redux/es/exports';
-import ScreenPoc from './pages/VedioWall/ScreenPoc/index';
-import ScreenPoc2 from "./pages/VedioWall/ScreenPoc2";
 import Combined from "./pages/VedioWall/Combined/Combined";
 import CombinedTest from "./pages/VedioWall/CombinedTest/CombinedTest";
 import TooglePoc from "./pages/VedioWall/TooglePoc/TooglePoc";
+// import CustomMap from "./components/CustomMap/CustomMap";
+// import ScreenPoc from './pages/VedioWall/ScreenPoc/index';
+// import ScreenPoc2 from "./pages/VedioWall/ScreenPoc2";
 export const IframeContextContext = React.createContext({
   updateHasFirstIframeLoaded: null,
   hasFirstIframeLoaded: null,
@@ -113,17 +113,17 @@ const App: FC = ({ _addUserToState }: any) => {
             <Route exact path={ROUTE_CONST.vdo_wall_3} component={Screen3} />
             <Route exact path={ROUTE_CONST.vdo_wall_4} component={Screen4} />
             <Route exact path={ROUTE_CONST.combined} component={Combined} />
+            <Route exact path={ROUTE_CONST.combined_test} component={CombinedTest} />
             <Route exact path={ROUTE_CONST.autoplay} component={TooglePoc} />
-            {/* <Route exact path={ROUTE_CONST.combined_test} component={CombinedTest} /> */}
             {/* <PrivateRoute exact path={ROUTE_CONST.map_test} component={() => <CreateHeaderContext comp={CustomMap} />} />
             <PrivateRoute exact path={ROUTE_CONST.card_poc1} component={() => <CreateHeaderContext comp={ScreenPoc} />} />
             <PrivateRoute exact path={ROUTE_CONST.card_poc2} component={() => <CreateHeaderContext comp={ScreenPoc2} />} /> */}
             <PrivateRoute exact path={ROUTE_CONST.root} component={() => <CreateHeaderContext comp={ControlledTabs} />} />
             <Route />
-          </Switch>
-        </Router>
-      </IframeContextContext.Provider>
-    </div>
+          </Switch >
+        </Router >
+      </IframeContextContext.Provider >
+    </div >
   );
 };
 

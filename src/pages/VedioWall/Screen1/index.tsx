@@ -18,8 +18,6 @@ interface Props {
 
 const Screen1: FC<Props> = ({ year, single_date, withFilter = true }) => {
 
-
-
     return (
         <>
             {withFilter && <Filters />}

@@ -6,8 +6,13 @@ import QuestionWithIframe from "../../../components/QuestionWIthIframe"
 import { connect } from 'react-redux';
 import { FC } from "react"
 import CustomMap from "../../../components/CustomMap/CustomMap"
-import SectionHeader from "../../ControlledTabs/Tabs/utils/SectionHeader"
-import { GoLocation } from "react-icons/go"
+import SectionHeader from '../../ControlledTabs/Tabs/utils/SectionHeader';
+import studentAttendance from "../../../assets/pjb/SectionHeader/student_attendance.png"
+import infrastructure from "../../../assets/pjb/SectionHeader/infrastructure.png"
+import midDayMeal from "./../../../assets/pjb/SectionHeader/mid_day_meal.png"
+import financeAndCivilWorks from "../../../assets/pjb/SectionHeader/finance_and_civil_works.png"
+import CombinedFooter from "../../../components/layouts/CombinedFooter"
+import map from "../../../assets/pjb/SectionHeader/map.png"
 
 interface Props {
     date_range: any
@@ -23,6 +28,9 @@ const Combined: FC<Props> = ({ date_range, year }) => {
                     <Row gutter={2}>
                         <Col span={16}>
                             <div className="CombinedIframe">
+                                <div className="HeaderContainer__padding">
+                                    <SectionHeader Icon={studentAttendance} label="Student Attendance" />
+                                </div>
                                 <QuestionWithIframe
                                     questionId={54}
                                     width="100%"
@@ -34,9 +42,9 @@ const Combined: FC<Props> = ({ date_range, year }) => {
                         </Col>
 
                         <Col span={8}>
-                            <div className="CombinedIframe CombinedIframe__flex CombinedIframe__flex--fix">
-                                <div className='CombinedIframe__header'>
-                                    <SectionHeader Icon={GoLocation} label="Map View" />
+                            <div className="CombinedIframe2 CombinedIframe__flex CombinedIframe__flex--fix">
+                                <div className='CombinedIframe__header '>
+                                    <SectionHeader Icon={map} label="Map View" />
                                 </div>
                                 <div className='CombinedIframe__map'>
                                     <CustomMap />
@@ -47,6 +55,11 @@ const Combined: FC<Props> = ({ date_range, year }) => {
                 </Col>
                 <Col span={12}>
                     <div className="CombinedIframe">
+                        <div className="HeaderContainer__padding">
+                            <SectionHeader Icon={infrastructure} label="Infrastructure" />
+                        </div>
+
+
                         <QuestionWithIframe
                             questionId={65}
                             width="100%"
@@ -59,6 +72,11 @@ const Combined: FC<Props> = ({ date_range, year }) => {
             </Row>
             <Row gutter={2}>
                 <Col span={12}>
+                    <div className="HeaderContainer__padding">
+                        <SectionHeader Icon={midDayMeal} label="Mid-day Meal" />
+                    </div>
+
+
                     <div className="CombinedIframe">
                         <QuestionWithIframe
                             questionId={66}
@@ -71,6 +89,10 @@ const Combined: FC<Props> = ({ date_range, year }) => {
                     </div>
                 </Col>
                 <Col span={12}>
+                    <div className="HeaderContainer__padding">
+                        <SectionHeader Icon={financeAndCivilWorks} label="Finance and Civil Works" />
+                    </div>
+
                     <div className="CombinedIframe">
                         <QuestionWithIframe
                             questionId={67}
@@ -83,6 +105,7 @@ const Combined: FC<Props> = ({ date_range, year }) => {
                     </div>
                 </Col>
             </Row>
+            <CombinedFooter />
         </>
     )
 

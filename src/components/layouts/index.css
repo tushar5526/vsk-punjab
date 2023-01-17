@@ -1,7 +1,7 @@
 /* header */
-.dashboard-header {
-  margin-bottom: 10px;
-}
+/* .dashboard-header {
+margin-bottom: 10px;
+} */
 .image_row {
   margin: 10px;
 }
@@ -23,4 +23,13 @@
   margin-top: 2px;
   height: 28px;
   font-size: 12px;
+}
+
+.combinedFooter {
+  background: var(--dashboard-header);
+  height: 100px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
 }

@@ -1,16 +1,19 @@
 .CombinedIframe {
-  height: 48vh;
+  height: 37.5vh;
+}
+
+.CombinedIframe2 {
+  height: 47vh;
 }
 
 .CombinedIframe__map {
-  height: 84%;
+  height: 86%;
   border: 8px solid var(--grey-primary);
   overflow: hidden;
 }
 
 .demoHeader3__height1 {
-  height: 100px;
-  margin-top: 70px;
+  height: 60px;
 }
 
 .CombinedIframe__flex {
@@ -20,4 +23,16 @@
 .CombinedIframe__flex--fix {
   flex-direction: column;
   justify-content: space-between;
+}
+
+.screen4HeaderContainer {
+  display: flex;
+}
+
+.HeaderContainer__width1 {
+  width: 78%;
+}
+
+.HeaderContainer__width2 {
+  width: 23%;
 }

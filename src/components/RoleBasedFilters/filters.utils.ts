@@ -30,7 +30,7 @@ const getDataFromLodash = (type: string, cascade?: any) => {
         }));
     case lodashTypes.CLUSTER:
       return _.uniqBy(location, "Cluster")
-        .filter((item) => item.Block == cascade)
+        .filter((item) => item.Block === cascade)
         .map((item) => ({
           value: item.Cluster,
           label: item.Cluster,

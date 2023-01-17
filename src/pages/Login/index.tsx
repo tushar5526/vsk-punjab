@@ -40,7 +40,7 @@ const Login: FC = ({ _toogleUserSession }: any) => {
 
         const res = await API_SERVICE.Login(params)
         if (res) {
-          const { Location, Role, UserType, uniqueCode, message } = await parseStringPromise(res.data).then((resolved: any) => JSON.parse(resolved?.string?._)[0])
+          const { Location, Role, UserType, uniqueCode } = await parseStringPromise(res.data).then((resolved: any) => JSON.parse(resolved?.string?._)[0])
           if (uniqueCode) {
             setLocalStorageItem("user", { Location, Role, UserType, uniqueCode })
             notification.success({
