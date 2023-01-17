@@ -13,7 +13,7 @@ interface Props {
     iconPerson: any
     encryptedAcademicYear: any
     school_id: any
-    date: any
+    single_date: any
 }
 
 interface ToolTip {
@@ -39,7 +39,7 @@ const ToolTip: React.FC<Props> = (props) => {
 
     const getToolTipData = async () => {
         const encryptedSchoolId = await getEncryptedStringForMIS(props.school_id)
-        const encryptedDate = await getEncryptedStringForMIS(props.date)
+        const encryptedDate = await getEncryptedStringForMIS(props.single_date)
         const res = await getToolTip(props.encryptedAcademicYear, encryptedSchoolId, encryptedDate)
         if (res) setToolTip({ ...res, loaded: true })
     }
@@ -87,7 +87,7 @@ const ToolTip: React.FC<Props> = (props) => {
     )
 }
 
-const mapStateToProps = ({ vedio_wall: { date } }: any) => ({
-    date
+const mapStateToProps = ({ vedio_wall: { single_date } }: any) => ({
+    single_date
 })
 export default connect(mapStateToProps)(ToolTip)

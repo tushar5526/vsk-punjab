@@ -8,6 +8,7 @@ import filtersUtils from "../../../components/RoleBasedFilters/filters.utils";
 import { useEffect, useState } from "react";
 import { ClearFilter } from "../../../components/ClearFilter";
 import { handleDistrictLink, handleBlockLink, linkingTypes } from '../../linking';
+import { fixMomentDateForMis } from "../../VedioWall/utils";
 
 
 interface USER {
@@ -26,6 +27,8 @@ const DemoHeader = ({ tabs, _toogle, current, _toogleFilterPage, dashboard }: an
         b: localStorage.getItem(linkingTypes.USER_DEFAULT_BLOCK) || "Block"
     })
 
+
+    const [rangeState, setRangeState] = useState<any>([moment(), moment().add(1, "month")]);
     const onClearFilterPress = () => {
         setGeoState({
             d: "District",
@@ -133,31 +136,6 @@ const DemoHeader = ({ tabs, _toogle, current, _toogleFilterPage, dashboard }: an
             { label: "Social Science", value: "Social Science" },
         ]
     }
-    const swapDateForRangeAttendance = (toSwap: any) => {
-        if (Array.isArray(toSwap)) {
-            const condition1 = toSwap[1] < 10;
-            const condition2 = toSwap[2] < 10;
-            if (condition1 || condition2) {
-                if (condition1) toSwap[1] = `${0}${toSwap[1]}`;
-                if (condition2) toSwap[2] = `${0}${toSwap[2]}`;
-            }
-            let temp = toSwap[1];
-            toSwap[1] = toSwap[toSwap.length - 1];
-            toSwap[toSwap.length - 1] = temp;
-            return toSwap.join("-");
-        }
-    };
-
-    const fixDateRangeForAttendanceTab = (e: any) => {
-        let start = swapDateForRangeAttendance(
-            moment(e[0]).format("l").split("/").reverse()
-        );
-        let end = swapDateForRangeAttendance(
-            moment(e[1]).format("l").split("/").reverse()
-        );
-        const prepared = `${start}~${end}`;
-        if (prepared) return prepared;
-    };
 
     const handleDistrictChange = async (e: any) => {
         setGeoState({ ...geoState, d: e })
@@ -256,9 +234,12 @@ const DemoHeader = ({ tabs, _toogle, current, _toogleFilterPage, dashboard }: an
                                 <>
                                     <div className="AcademicDateRange">
                                         <RangePicker
+                                            defaultValue={rangeState}
                                             onChange={(e: any) => {
-                                                const prepared = fixDateRangeForAttendanceTab(e);
-                                                setAcademicParams({ ...academicParams, date_range: prepared });
+                                                setRangeState(e)
+                                                const date_range = `${fixMomentDateForMis(e[0])}~${fixMomentDateForMis(e[0])}`;
+
+                                                setAcademicParams({ ...academicParams, date_range });
                                             }}
                                         />
                                     </div>

@@ -7,7 +7,7 @@ import { connect } from 'react-redux'
 
 interface Props {
     year: any
-    date_range: any
+    single_date: any
 }
 export class Screen3 extends Component<Props, any> {
     constructor(props: Props) {
@@ -24,7 +24,7 @@ export class Screen3 extends Component<Props, any> {
                         type={1}
                         params={{
                             year: this.props.year,
-                            date_range: this.props.date_range
+                            single_date: this.props.single_date
                         }}
                         height="100%"
                         handleLoadCounter={() => { }}
@@ -36,9 +36,9 @@ export class Screen3 extends Component<Props, any> {
 }
 
 
-const mapStateToProps = ({ vedio_wall: { year, date_range } }: any) => ({
+const mapStateToProps = ({ vedio_wall: { year, single_date } }: any) => ({
     year,
-    date_range,
+    single_date,
 })
 
 

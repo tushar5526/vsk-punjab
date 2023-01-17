@@ -12,7 +12,7 @@ interface State {
 }
 interface Props {
     year: any
-    date_range: any
+    single_date: any
     loading: any
 }
 
@@ -40,7 +40,7 @@ export class Screen1 extends Component<Props, State> {
                             type={1}
                             params={{
                                 year: this.props.year,
-                                date_range: this.props.date_range
+                                single_date: this.props.single_date
                             }}
                         />
                     </div>
@@ -57,9 +57,9 @@ export class Screen1 extends Component<Props, State> {
 }
 
 
-const mapStateToProps = ({ vedio_wall: { year, date_range, loading } }: any) => ({
+const mapStateToProps = ({ vedio_wall: { year, single_date, loading } }: any) => ({
     year,
-    date_range,
+    single_date,
     loading
 })
 

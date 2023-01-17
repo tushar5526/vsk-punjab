@@ -11,10 +11,10 @@ import { getAcademicYearList, parseYearListForMetabase } from '../utils'
 
 interface Props {
     year: any
-    date_range: any
+    single_date: any
 }
 
-const Screen2: FC<Props> = ({ year, date_range }) => {
+const Screen2: FC<Props> = ({ year, single_date }) => {
 
 
 
@@ -28,7 +28,7 @@ const Screen2: FC<Props> = ({ year, date_range }) => {
                     questionId={65}
                     width="100%"
                     type={1}
-                    params={{ year, date_range }}
+                    params={{ year, single_date }}
                     height="100%"
                     handleLoadCounter={() => { }}
                 />
@@ -38,9 +38,9 @@ const Screen2: FC<Props> = ({ year, date_range }) => {
 }
 
 
-const mapStateToProps = ({ vedio_wall: { year, date_range } }: any) => ({
+const mapStateToProps = ({ vedio_wall: { year, single_date } }: any) => ({
     year,
-    date_range,
+    single_date,
 })
 
 export default connect(mapStateToProps)(Screen2)
