@@ -28,13 +28,13 @@ const TooglePoc: FC<Props> = ({ duration, setNewDuration }) => {
     }
 
     useEffect(() => {
-        // const toogleInterval = setInterval(() => {
-        //     setToogle((prev: any) => {
-        //         if (prev === 3) return 0
-        //         else return prev + 1
-        //     })
-        // }, duration)
-        // return () => clearInterval(toogleInterval)
+        const toogleInterval = setInterval(() => {
+            setToogle((prev: any) => {
+                if (prev === 3) return 0
+                else return prev + 1
+            })
+        }, duration)
+        return () => clearInterval(toogleInterval)
     }, [duration])
 
     return (
