@@ -1,6 +1,5 @@
 import QuestionWithIframe from '../../../components/QuestionWIthIframe'
 import "./index.css"
-import Filters from '../Filters/Filters'
 import { connect } from 'react-redux'
 import SectionHeader from '../../ControlledTabs/Tabs/utils/SectionHeader'
 import infrastructure from "../../../assets/pjb/SectionHeader/infrastructure.png"
