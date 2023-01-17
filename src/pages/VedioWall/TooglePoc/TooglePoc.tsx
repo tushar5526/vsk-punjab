@@ -16,9 +16,14 @@ interface Props {
     setNewDuration: any
 }
 const TooglePoc: FC<Props> = ({ duration, setNewDuration }) => {
-
     const [toogle, setToogle] = useState<any>(0)
     const [durationValue, setDurationValue] = useState<any>("")
+    const [playPause, setPlayPause] = useState<boolean>(false)
+
+    const handlePlayPauseChange = () => {
+        setPlayPause(!playPause);
+        console.log(playPause, "playpause")
+    }
 
     const _toogleCheck = {
         screen1: toogle === 0,
@@ -28,14 +33,18 @@ const TooglePoc: FC<Props> = ({ duration, setNewDuration }) => {
     }
 
     useEffect(() => {
-        const toogleInterval = setInterval(() => {
-            setToogle((prev: any) => {
-                if (prev === 3) return 0
-                else return prev + 1
-            })
-        }, duration)
-        return () => clearInterval(toogleInterval)
-    }, [duration])
+        if (playPause) {
+
+        } else {
+            const toogleInterval = setInterval(() => {
+                setToogle((prev: any) => {
+                    if (prev === 3) return 0
+                    else return prev + 1
+                })
+            }, duration)
+            return () => clearInterval(toogleInterval)
+        }
+    }, [duration, playPause])
 
     return (
         <>
@@ -55,6 +64,12 @@ const TooglePoc: FC<Props> = ({ duration, setNewDuration }) => {
                             setDurationValue("")
                         }}>
                         Add
+                    </Button>
+                    <Button
+                        onClick={handlePlayPauseChange}
+                        type='primary'
+                    >
+                        {playPause ? "Play" : "Pause"}
                     </Button>
                 </div>
             </div>
