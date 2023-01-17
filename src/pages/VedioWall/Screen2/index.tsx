@@ -13,7 +13,6 @@ const Screen2: FC<Props> = ({ year, single_date }) => {
 
     return (
         <>
-            <Filters />
             <div className='IframeScreen'>
                 <QuestionWithIframe
                     questionId={65}
