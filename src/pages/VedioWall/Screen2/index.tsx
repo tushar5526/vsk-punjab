@@ -14,15 +14,7 @@ interface Props {
     single_date: any
 }
 
-<<<<<<< Updated upstream
 const Screen2: FC<Props> = ({ year, single_date }) => {
-=======
-const Screen2: FC<Props> = ({ year, date_range }) => {
->>>>>>> Stashed changes
-
-
-
-
 
     return (
         <>

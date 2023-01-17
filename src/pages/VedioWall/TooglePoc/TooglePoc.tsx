@@ -6,10 +6,10 @@ import Screen3 from '../Screen3/Index';
 import Screen4 from '../Screen4';
 import CombinedHeader from '../../../components/layouts/CombinedHeader';
 import "./index.css"
-import { setDuationForTooglePoc } from '../../../redux/Slider/actions';
 import { connect } from 'react-redux';
 import { Button, Input, notification } from 'antd';
-import CombinedFooter from '../../../components/layouts/CombinedFooter';
+import CombinedFooter from '../../../components/CombinedFooter/CombinedFooter';
+import { setDuationForTooglePoc } from '../../../redux/Slider/action';
 
 interface Props {
     duration: any,
