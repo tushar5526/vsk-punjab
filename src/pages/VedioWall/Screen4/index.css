@@ -109,3 +109,11 @@
   display: flex;
   width: 100vw;
 }
+
+.Screen4HeaderContainer__width1 {
+  width: 42%;
+}
+
+.Screen4HeaderContainer__width2 {
+  width: 22%;
+}

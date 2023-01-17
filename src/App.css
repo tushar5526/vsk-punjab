@@ -38,3 +38,9 @@ p {
   bottom: 0;
   left: 0;
 }
+
+.clearFilterButton {
+  background-color: var(--grey-secondary) !important;
+  border: none !important;
+  color: black;
+}

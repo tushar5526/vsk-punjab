@@ -10,15 +10,17 @@ import SectionHeader from '../../ControlledTabs/Tabs/utils/SectionHeader';
 import studentAttendance from "../../../assets/pjb/SectionHeader/student_attendance.png"
 import infrastructure from "../../../assets/pjb/SectionHeader/infrastructure.png"
 import midDayMeal from "./../../../assets/pjb/SectionHeader/mid_day_meal.png"
-import financeAndCivilWorks from "../../../assets/pjb/SectionHeader/finance_and_civil_works.png"
+import finance from "../../../assets/pjb/SectionHeader/finance_and_civil_works.png"
 import CombinedFooter from "../../../components/layouts/CombinedFooter"
 import map from "../../../assets/pjb/SectionHeader/map.png"
+import cwsn from "../../../assets/pjb/SectionHeader/cwsn.png";
+import civilWorks from "../../../assets/pjb/SectionHeader/civil_works.png"
 
 interface Props {
-    date_range: any
+    single_date: any
     year: any
 }
-const Combined: FC<Props> = ({ date_range, year }) => {
+const Combined: FC<Props> = ({ single_date, year }) => {
     return (
         <>
             <CombinedHeader />
@@ -36,7 +38,7 @@ const Combined: FC<Props> = ({ date_range, year }) => {
                                     width="100%"
                                     height="100%"
                                     type={1}
-                                    params={{ year, date_range }}
+                                    params={{ year, single_date }}
                                 />
                             </div>
                         </Col>
@@ -65,7 +67,7 @@ const Combined: FC<Props> = ({ date_range, year }) => {
                             width="100%"
                             height="100%"
                             type={1}
-                            params={{ year, date_range }}
+                            params={{ year, single_date }}
                         />
                     </div>
                 </Col>
@@ -82,23 +84,29 @@ const Combined: FC<Props> = ({ date_range, year }) => {
                             questionId={66}
                             height="100%"
                             width="100%"
-                            params={{ year, date_range }}
+                            params={{ year, single_date }}
                             type={1}
                             handleLoadCounter={() => { }}
                         />
                     </div>
                 </Col>
                 <Col span={12}>
-                    <div className="HeaderContainer__padding">
-                        <SectionHeader Icon={financeAndCivilWorks} label="Finance and Civil Works" />
+                    <div className="screen4HeaderContainer">
+                        <div className="HeaderContainer__padding  HeaderContainer__width1">
+                            <SectionHeader Icon={finance} label="Finance" />
+                        </div><div className="HeaderContainer__padding HeaderContainer__width1">
+                            <SectionHeader Icon={civilWorks} label="Civil Works" />
+                        </div>
+                        <div className="HeaderContainer__padding HeaderContainer__width2">
+                            <SectionHeader Icon={cwsn} label="CWSN" />
+                        </div>
                     </div>
-
                     <div className="CombinedIframe">
                         <QuestionWithIframe
                             questionId={67}
                             width="100%"
                             height="100%"
-                            params={{ year, date_range }}
+                            params={{ year, single_date }}
                             type={1}
                             handleLoadCounter={() => { }}
                         />
@@ -112,9 +120,9 @@ const Combined: FC<Props> = ({ date_range, year }) => {
 }
 
 
-const mapStateToProps = ({ vedio_wall: { year, date_range } }: any) => ({
+const mapStateToProps = ({ vedio_wall: { year, single_date } }: any) => ({
     year,
-    date_range,
+    single_date,
 })
 
 export default connect(mapStateToProps)(Combined)

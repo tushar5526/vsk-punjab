@@ -3,6 +3,8 @@ import QuestionWithIframe from '../../../components/QuestionWIthIframe';
 import { connect } from 'react-redux';
 import SectionHeader from '../../ControlledTabs/Tabs/utils/SectionHeader';
 import financeAndCivilWorks from "../../../assets/pjb/SectionHeader/finance_and_civil_works.png"
+import cwsn from "../../../assets/pjb/SectionHeader/cwsn.png"
+import civil_works from "../../../assets/pjb/SectionHeader/civil_works.png"
 import CombinedFooter from '../../../components/layouts/CombinedFooter';
 import { FC } from "react";
 
@@ -16,14 +18,15 @@ const Screen4: FC<Props> = ({ year, single_date, widthFooter = true }) => {
     return (
         <>
             <div className="Screen4HeaderContainer">
-                <div className="HeaderContainer__padding">
-                    <SectionHeader Icon={financeAndCivilWorks} label="Finance" />
+                <div className="HeaderContainer__padding Screen4HeaderContainer__width1">
+                    <SectionHeader Icon={financeAndCivilWorks} label="Finance And Civil Works" />
                 </div>
-                <div className="HeaderContainer__padding">
-                    <SectionHeader Icon={financeAndCivilWorks} label="Civil Works" />
+                <div className="HeaderContainer__padding Screen4HeaderContainer__width1">
+                    <SectionHeader Icon={cwsn} label="CWSN" />
                 </div>
-
-
+                <div className="HeaderContainer__padding Screen4HeaderContainer__width2">
+                    <SectionHeader Icon={civil_works} label="CWSN" />
+                </div>
             </div>
             <div className='IframeScreen4'>
                 <QuestionWithIframe

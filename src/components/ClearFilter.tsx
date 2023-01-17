@@ -9,8 +9,8 @@ interface Props {
 export const ClearFilter = ({ handleClearFilter }: Props) => {
     return (
         < Button
-            className="WebHeader2__SelectContainer--select2"
-            icon={< CloseOutlined />}
+            className="WebHeader2__SelectContainer--select2 clearFilterButton"
+            // icon={< CloseOutlined />}
             type="default"
             danger
             onClick={handleClearFilter}
