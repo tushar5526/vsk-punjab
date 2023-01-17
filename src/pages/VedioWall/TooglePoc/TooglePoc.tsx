@@ -35,19 +35,19 @@ const TooglePoc: FC<Props> = ({ duration, setNewDuration, durationParsed }) => {
         screen4: toogle === 3,
     }
 
-    useEffect(() => {
-        if (playPause) {
+    // useEffect(() => {
+    //     if (playPause) {
 
-        } else {
-            const toogleInterval = setInterval(() => {
-                setToogle((prev: any) => {
-                    if (prev === 3) return 0
-                    else return prev + 1
-                })
-            }, duration)
-            return () => clearInterval(toogleInterval)
-        }
-    }, [duration, playPause])
+    //     } else {
+    //         const toogleInterval = setInterval(() => {
+    //             setToogle((prev: any) => {
+    //                 if (prev === 3) return 0
+    //                 else return prev + 1
+    //             })
+    //         }, duration)
+    //         return () => clearInterval(toogleInterval)
+    //     }
+    // }, [duration, playPause])
 
     return (
         <>
@@ -81,7 +81,7 @@ const TooglePoc: FC<Props> = ({ duration, setNewDuration, durationParsed }) => {
                 </div>
             </div>
             <div style={{ display: _toogleCheck.screen1 ? "block" : "none" }} >
-                <Screen1 withFilter={false} />
+                <Screen1 forAutoPlay={true} withFilter={false} />
             </div>
             <div style={{ display: _toogleCheck.screen2 ? "block" : "none" }} >
                 <Screen2 />

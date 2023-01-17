@@ -8,6 +8,12 @@
   height: 80vh;
 }
 
+.Screen1__ContainerMap {
+  width: 33%;
+  height: 89.5vh;
+  overflow: hidden;
+}
+
 .Screen1__Container1_DistrictPerformance {
   width: 48%;
 }

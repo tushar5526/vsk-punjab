@@ -13,10 +13,11 @@ interface Props {
     single_date: any
     loading: any
     withFilter?: any
+    forAutoPlay?: any
 }
 
 
-const Screen1: FC<Props> = ({ year, single_date, withFilter = true }) => {
+const Screen1: FC<Props> = ({ year, single_date, withFilter = true, forAutoPlay = false }) => {
 
     return (
         <>
@@ -35,7 +36,7 @@ const Screen1: FC<Props> = ({ year, single_date, withFilter = true }) => {
                         params={{ year, single_date }}
                     />
                 </div>
-                <div className='Screen1__Container'>
+                <div className={forAutoPlay ? "Screen1__ContainerMap" : "Screen1__Container"}>
                     <SectionHeader Icon={map} label="Map View" />
                     <div className="Screen__Container1--map">
                         <CustomMap />
