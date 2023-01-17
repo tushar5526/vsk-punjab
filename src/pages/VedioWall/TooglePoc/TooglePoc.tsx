@@ -16,8 +16,9 @@ import { millisToMinutesAndSeconds } from '../utils';
 interface Props {
     duration: any,
     setNewDuration: any
+    durationParsed: any
 }
-const TooglePoc: FC<Props> = ({ duration, setNewDuration }) => {
+const TooglePoc: FC<Props> = ({ duration, setNewDuration, durationParsed }) => {
     const [toogle, setToogle] = useState<any>(0)
     const [durationValue, setDurationValue] = useState<any>("")
     const [playPause, setPlayPause] = useState<boolean>(false)
@@ -76,8 +77,7 @@ const TooglePoc: FC<Props> = ({ duration, setNewDuration }) => {
                     <div className="Autoplay_timerContainer">
                         <img src={timer} alt="timer" />
                     </div>
-                    {/* {millisToMinutesAndSeconds(duration)} */}
-                    {(duration / 1000)}sec
+                    {durationParsed < 60 ? durationParsed : millisToMinutesAndSeconds(duration)}{durationParsed < 60 ? "sec" : "min"}
                 </div>
             </div>
             <div style={{ display: _toogleCheck.screen1 ? "block" : "none" }} >
@@ -96,8 +96,9 @@ const TooglePoc: FC<Props> = ({ duration, setNewDuration }) => {
         </>
     )
 }
-const mapStateToProps = ({ slider: { duration } }: any) => ({
-    duration
+const mapStateToProps = ({ slider: { duration, durationParsed } }: any) => ({
+    duration,
+    durationParsed: duration / 1000
 })
 
 const mapDispatchToProps = (dispatch: any) => ({
