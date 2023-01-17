@@ -2,12 +2,7 @@ import QuestionWithIframe from '../../../components/QuestionWIthIframe'
 import "./index.css"
 import Filters from '../Filters/Filters'
 import { connect } from 'react-redux'
-import API_SERVICE from '../../../services/api-service'
-import { parseStringPromise, parseString } from 'xml2js';
-import { useState, FC, useEffect } from 'react';
-import { notification } from 'antd'
-import { getAcademicYearList, parseYearListForMetabase } from '../utils'
-
+import { FC } from 'react';
 
 interface Props {
     year: any
@@ -20,14 +15,14 @@ const Screen2: FC<Props> = ({ year, single_date }) => {
         <>
             <Filters />
             <div className='IframeScreen'>
-                {/* <QuestionWithIframe
+                <QuestionWithIframe
                     questionId={65}
                     width="100%"
                     type={1}
                     params={{ year, single_date }}
                     height="100%"
                     handleLoadCounter={() => { }}
-                /> */}
+                />
             </div>
         </>
     )

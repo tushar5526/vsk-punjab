@@ -49,6 +49,11 @@
   font-weight: 700;
 }
 
+.demoHeader3__spanDiv--image {
+  width: 100%;
+  object-fit: contain;
+}
+
 .demoHeader__Tabs {
   width: 100%;
   height: 100%;

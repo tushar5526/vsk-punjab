@@ -1,5 +1,3 @@
-import { Image } from "antd"
-
 interface Props {
     label: string
     label2?: string
@@ -8,12 +6,12 @@ interface Props {
 }
 const SectionHeader = ({ label, label2, Icon }: Props) => {
     return (
-        <div className={`demoHeader3 demoHeader3__height1  mb`}>
+        <div className={`demoHeader3 demoHeader3__height1`}>
             <div className='demoHeader3__span'>
                 {!label2 || label2 === "" ? (
                     <>
                         <div className="demoHeader3__spanDiv">
-                            <Icon />
+                            <img className="demoHeader3__spanDiv--image" src={Icon} alt="screen" />
                         </div>
                         <p className="demoHeader3__spanText">{label}</p>
                     </>

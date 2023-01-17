@@ -1,4 +1,4 @@
-import { Component, FC } from 'react';
+import { FC } from 'react';
 import "./index.css"
 import QuestionWithIframe from '../../../components/QuestionWIthIframe';
 import { connect } from 'react-redux';
