@@ -10,6 +10,8 @@ import { connect } from 'react-redux';
 import { Button, Input, notification } from 'antd';
 import CombinedFooter from '../../../components/CombinedFooter/CombinedFooter';
 import { setDuationForTooglePoc } from '../../../redux/Slider/action';
+import timer from "../../../assets/pjb/SectionHeader/timer.png"
+import { millisToMinutesAndSeconds } from '../utils';
 
 interface Props {
     duration: any,
@@ -71,6 +73,11 @@ const TooglePoc: FC<Props> = ({ duration, setNewDuration }) => {
                     >
                         {playPause ? "Play" : "Pause"}
                     </Button>
+                    <div className="Autoplay_timerContainer">
+                        <img src={timer} alt="timer" />
+                    </div>
+                    {/* {millisToMinutesAndSeconds(duration)} */}
+                    {(duration / 1000)}sec
                 </div>
             </div>
             <div style={{ display: _toogleCheck.screen1 ? "block" : "none" }} >

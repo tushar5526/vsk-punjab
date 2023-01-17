@@ -7,6 +7,16 @@
 }
 
 .Autoplay__ContainerInput {
+  align-items: center;
   display: flex;
   gap: 20px;
+}
+
+.Autoplay_timerContainer {
+  width: 80px;
+}
+
+.Autoplay_timerContainer > img {
+  width: 100%;
+  object-fit: contain;
 }
