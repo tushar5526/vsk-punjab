@@ -22,10 +22,7 @@ const Screen4: FC<Props> = ({ year, single_date, widthFooter = true }) => {
                     width="100%"
                     type={1}
                     height="100%"
-                    params={{
-                        year,
-                        single_date
-                    }}
+                    params={{ year, single_date }}
                 />
             </div>
             {widthFooter && <CombinedFooter />}
