@@ -93,7 +93,7 @@ const Combined: FC<Props> = ({ single_date, year }) => {
                 <Col span={12}>
                     <div className="screen4HeaderContainer">
                         <div className="HeaderContainer__padding  HeaderContainer__width1">
-                            <SectionHeader Icon={finance} label="Finance" />
+                            <SectionHeader width={"110%"} Icon={finance} label="Finance" />
                         </div><div className="HeaderContainer__padding HeaderContainer__width1">
                             <SectionHeader width={"80px"} Icon={civilWorks} label="Civil Works" />
                         </div>
