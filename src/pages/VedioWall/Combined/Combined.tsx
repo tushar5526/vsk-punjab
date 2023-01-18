@@ -24,7 +24,7 @@ const Combined: FC<Props> = ({ single_date, year }) => {
     return (
         <>
             <CombinedHeader />
-            {/* <Filters /> */}
+            <Filters />
             <Row gutter={2}>
                 <Col span={12}>
                     <Row gutter={2}>

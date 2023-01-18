@@ -1,14 +1,14 @@
 import types from "./types";
 import { fixMomentDateForMis } from "../../pages/VedioWall/utils";
 
-interface INITIAL_STATE {
+interface STATE {
   year: any;
   single_date: any;
   mis_year: any;
   loading: any;
 }
 const initDate = fixMomentDateForMis();
-const INITIAL_STATE: INITIAL_STATE = {
+const INITIAL_STATE: STATE = {
   year: [],
   single_date: initDate,
   mis_year: "13",
