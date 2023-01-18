@@ -19,13 +19,13 @@ const Screen4: FC<Props> = ({ year, single_date, widthFooter = true }) => {
         <>
             <div className="Screen4HeaderContainer">
                 <div className="HeaderContainer__padding Screen4HeaderContainer__width1">
-                    <SectionHeader Icon={financeAndCivilWorks} label="Finance And Civil Works" />
+                    <SectionHeader Icon={financeAndCivilWorks} label="Finance" />
                 </div>
                 <div className="HeaderContainer__padding Screen4HeaderContainer__width1">
-                    <SectionHeader Icon={cwsn} label="CWSN" />
+                    <SectionHeader Icon={civil_works} label="Civil Works" />
                 </div>
                 <div className="HeaderContainer__padding Screen4HeaderContainer__width2">
-                    <SectionHeader Icon={civil_works} label="CWSN" />
+                    <SectionHeader Icon={cwsn} label="CWSN" />
                 </div>
             </div>
             <div className='IframeScreen4'>
