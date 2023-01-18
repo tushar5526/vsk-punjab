@@ -36,10 +36,9 @@ const ToolTip = (props) => {
   return (
     <Marker position={props.position} icon={props.iconPerson}>
       <Popup
-        onOpen={() => {
-          console.log("hello");
-          getToolTipData();
-        }}
+        // onOpen={() => {
+        //   getToolTipData();
+        // }}
         className="tooltip-popup"
       >
         {toolTip.loaded ? (
