@@ -36,9 +36,7 @@ const TooglePoc: FC<Props> = ({ duration, setNewDuration, durationParsed }) => {
     }
 
     useEffect(() => {
-        if (playPause) {
-
-        } else {
+        if (!playPause) {
             const toogleInterval = setInterval(() => {
                 setToogle((prev: any) => {
                     if (prev === 3) return 0

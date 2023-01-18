@@ -1,7 +1,7 @@
 import { DatePicker, Select } from 'antd';
 import { FC, useState, useEffect } from 'react'
 import { ClearFilter } from '../../../components/ClearFilter';
-import { applyDateFilter, applyYearFilter, pushMisYearToState, setDateForVedioWallFilter, setLoadingForMapRender } from '../../../redux/VedioWall/actions';
+import { applyDateFilter, applyYearFilter, pushMisYearToState, setLoadingForMapRender } from '../../../redux/VedioWall/actions';
 import { connect } from 'react-redux';
 import { getAcademicYearList, parseYearListForMetabase, fixMomentDateForMis } from '../utils';
 import moment from 'moment';
