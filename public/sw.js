@@ -19,13 +19,11 @@ let coreAssets = [
 ];
 
 self.addEventListener("install", function (event) {
-  console.log("SW Installed");
   event.waitUntil(
     caches.open("app").then(function (cache) {
       for (let asset of coreAssets) {
         cache.add(new Request(asset));
       }
-      console.log("Assets Added");
       return cache;
     })
   );
@@ -47,7 +45,6 @@ self.addEventListener("fetch", function (event) {
   // CSS & JavaScript
   // Offline-first
   if (coreAssets.some((v) => request.url.includes(v))) {
-    console.log("Matched Asset", request.url);
     event.respondWith(
       caches
         .match(request, {

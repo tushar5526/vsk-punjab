@@ -6,6 +6,17 @@ import jwt from "jsonwebtoken";
 const METABASE_SITE_URL = "https://samarthhp-metabase.in";
 const METABASE_SECRET_KEY =
   "9f9b235cc2efc4af8cbaf8a1b727c3104ff2d87663f8682e5e07be78cd00573a";
+
+
+
+interface SamarthQuestionWithIframeProtectedType {
+  questionId: any;
+  height?: string;
+  width?: string;
+  nonDownloadable?: boolean;
+  params?: any;
+  loadCallback?: any;
+}
 const SamarthQuestionWithIframeProtected = ({
   questionId,
   height,
@@ -13,18 +24,10 @@ const SamarthQuestionWithIframeProtected = ({
   nonDownloadable,
   params,
   loadCallback,
-}: {
-  questionId: any;
-  height?: string;
-  width?: string;
-  nonDownloadable?: boolean;
-  params?: any;
-  loadCallback?: any;
-}) => {
+}: SamarthQuestionWithIframeProtectedType) => {
   const { hasFirstIframeLoaded, updateHasFirstIframeLoaded } =
     useContext(IframeContextContext);
   const [load, setLoad] = useState(false);
-  const [random, setRandom] = useState(0);
   const [url, setUrl] = useState("");
   const generateUrl = () => {
     const payload = {
@@ -96,6 +99,14 @@ const SamarthQuestionWithIframeProtected = ({
     />
   );
 };
+interface SamarthQuestionWithIframeType {
+  questionId: any;
+  height?: string;
+  width?: string;
+  nonDownloadable?: boolean;
+  params?: any;
+  handleLoadCounter?: any;
+}
 const SamarthQuestionWithIframe = ({
   questionId,
   height,
@@ -103,17 +114,7 @@ const SamarthQuestionWithIframe = ({
   nonDownloadable,
   params,
   handleLoadCounter = () => console.log("no call back"),
-}: {
-  questionId: any;
-  height?: string;
-  width?: string;
-  nonDownloadable?: boolean;
-  params?: any;
-  handleLoadCounter?: any;
-}) => {
-  useEffect(() => {
-    console.log(params, "filterdist");
-  }, []);
+}: SamarthQuestionWithIframeType) => {
   return (
     <SamarthQuestionWithIframeProtected
       questionId={questionId}

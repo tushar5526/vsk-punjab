@@ -95,7 +95,7 @@ const Combined: FC<Props> = ({ single_date, year }) => {
                         <div className="HeaderContainer__padding  HeaderContainer__width1">
                             <SectionHeader Icon={finance} label="Finance" />
                         </div><div className="HeaderContainer__padding HeaderContainer__width1">
-                            <SectionHeader Icon={civilWorks} label="Civil Works" />
+                            <SectionHeader width={"80px"} Icon={civilWorks} label="Civil Works" />
                         </div>
                         <div className="HeaderContainer__padding HeaderContainer__width2">
                             <SectionHeader Icon={cwsn} label="CWSN" />

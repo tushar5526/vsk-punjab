@@ -2,16 +2,17 @@ interface Props {
     label: string
     label2?: string
     withHeight?: boolean
+    width?: any
     Icon?: any
 }
-const SectionHeader = ({ label, label2, Icon }: Props) => {
+const SectionHeader = ({ label, label2, Icon, width = "100%" }: Props) => {
     return (
         <div className={`demoHeader3 demoHeader3__height1`}>
             <div className='demoHeader3__span'>
                 {!label2 || label2 === "" ? (
                     <>
                         <div className="demoHeader3__spanDiv">
-                            <img className="demoHeader3__spanDiv--image" src={Icon} alt="screen" />
+                            <img style={{ width }} className="demoHeader3__spanDiv--image" src={Icon} alt="screen" />
                         </div>
                         <p className="demoHeader3__spanText">{label}</p>
                     </>

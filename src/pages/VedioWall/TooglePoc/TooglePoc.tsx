@@ -25,7 +25,6 @@ const TooglePoc: FC<Props> = ({ duration, setNewDuration, durationParsed }) => {
 
     const handlePlayPauseChange = () => {
         setPlayPause(!playPause);
-        console.log(playPause, "playpause")
     }
 
     const _toogleCheck = {

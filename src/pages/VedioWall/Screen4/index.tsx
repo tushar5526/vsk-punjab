@@ -22,7 +22,7 @@ const Screen4: FC<Props> = ({ year, single_date, widthFooter = true }) => {
                     <SectionHeader Icon={financeAndCivilWorks} label="Finance" />
                 </div>
                 <div className="HeaderContainer__padding Screen4HeaderContainer__width1">
-                    <SectionHeader Icon={civil_works} label="Civil Works" />
+                    <SectionHeader width={"80px"} Icon={civil_works} label="Civil Works" />
                 </div>
                 <div className="HeaderContainer__padding Screen4HeaderContainer__width2">
                     <SectionHeader Icon={cwsn} label="CWSN" />

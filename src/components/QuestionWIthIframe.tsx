@@ -24,7 +24,6 @@ const QuestionWithIframeProtected = ({
   var SU: any = process.env.REACT_APP_VSKP_METABASE_SITE_URL
 
 
-  console.log(SK, SU, "SK SU")
   const { hasFirstIframeLoaded, updateHasFirstIframeLoaded } =
     useContext(IframeContextContext);
   const [load, setLoad] = useState(false);
