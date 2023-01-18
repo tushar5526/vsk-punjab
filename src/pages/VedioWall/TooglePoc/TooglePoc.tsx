@@ -36,7 +36,7 @@ const TooglePoc: FC<Props> = ({ duration, setNewDuration, durationParsed }) => {
     }
 
     useEffect(() => {
-        if (!playPause) {
+        if (playPause) {
             const toogleInterval = setInterval(() => {
                 setToogle((prev: any) => {
                     if (prev === 3) return 0
@@ -62,6 +62,7 @@ const TooglePoc: FC<Props> = ({ duration, setNewDuration, durationParsed }) => {
                                 placement: "bottomRight",
                                 message: "New Duration Applied"
                             })
+                            setPlayPause(true)
                             setDurationValue("")
                         }}>
                         Add
@@ -75,7 +76,11 @@ const TooglePoc: FC<Props> = ({ duration, setNewDuration, durationParsed }) => {
                     <div className="Autoplay_timerContainer">
                         <img src={timer} alt="timer" />
                     </div>
-                    {durationParsed < 60 ? durationParsed : millisToMinutesAndSeconds(duration)}{durationParsed < 60 ? "sec" : "min"}
+                    {durationParsed !== 0 && (
+                        <span>
+                            {durationParsed < 60 ? durationParsed : millisToMinutesAndSeconds(duration)}{durationParsed < 60 ? "sec" : "min"}
+                        </span>
+                    )}
                 </div>
             </div>
             <div style={{ display: _toogleCheck.screen1 ? "block" : "none" }} >
@@ -94,7 +99,7 @@ const TooglePoc: FC<Props> = ({ duration, setNewDuration, durationParsed }) => {
         </>
     )
 }
-const mapStateToProps = ({ slider: { duration, durationParsed } }: any) => ({
+const mapStateToProps = ({ slider: { duration } }: any) => ({
     duration,
     durationParsed: duration / 1000
 })

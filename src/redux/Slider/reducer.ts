@@ -1,7 +1,7 @@
 import types from "./types";
 
 const INITIAL_STATE = {
-  duration: 12000,
+  duration: 0,
 };
 
 const sliderReducer = (state = INITIAL_STATE, action: any) => {
