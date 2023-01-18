@@ -39,7 +39,10 @@ const CustomMap = ({ mis_year, setLoading, loading }: any) => {
 
             const encryptedAcademicYear = await getEncryptedStringForMIS(mis_year)
             const schoolList = await getSchoolListForMapWithLatLong(encryptedAcademicYear)
-            if (schoolList) formatMarkerData(schoolList, encryptedAcademicYear)
+            if (Array.isArray(schoolList)) {
+                formatMarkerData(schoolList, encryptedAcademicYear)
+                console.log(schoolList, "Scool list")
+            }
 
         } catch (error) {
             notification.error({

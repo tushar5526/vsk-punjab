@@ -13,7 +13,7 @@ import ToolTip from "./ToolTip/ToolTip";
 
 export default function MapComponent({ config, markers }) {
   // const center = config?.markers?.postions[0]?.position || [28.7041, 77.1025];
-  const center = [30.8244732639336, 75.173516308009];
+  const center = [30.382726865819787, 75.18919035482591];
   const byGeoJson = config?.bounds?.byGeoJson?.length;
   const byBbox = config?.bounds?.byBbox?.length;
 
