@@ -100,14 +100,9 @@ export default function MapComponent({ config, markers }) {
                   markerColor = purple_marker;
                 }
                 const iconPerson = new L.Icon({
-                  // iconUrl: new URL(`${item.icon}`),
-                  // iconRetinaUrl: new URL(`${item.icon}`),
                   iconUrl: markerColor,
                   iconRetinaUrl: markerColor,
                   iconSize: new L.Point(20, 30),
-                  // onclick: getToolTipData,
-                  // eventHandlers: { eventHandlers },
-                  // className: "leaflet-div-icon",
                 });
                 return (
                   <ToolTip
