@@ -5,7 +5,7 @@ import CustomMap from '../../../components/CustomMap/CustomMap'
 import { connect } from 'react-redux'
 import SectionHeader from '../../ControlledTabs/Tabs/utils/SectionHeader'
 import Filters from '../Filters/Filters'
-import map from "../../../assets/pjb/SectionHeader/map.png"
+import map from "../../../assets/pjb/SectionHeader/map.jpg"
 import studentAttendance from "../../../assets/pjb/SectionHeader/student_attendance.png"
 
 interface Props {

@@ -8,7 +8,7 @@ import { FC } from 'react';
 import SectionHeader from '../../ControlledTabs/Tabs/utils/SectionHeader';
 import CombinedFooter from '../../../components/layouts/CombinedFooter';
 import studentAttendance from "../../../assets/pjb/SectionHeader/student_attendance.png"
-import map from "../../../assets/pjb/SectionHeader/map.png"
+import map from "../../../assets/pjb/SectionHeader/map.jpg"
 import infrastructure from "../../../assets/pjb/SectionHeader/infrastructure.png"
 import midDayMeal from "../../../assets/pjb/SectionHeader/mid_day_meal.png"
 import financeAndCivilWorks from "../../../assets/pjb/SectionHeader/finance_and_civil_works.png"

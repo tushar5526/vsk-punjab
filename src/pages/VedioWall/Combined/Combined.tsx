@@ -12,7 +12,7 @@ import infrastructure from "../../../assets/pjb/SectionHeader/infrastructure.png
 import midDayMeal from "./../../../assets/pjb/SectionHeader/mid_day_meal.png"
 import finance from "../../../assets/pjb/SectionHeader/finance_and_civil_works.png"
 import CombinedFooter from "../../../components/layouts/CombinedFooter"
-import map from "../../../assets/pjb/SectionHeader/map.png"
+import map from "../../../assets/pjb/SectionHeader/map.jpg"
 import cwsn from "../../../assets/pjb/SectionHeader/cwsn.png";
 import civilWorks from "../../../assets/pjb/SectionHeader/civil_works.png"
 
