@@ -70,7 +70,7 @@ const TooglePoc: FC<Props> = ({ duration, setNewDuration, durationParsed }) => {
                         onClick={handlePlayPauseChange}
                         type='primary'
                     >
-                        {playPause ? "Play" : "Pause"}
+                        {playPause ? "Pause" : "Play"}
                     </Button>
                     <div className="Autoplay_timerContainer">
                         <img src={timer} alt="timer" />
