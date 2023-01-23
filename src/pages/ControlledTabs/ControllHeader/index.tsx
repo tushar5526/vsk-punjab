@@ -44,8 +44,8 @@ const DemoHeader = ({ tabs, _toogle, current, _toogleFilterPage, dashboard }: an
             setAcademicParams({
                 date_range: "2022-12-04~2022-12-21",
                 year: [],
-                class: [],
-                subject: []
+                // class: [],
+                // subject: []
             })
             _toogleFilterPage(_dash.academic)
         } else if (current === 2) {
@@ -99,8 +99,8 @@ const DemoHeader = ({ tabs, _toogle, current, _toogleFilterPage, dashboard }: an
     const [academicParams, setAcademicParams] = useState<any>({
         date_range: [],
         year: [],
-        class: [],
-        subject: []
+        // class: [],
+        // subject: []
     })
 
     const _academicValues = {
@@ -256,7 +256,7 @@ const DemoHeader = ({ tabs, _toogle, current, _toogleFilterPage, dashboard }: an
                                             })
                                         }}
                                     />
-                                    <Select
+                                    {/* <Select
                                         className='demoHeader__select'
                                         suffixIcon={<img alt="dropdown" className='demoHeader__dropdown--suffix' src={down_arrow} />}
                                         value={academicParams.class[0] || "Class"}
@@ -268,8 +268,8 @@ const DemoHeader = ({ tabs, _toogle, current, _toogleFilterPage, dashboard }: an
 
                                             })
                                         }}
-                                    />
-                                    <Select
+                                    /> */}
+                                    {/* <Select
                                         className='demoHeader__select'
                                         suffixIcon={<img alt="dropdown" className='demoHeader__dropdown--suffix' src={down_arrow} />}
                                         value={academicParams.subject[0] || "Subject"}
@@ -280,7 +280,7 @@ const DemoHeader = ({ tabs, _toogle, current, _toogleFilterPage, dashboard }: an
                                                 subject: [e]
                                             })
                                         }}
-                                    />
+                                    /> */}
                                 </>
                             )}
                             <ClearFilter handleClearFilter={() => onClearFilterPress()} />
