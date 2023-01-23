@@ -53,7 +53,8 @@ const Filters: FC<Props> = (props) => {
                 <DatePicker
                     defaultValue={moment()}
                     onChange={(e: any) => {
-                        props.applyDate(fixMomentDateForMis(e));
+                        if (e) props.applyDate(fixMomentDateForMis(e))
+                        else props.applyDate([])
                     }} />
 
             </div>

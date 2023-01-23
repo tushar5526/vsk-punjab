@@ -237,7 +237,10 @@ const DemoHeader = ({ tabs, _toogle, current, _toogleFilterPage, dashboard }: an
                             {(tabCheck.performance || tabCheck.performance_block || tabCheck.performance_district || tabCheck.performance_cluster) && (
                                 <DatePicker
                                     defaultValue={performanceParams.single_date}
-                                    onChange={(e: any) => setPerformanceParams({ single_date: e })} />
+                                    onChange={(e: any) => {
+                                        if (e) setPerformanceParams({ single_date: e })
+                                        else setPerformanceParams({ single_date: [] })
+                                    }} />
                             )}
 
                             {(tabCheck.academic || tabCheck.academic_block || tabCheck.academic_district) && (
@@ -246,9 +249,13 @@ const DemoHeader = ({ tabs, _toogle, current, _toogleFilterPage, dashboard }: an
                                         <RangePicker
                                             defaultValue={rangeState}
                                             onChange={(e: any) => {
-                                                setRangeState(e)
-                                                const date_range = `${fixMomentDateForMis(e[0])}~${fixMomentDateForMis(e[0])}`;
-                                                setAcademicParams({ ...academicParams, date_range });
+                                                if (e) {
+                                                    setRangeState(e)
+                                                    const date_range = `${fixMomentDateForMis(e[0])}~${fixMomentDateForMis(e[0])}`;
+                                                    setAcademicParams({ ...academicParams, date_range });
+                                                } else {
+                                                    setAcademicParams({ ...academicParams, date_range: [] });
+                                                }
                                             }}
                                         />
                                     </div>
