@@ -27,6 +27,10 @@ const DemoHeader = ({ tabs, _toogle, current, _toogleFilterPage, dashboard }: an
         b: localStorage.getItem(linkingTypes.USER_DEFAULT_BLOCK) || "Block"
     })
 
+    const [performanceParams, setPerformanceParams] = useState<{ single_date: any }>({
+        single_date: moment()
+    })
+
 
     const [rangeState, setRangeState] = useState<any>([moment(), moment().add(1, "month")]);
     const onClearFilterPress = () => {
@@ -42,7 +46,7 @@ const DemoHeader = ({ tabs, _toogle, current, _toogleFilterPage, dashboard }: an
             _toogleFilterPage(_dash.performance)
         } else if (current === 1) {
             setAcademicParams({
-                date_range: "2022-12-04~2022-12-21",
+                date_range: moment(),
                 year: [],
                 // class: [],
                 // subject: []
@@ -230,6 +234,12 @@ const DemoHeader = ({ tabs, _toogle, current, _toogleFilterPage, dashboard }: an
                                 id="block"
                             />
 
+                            {(tabCheck.performance || tabCheck.performance_block || tabCheck.performance_district || tabCheck.performance_cluster) && (
+                                <DatePicker
+                                    defaultValue={performanceParams.single_date}
+                                    onChange={(e: any) => setPerformanceParams({ single_date: e })} />
+                            )}
+
                             {(tabCheck.academic || tabCheck.academic_block || tabCheck.academic_district) && (
                                 <>
                                     <div className="AcademicDateRange">
@@ -238,7 +248,6 @@ const DemoHeader = ({ tabs, _toogle, current, _toogleFilterPage, dashboard }: an
                                             onChange={(e: any) => {
                                                 setRangeState(e)
                                                 const date_range = `${fixMomentDateForMis(e[0])}~${fixMomentDateForMis(e[0])}`;
-
                                                 setAcademicParams({ ...academicParams, date_range });
                                             }}
                                         />
@@ -291,11 +300,11 @@ const DemoHeader = ({ tabs, _toogle, current, _toogleFilterPage, dashboard }: an
             </div>
             <Dashboard params={
                 tabCheck.performance ?
-                    { ...geo } :
+                    { ...geo, ...performanceParams } :
                     tabCheck.performance_district ?
-                        { ...geo } :
+                        { ...geo, ...performanceParams } :
                         tabCheck.performance_block ?
-                            { ...geo2 }
+                            { ...geo2, ...performanceParams }
                             : tabCheck.admin ?
                                 { ...geo } :
                                 tabCheck.admin_district ?
