@@ -43,10 +43,14 @@ const DemoHeader = ({ tabs, _toogle, current, _toogleFilterPage, dashboard }: an
         setGeo({ district: [] })
         setGeo2({ block: [] })
         if (current === 0) {
+            setPerformanceParams({
+                single_date: []
+            })
             _toogleFilterPage(_dash.performance)
         } else if (current === 1) {
+            setRangeState([null, null])
             setAcademicParams({
-                date_range: moment(),
+                date_range: [],
                 year: [],
                 // class: [],
                 // subject: []
@@ -236,7 +240,7 @@ const DemoHeader = ({ tabs, _toogle, current, _toogleFilterPage, dashboard }: an
 
                             {(tabCheck.performance || tabCheck.performance_block || tabCheck.performance_district || tabCheck.performance_cluster) && (
                                 <DatePicker
-                                    defaultValue={performanceParams.single_date}
+                                    value={Array.isArray(performanceParams.single_date) ? null : performanceParams.single_date}
                                     onChange={(e: any) => {
                                         if (e) setPerformanceParams({ single_date: e })
                                         else setPerformanceParams({ single_date: [] })
@@ -247,7 +251,7 @@ const DemoHeader = ({ tabs, _toogle, current, _toogleFilterPage, dashboard }: an
                                 <>
                                     <div className="AcademicDateRange">
                                         <RangePicker
-                                            defaultValue={rangeState}
+                                            value={!rangeState[0] ? [null, null] : rangeState}
                                             onChange={(e: any) => {
                                                 if (e) {
                                                     setRangeState(e)

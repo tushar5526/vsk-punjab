@@ -35,8 +35,16 @@ const Filters: FC<Props> = (props) => {
         return `${String(e).substring(0, 5)}${String(e).substring(7)}`
     }
 
+    const [date, setDate] = useState<any>(moment())
+
     const filterMisYearItem = (e: string) => {
         return misYearList.filter(({ Year }: any) => Year === trimStringForMis(e))[0]?.AccYearCode
+    }
+    const onClearFilter = () => {
+        props.applyDate([])
+        props.applyYear([])
+        setDate(null)
+        // props.pushMisYear([])
     }
     return (
         <div className='Screen2VedioWallFilters'>
@@ -51,14 +59,19 @@ const Filters: FC<Props> = (props) => {
             />
             <div className="AcademicDateRange">
                 <DatePicker
-                    defaultValue={moment()}
+                    value={date}
                     onChange={(e: any) => {
-                        if (e) props.applyDate(fixMomentDateForMis(e))
-                        else props.applyDate([])
+                        if (e) {
+                            setDate(e)
+                            props.applyDate(fixMomentDateForMis(e))
+                        }
+                        else {
+                            props.applyDate([])
+                        }
                     }} />
 
             </div>
-            <ClearFilter handleClearFilter={() => window.location.reload()} />
+            <ClearFilter handleClearFilter={() => onClearFilter()} />
         </div>
     )
 }
