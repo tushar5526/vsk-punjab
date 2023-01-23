@@ -22,8 +22,8 @@ import { getUserFromLS } from "./utils";
 import { addUserToState } from './redux/user/actions';
 import { connect } from 'react-redux/es/exports';
 import Combined from "./pages/VedioWall/Combined/Combined";
-import CombinedTest from "./pages/VedioWall/CombinedTest/CombinedTest";
-import TooglePoc from "./pages/VedioWall/TooglePoc/TooglePoc";
+// import CombinedTest from "./pages/VedioWall/CombinedTest/CombinedTest";
+import AutoPlay from "./pages/VedioWall/AutoPlay/AutoPlay";
 // import CustomMap from "./components/CustomMap/CustomMap";
 // import ScreenPoc from './pages/VedioWall/ScreenPoc/index';
 // import ScreenPoc2 from "./pages/VedioWall/ScreenPoc2";
@@ -113,8 +113,8 @@ const App: FC = ({ _addUserToState }: any) => {
             <Route exact path={ROUTE_CONST.vdo_wall_3} component={Screen3} />
             <Route exact path={ROUTE_CONST.vdo_wall_4} component={Screen4} />
             <Route exact path={ROUTE_CONST.combined} component={Combined} />
-            <Route exact path={ROUTE_CONST.combined_test} component={CombinedTest} />
-            <Route exact path={ROUTE_CONST.autoplay} component={TooglePoc} />
+            {/* <Route exact path={ROUTE_CONST.combined_test} component={CombinedTest} /> */}
+            <Route exact path={ROUTE_CONST.autoplay} component={AutoPlay} />
             {/* <PrivateRoute exact path={ROUTE_CONST.map_test} component={() => <CreateHeaderContext comp={CustomMap} />} />
             <PrivateRoute exact path={ROUTE_CONST.card_poc1} component={() => <CreateHeaderContext comp={ScreenPoc} />} />
             <PrivateRoute exact path={ROUTE_CONST.card_poc2} component={() => <CreateHeaderContext comp={ScreenPoc2} />} /> */}

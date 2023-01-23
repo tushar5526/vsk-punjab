@@ -18,7 +18,7 @@ interface Props {
     setNewDuration: any
     durationParsed: any
 }
-const TooglePoc: FC<Props> = ({ duration, setNewDuration, durationParsed }) => {
+const AutoPlay: FC<Props> = ({ duration, setNewDuration, durationParsed }) => {
     const [toogle, setToogle] = useState<any>(0)
     const [durationValue, setDurationValue] = useState<any>("")
     const [playPause, setPlayPause] = useState<boolean>(false)
@@ -107,4 +107,4 @@ const mapDispatchToProps = (dispatch: any) => ({
     setNewDuration: (e: any) => dispatch(setDuationForTooglePoc(e))
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(TooglePoc)
+export default connect(mapStateToProps, mapDispatchToProps)(AutoPlay)
