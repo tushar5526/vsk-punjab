@@ -45,9 +45,9 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
-## src/pages
+# src/pages
 
-- # /ControlledTabs
+- ## /ControlledTabs
   1.  Controlles logic of the tabs Admistrative Overview, Academic Overview & Education Statistics
   2.  Controll of the tabs available in ControlledTabs/index.tsx
   3.  Main logic available in ControlledTabs/ControlledHeader/index.tsx
