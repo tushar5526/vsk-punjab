@@ -103,7 +103,7 @@ To learn React, check out the [React documentation](https://reactjs.org/).
   1.  Contains react component for vedio wall 4
   2.  Filter Academic Year & Date Range
 
-- ## /utils.ts
+- ## utils.ts
 
   1.  Contains some helper functions
 
