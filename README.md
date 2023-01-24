@@ -45,9 +45,108 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
-# src/pages
+# src/pages/
+
+- ## /Dashboard
+
+  1.  React component which takes metabase dashboard id and reders metabase dasboard iframe
+  2.  It's bieng used in ControlledTabs/index.tsx
+
+- ## /Login
+
+  1.  React component to login users using MIS Authentication
 
 - ## /ControlledTabs
+
   1.  Controlles logic of the tabs Admistrative Overview, Academic Overview & Education Statistics
   2.  Controll of the tabs available in ControlledTabs/index.tsx
   3.  Main logic available in ControlledTabs/ControlledHeader/index.tsx
+
+- ## linking.ts
+
+1.  Contains helpers to link user to default geo locations
+
+# src/pages/VedioWall
+
+- ## /Autoplay
+
+  1.  React component to Autoplay all 4 vedio wall metabase dashboards with a user defined duration
+  2.  Contains controlls of Play/Pause & Duration Manangement
+
+- ## /Combined
+
+  1.  React component to show all 4 vedio wall metabase dashboards
+  2.  Each dashboard contains 1/4 space of the screen
+
+- ## /Filters
+
+  1.  React component to manange filters for vedio walls
+  2.  dispatches reducx actions to manage filters
+
+- ## /Screen1
+
+  1.  Contains react component for vedio wall 1
+  2.  Shows student attendance stats
+
+- ## /Screen2
+
+  1.  Contains react component for vedio wall 2
+  2.  Shows infrastructure stats
+
+- ## /Screen3
+
+  1.  Contains react component for vedio wall 3
+  2.  Shows Mid-day Meal stats
+
+- ## /Screen4
+
+  1.  Contains react component for vedio wall 4
+  2.  Filter Academic Year & Date Range
+
+- ## /utils.ts
+
+  1.  Contains some helper functions
+
+# src/redux
+
+- # root-reducer
+
+  1. contains root reducer logic / state structure
+  2. import other individual reducers and merge to create single reducer
+
+- # Slider
+
+  1. Contains states of the Autoplay screen
+
+- # TabContoller
+
+  1. Contains states of the Tabs/ControllHeader screen
+
+- # user
+
+  1. Contains states of the user
+
+- # VedioWall
+
+  1. Contains states of the Vedio Walls
+
+# src/Routing
+
+- # ProtectedRoute.tsx
+
+  1. Contains React component for protected routes
+  2. return Route of react-router-dom
+
+- # RouteConstants.tsx
+
+  1. Contains Routes as an object to be reused
+
+# src/services
+
+- # api-services.ts
+
+  1. Contains api calls exported as an object
+  2. Api calls are defined as functions
+
+- # parameters.ts
+  1. Contains some constant parameters such as api base url etc.
