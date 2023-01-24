@@ -6,7 +6,6 @@ import QuestionWithIframe from "../../../components/QuestionWIthIframe"
 import { connect } from 'react-redux';
 import { FC } from "react"
 import CustomMap from "../../../components/CustomMap/CustomMap"
-import SectionHeader from '../../ControlledTabs/Tabs/utils/SectionHeader';
 import studentAttendance from "../../../assets/pjb/SectionHeader/student_attendance.png"
 import infrastructure from "../../../assets/pjb/SectionHeader/infrastructure.png"
 import midDayMeal from "./../../../assets/pjb/SectionHeader/mid_day_meal.png"
@@ -15,6 +14,7 @@ import CombinedFooter from "../../../components/layouts/CombinedFooter"
 import map from "../../../assets/pjb/SectionHeader/map.jpg"
 import cwsn from "../../../assets/pjb/SectionHeader/cwsn.png";
 import civilWorks from "../../../assets/pjb/SectionHeader/civil_works.png"
+import SectionHeader from "../../../components/SectionHeader"
 
 interface Props {
     single_date: any

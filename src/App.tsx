@@ -22,7 +22,7 @@ import { getUserFromLS } from "./utils";
 import { addUserToState } from './redux/user/actions';
 import { connect } from 'react-redux/es/exports';
 import Combined from "./pages/VedioWall/Combined/Combined";
-// import CombinedTest from "./pages/VedioWall/CombinedTest/CombinedTest";
+// import CPombinedTest from "./pages/VedioWall/CombinedTest/CombinedTest";
 import AutoPlay from "./pages/VedioWall/AutoPlay/AutoPlay";
 // import CustomMap from "./components/CustomMap/CustomMap";
 // import ScreenPoc from './pages/VedioWall/ScreenPoc/index';

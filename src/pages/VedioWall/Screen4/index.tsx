@@ -1,12 +1,12 @@
 import "./index.css"
 import QuestionWithIframe from '../../../components/QuestionWIthIframe';
 import { connect } from 'react-redux';
-import SectionHeader from '../../ControlledTabs/Tabs/utils/SectionHeader';
 import financeAndCivilWorks from "../../../assets/pjb/SectionHeader/finance_and_civil_works.png"
 import cwsn from "../../../assets/pjb/SectionHeader/cwsn.png"
 import civil_works from "../../../assets/pjb/SectionHeader/civil_works.png"
 import CombinedFooter from '../../../components/layouts/CombinedFooter';
 import { FC } from "react";
+import SectionHeader from "../../../components/SectionHeader";
 
 interface Props {
     year: any

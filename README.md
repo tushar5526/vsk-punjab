@@ -44,3 +44,10 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+## src/pages
+
+- # /ControlledTabs
+  1.  Controlles logic of the tabs Admistrative Overview, Academic Overview & Education Statistics
+  2.  Controll of the tabs available in ControlledTabs/index.tsx
+  3.  Main logic available in ControlledTabs/ControlledHeader/index.tsx

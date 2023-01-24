@@ -2,9 +2,9 @@ import { FC } from 'react';
 import QuestionWithIframe from '../../../components/QuestionWIthIframe'
 import "./index.css"
 import { connect } from 'react-redux'
-import SectionHeader from '../../ControlledTabs/Tabs/utils/SectionHeader'
 import midDayMeal from "../../../assets/pjb/SectionHeader/mid_day_meal.png"
 import CombinedFooter from '../../../components/layouts/CombinedFooter'
+import SectionHeader from '../../../components/SectionHeader';
 
 interface Props {
     year: any
