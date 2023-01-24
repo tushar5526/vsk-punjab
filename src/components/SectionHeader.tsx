@@ -1,3 +1,4 @@
+import { FC } from 'react';
 interface Props {
     label: string
     label2?: string
@@ -5,7 +6,7 @@ interface Props {
     width?: any
     Icon?: any
 }
-const SectionHeader = ({ label, label2, Icon, width = "100%" }: Props) => {
+const SectionHeader: FC<Props> = ({ label, label2, Icon, width = "100%" }) => {
     return (
         <div className={`demoHeader3 demoHeader3__height1`}>
             <div className='demoHeader3__span'>
@@ -22,7 +23,6 @@ const SectionHeader = ({ label, label2, Icon, width = "100%" }: Props) => {
                             <p className="demoHeader3__spanLabelDivText"> {label}</p>
                             <p className="demoHeader3__spanLabelDivText">{label2}</p>
                         </div>
-
                     </>
                 )}
 
