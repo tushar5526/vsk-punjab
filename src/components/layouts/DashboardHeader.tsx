@@ -49,18 +49,19 @@ const DashboardHeader: FC<Props> = ({ user_in_session, _toogleUserSession }) => 
           </div>
         </div>
 
-        <div>
-          <>
-            <Image src={RightLogo} height={"30px"} preview={false} />
-            {localStorage.getItem("user") && (
-              <Button
-                className="logout-btn"
-                onClick={_logout}
-              >
-                <span>Log Out</span>
-              </Button>
-            )}
-          </>
+        <div className="logoutAvatarContainer">
+
+          <div className='combinedHeader__img'>
+            <img src={RightLogo} alt="b" />
+          </div>
+          {localStorage.getItem("user") && (
+            <Button
+              className="logout-btn"
+              onClick={_logout}
+            >
+              <span>Log Out</span>
+            </Button>
+          )}
         </div>
       </div>
 

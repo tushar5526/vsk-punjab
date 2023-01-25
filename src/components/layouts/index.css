@@ -73,9 +73,17 @@ margin-bottom: 10px;
   justify-content: center;
   align-items: center;
   justify-content: flex-end;
-  gap: 2px;
+  gap: 8px;
 }
 
 .combinedHeader__img2 .combinedHeader__img2--dashboard {
   width: 80px;
+}
+
+.logoutAvatarContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
 }

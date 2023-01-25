@@ -1,4 +1,3 @@
-// import { Map } from "leaflet";
 import { useMap, Rectangle, Polygon } from "react-leaflet";
 import { useEffect, useMemo } from "react";
 
