@@ -1,7 +1,5 @@
-import axios from "axios";
-import React, { useState } from "react";
+import { useState } from "react";
 import { Marker, Popup } from "react-leaflet";
-import { useEffect } from "react";
 
 import "./ToolTip.css";
 import {

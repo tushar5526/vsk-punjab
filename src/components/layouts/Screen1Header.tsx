@@ -1,8 +1,6 @@
 import { FC } from "react";
-import { Col, Image, Row } from 'antd';
 import "./index.less";
 import bharatSarkar from "../../assets/pjb/Header/highres/bharat-sarkar.png"
-import { NavLink } from 'react-router-dom';
 import "./index.css"
 
 

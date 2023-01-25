@@ -46,8 +46,9 @@ const getDistrictBasedOnBlock = (block: any) => {
   })[0].District;
 };
 
-export default {
+const filterUtils = {
   lodashTypes,
   getDataFromLodash,
   getDistrictBasedOnBlock,
 };
+export default filterUtils;
