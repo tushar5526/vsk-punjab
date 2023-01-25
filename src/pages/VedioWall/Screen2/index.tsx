@@ -20,6 +20,7 @@ const Screen2: FC<Props> = ({ year, single_date }) => {
                     questionId={65}
                     width="100%"
                     type={1}
+                    nonDownloadable={true}
                     params={{ year, single_date }}
                     height="100%"
                     handleLoadCounter={() => { }}

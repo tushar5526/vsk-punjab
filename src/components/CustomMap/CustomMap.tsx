@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import { connect } from "react-redux";
 import { getEncryptedStringForMIS, getSchoolListForMapWithLatLong } from "../../pages/VedioWall/utils";
 import { setLoadingForMapRender } from "../../redux/VedioWall/actions";
-import { Spin, notification } from 'antd';
+import { notification } from 'antd';
 import "./index.css"
 import Spinner from "../Spinner/Spinner";
 
