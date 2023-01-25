@@ -7,33 +7,12 @@ import education from "../../assets/pjb/Header/highres/education-logo.png"
 const Screen2Header: FC = () => {
 
     return (
-        <div style={{
-            padding: "20px 0"
-        }} key={+new Date()} className="dashboard-header">
-            <Row gutter={10} justify={"space-between"}>
-                <Col
-                    span={24}
-                    style={{
-                        display: "flex",
-                        justifyContent: "flex-end",
-                    }}
-                >
-
-                    <Col
-                        span={6}
-                        style={{
-                            display: "flex",
-                            justifyContent: "flex-end",
-                        }}
-                    >
-                        <div style={{ display: "flex", flexDirection: "column" }}>
-                            <>
-                                <Image src={education} height={"40px"} preview={false} />
-                            </>
-                        </div>
-                    </Col>
-                </Col>
-            </Row>
+        <div key={+new Date()} className="dashboard-header">
+            <div className="screen2Header">
+                <div className='combinedHeader__img'>
+                    <img src={education} alt="education" />
+                </div>
+            </div>
         </div >
     );
 };

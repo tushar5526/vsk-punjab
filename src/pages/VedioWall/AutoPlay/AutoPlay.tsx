@@ -39,7 +39,7 @@ const AutoPlay: FC<Props> = ({ duration, setNewDuration, durationParsed }) => {
             const toogleInterval = setInterval(() => {
                 setToogle((prev: any) => {
                     if (prev === 3) return 0
-                    else return prev + 1
+                    else return (prev + 1)
                 })
             }, duration)
             return () => clearInterval(toogleInterval)

@@ -9,41 +9,25 @@ import "./index.css"
 const Screen1Header: FC = () => {
     return (
         <div key={+new Date()} className="dashboard-header">
-            <Row gutter={10} justify={"space-between"}>
-                <Col span={12}>
-                    <Row className="image_row" gutter={10}>
-                        <Col>
-                            <Image src={bharatSarkar} height={"40px"} preview={false} />
-                        </Col>
-                    </Row>
-                </Col>
-                <Col span={22}
-                    style={{
-                        alignContent: "center",
-                        display: "flex",
-                        justifyContent: "flex-end"
-                    }}>
-                    <NavLink to={"/"}>
-                        <Row align={"middle"}>
-                            <Col
-                                span={24}
-                                className="header_text_1"
-                            >
-                                ਪੰਜਾਬ ਵਿਦਿਆ ਸਮੀਕਸ਼ਾ ਕੇਂਦਰ ਏਕੀਕ੍ਰਿਤ ਡੈਸ਼ਬੋਰਡ
-                            </Col>
-                        </Row>
-                        <Row align={"middle"}>
-                            <Col
-                                span={24}
-                                className="header_text_2"
-                            >
-                                ਸਕੂਲ ਸਿੱਖਿਆ ਵਿਭਾਗ, ਪੰਜਾਬ
-                            </Col>
-                        </Row>
-                    </NavLink>
-                </Col>
+            <div className="combinedHeader">
+                <div className='combinedHeader__img'>
+                    <img src={bharatSarkar} alt="bharatSarkar" />
+                </div>
+                <div className='combinedHeader__title'>
+                    <div
+                        className="header_text_1"
+                    >
+                        ਪੰਜਾਬ ਵਿਦਿਆ ਸਮੀਕਸ਼ਾ ਕੇਂਦਰ ਏਕੀਕ੍ਰਿਤ ਡੈਸ਼ਬੋਰਡ
+                    </div>
+                    <div
+                        className="header_text_2"
+                    >
+                        ਸਕੂਲ ਸਿੱਖਿਆ ਵਿਭਾਗ, ਪੰਜਾਬ
+                    </div>
+                </div>
+            </div>
 
-            </Row>
+
         </div>
     );
 };
