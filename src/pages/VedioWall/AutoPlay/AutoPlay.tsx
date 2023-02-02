@@ -33,15 +33,21 @@ const AutoPlay: FC<Props> = ({ duration, setNewDuration, durationParsed }) => {
         screen3: toogle === 2,
         screen4: toogle === 3,
     }
+    const toogleScreenAction = {
+        PREV: "PREV",
+        NEXT: "NEXT",
+    }
+    const handleToggleScreen = (action?: string) => {
+        if (action === toogleScreenAction.NEXT) {
+            setToogle((prev: any) => (prev === 3) ? 0 : (prev + 1))
+        } else if (action === toogleScreenAction.PREV) {
+            setToogle((prev: any) => (prev === 0) ? 3 : (prev - 1))
+        } else setToogle((prev: any) => (prev === 3) ? 0 : (prev + 1))
+    }
 
     useEffect(() => {
         if (playPause) {
-            const toogleInterval = setInterval(() => {
-                setToogle((prev: any) => {
-                    if (prev === 3) return 0
-                    else return (prev + 1)
-                })
-            }, duration)
+            const toogleInterval = setInterval(handleToggleScreen, duration)
             return () => clearInterval(toogleInterval)
         }
     }, [duration, playPause])
@@ -52,6 +58,14 @@ const AutoPlay: FC<Props> = ({ duration, setNewDuration, durationParsed }) => {
             <div className='Autoplay__Container'>
                 <Filters />
                 <div className="Autoplay__ContainerInput">
+                    <Button type='primary'
+                        onClick={() => handleToggleScreen(toogleScreenAction.PREV)}>
+                        Prev
+                    </Button>
+                    <Button type='primary'
+                        onClick={() => handleToggleScreen(toogleScreenAction.NEXT)}>
+                        Next
+                    </Button>
                     <Input placeholder='Enter Duration in Seconds' value={durationValue} onChange={(e) => setDurationValue(e.target.value)} />
                     <Button
                         type='primary'

@@ -57,20 +57,18 @@ const Filters: FC<Props> = (props) => {
                     props.pushMisYear(filterMisYearItem(e))
                 }}
             />
-            <div className="AcademicDateRange">
-                <DatePicker
-                    value={date}
-                    onChange={(e: any) => {
-                        if (e) {
-                            setDate(e)
-                            props.applyDate(fixMomentDateForMis(e))
-                        }
-                        else {
-                            props.applyDate([])
-                        }
-                    }} />
+            <DatePicker
+                value={date}
+                onChange={(e: any) => {
+                    if (e) {
+                        setDate(e)
+                        props.applyDate(fixMomentDateForMis(e))
+                    }
+                    else {
+                        props.applyDate([])
+                    }
+                }} />
 
-            </div>
             <ClearFilter handleClearFilter={() => onClearFilter()} />
         </div>
     )
